@@ -1,0 +1,16 @@
+PODS:
+  - FaceCaptcha (1.1.0)
+
+DEPENDENCIES:
+  - FaceCaptcha
+
+SPEC REPOS:
+  https://github.com/oititec/liveness-ios-specs.git:
+    - FaceCaptcha
+
+SPEC CHECKSUMS:
+  FaceCaptcha: ed683ffa8b44b908ea9de4b2f3617724e0fbb722
+
+PODFILE CHECKSUM: 637f062d5f06f1b68eab9974e73d07a4fbe113ca
+
+COCOAPODS: 1.10.0

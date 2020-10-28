@@ -1,0 +1,11 @@
+source 'https://github.com/oititec/liveness-ios-specs.git'
+
+platform :ios, '13.0'
+
+target 'SampleFaceCaptcha' do
+
+  use_frameworks!
+
+  pod 'FaceCaptcha'
+
+end
