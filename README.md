@@ -40,6 +40,10 @@ No `Info.plist` do projeto, adicione as descrições de uso de câmera (`Privacy
 
 - [Troubleshooting](Documentation/Troubleshooting.md)
 
+## Release notes
+
+- As novidades das versões podem ser acessadas [neste link](Documentation/ReleaseNotes.md).
+
 ## Guias de migração
 
 - [1.2.0](Documentation/Migration-Guide-1.2.0.md)
