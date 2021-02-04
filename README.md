@@ -46,4 +46,4 @@ No `Info.plist` do projeto, adicione as descrições de uso de câmera (`Privacy
 
 ## Guias de migração
 
-- [1.2.0](Documentation/Migration-Guide-1.2.0.md)
+- [1.2.0](Documentation/Migration-Guide-1.2.0.md) - BREAKING CHANGE
