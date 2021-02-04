@@ -6,6 +6,6 @@ target 'SampleFaceCaptcha' do
 
   use_frameworks!
 
-  pod 'FaceCaptcha'
+  pod 'FaceCaptchaXP', '~> 1.2.0'
 
 end

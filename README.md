@@ -5,34 +5,29 @@ Biblioteca Liveness para iOS.
 
 ## Instalação
 
+O SDK está disponível via [CocoaPods](https://cocoapods.org/) (forma recomendada), mas também pode ser instalado manualmente.
+
 ### CocoaPods
 
-Adicione a seguinte entrada no seu Podfile:
-
+1. No início do `Podfile`, inclua a linha:
 ```rb
-pod 'FaceCaptcha'
+source 'https://github.com/oititec/liveness-ios-specs.git'
 ```
-
-Rode `pod install`.
-Não esqueça de colocar `import FaceCaptcha` nos arquivos em que for usar a biblioteca.
+2. Após isso, adicione a dependência:
+```rb
+pod 'FaceCaptcha', '~> 1.2.0'
+```
+3. Rode `pod install`.
 
 ### Manual
 
-1. Arraste o `FaceCaptcha.framework` para dentro do projeto:
+Para adicionar o SDK manualmente no seu projeto, siga estas [instruções](Documentation/ManualInstallation.md).
 
-![Instalação 1](Documentation/Images/installation_1.png)
+## Uso
 
-2. Não se esqueça de marcar as opções abaixo:
+### Permissões de acesso
 
-![Instalação 2](Documentation/Images/installation_2.png)
-
-3.  Nas configurações gerais do projeto, selecione o `​FaceCaptcha.framework​` e deixe em `Embed: Embed & Sign`:
-
-![Instalação 3](Documentation/Images/installation_3.png)
-
-#### Permissões de acesso:
-
-No `Info.plist` do projeto, adicione as descrições de uso de câmera (`Privacy - Camera Usage Description`) e microfone (`Privacy - Microphone Usage Description`):
+ No `Info.plist` do projeto, adicione as descrições de uso de câmera (`Privacy - Camera Usage Description`) e microfone (`Privacy - Microphone Usage Description`):
 
 ![Instalação 4](Documentation/Images/installation_4.png)
 
