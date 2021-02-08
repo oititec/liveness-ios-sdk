@@ -1,5 +1,8 @@
 # Liveness - Release Notes
 
+#### [1.2.1]
+- `BUILD_LIBRARIES_FOR_DISTRIBUTION` habilitado.
+
 #### [1.2.0](Migration-Guide-1.2.0.md) - BREAKING CHANGE
 - Foi criado um novo enum, `FaceCaptchaError`, que indica o tipo de erro retornado pelo SDK.
 - Correção para o problema de câmera travada (tela preta).
