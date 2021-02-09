@@ -1,4 +1,3 @@
-
 # Liveness
 
 Biblioteca Liveness para iOS.
@@ -31,7 +30,61 @@ Para adicionar o SDK manualmente no seu projeto, siga estas [instruções](Docum
 
 ![Instalação 4](Documentation/Images/installation_4.png)
 
-## Documentação
+### Iniciando o FaceCaptcha
+
+1. Importe o FaceCaptcha no controller onde irá usá-lo:
+```swift
+import FaceCaptcha
+```
+
+2. Crie uma referência para um objeto do tipo `FCCameraCapture`. Este objeto deve ser mantido durante todo o processo de prova de vida:
+```swift
+private var faceCaptcha: FCCameraCapture?
+```
+
+3. Instancie o `FCCameraCapture`, com os seguintes parâmetros:
+- *model*: Objeto do tipo `FCUserModel` onde é possível especificar a imagem de overlay da câmera. Os outros parâmetros podem ser vazios.
+- *appkey*: App Key recebida previamente. Deve ser diferente para cada vez que for apresentar o FaceCaptcha.
+- *fcvarUrlbase*: URL apontando para o ambiente desejado.
+- *viewController*: `UIVIewController` que será utilizado para apresentar o FaceCaptcha.
+- *delegate*: objeto que deve implementar o protocolo `FCCameraCaptureDelegate`, para receber o retorno da prova de vida.
+- *showSetupErrors*: Booleano que indica se o SDK deve apresentar dialogs de erro durante a fase de inicialização, por exemplo: erro de permissão de câmera e erro de conexão. Independente deste valor, a callback de erro sempre será chamada.
+```swift
+let fcvarUrlbase = "https://comercial.certiface.com.br:8443/"
+let appKey = ""
+let faceUserModel = FCUserModel("", "", "", "", "", UIImage(named: "overlay"))
+faceCaptcha = FCCameraCapture(model: faceUserModel,
+                              appkey: appKey,
+                              fcvarUrlbase: fcvarUrlbase,
+                              viewController: self,
+                              delegate: self,
+                              showSetupErrors: false)
+```
+
+4. Chame o método show() para apresentar:
+```swift
+faceCaptcha?.show()
+```
+
+5. Implemente o protocolo `FCCameraCaptureDelegate` para ser notificado sobre a conclusão da prova de vida:
+```swift
+public protocol FCCameraCaptureDelegate: class {
+    func handleCaptureValidation(_ validateModel: FCValidCaptchaModel)
+    func handleCaptureVideoError(_ error: FaceCaptchaError, imageBase64: String?)
+}
+```
+
+Este protocolo contém dois métodos:
+
+- *handleCaptureValidation*: recebe um objeto do tipo `FCValidCaptchaModel`, no qual é possível verificar se a prova de vida foi válida, e, caso não tenha sido, o motivo pelo qual falhou.
+
+- *handleCaptureVideoError*: recebe um enum do tipo `FaceCaptchaError`, que indica o erro ocorrido, e também uma imagem opcional (em formato Base64), que pode ser retornada em alguns cenários de erro.
+
+**Importante:** em ambos os métodos, deve-se atribuir `nil` ao objeto `faceCaptcha`, para que o FaceCaptcha seja finalizado e desalocado.
+
+Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha](https://github.com/oititec/liveness-ios-sdk/tree/main/SampleFaceCaptcha "SampleFaceCaptcha"), neste mesmo repositório.
+
+## Documentação Auxiliar
 
 - [Troubleshooting](Documentation/Troubleshooting.md)
 
