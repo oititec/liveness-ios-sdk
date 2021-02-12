@@ -50,7 +50,7 @@ private var faceCaptcha: FCCameraCapture?
 - *delegate*: objeto que deve implementar o protocolo `FCCameraCaptureDelegate`, para receber o retorno da prova de vida.
 - *showSetupErrors*: Booleano que indica se o SDK deve apresentar dialogs de erro durante a fase de inicialização, por exemplo: erro de permissão de câmera e erro de conexão. Independente deste valor, a callback de erro sempre será chamada.
 ```swift
-let fcvarUrlbase = "https://comercial.certiface.com.br:8443/"
+let fcvarUrlbase = ""
 let appKey = ""
 let faceUserModel = FCUserModel("", "", "", "", "", UIImage(named: "overlay"))
 faceCaptcha = FCCameraCapture(model: faceUserModel,
@@ -66,7 +66,9 @@ faceCaptcha = FCCameraCapture(model: faceUserModel,
 faceCaptcha?.show()
 ```
 
-5. Implemente o protocolo `FCCameraCaptureDelegate` para ser notificado sobre a conclusão da prova de vida:
+### Tratando o retorno
+
+1. Implemente o protocolo `FCCameraCaptureDelegate` para ser notificado sobre a conclusão da prova de vida:
 ```swift
 public protocol FCCameraCaptureDelegate: class {
     func handleCaptureValidation(_ validateModel: FCValidCaptchaModel)
@@ -77,10 +79,31 @@ public protocol FCCameraCaptureDelegate: class {
 Este protocolo contém dois métodos:
 
 - *handleCaptureValidation*: recebe um objeto do tipo `FCValidCaptchaModel`, no qual é possível verificar se a prova de vida foi válida, e, caso não tenha sido, o motivo pelo qual falhou.
-
 - *handleCaptureVideoError*: recebe um enum do tipo `FaceCaptchaError`, que indica o erro ocorrido, e também uma imagem opcional (em formato Base64), que pode ser retornada em alguns cenários de erro.
 
 **Importante:** em ambos os métodos, deve-se atribuir `nil` ao objeto `faceCaptcha`, para que o FaceCaptcha seja finalizado e desalocado.
+
+`FaceCaptchaError` pode assumir os seguintes valores:
+```swift
+public enum FaceCaptchaError {
+    /// App Key inválido.
+    case invalidAppKey
+    /// Certiface offline.
+    case certifaceOff
+    /// Não foi concedida permissão de acesso à câmera do aparelho.
+    case noCameraPermission
+    /// Sem conexão à Internet.
+    case noInternetConnection
+    /// Chamada telefônica em andamento. Não é possível iniciar o desafio durante uma chamada telefônica.
+    case phoneCallInProgress
+    /// Erro na requisição de validação dos desafios.
+    case validationError
+    /// App foi minimizado durante o uso do FaceCaptcha, isso faz com que o desafio seja encerrado.
+    case challengeInterrupted
+}
+```
+
+## Sample
 
 Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha](https://github.com/oititec/liveness-ios-sdk/tree/main/SampleFaceCaptcha "SampleFaceCaptcha"), neste mesmo repositório.
 
