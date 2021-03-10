@@ -1,5 +1,8 @@
 # Liveness - Release Notes
 
+#### 1.2.2
+- Ajuste no dismiss da câmera.
+
 #### 1.2.1
 - `BUILD_LIBRARIES_FOR_DISTRIBUTION` habilitado.
 
