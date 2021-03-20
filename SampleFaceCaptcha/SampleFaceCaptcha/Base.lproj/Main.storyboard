@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,19 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Z4-9nb">
-                                <rect key="frame" x="143" y="433" width="128" height="30"/>
-                                <state key="normal" title="Abrir FaceCaptcha"/>
-                                <connections>
-                                    <action selector="openFaceCaptchaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6h-GA-Uv1"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jLX-gr-5v4">
+                                <rect key="frame" x="132.5" y="387" width="149" height="122"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Z4-9nb">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="30"/>
+                                        <state key="normal" title="View padrão"/>
+                                        <connections>
+                                            <action selector="defaultViewPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ye-12-K5R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vc-4s-MAk">
+                                        <rect key="frame" x="0.0" y="46" width="149" height="30"/>
+                                        <state key="normal" title="Imagem Customizada"/>
+                                        <connections>
+                                            <action selector="customImagePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="viq-SH-192"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krN-LZ-JJW">
+                                        <rect key="frame" x="0.0" y="92" width="149" height="30"/>
+                                        <state key="normal" title="View Customizada"/>
+                                        <connections>
+                                            <action selector="customViewPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6O-5y-DCE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hOl-Z4-9nb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Ty-Ju-XrT"/>
-                            <constraint firstItem="hOl-Z4-9nb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cJh-4Q-YnB"/>
+                            <constraint firstItem="jLX-gr-5v4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hwx-aT-J76"/>
+                            <constraint firstItem="jLX-gr-5v4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JDH-j4-u0r"/>
                         </constraints>
                     </view>
                 </viewController>

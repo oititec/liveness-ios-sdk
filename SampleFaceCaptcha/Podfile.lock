@@ -1,16 +1,16 @@
 PODS:
-  - FaceCaptcha (1.2.2)
+  - FaceCaptcha (2.0.0-beta)
 
 DEPENDENCIES:
-  - FaceCaptcha (~> 1.2.2)
+  - FaceCaptcha (~> 2.0.0-beta)
 
 SPEC REPOS:
   https://github.com/oititec/liveness-ios-specs.git:
     - FaceCaptcha
 
 SPEC CHECKSUMS:
-  FaceCaptcha: 5b7b1d302a3db91228afdcd5c9c08d9862fb5903
+  FaceCaptcha: 6ec0fc2478dd81677e3a6d780372680255f00851
 
-PODFILE CHECKSUM: 94deacaa48449a5fab090cb04a635ff6cb21cc41
+PODFILE CHECKSUM: 997555e1f273e314dea4322fc61f98968d893ff7
 
 COCOAPODS: 1.10.1
