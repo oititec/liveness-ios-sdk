@@ -190,7 +190,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import CoreGraphics;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -210,16 +209,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-
-SWIFT_CLASS("_TtC11FaceCaptcha10FCBaseView")
-@interface FCBaseView : UIView
-@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified view;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-@end
-
 
 SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
 @interface FCCameraCapture : NSObject
@@ -228,22 +217,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
 @end
 
 
-
-
 @class UIImagePickerController;
 
 @interface FCCameraCapture (SWIFT_EXTENSION(FaceCaptcha)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
 @end
-
-
-SWIFT_CLASS("_TtC11FaceCaptcha12FCCameraView")
-@interface FCCameraView : FCBaseView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
 
 
 
@@ -444,7 +423,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import CoreGraphics;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -464,16 +442,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-
-SWIFT_CLASS("_TtC11FaceCaptcha10FCBaseView")
-@interface FCBaseView : UIView
-@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified view;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-@end
-
 
 SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
 @interface FCCameraCapture : NSObject
@@ -482,22 +450,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
 @end
 
 
-
-
 @class UIImagePickerController;
 
 @interface FCCameraCapture (SWIFT_EXTENSION(FaceCaptcha)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
 @end
-
-
-SWIFT_CLASS("_TtC11FaceCaptcha12FCCameraView")
-@interface FCCameraView : FCBaseView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
 
 
 
@@ -698,7 +656,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import CoreGraphics;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -718,16 +675,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-
-SWIFT_CLASS("_TtC11FaceCaptcha10FCBaseView")
-@interface FCBaseView : UIView
-@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified view;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-@end
-
 
 SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
 @interface FCCameraCapture : NSObject
@@ -736,22 +683,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
 @end
 
 
-
-
 @class UIImagePickerController;
 
 @interface FCCameraCapture (SWIFT_EXTENSION(FaceCaptcha)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
 @end
-
-
-SWIFT_CLASS("_TtC11FaceCaptcha12FCCameraView")
-@interface FCCameraView : FCBaseView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
 
 
 

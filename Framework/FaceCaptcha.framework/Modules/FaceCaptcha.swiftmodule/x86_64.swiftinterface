@@ -28,29 +28,6 @@ extension Rabbit {
 public protocol Authenticator {
   func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
-public enum CStatusType {
-  case record
-  case stop
-  public static func == (a: FaceCaptcha.CStatusType, b: FaceCaptcha.CStatusType) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
-public protocol FCCameraViewDelegate : AnyObject {
-  func handleButtonAction(_ type: FaceCaptcha.CStatusType)
-  func handleCompletionAnimation()
-}
-@objc public class FCCameraView : FaceCaptcha.FCBaseView {
-  public init(frame: CoreGraphics.CGRect, _ delegate: FaceCaptcha.FCCameraViewDelegate?)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-}
-extension FCCameraView {
-  public func configuration(_ model: FaceCaptcha.FCResultModel?)
-  public func setOverlapImage(with image: UIKit.UIImage)
-}
 public typealias Hash = FaceCaptcha.Digest
 public struct Digest {
   public static func md5(_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Array<Swift.UInt8>
@@ -83,38 +60,23 @@ public enum Padding : FaceCaptcha.PaddingProtocol {
 public enum PKCS5 {
 }
 public protocol FCCameraCaptureDelegate : AnyObject {
-  func handleCaptureValidation(_ validateModel: FaceCaptcha.FCValidCaptchaModel)
-  func handleCaptureVideoError(_ error: FaceCaptcha.FaceCaptchaError, imageBase64: Swift.String?)
-}
-public enum FaceCaptchaError {
-  case invalidAppKey
-  case certifaceOff
-  case noCameraPermission
-  case noInternetConnection
-  case phoneCallInProgress
-  case validationError
-  case challengeInterrupted
-  public static func == (a: FaceCaptcha.FaceCaptchaError, b: FaceCaptcha.FaceCaptchaError) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
+  func handleCaptureValidation(validateModel: FaceCaptcha.FCValidCaptchaModel)
+  func handleCaptureVideoError(error: FaceCaptcha.FaceCaptchaError, imageBase64: Swift.String?)
+  func handleCaptureCanceled()
 }
 @objc public class FCCameraCapture : ObjectiveC.NSObject {
-  public init(model: FaceCaptcha.FCUserModel, appkey: Swift.String, fcvarUrlbase: Swift.String, viewController: UIKit.UIViewController, delegate: FaceCaptcha.FCCameraCaptureDelegate, showSetupErrors: Swift.Bool = false)
+  @available(*, deprecated, message: "Use init(appKey:baseURL:viewController:delegate:showSetupErrors:cameraOverlay:customView:) instead")
+  convenience public init(model: FaceCaptcha.FCUserModel, appkey: Swift.String, fcvarUrlbase: Swift.String, viewController: UIKit.UIViewController, delegate: FaceCaptcha.FCCameraCaptureDelegate, showSetupErrors: Swift.Bool = false)
+  public init(appKey: Swift.String, baseURL: Swift.String, viewController: UIKit.UIViewController, delegate: FaceCaptcha.FCCameraCaptureDelegate, showSetupErrors: Swift.Bool = false, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FCView? = nil)
   @objc deinit
   @objc override dynamic public init()
 }
-extension FCCameraCapture : FaceCaptcha.FCCameraViewDelegate {
-  public func handleButtonAction(_ type: FaceCaptcha.CStatusType)
-  public func handleCompletionAnimation()
+extension FCCameraCapture {
+  public func show()
 }
 extension FCCameraCapture : UIKit.UIImagePickerControllerDelegate, UIKit.UINavigationControllerDelegate {
   @objc dynamic public func imagePickerControllerDidCancel(_ picker: UIKit.UIImagePickerController)
   @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [Swift.String : Any])
-}
-extension FCCameraCapture {
-  public func show()
 }
 extension ChaCha20 {
   convenience public init(key: Swift.String, iv: Swift.String) throws
@@ -127,8 +89,8 @@ public struct FCUserModel {
   public var cpf: Swift.String?
   public var name: Swift.String?
   public var birth: Swift.String?
-  public var overlapImage: UIKit.UIImage?
   public var privateKey: Swift.String?
+  public var image: UIKit.UIImage?
   public init(_ user: Swift.String, _ pass: Swift.String, _ cpf: Swift.String, _ name: Swift.String, _ birth: Swift.String, _ overlapImage: UIKit.UIImage? = nil)
 }
 public protocol RandomAccessCryptor : FaceCaptcha.Updatable {
@@ -486,6 +448,15 @@ extension SHA1 : FaceCaptcha.Updatable {
 }
 public enum PKCS7 {
 }
+public protocol FCView : UIKit.UIView {
+  var startButton: UIKit.UIButton! { get }
+  var closeButton: UIKit.UIButton! { get }
+  var activityIndicatorView: UIKit.UIView! { get }
+  var challengeIcon: UIKit.UIImageView! { get }
+  var challengeText: UIKit.UIImageView! { get }
+  var challengeContainer: UIKit.UIView? { get }
+  var initialInstructionView: UIKit.UIView? { get }
+}
 final public class Poly1305 : FaceCaptcha.Authenticator {
   public enum Error : Swift.Error {
     case authenticateError
@@ -537,15 +508,6 @@ final public class SHA2 {
 }
 extension SHA2 : FaceCaptcha.Updatable {
   final public func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8>
-}
-@objc @_inheritsConvenienceInitializers public class FCBaseView : UIKit.UIView {
-  @objc @IBOutlet weak public var view: UIKit.UIView!
-  public var shouldLayoutSubviews: Swift.Bool
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  open func xibSetup(_ named: Swift.String)
-  @objc override dynamic open func layoutSubviews()
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class Checksum {
   @objc deinit
@@ -605,12 +567,22 @@ extension AES {
     public mutating func seek(to position: Swift.Int) -> Swift.Bool
   }
 }
-extension FaceCaptcha.CStatusType : Swift.Equatable {}
-extension FaceCaptcha.CStatusType : Swift.Hashable {}
+public enum FaceCaptchaError {
+  case invalidAppKey
+  case certifaceOff
+  case noCameraPermission
+  case noInternetConnection
+  case phoneCallInProgress
+  case validationError
+  case challengeInterrupted
+  public static func == (a: FaceCaptcha.FaceCaptchaError, b: FaceCaptcha.FaceCaptchaError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
 extension FaceCaptcha.Padding : Swift.Equatable {}
 extension FaceCaptcha.Padding : Swift.Hashable {}
-extension FaceCaptcha.FaceCaptchaError : Swift.Equatable {}
-extension FaceCaptcha.FaceCaptchaError : Swift.Hashable {}
 extension FaceCaptcha.AES.Error : Swift.Equatable {}
 extension FaceCaptcha.AES.Error : Swift.Hashable {}
 extension FaceCaptcha.AES.Variant : Swift.Equatable {}
@@ -645,3 +617,5 @@ extension FaceCaptcha.SHA2.Variant : Swift.Equatable {}
 extension FaceCaptcha.SHA2.Variant : Swift.Hashable {}
 extension FaceCaptcha.Rabbit.Error : Swift.Equatable {}
 extension FaceCaptcha.Rabbit.Error : Swift.Hashable {}
+extension FaceCaptcha.FaceCaptchaError : Swift.Equatable {}
+extension FaceCaptcha.FaceCaptchaError : Swift.Hashable {}
