@@ -1,4 +1,7 @@
-# Liveness - Release Notes
+# Changelog
+
+#### 2.1.1
+- [Documentoscopia.](Documentscopy-Usage.md)
 
 #### [2.0.0](Migration-Guide-2.0.0.md) - BREAKING CHANGE
 - Layout redesenhado.
