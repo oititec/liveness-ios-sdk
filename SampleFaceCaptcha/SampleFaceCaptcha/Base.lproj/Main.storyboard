@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jLX-gr-5v4">
-                                <rect key="frame" x="132.5" y="387" width="149" height="122"/>
+                                <rect key="frame" x="132.5" y="327" width="149" height="122"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Z4-9nb">
                                         <rect key="frame" x="0.0" y="0.0" width="149" height="30"/>
@@ -43,12 +43,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjt-mK-Zlm">
+                                <rect key="frame" x="144.5" y="509" width="125" height="30"/>
+                                <state key="normal" title="Documentoscopia"/>
+                                <connections>
+                                    <action selector="documentoscopiaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddW-iA-4be"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jjt-mK-Zlm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Y1-6Z-nAD"/>
                             <constraint firstItem="jLX-gr-5v4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hwx-aT-J76"/>
-                            <constraint firstItem="jLX-gr-5v4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JDH-j4-u0r"/>
+                            <constraint firstItem="jLX-gr-5v4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="JDH-j4-u0r"/>
+                            <constraint firstItem="jjt-mK-Zlm" firstAttribute="top" secondItem="jLX-gr-5v4" secondAttribute="bottom" constant="60" id="crJ-t7-Oy6"/>
                         </constraints>
                     </view>
                 </viewController>

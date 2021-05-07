@@ -48,6 +48,15 @@ class ViewController: UIViewController {
         faceCaptcha?.show()
     }
 
+    /// Trata de clique no botão para abrir Documentoscopia
+    @IBAction func documentoscopiaPressed(_ sender: Any) {
+        let controller = DocumentscopyViewController(appKey: appKey,
+                                                     baseURL: baseURL,
+                                                     documentscopyDelegate: self)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
+    }
+
     /// Exibe um UIAlertController.
     /// - Parameters:
     ///   - title: Título da alerta
@@ -89,5 +98,31 @@ extension ViewController: FCCameraCaptureDelegate {
     func handleCaptureCanceled() {
         debugPrint("handleCaptureCanceled")
         faceCaptcha = nil
+    }
+}
+
+// MARK: - DocumentscopyDelegate
+
+extension ViewController: DocumentscopyDelegate {
+
+    func handleDocumentscopyError(error: DocumentscopyError) {
+        debugPrint("handleDocumentscopyError: \(error)")
+        dismiss(animated: true) {
+            self.showAlert(title: "Erro",
+                           message: "\(error)")
+        }
+    }
+
+    func handleDocumentscopyCompleted() {
+        debugPrint("handleDocumentscopyCompleted")
+        dismiss(animated: true) {
+            self.showAlert(title: "Sucesso",
+                           message: "Documentoscopia concluída")
+        }
+    }
+
+    func handleDocumentscopyCanceled() {
+        debugPrint("handleDocumentscopyCanceled")
+        dismiss(animated: true, completion: nil)
     }
 }
