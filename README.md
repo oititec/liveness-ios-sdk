@@ -14,7 +14,7 @@ source 'https://github.com/oititec/liveness-ios-specs.git'
 ```
 2. Após isso, adicione a dependência:
 ```rb
-pod 'FaceCaptcha', '~> 1.2.2'
+pod 'FaceCaptcha', '~> 2.0.0'
 ```
 3. Rode `pod install`.
 
@@ -43,19 +43,16 @@ private var faceCaptcha: FCCameraCapture?
 ```
 
 3. Instancie o `FCCameraCapture`, com os seguintes parâmetros:
-- *model*: Objeto do tipo `FCUserModel` onde é possível especificar a imagem de overlay da câmera. Os outros parâmetros podem ser vazios.
 - *appkey*: App Key recebida previamente. Deve ser diferente para cada vez que for apresentar o FaceCaptcha.
-- *fcvarUrlbase*: URL apontando para o ambiente desejado.
+- *baseURL*: URL apontando para o ambiente desejado.
 - *viewController*: `UIVIewController` que será utilizado para apresentar o FaceCaptcha.
 - *delegate*: objeto que deve implementar o protocolo `FCCameraCaptureDelegate`, para receber o retorno da prova de vida.
 - *showSetupErrors*: Booleano que indica se o SDK deve apresentar dialogs de erro durante a fase de inicialização, por exemplo: erro de permissão de câmera e erro de conexão. Independente deste valor, a callback de erro sempre será chamada.
 ```swift
-let fcvarUrlbase = ""
+let baseURL = ""
 let appKey = ""
-let faceUserModel = FCUserModel("", "", "", "", "", UIImage(named: "overlay"))
-faceCaptcha = FCCameraCapture(model: faceUserModel,
-                              appkey: appKey,
-                              fcvarUrlbase: fcvarUrlbase,
+faceCaptcha = FCCameraCapture(appkey: appKey,
+                              baseURL: baseURL,
                               viewController: self,
                               delegate: self,
                               showSetupErrors: false)
@@ -71,8 +68,9 @@ faceCaptcha?.show()
 1. Implemente o protocolo `FCCameraCaptureDelegate` para ser notificado sobre a conclusão da prova de vida:
 ```swift
 public protocol FCCameraCaptureDelegate: class {
-    func handleCaptureValidation(_ validateModel: FCValidCaptchaModel)
-    func handleCaptureVideoError(_ error: FaceCaptchaError, imageBase64: String?)
+    func handleCaptureValidation(validateModel: FCValidCaptchaModel)
+    func handleCaptureVideoError(error: FaceCaptchaError, imageBase64: String?)
+    func handleCaptureCanceled()
 }
 ```
 
@@ -80,8 +78,9 @@ Este protocolo contém dois métodos:
 
 - *handleCaptureValidation*: recebe um objeto do tipo `FCValidCaptchaModel`, no qual é possível verificar se a prova de vida foi válida, e, caso não tenha sido, o motivo pelo qual falhou.
 - *handleCaptureVideoError*: recebe um enum do tipo `FaceCaptchaError`, que indica o erro ocorrido, e também uma imagem opcional (em formato Base64), que pode ser retornada em alguns cenários de erro.
+- *handleCaptureCanceled*: método chamado se o usuário clicar no botão fechar/cancelar.
 
-**Importante:** em ambos os métodos, deve-se atribuir `nil` ao objeto `faceCaptcha`, para que o FaceCaptcha seja finalizado e desalocado.
+**Importante:** em todos os métodos, deve-se atribuir `nil` ao objeto `faceCaptcha`, para que o FaceCaptcha seja finalizado e desalocado, evitando memory leaks.
 
 `FaceCaptchaError` pode assumir os seguintes valores:
 ```swift
@@ -103,6 +102,35 @@ public enum FaceCaptchaError {
 }
 ```
 
+### Customização
+
+Além de poder usar o SDK em sua forma padrão de exibição, são fornecidas duas formas de customização: 
+
+1. Imagem de fundo customizada:
+Para exibir uma imagem de fundo (overlay da câmera) customizada, basta passar a imagem desejada para o construtor do `FCCameraCapture`, através do parâmetro `cameraOverlay`. Exemplo:
+```swift
+faceCaptcha = FCCameraCapture(appkey: appKey,
+                              baseURL: baseURL,
+                              viewController: self,
+                              delegate: self,
+                              showSetupErrors: false,
+                              cameraOverlay: UIImage(named: "custom_overlay"))
+```
+
+2. Visual completamente customizado:
+É possível configurar completamente o visual exibido pelo FaceCaptcha. Para isso, é necessário criar uma UIView que implemente o protocolo `FCView`, e passá-la para o construtor do `FCCameraCapture` através do parâmetro `customView`. Exemplo:
+```swift
+// MyCustomView must implement FCView
+let customView: FCView = MyCustomView(frame: view.bounds)
+faceCaptcha = FCCameraCapture(appkey: appKey,
+                              baseURL: baseURL,
+                              viewController: self,
+                              delegate: self,
+                              showSetupErrors: false,
+                              customView: customView)
+```
+Detalhes de como implementar a view customizada são encontrados [neste link](Documentation/CustomView.md).
+
 ## Sample
 
 Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha](https://github.com/oititec/liveness-ios-sdk/tree/main/SampleFaceCaptcha "SampleFaceCaptcha"), neste mesmo repositório.
@@ -117,4 +145,5 @@ Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha]
 
 ## Guias de migração
 
+- [2.0.0](Documentation/Migration-Guide-2.0.0.md) - BREAKING CHANGE
 - [1.2.0](Documentation/Migration-Guide-1.2.0.md) - BREAKING CHANGE
