@@ -63,6 +63,5 @@ public enum DocumentscopyError {
     case noInternetConnection
     /// Erro na requisição de validação dos desafios.
     case validationError
-    /// App foi minimizado durante o uso do FaceCaptcha, isso faz com que o desafio seja encerrado.
 }
 ```

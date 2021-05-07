@@ -62,7 +62,7 @@ faceCaptcha = FCCameraCapture(appkey: appKey,
                               showSetupErrors: false,
                               customView: customView)
 ```
-Detalhes de como implementar a view customizada são encontrados [neste link](Documentation/Liveness-CustomView.md).
+Detalhes de como implementar a view customizada são encontrados [neste link](Liveness-CustomView.md).
 
 
 ### Tratando o retorno
