@@ -1479,7 +1479,6 @@ public protocol DocumentscopyDelegate : AnyObject {
   }
   convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate)
   @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit

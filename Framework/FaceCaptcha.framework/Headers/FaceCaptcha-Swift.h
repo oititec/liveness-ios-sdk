@@ -219,7 +219,6 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 @interface DocumentscopyViewController : UITabBarController
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 - (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -473,7 +472,6 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 @interface DocumentscopyViewController : UITabBarController
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 - (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -727,7 +725,6 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 @interface DocumentscopyViewController : UITabBarController
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 - (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
