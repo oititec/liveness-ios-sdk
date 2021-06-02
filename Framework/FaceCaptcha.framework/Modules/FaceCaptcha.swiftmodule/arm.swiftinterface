@@ -13,6 +13,17 @@ import MobileCoreServices
 import Swift
 import SystemConfiguration
 import UIKit
+public protocol DocCameraView : UIKit.UIView {
+  var cameraContainer: FaceCaptcha.CameraPreviewView! { get }
+  var captureButton: UIKit.UIButton! { get }
+  var previewContainer: UIKit.UIView! { get }
+  var previewImageView: UIKit.UIImageView! { get }
+  var usePictureButton: UIKit.UIButton! { get }
+  var takeNewPictureButton: UIKit.UIButton! { get }
+  var rotationContainer: UIKit.UIView! { get }
+  var instructionLabel: UIKit.UILabel! { get }
+  var closeButton: UIKit.UIButton! { get }
+}
 extension AES : FaceCaptcha.Cryptors {
   @inlinable final public func makeEncryptor() throws -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable {
     let blockSize = blockMode.customBlockSize ?? AES.blockSize
@@ -924,6 +935,13 @@ extension ChaCha20 : FaceCaptcha.Cryptors {
   final public func makeEncryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
   final public func makeDecryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
 }
+public protocol DocHomeView : UIKit.UIView {
+  var contentView: UIKit.UIView! { get }
+  var singlePictureView: UIKit.UIControl! { get }
+  var dualPictureView: UIKit.UIControl! { get }
+  var activityIndicatorView: UIKit.UIView! { get }
+  var closeButton: UIKit.UIButton! { get }
+}
 extension FixedWidthInteger {
   @inlinable internal func bytes(totalBytes: Swift.Int = MemoryLayout<Self>.size) -> Swift.Array<Swift.UInt8> {
     arrayOfBytes(value: self.littleEndian, length: totalBytes)
@@ -1378,6 +1396,12 @@ final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
   @objc @usableFromInline
   deinit
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CameraPreviewView : UIKit.UIView {
+  @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @objc deinit
+}
 @_specialize(exported: false, kind: full, where T == Swift.Int)
 @_specialize(exported: false, kind: full, where T == Swift.UInt)
 @_specialize(exported: false, kind: full, where T == Swift.UInt8)
@@ -1412,6 +1436,15 @@ public struct OFB : FaceCaptcha.BlockMode {
   public let customBlockSize: Swift.Int?
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
+}
+public protocol DocConfirmationView : UIKit.UIView {
+  var pictureOneImageView: UIKit.UIImageView! { get }
+  var changePictureOneButton: UIKit.UIButton! { get }
+  var pictureTwoContainer: UIKit.UIView! { get }
+  var pictureTwoImageView: UIKit.UIImageView! { get }
+  var changePictureTwoButton: UIKit.UIButton! { get }
+  var sendButton: UIKit.UIButton! { get }
+  var activityIndicatorView: UIKit.UIView! { get }
 }
 extension HMAC {
   convenience public init(key: Swift.String, variant: FaceCaptcha.HMAC.Variant = .md5) throws
@@ -1473,11 +1506,20 @@ public protocol DocumentscopyDelegate : AnyObject {
   func handleDocumentscopyCompleted()
   func handleDocumentscopyCanceled()
 }
+public struct DocumentscopyCustomViewParam {
+  public let homeView: FaceCaptcha.DocHomeView?
+  public let cameraView: FaceCaptcha.DocCameraView?
+  public let confirmationView: FaceCaptcha.DocConfirmationView?
+  public let camInstructionSingle: Swift.String?
+  public let camInstructionFront: Swift.String?
+  public let camInstructionBack: Swift.String?
+  public init(homeView: FaceCaptcha.DocHomeView?, cameraView: FaceCaptcha.DocCameraView?, confirmationView: FaceCaptcha.DocConfirmationView?, camInstructionSingle: Swift.String?, camInstructionFront: Swift.String?, camInstructionBack: Swift.String?)
+}
 @objc @_inheritsConvenienceInitializers public class DocumentscopyViewController : UIKit.UITabBarController {
   @objc override dynamic public var shouldAutorotate: Swift.Bool {
     @objc get
   }
-  convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate)
+  convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate, customViewParam: FaceCaptcha.DocumentscopyCustomViewParam? = nil)
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
