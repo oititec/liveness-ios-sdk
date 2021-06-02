@@ -2,6 +2,7 @@
 
 #### 2.2.0
 - [Documentoscopia com view customizável.](Documentscopy-CustomView.md)
+- Ajuste na qualidade das imagens do Liveness.
 
 #### 2.1.1
 - [Documentoscopia.](Documentscopy-Usage.md)
