@@ -23,6 +23,12 @@ controller.modalPresentationStyle = .fullScreen
 present(controller, animated: true, completion: nil)
 ```
 
+### Customização
+
+Além de poder usar o SDK em sua forma padrão de exibição, é possível customizar o seu visual.
+
+Detalhes de como implementar a view customizada são encontrados [neste link](Documentscopy-CustomView.md).
+
 ### Tratando o retorno
 
 1. Implemente o protocolo `DocumentscopyDelegate` para ser notificado sobre a conclusão da documentoscopia:
