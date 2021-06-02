@@ -13,8 +13,14 @@
 		552648F825489E2B0086DB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648F625489E2B0086DB73 /* Main.storyboard */; };
 		552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552648F925489E2F0086DB73 /* Assets.xcassets */; };
 		552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648FB25489E2F0086DB73 /* LaunchScreen.storyboard */; };
-		5548FCE5260664D6009700C9 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548FCE3260664D5009700C9 /* CustomView.xib */; };
-		5548FCE6260664D6009700C9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548FCE4260664D6009700C9 /* CustomView.swift */; };
+		5548FCE5260664D6009700C9 /* LivenessCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548FCE3260664D5009700C9 /* LivenessCustomView.xib */; };
+		5548FCE6260664D6009700C9 /* LivenessCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548FCE4260664D6009700C9 /* LivenessCustomView.swift */; };
+		556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */; };
+		556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039102667E7960039B94F /* DocConfirmationCustomView.xib */; };
+		556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039112667E7960039B94F /* DocCameraCustomView.swift */; };
+		556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039122667E7960039B94F /* DocHomeCustomView.xib */; };
+		556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039132667E7960039B94F /* DocCameraCustomView.xib */; };
+		5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039142667E7960039B94F /* DocHomeCustomView.swift */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +34,14 @@
 		552648F925489E2F0086DB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552648FC25489E2F0086DB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552648FE25489E2F0086DB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5548FCE3260664D5009700C9 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
-		5548FCE4260664D6009700C9 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5548FCE3260664D5009700C9 /* LivenessCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivenessCustomView.xib; sourceTree = "<group>"; };
+		5548FCE4260664D6009700C9 /* LivenessCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivenessCustomView.swift; sourceTree = "<group>"; };
+		5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocConfirmationCustomView.swift; sourceTree = "<group>"; };
+		556039102667E7960039B94F /* DocConfirmationCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocConfirmationCustomView.xib; sourceTree = "<group>"; };
+		556039112667E7960039B94F /* DocCameraCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCameraCustomView.swift; sourceTree = "<group>"; };
+		556039122667E7960039B94F /* DocHomeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocHomeCustomView.xib; sourceTree = "<group>"; };
+		556039132667E7960039B94F /* DocCameraCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCameraCustomView.xib; sourceTree = "<group>"; };
+		556039142667E7960039B94F /* DocHomeCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocHomeCustomView.swift; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,17 +79,31 @@
 		552648EF25489E2B0086DB73 /* SampleFaceCaptcha */ = {
 			isa = PBXGroup;
 			children = (
+				5560390E2667E7190039B94F /* CustomViews */,
 				552648F025489E2B0086DB73 /* AppDelegate.swift */,
 				552648F225489E2B0086DB73 /* SceneDelegate.swift */,
 				552648F425489E2B0086DB73 /* ViewController.swift */,
-				5548FCE4260664D6009700C9 /* CustomView.swift */,
-				5548FCE3260664D5009700C9 /* CustomView.xib */,
 				552648F625489E2B0086DB73 /* Main.storyboard */,
 				552648F925489E2F0086DB73 /* Assets.xcassets */,
 				552648FB25489E2F0086DB73 /* LaunchScreen.storyboard */,
 				552648FE25489E2F0086DB73 /* Info.plist */,
 			);
 			path = SampleFaceCaptcha;
+			sourceTree = "<group>";
+		};
+		5560390E2667E7190039B94F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				556039112667E7960039B94F /* DocCameraCustomView.swift */,
+				556039132667E7960039B94F /* DocCameraCustomView.xib */,
+				5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */,
+				556039102667E7960039B94F /* DocConfirmationCustomView.xib */,
+				556039142667E7960039B94F /* DocHomeCustomView.swift */,
+				556039122667E7960039B94F /* DocHomeCustomView.xib */,
+				5548FCE4260664D6009700C9 /* LivenessCustomView.swift */,
+				5548FCE3260664D5009700C9 /* LivenessCustomView.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		5F0A8599576EF633A5603833 /* Pods */ = {
@@ -156,8 +182,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */,
 				552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */,
-				5548FCE5260664D6009700C9 /* CustomView.xib in Resources */,
+				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
+				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
+				5548FCE5260664D6009700C9 /* LivenessCustomView.xib in Resources */,
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
 			);
@@ -213,7 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				552648F525489E2B0086DB73 /* ViewController.swift in Sources */,
-				5548FCE6260664D6009700C9 /* CustomView.swift in Sources */,
+				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
+				5548FCE6260664D6009700C9 /* LivenessCustomView.swift in Sources */,
+				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
+				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,
 				552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */,
 			);

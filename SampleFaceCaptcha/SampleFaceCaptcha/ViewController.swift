@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     private var faceCaptcha: FCCameraCapture?
 
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiNDg5RUI5RjkxQTNCRjIyRDg0QTRCQTVBNEZGRjcyMEMwNkI5fGZlbGlwZS5tb2JpbGUiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjU3OCIsImNwZiI6IjM4MDc1NjUwODY3Iiwibm9tZSI6IkI0RTZCRENEMzA4NzdDREE5OEY4NTREMkI4QkE5MkYwMDBCQzAzM0VERTI3REFDMTg5RDk0MkJBMDI3MzM2M0I5QjNCNDgxQjMwNThEMUJDN0I5QzkxMzM5OEJFRTEyQTA5NTdBOTk2M0MxMEVCNzQ5NjZFQkI3MUUxNzY2REQ0ODdCMDZFQjdBfEZFTElQRSBTSUxWQSIsIm5hc2NpbWVudG8iOiIwNS8wNS8xOTkwIiwiZWFzeS1pbmRleCI6IkFBQUFFc0NnWmZCbFFqNHhucCtUV1YrTVlucGtJcFRqS2U0dXBlKzR5SVpVNTZkaFdOUjVlWnI1RG1KWXF3PT0iLCJrZXkiOiJRV0pzWlNCaGJpQm9iM0JsSUc5bUlHSnZaSGt1SUVGdWVTQnVZWGtnYzJoNWJtVT0iLCJleHAiOjE2MTYyNjEzODEsImlhdCI6MTYxNjI2MTA4MX0.vAKGFiuxpRlCgV8pFPH2VYDDM6Ne1nIBGkpg3PKXAss"
+    private let appKey = ""
 
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultViewPressed() {
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 
     /// Trata de clique no botão para abrir o FaceCaptcha usando view customizada
     @IBAction private func customViewPressed() {
-        let customView = CustomView(frame: view.bounds)
+        let customView = LivenessCustomView(frame: view.bounds)
         faceCaptcha = FCCameraCapture(appKey: appKey,
                                       baseURL: baseURL,
                                       viewController: self,
@@ -48,11 +48,32 @@ class ViewController: UIViewController {
         faceCaptcha?.show()
     }
 
-    /// Trata de clique no botão para abrir Documentoscopia
+    /// Trata de clique no botão para abrir Documentoscopia usando view padrão
     @IBAction func documentoscopiaPressed(_ sender: Any) {
         let controller = DocumentscopyViewController(appKey: appKey,
                                                      baseURL: baseURL,
                                                      documentscopyDelegate: self)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
+    }
+
+    /// Trata de clique no botão para abrir Documentoscopia usando view customizada
+    @IBAction private func customDocumentoscopiaPressed() {
+
+        let customViewParam = DocumentscopyCustomViewParam(
+            homeView: DocHomeCustomView(frame: view.bounds),
+            cameraView: DocCameraCustomView(frame: view.bounds),
+            confirmationView: DocConfirmationCustomView(frame: view.bounds),
+            camInstructionSingle: "Centralize o documento",
+            camInstructionFront: "Centralize a frente",
+            camInstructionBack: "Centralize o verso"
+        )
+
+        let controller = DocumentscopyViewController(appKey: appKey,
+                                                     baseURL: baseURL,
+                                                     documentscopyDelegate: self,
+                                                     customViewParam: customViewParam)
+
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }

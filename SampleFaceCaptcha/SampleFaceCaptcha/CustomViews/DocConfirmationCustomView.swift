@@ -1,15 +1,14 @@
 //
-//  FCCustomView.swift
-//  FaceCaptcha
+//  DocConfirmationCustomView.swift
+//  SampleFaceCaptcha
 //
-//  Created by Mauricio Lorenzetti on 13/11/20.
-//  Copyright © 2020 Luis Pimenta. All rights reserved.
+//  Created by Felipe Augusto on 28/04/21.
 //
 
 import UIKit
 import FaceCaptcha
 
-class CustomView: UIView, FCView {
+class DocConfirmationCustomView: UIView, DocConfirmationView {
 
     // MARK: - Outlets
 
@@ -17,13 +16,14 @@ class CustomView: UIView, FCView {
 
     // MARK: - FCView
 
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var container: UIView!
+    @IBOutlet weak var pictureTwoContainer: UIView!
+    @IBOutlet weak var pictureOneImageView: UIImageView!
+    @IBOutlet weak var pictureTwoImageView: UIImageView!
+    @IBOutlet weak var changePictureOneButton: UIButton!
+    @IBOutlet weak var changePictureTwoButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIView!
-    @IBOutlet weak var challengeIcon: UIImageView!
-    @IBOutlet weak var challengeText: UIImageView!
-    @IBOutlet weak var initialInstructionView: UIView?
-    @IBOutlet weak var challengeContainer: UIView?
 
     // MARK: - Lifecycle
 
