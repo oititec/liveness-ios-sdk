@@ -1,6 +1,6 @@
-# Liveness 1.2.0 - Guia de migração
+# FaceCaptcha 1.2.0 - Guia de migração
 
-#### Guia de migração para a versão 1.2.0 da SDK Liveness iOS.
+#### Guia de migração para a versão 1.2.0 da SDK FaceCaptcha iOS.
 
 1. Devido a algumas melhorias em relação ao gerenciamento de memória, agora é necessário manter uma referência para o objeto da classe `FCCameraCapture` no controller que o estiver usando.
 Esta referência deve ser desalocada assim que algum dos métodos do protocolo `FCCameraCaptureDelegate` forem chamados.

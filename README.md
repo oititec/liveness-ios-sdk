@@ -14,7 +14,7 @@ source 'https://github.com/oititec/liveness-ios-specs.git'
 ```
 2. Após isso, adicione a dependência:
 ```rb
-pod 'FaceCaptcha', '~> 2.2.0'
+pod 'FaceCaptcha', '~> 3.0.0'
 ```
 3. Rode `pod install`.
 
@@ -26,13 +26,13 @@ Para adicionar o SDK manualmente no seu projeto, siga estas [instruções](Docum
 
 ### Permissões de acesso
 
- No `Info.plist` do projeto, adicione as descrições de uso de câmera (`Privacy - Camera Usage Description`) e microfone (`Privacy - Microphone Usage Description`):
+ No `Info.plist` do projeto, adicione a descrição de uso de câmera (`Privacy - Camera Usage Description`):
 
 ![Instalação 4](Documentation/Images/installation_4.png)
 
 ### Liveness - Prova de Vida
 
-As instruções de uso e integração do Liveness podem ser acessadas [neste link](Documentation/Liveness-Usage.md).
+As instruções de uso e integração do FaceCaptcha podem ser acessadas [neste link](Documentation/FaceCaptcha-Usage.md).
 
 ### Documentoscopia
 
@@ -52,5 +52,6 @@ Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha]
 
 ## Guias de migração
 
+- [3.0.0](Documentation/Migration-Guide-3.0.0.md) - BREAKING CHANGE
 - [2.0.0](Documentation/Migration-Guide-2.0.0.md) - BREAKING CHANGE
 - [1.2.0](Documentation/Migration-Guide-1.2.0.md) - BREAKING CHANGE

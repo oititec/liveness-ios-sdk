@@ -14,7 +14,7 @@ class DocConfirmationCustomView: UIView, DocConfirmationView {
 
     @IBOutlet weak var view: UIView!
 
-    // MARK: - FCView
+    // MARK: - DocConfirmationView
 
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var pictureTwoContainer: UIView!

@@ -1,8 +1,8 @@
-# Liveness 2.0.0 - Guia de migração
+# FaceCaptcha 2.0.0 - Guia de migração
 
-#### Guia de migração para a versão 2.0.0 da SDK Liveness iOS.
+#### Guia de migração para a versão 2.0.0 da SDK FaceCaptcha iOS.
 
-1. Agora é possível implementar sua própria view customizada para ser exibida pelo Liveness. Para isto, consulte [este guia.](CustomView.md)
+1. Agora é possível implementar sua própria view customizada para ser exibida pelo FaceCaptcha. Para isto, consulte [este guia.](CustomView.md)
 
 2. O construtor da classe `FCCameraCapture` agora possui a seguinte assinatura:
 ```swift

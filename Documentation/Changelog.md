@@ -1,5 +1,9 @@
 # Changelog
 
+#### [3.0.0](Migration-Guide-3.0.0.md) - BREAKING CHANGE
+- Alteração na forma como são capturadas as fotos do FaceCaptcha, fazendo com que não seja mais necessária a permissão de microfone.
+- Alteração nos nomes de classes e protocolos referentes ao FaceCatpcha.
+
 #### 2.2.0
 - [Documentoscopia com view customizável.](Documentscopy-CustomView.md)
 - Ajuste na qualidade das imagens do Liveness.

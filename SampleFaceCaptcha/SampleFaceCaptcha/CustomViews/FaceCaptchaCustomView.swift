@@ -14,7 +14,7 @@ class FaceCaptchaCustomView: UIView, FaceCaptchaView {
 
     @IBOutlet weak var view: UIView!
 
-    // MARK: - FCView
+    // MARK: - FaceCaptchaView
 
     @IBOutlet weak var cameraContainer: CameraPreviewView!
     @IBOutlet weak var startButton: UIButton!

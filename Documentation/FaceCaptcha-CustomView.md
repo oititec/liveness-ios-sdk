@@ -1,13 +1,15 @@
 # Liveness - Guia de implementação de view customizada
 
-A partir da versão 2.0.0, o SDK Liveness permite que a forma de visualização seja completamente customizada. Para isto, é necessária a criação de uma `UIView` (via código ou via Interface Builder) que implemente o protocolo `FCView`, que especifica alguns componentes que a view em questão precisa conter:
+A partir da versão 2.0.0, o SDK Liveness permite que a forma de visualização seja completamente customizada. Para isto, é necessária a criação de uma `UIView` (via código ou via Interface Builder) que implemente o protocolo `FaceCaptchaView`, que especifica alguns componentes que a view em questão precisa conter:
 
 ```swift
 /// Protocolo que deve ser implementado pela view customizada
-public protocol FCView: UIView {
+public protocol FaceCaptchaView: UIView {
 
     // MARK: - Views obrigatórias
 
+    /// Nesta view será colocado o preview da câmera.
+    var cameraContainer: CameraPreviewView! { get }
     /// UIButton para iniciar o desafio
     var startButton: UIButton! { get }
     /// UIButton para interromper e fechar o desafio
@@ -36,17 +38,15 @@ Na figura abaixo é possível visualizar o que cada uma das subviews representa 
 
 ![Componentes da view customizada](Images/custom_view_components.jpg)
 
-Após criada a view, é necessário passá-la para o construtor do `FCCameraCapture` através do parâmetro `customView`. Exemplo:
+Após criada a view, é necessário passá-la para o construtor do `FaceCaptchaViewController` através do parâmetro `customView`. Exemplo:
 
 ```swift
-// MyCustomView must implement FCView
-let customView: FCView = MyCustomView(frame: view.bounds)
-faceCaptcha = FCCameraCapture(appkey: appKey,
-                              baseURL: baseURL,
-                              viewController: self,
-                              delegate: self,
-                              showSetupErrors: false,
-                              customView: customView)
+// MyCustomView must implement FaceCaptchaView
+let customView: FaceCaptchaView = MyCustomView(frame: view.bounds)
+let controller = FaceCaptchaViewController(appKey: appKey,
+                                           baseURL: baseURL,
+                                           delegate: self,
+                                           customView: customView)
 ```
 
 No projeto Sample, neste mesmo repositório, encontra-se um exemplo de implementação.
