@@ -13,8 +13,8 @@
 		552648F825489E2B0086DB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648F625489E2B0086DB73 /* Main.storyboard */; };
 		552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552648F925489E2F0086DB73 /* Assets.xcassets */; };
 		552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648FB25489E2F0086DB73 /* LaunchScreen.storyboard */; };
-		5548FCE5260664D6009700C9 /* LivenessCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548FCE3260664D5009700C9 /* LivenessCustomView.xib */; };
-		5548FCE6260664D6009700C9 /* LivenessCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548FCE4260664D6009700C9 /* LivenessCustomView.swift */; };
+		5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */; };
+		5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */; };
 		556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */; };
 		556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039102667E7960039B94F /* DocConfirmationCustomView.xib */; };
 		556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039112667E7960039B94F /* DocCameraCustomView.swift */; };
@@ -34,8 +34,8 @@
 		552648F925489E2F0086DB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552648FC25489E2F0086DB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552648FE25489E2F0086DB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5548FCE3260664D5009700C9 /* LivenessCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivenessCustomView.xib; sourceTree = "<group>"; };
-		5548FCE4260664D6009700C9 /* LivenessCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivenessCustomView.swift; sourceTree = "<group>"; };
+		5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaceCaptchaCustomView.xib; sourceTree = "<group>"; };
+		5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptchaCustomView.swift; sourceTree = "<group>"; };
 		5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocConfirmationCustomView.swift; sourceTree = "<group>"; };
 		556039102667E7960039B94F /* DocConfirmationCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocConfirmationCustomView.xib; sourceTree = "<group>"; };
 		556039112667E7960039B94F /* DocCameraCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCameraCustomView.swift; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 				556039102667E7960039B94F /* DocConfirmationCustomView.xib */,
 				556039142667E7960039B94F /* DocHomeCustomView.swift */,
 				556039122667E7960039B94F /* DocHomeCustomView.xib */,
-				5548FCE4260664D6009700C9 /* LivenessCustomView.swift */,
-				5548FCE3260664D5009700C9 /* LivenessCustomView.xib */,
+				5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */,
+				5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 				552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */,
 				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
 				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
-				5548FCE5260664D6009700C9 /* LivenessCustomView.xib in Resources */,
+				5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */,
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
 			);
@@ -243,7 +243,7 @@
 			files = (
 				552648F525489E2B0086DB73 /* ViewController.swift in Sources */,
 				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
-				5548FCE6260664D6009700C9 /* LivenessCustomView.swift in Sources */,
+				5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */,
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
 				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,

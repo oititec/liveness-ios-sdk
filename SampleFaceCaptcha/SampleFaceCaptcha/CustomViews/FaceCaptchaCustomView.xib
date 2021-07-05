@@ -9,9 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LivenessCustomView" customModule="SampleFaceCaptcha" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FaceCaptchaCustomView" customModule="SampleFaceCaptcha" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicatorView" destination="qAi-zL-GDn" id="6fl-rP-Xca"/>
+                <outlet property="cameraContainer" destination="qKS-2C-leL" id="RyA-rb-znd"/>
                 <outlet property="challengeContainer" destination="bHi-ZS-fug" id="rNM-fL-Onf"/>
                 <outlet property="challengeIcon" destination="6dh-kF-ztA" id="1nS-gl-Akj"/>
                 <outlet property="challengeText" destination="hvy-ia-W5s" id="66K-F8-r1d"/>
@@ -26,6 +27,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKS-2C-leL" customClass="CameraPreviewView" customModule="FaceCaptcha">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="custom_overlay_blue" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-k6-TjK" userLabel="overlayView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
@@ -101,6 +106,7 @@
             <constraints>
                 <constraint firstItem="X4F-k6-TjK" firstAttribute="bottom" secondItem="MV5-Tm-wDR" secondAttribute="bottom" id="2wH-NY-GFd"/>
                 <constraint firstItem="Qj8-Ip-Roy" firstAttribute="trailing" secondItem="bHi-ZS-fug" secondAttribute="trailing" constant="25" id="4zW-K5-DuQ"/>
+                <constraint firstAttribute="bottom" secondItem="qKS-2C-leL" secondAttribute="bottom" id="FTO-NL-n6F"/>
                 <constraint firstItem="55r-VT-GhJ" firstAttribute="leading" secondItem="Qj8-Ip-Roy" secondAttribute="leading" id="Hap-rb-xf2"/>
                 <constraint firstItem="X4F-k6-TjK" firstAttribute="top" secondItem="MV5-Tm-wDR" secondAttribute="top" id="JEs-rI-353"/>
                 <constraint firstItem="yuD-Ik-n0j" firstAttribute="top" secondItem="AZM-u6-yuC" secondAttribute="bottom" constant="32" id="Nxq-V5-CqC"/>
@@ -109,14 +115,17 @@
                 <constraint firstItem="bHi-ZS-fug" firstAttribute="leading" secondItem="Qj8-Ip-Roy" secondAttribute="leading" constant="25" id="VSX-Q3-iRI"/>
                 <constraint firstItem="X4F-k6-TjK" firstAttribute="leading" secondItem="MV5-Tm-wDR" secondAttribute="leading" id="WLz-wY-XWR"/>
                 <constraint firstItem="yuD-Ik-n0j" firstAttribute="leading" secondItem="Qj8-Ip-Roy" secondAttribute="leading" constant="66" id="XB1-bV-QrI"/>
+                <constraint firstItem="qKS-2C-leL" firstAttribute="trailing" secondItem="Qj8-Ip-Roy" secondAttribute="trailing" id="aAn-Pd-hfw"/>
+                <constraint firstItem="qKS-2C-leL" firstAttribute="leading" secondItem="Qj8-Ip-Roy" secondAttribute="leading" id="bZn-m0-hUH"/>
                 <constraint firstItem="Qj8-Ip-Roy" firstAttribute="bottom" secondItem="yuD-Ik-n0j" secondAttribute="bottom" constant="25" id="ege-ga-6Bm"/>
                 <constraint firstItem="Qj8-Ip-Roy" firstAttribute="trailing" secondItem="yuD-Ik-n0j" secondAttribute="trailing" constant="66" id="hCw-rf-g6w"/>
                 <constraint firstItem="55r-VT-GhJ" firstAttribute="top" secondItem="Qj8-Ip-Roy" secondAttribute="top" constant="8" id="hZn-ex-iAZ"/>
+                <constraint firstItem="qKS-2C-leL" firstAttribute="top" secondItem="MV5-Tm-wDR" secondAttribute="top" id="i11-Nz-tzn"/>
                 <constraint firstItem="qAi-zL-GDn" firstAttribute="centerX" secondItem="yuD-Ik-n0j" secondAttribute="centerX" id="jwN-Qj-SwR"/>
                 <constraint firstItem="qAi-zL-GDn" firstAttribute="centerY" secondItem="yuD-Ik-n0j" secondAttribute="centerY" id="nSN-SO-7Mb"/>
                 <constraint firstItem="bHi-ZS-fug" firstAttribute="top" secondItem="55r-VT-GhJ" secondAttribute="bottom" id="sc1-ip-Wao"/>
             </constraints>
-            <point key="canvasLocation" x="-583.20000000000005" y="-621.13943028485767"/>
+            <point key="canvasLocation" x="-584.05797101449275" y="-621.42857142857144"/>
         </view>
     </objects>
     <resources>

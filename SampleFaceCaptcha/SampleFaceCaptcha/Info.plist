@@ -22,8 +22,6 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>FaceCaptcha precisa de acesso à câmera.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>FaceCaptcha precisa de acesso ao microfone.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

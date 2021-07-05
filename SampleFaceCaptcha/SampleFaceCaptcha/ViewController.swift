@@ -10,42 +10,38 @@ import FaceCaptcha
 
 class ViewController: UIViewController {
 
-    /// Armazena FCCameraCapture durante o processo prova de vida.
-    /// Deve ser desalocado nas chamadas do FCCameraCaptureDelegate.
-    private var faceCaptcha: FCCameraCapture?
-
     private let baseURL = "https://comercial.certiface.com.br:8443/"
     private let appKey = ""
 
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultViewPressed() {
-        faceCaptcha = FCCameraCapture(appKey: appKey,
-                                      baseURL: baseURL,
-                                      viewController: self,
-                                      delegate: self)
-        faceCaptcha?.show()
+        let controller = FaceCaptchaViewController(appKey: appKey,
+                                                   baseURL: baseURL,
+                                                   delegate: self)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
 
     /// Trata de clique no botão para abrir o FaceCaptcha usando imagem customizada
     @IBAction private func customImagePressed() {
         let cameraOverlay = UIImage(named: "custom_overlay")
-        faceCaptcha = FCCameraCapture(appKey: appKey,
-                                      baseURL: baseURL,
-                                      viewController: self,
-                                      delegate: self,
-                                      cameraOverlay: cameraOverlay)
-        faceCaptcha?.show()
+        let controller = FaceCaptchaViewController(appKey: appKey,
+                                                   baseURL: baseURL,
+                                                   delegate: self,
+                                                   cameraOverlay: cameraOverlay)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
 
     /// Trata de clique no botão para abrir o FaceCaptcha usando view customizada
     @IBAction private func customViewPressed() {
-        let customView = LivenessCustomView(frame: view.bounds)
-        faceCaptcha = FCCameraCapture(appKey: appKey,
-                                      baseURL: baseURL,
-                                      viewController: self,
-                                      delegate: self,
-                                      customView: customView)
-        faceCaptcha?.show()
+        let customView = FaceCaptchaCustomView(frame: view.bounds)
+        let controller = FaceCaptchaViewController(appKey: appKey,
+                                                   baseURL: baseURL,
+                                                   delegate: self,
+                                                   customView: customView)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
 
     /// Trata de clique no botão para abrir Documentoscopia usando view padrão
@@ -91,34 +87,35 @@ class ViewController: UIViewController {
     }
 }
 
-// MARK: - FCCameraCaptureDelegate
+// MARK: - FaceCaptchaDelegate
 
-extension ViewController: FCCameraCaptureDelegate {
+extension ViewController: FaceCaptchaDelegate {
 
     /// Callback chamada em caso de desafio concluído.
     /// - Parameter validateModel: Modelo para verificação se prova de vida obteve sucesso
-    func handleCaptureValidation(validateModel: FCValidCaptchaModel) {
+    func handleFaceCaptchaValidation(validateModel: FCValidCaptchaModel) {
         debugPrint("handleCaptureValidation: \(validateModel)")
-        faceCaptcha = nil
-        showAlert(title: "Desafio concluído",
-                  message: "Válido: \(validateModel.valid ?? false)\nMotivo: \(validateModel.cause ?? "")")
+        dismiss(animated: true) {
+            self.showAlert(title: "Desafio concluído",
+                           message: "Válido: \(validateModel.valid ?? false)\nMotivo: \(validateModel.cause ?? "")")
+        }
     }
 
     /// Callback chamada em caso de erro durante execução do FaceCaptcha.
     /// - Parameters:
     ///   - error: Erro ocorrido
-    ///   - imageBase64: imagem capturada
-    func handleCaptureVideoError(error: FaceCaptchaError, imageBase64: String?) {
+    func handleFaceCaptchaError(error: FaceCaptchaError) {
         debugPrint("handleCaptureVideoError: \(error)")
-        faceCaptcha = nil
-        showAlert(title: "Erro",
-                  message: "\(error)")
+        dismiss(animated: true) {
+            self.showAlert(title: "Erro",
+                           message: "\(error)")
+        }
     }
 
     /// Callback chamada ao clicar no botão de cancelar/fechar.
-    func handleCaptureCanceled() {
+    func handleFaceCaptchaCanceled() {
         debugPrint("handleCaptureCanceled")
-        faceCaptcha = nil
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -126,14 +123,7 @@ extension ViewController: FCCameraCaptureDelegate {
 
 extension ViewController: DocumentscopyDelegate {
 
-    func handleDocumentscopyError(error: DocumentscopyError) {
-        debugPrint("handleDocumentscopyError: \(error)")
-        dismiss(animated: true) {
-            self.showAlert(title: "Erro",
-                           message: "\(error)")
-        }
-    }
-
+    /// Callback chamada em caso de Documentoscopia concluída..
     func handleDocumentscopyCompleted() {
         debugPrint("handleDocumentscopyCompleted")
         dismiss(animated: true) {
@@ -142,6 +132,18 @@ extension ViewController: DocumentscopyDelegate {
         }
     }
 
+    /// Callback chamada em caso de erro durante execução da Documentoscopia.
+    /// - Parameters:
+    ///   - error: Erro ocorrido
+    func handleDocumentscopyError(error: DocumentscopyError) {
+        debugPrint("handleDocumentscopyError: \(error)")
+        dismiss(animated: true) {
+            self.showAlert(title: "Erro",
+                           message: "\(error)")
+        }
+    }
+
+    /// Callback chamada ao clicar no botão de cancelar/fechar.
     func handleDocumentscopyCanceled() {
         debugPrint("handleDocumentscopyCanceled")
         dismiss(animated: true, completion: nil)

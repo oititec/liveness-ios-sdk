@@ -1,5 +1,5 @@
 //
-//  LivenessCustomView.swift
+//  FaceCaptchaCustomView.swift
 //  SampleFaceCaptcha
 //
 //  Created by Mauricio Lorenzetti on 13/11/20.
@@ -8,7 +8,7 @@
 import UIKit
 import FaceCaptcha
 
-class LivenessCustomView: UIView, FCView {
+class FaceCaptchaCustomView: UIView, FaceCaptchaView {
 
     // MARK: - Outlets
 
@@ -16,6 +16,7 @@ class LivenessCustomView: UIView, FCView {
 
     // MARK: - FCView
 
+    @IBOutlet weak var cameraContainer: CameraPreviewView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIView!
