@@ -190,9 +190,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreGraphics;
-@import Foundation;
-@import ObjectiveC;
+@import CoreMedia;
 @import UIKit;
 #endif
 
@@ -238,18 +238,25 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 
 
 
-SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
-@interface FCCameraCapture : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
+@interface FaceCaptchaViewController : UIViewController
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+- (void)loadView;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AVCapturePhotoOutput;
+@class AVCapturePhoto;
+@class AVCaptureResolvedPhotoSettings;
+@class AVCaptureBracketedStillImageSettings;
 
-@class UIImagePickerController;
-
-@interface FCCameraCapture (SWIFT_EXTENSION(FaceCaptcha)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
-- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+@interface FaceCaptchaViewController (SWIFT_EXTENSION(FaceCaptcha)) <AVCapturePhotoCaptureDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
 @end
 
 
@@ -453,9 +460,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreGraphics;
-@import Foundation;
-@import ObjectiveC;
+@import CoreMedia;
 @import UIKit;
 #endif
 
@@ -501,18 +508,25 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 
 
 
-SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
-@interface FCCameraCapture : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
+@interface FaceCaptchaViewController : UIViewController
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+- (void)loadView;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AVCapturePhotoOutput;
+@class AVCapturePhoto;
+@class AVCaptureResolvedPhotoSettings;
+@class AVCaptureBracketedStillImageSettings;
 
-@class UIImagePickerController;
-
-@interface FCCameraCapture (SWIFT_EXTENSION(FaceCaptcha)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
-- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+@interface FaceCaptchaViewController (SWIFT_EXTENSION(FaceCaptcha)) <AVCapturePhotoCaptureDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
 @end
 
 
@@ -716,9 +730,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreGraphics;
-@import Foundation;
-@import ObjectiveC;
+@import CoreMedia;
 @import UIKit;
 #endif
 
@@ -764,18 +778,25 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 
 
 
-SWIFT_CLASS("_TtC11FaceCaptcha15FCCameraCapture")
-@interface FCCameraCapture : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
+@interface FaceCaptchaViewController : UIViewController
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+- (void)loadView;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AVCapturePhotoOutput;
+@class AVCapturePhoto;
+@class AVCaptureResolvedPhotoSettings;
+@class AVCaptureBracketedStillImageSettings;
 
-@class UIImagePickerController;
-
-@interface FCCameraCapture (SWIFT_EXTENSION(FaceCaptcha)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
-- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+@interface FaceCaptchaViewController (SWIFT_EXTENSION(FaceCaptcha)) <AVCapturePhotoCaptureDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
 @end
 
 

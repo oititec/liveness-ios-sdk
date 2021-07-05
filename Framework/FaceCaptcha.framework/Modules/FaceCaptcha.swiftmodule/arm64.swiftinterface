@@ -3,13 +3,10 @@
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
 import CallKit
-import CoreImage
-import CoreMedia
 import CoreTelephony
 import Darwin
 @_exported import FaceCaptcha
 import Foundation
-import MobileCoreServices
 import Swift
 import SystemConfiguration
 import UIKit
@@ -42,6 +39,29 @@ extension AES : FaceCaptcha.Cryptors {
     }
     return try BlockDecryptor(blockSize: blockSize, padding: padding, worker)
   }
+}
+public protocol FaceCaptchaDelegate : AnyObject {
+  func handleFaceCaptchaValidation(validateModel: FaceCaptcha.FCValidCaptchaModel)
+  func handleFaceCaptchaError(error: FaceCaptcha.FaceCaptchaError)
+  func handleFaceCaptchaCanceled()
+}
+@objc @_inheritsConvenienceInitializers public class FaceCaptchaViewController : UIKit.UIViewController {
+  @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  convenience public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.FaceCaptchaDelegate, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FaceCaptchaView? = nil)
+  @objc override dynamic public func loadView()
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FaceCaptchaViewController : AVFoundation.AVCapturePhotoCaptureDelegate {
+  @available(iOS 11.0, *)
+  @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+  @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CoreMedia.CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CoreMedia.CMSampleBuffer?, resolvedSettings: AVFoundation.AVCaptureResolvedPhotoSettings, bracketSettings: AVFoundation.AVCaptureBracketedStillImageSettings?, error: Swift.Error?)
 }
 @_inheritsConvenienceInitializers final public class CBCMAC : FaceCaptcha.CMAC {
   override final public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
@@ -239,25 +259,6 @@ public class CMAC : FaceCaptcha.Authenticator {
   public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   public func authenticate(_ bytes: Swift.Array<Swift.UInt8>, cipher: FaceCaptcha.Cipher) throws -> Swift.Array<Swift.UInt8>
   @objc deinit
-}
-public protocol FCCameraCaptureDelegate : AnyObject {
-  func handleCaptureValidation(validateModel: FaceCaptcha.FCValidCaptchaModel)
-  func handleCaptureVideoError(error: FaceCaptcha.FaceCaptchaError, imageBase64: Swift.String?)
-  func handleCaptureCanceled()
-}
-@objc public class FCCameraCapture : ObjectiveC.NSObject {
-  @available(*, deprecated, message: "Use init(appKey:baseURL:viewController:delegate:showSetupErrors:cameraOverlay:customView:) instead")
-  convenience public init(model: FaceCaptcha.FCUserModel, appkey: Swift.String, fcvarUrlbase: Swift.String, viewController: UIKit.UIViewController, delegate: FaceCaptcha.FCCameraCaptureDelegate, showSetupErrors: Swift.Bool = false)
-  public init(appKey: Swift.String, baseURL: Swift.String, viewController: UIKit.UIViewController, delegate: FaceCaptcha.FCCameraCaptureDelegate, showSetupErrors: Swift.Bool = false, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FCView? = nil)
-  @objc deinit
-  @objc override dynamic public init()
-}
-extension FCCameraCapture {
-  public func show()
-}
-extension FCCameraCapture : UIKit.UIImagePickerControllerDelegate, UIKit.UINavigationControllerDelegate {
-  @objc dynamic public func imagePickerControllerDidCancel(_ picker: UIKit.UIImagePickerController)
-  @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [Swift.String : Any])
 }
 extension Array where Element == Swift.UInt8 {
   public func toBase64() -> Swift.String?
@@ -1066,7 +1067,9 @@ extension UInt8 {
   public func bits() -> [FaceCaptcha.Bit]
   public func bits() -> Swift.String
 }
-public protocol FCView : UIKit.UIView {
+public typealias FCView = FaceCaptcha.FaceCaptchaView
+public protocol FaceCaptchaView : UIKit.UIView {
+  var cameraContainer: FaceCaptcha.CameraPreviewView! { get }
   var startButton: UIKit.UIButton! { get }
   var closeButton: UIKit.UIButton! { get }
   var activityIndicatorView: UIKit.UIView! { get }
@@ -1502,8 +1505,8 @@ extension UInt32 {
   }
 }
 public protocol DocumentscopyDelegate : AnyObject {
-  func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
   func handleDocumentscopyCompleted()
+  func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
   func handleDocumentscopyCanceled()
 }
 public struct DocumentscopyCustomViewParam {
@@ -1619,6 +1622,9 @@ public enum FaceCaptchaError {
   case phoneCallInProgress
   case validationError
   case challengeInterrupted
+  case requestError
+  case errorCameraSetup
+  case errorCapturePicture
   public static func == (a: FaceCaptcha.FaceCaptchaError, b: FaceCaptcha.FaceCaptchaError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
