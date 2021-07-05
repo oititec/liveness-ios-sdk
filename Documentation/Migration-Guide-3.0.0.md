@@ -18,4 +18,4 @@ public protocol FaceCaptchaDelegate: class {
 ```
 5. O protocolo `FCView` (para as views customizadas) agora se chama `FaceCaptchaView`.
 
-6. A view customizada agora necessita obrigatoriamente da subview `cameraContainer`, que deve ser do tipo `CameraPreviewView` (esta classe faz parte do SDK do FaceCaptcha). Para mais detalhes, acesse [este link.](CustomView.md)
+6. A view customizada agora necessita obrigatoriamente da subview `cameraContainer`, que deve ser do tipo `CameraPreviewView` (esta classe faz parte do SDK do FaceCaptcha). Para mais detalhes, acesse [este link.](FaceCaptcha-CustomView.md)
