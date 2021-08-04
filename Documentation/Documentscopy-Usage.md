@@ -69,5 +69,7 @@ public enum DocumentscopyError {
     case noInternetConnection
     /// Erro na requisição de validação dos desafios.
     case validationError
+    /// FaceCaptcha não foi realizada
+    case faceCaptchaNotExecuted
 }
 ```
