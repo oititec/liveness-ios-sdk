@@ -1,5 +1,8 @@
 # Changelog
 
+#### 3.1.1
+- Correção na lógica de exibição do indicador de rotação na tela de câmera da documentoscopia.
+
 #### 3.1.0
 - Fluxo de recaptura de documento em caso de falha.
 
