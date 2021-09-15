@@ -21,6 +21,8 @@
 		556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039122667E7960039B94F /* DocHomeCustomView.xib */; };
 		556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039132667E7960039B94F /* DocCameraCustomView.xib */; };
 		5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039142667E7960039B94F /* DocHomeCustomView.swift */; };
+		55D45B3126F258670032AABE /* FaceCaptchaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D45B3026F258670032AABE /* FaceCaptchaAPI.swift */; };
+		55D45B3326F26B020032AABE /* AppKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D45B3226F26B020032AABE /* AppKeyResponse.swift */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		556039122667E7960039B94F /* DocHomeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocHomeCustomView.xib; sourceTree = "<group>"; };
 		556039132667E7960039B94F /* DocCameraCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCameraCustomView.xib; sourceTree = "<group>"; };
 		556039142667E7960039B94F /* DocHomeCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocHomeCustomView.swift; sourceTree = "<group>"; };
+		55D45B3026F258670032AABE /* FaceCaptchaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCaptchaAPI.swift; sourceTree = "<group>"; };
+		55D45B3226F26B020032AABE /* AppKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyResponse.swift; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +83,7 @@
 		552648EF25489E2B0086DB73 /* SampleFaceCaptcha */ = {
 			isa = PBXGroup;
 			children = (
+				55D45B2F26F258390032AABE /* Data */,
 				5560390E2667E7190039B94F /* CustomViews */,
 				552648F025489E2B0086DB73 /* AppDelegate.swift */,
 				552648F225489E2B0086DB73 /* SceneDelegate.swift */,
@@ -104,6 +109,23 @@
 				5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		55D45B2F26F258390032AABE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				55D45B3426F26B0B0032AABE /* Model */,
+				55D45B3026F258670032AABE /* FaceCaptchaAPI.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		55D45B3426F26B0B0032AABE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55D45B3226F26B020032AABE /* AppKeyResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5F0A8599576EF633A5603833 /* Pods */ = {
@@ -245,6 +267,8 @@
 				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
 				5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */,
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
+				55D45B3326F26B020032AABE /* AppKeyResponse.swift in Sources */,
+				55D45B3126F258670032AABE /* FaceCaptchaAPI.swift in Sources */,
 				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,
 				552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */,
