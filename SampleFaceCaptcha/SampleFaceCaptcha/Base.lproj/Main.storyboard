@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OZ1-Ps-l6U">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -111,6 +111,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="103.89805097451276"/>
+        </scene>
+        <!--Farm View Controller-->
+        <scene sceneID="fz8-mn-Xc5">
+            <objects>
+                <viewController id="OZ1-Ps-l6U" customClass="FarmViewController" customModule="SampleFaceCaptcha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c5a-bP-fRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-Jm-JuZ">
+                                <rect key="frame" x="32" y="317.5" width="311" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsN-iS-6B7">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Iniciar"/>
+                                        <connections>
+                                            <action selector="startPressed:" destination="OZ1-Ps-l6U" eventType="touchUpInside" id="xIn-DU-Uxi"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-RH-C5l">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="0.0"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="esa-ot-ZI3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e0h-Jm-JuZ" firstAttribute="leading" secondItem="esa-ot-ZI3" secondAttribute="leading" constant="32" id="aJi-kT-1xQ"/>
+                            <constraint firstItem="esa-ot-ZI3" firstAttribute="trailing" secondItem="e0h-Jm-JuZ" secondAttribute="trailing" constant="32" id="ctn-UW-4H0"/>
+                            <constraint firstItem="e0h-Jm-JuZ" firstAttribute="centerY" secondItem="c5a-bP-fRZ" secondAttribute="centerY" id="fmC-r7-jpg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="6MD-RH-C5l" id="fDm-kr-QE8"/>
+                        <outlet property="startButton" destination="fsN-iS-6B7" id="qNq-os-eCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bv3-w2-iKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="831"/>
         </scene>
     </scenes>
     <resources>

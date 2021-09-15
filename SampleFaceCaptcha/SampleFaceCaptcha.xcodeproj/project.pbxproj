@@ -25,6 +25,7 @@
 		55D45B3326F26B020032AABE /* AppKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D45B3226F26B020032AABE /* AppKeyResponse.swift */; };
 		55D45B3826F277AC0032AABE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D45B3726F277AC0032AABE /* UserDefaultsManager.swift */; };
 		55D45B3A26F279200032AABE /* CertifaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D45B3926F279200032AABE /* CertifaceRepository.swift */; };
+		55D45B3626F2755D0032AABE /* FarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D45B3526F2755D0032AABE /* FarmViewController.swift */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		55D45B3226F26B020032AABE /* AppKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyResponse.swift; sourceTree = "<group>"; };
 		55D45B3726F277AC0032AABE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		55D45B3926F279200032AABE /* CertifaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifaceRepository.swift; sourceTree = "<group>"; };
+		55D45B3526F2755D0032AABE /* FarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmViewController.swift; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				552648F025489E2B0086DB73 /* AppDelegate.swift */,
 				552648F225489E2B0086DB73 /* SceneDelegate.swift */,
 				552648F425489E2B0086DB73 /* ViewController.swift */,
+				55D45B3526F2755D0032AABE /* FarmViewController.swift */,
 				552648F625489E2B0086DB73 /* Main.storyboard */,
 				552648F925489E2F0086DB73 /* Assets.xcassets */,
 				552648FB25489E2F0086DB73 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 			files = (
 				552648F525489E2B0086DB73 /* ViewController.swift in Sources */,
 				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
+				55D45B3626F2755D0032AABE /* FarmViewController.swift in Sources */,
 				5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */,
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
 				55D45B3326F26B020032AABE /* AppKeyResponse.swift in Sources */,
