@@ -1,5 +1,5 @@
 //
-//  FaceCaptchaAPI.swift
+//  CertifaceAPI.swift
 //  SampleFaceCaptcha
 //
 //  Created by Felipe Augusto on 15/09/21.
@@ -8,9 +8,9 @@
 import Foundation
 import CryptoKit
 
-typealias FaceCaptchaAPICallback = (_ value: Data?, _ error: Error?) -> Void
+typealias CertifaceAPICallback = (_ value: Data?, _ error: Error?) -> Void
 
-class FaceCaptchaAPI {
+class CertifaceAPI {
     
     private let baseURL: String
     private let defaultHeaders = [
@@ -33,7 +33,7 @@ class FaceCaptchaAPI {
 
         let parameters = [
             "user":"\(username)",
-            "pass":"\(password.MD5())"
+            "pass":"\(password)"
         ]
         
         let bodyData = parameters.stringFromHttpParameters()
@@ -94,7 +94,7 @@ class FaceCaptchaAPI {
         return request
     }
     
-    private func perforRequest(request: URLRequest, completion: @escaping FaceCaptchaAPICallback) {
+    private func perforRequest(request: URLRequest, completion: @escaping CertifaceAPICallback) {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let dt = data else { completion(nil, error); return }
             completion(dt, nil)
