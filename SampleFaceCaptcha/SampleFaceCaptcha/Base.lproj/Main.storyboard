@@ -115,6 +115,9 @@
                                             <constraint firstAttribute="trailing" secondItem="jLX-gr-5v4" secondAttribute="trailing" constant="32" id="PnA-dP-was"/>
                                             <constraint firstItem="jLX-gr-5v4" firstAttribute="top" secondItem="InP-zS-gL9" secondAttribute="top" constant="32" id="b0e-Iv-Qsv"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vGc-Mr-U9b" appends="YES" id="xhv-Q5-NBr"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -129,6 +132,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vbr-Bt-6MU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PZf-85-hIT"/>
                             <constraint firstItem="Vbr-Bt-6MU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SFV-8z-enr"/>
