@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,102 +17,231 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkH-ws-Jct">
-                                <rect key="frame" x="0.0" y="147" width="375" height="373"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbr-Bt-6MU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liveness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-Eu-9da">
-                                        <rect key="frame" x="146" y="0.0" width="83.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jLX-gr-5v4">
-                                        <rect key="frame" x="109" y="58.5" width="157" height="128"/>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="InP-zS-gL9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Z4-9nb">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="View padrão"/>
-                                                <connections>
-                                                    <action selector="defaultViewPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ye-12-K5R"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vc-4s-MAk">
-                                                <rect key="frame" x="0.0" y="48" width="157" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="Imagem Customizada"/>
-                                                <connections>
-                                                    <action selector="customImagePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="viq-SH-192"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krN-LZ-JJW">
-                                                <rect key="frame" x="0.0" y="96" width="157" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="View Customizada"/>
-                                                <connections>
-                                                    <action selector="customViewPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6O-5y-DCE"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jLX-gr-5v4">
+                                                <rect key="frame" x="32" y="32" width="311" height="507"/>
+                                                <subviews>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-lP-6HF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="0.0"/>
+                                                    </activityIndicatorView>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rv-25-8IT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Credenciais"/>
+                                                        <connections>
+                                                            <segue destination="Nea-TU-HLv" kind="presentation" modalPresentationStyle="fullScreen" id="Mis-Nj-jH6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJm-ne-XIo">
+                                                        <rect key="frame" x="0.0" y="48" width="311" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMx-ix-hbA">
+                                                        <rect key="frame" x="0.0" y="98" width="311" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nascimento (DD/MM/AAAA)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-LJ-3NB">
+                                                        <rect key="frame" x="0.0" y="148" width="311" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Liveness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-Eu-9da">
+                                                        <rect key="frame" x="0.0" y="198" width="311" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Z4-9nb">
+                                                        <rect key="frame" x="0.0" y="240.5" width="311" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="View padrão"/>
+                                                        <connections>
+                                                            <action selector="defaultViewPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ye-12-K5R"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vc-4s-MAk">
+                                                        <rect key="frame" x="0.0" y="288.5" width="311" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="Imagem Customizada"/>
+                                                        <connections>
+                                                            <action selector="customImagePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="viq-SH-192"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krN-LZ-JJW">
+                                                        <rect key="frame" x="0.0" y="336.5" width="311" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="View Customizada"/>
+                                                        <connections>
+                                                            <action selector="customViewPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6O-5y-DCE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Documentoscopia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPm-bH-Msa">
+                                                        <rect key="frame" x="0.0" y="384.5" width="311" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjt-mK-Zlm">
+                                                        <rect key="frame" x="0.0" y="427" width="311" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="View padrão"/>
+                                                        <connections>
+                                                            <action selector="documentoscopiaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddW-iA-4be"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhO-lt-nEQ">
+                                                        <rect key="frame" x="0.0" y="475" width="311" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="View customizada"/>
+                                                        <connections>
+                                                            <action selector="customDocumentoscopiaPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fg8-8a-7ow"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documentoscopia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPm-bH-Msa">
-                                        <rect key="frame" x="101" y="250.5" width="173.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UlU-MZ-iIW">
-                                        <rect key="frame" x="121.5" y="293" width="132" height="80"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjt-mK-Zlm">
-                                                <rect key="frame" x="0.0" y="0.0" width="132" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="View padrão"/>
-                                                <connections>
-                                                    <action selector="documentoscopiaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddW-iA-4be"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhO-lt-nEQ">
-                                                <rect key="frame" x="0.0" y="48" width="132" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="View customizada"/>
-                                                <connections>
-                                                    <action selector="customDocumentoscopiaPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fg8-8a-7ow"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jLX-gr-5v4" secondAttribute="bottom" constant="32" id="5rw-Cg-6uF"/>
+                                            <constraint firstItem="jLX-gr-5v4" firstAttribute="leading" secondItem="InP-zS-gL9" secondAttribute="leading" constant="32" id="Ccf-HR-s9t"/>
+                                            <constraint firstAttribute="trailing" secondItem="jLX-gr-5v4" secondAttribute="trailing" constant="32" id="PnA-dP-was"/>
+                                            <constraint firstItem="jLX-gr-5v4" firstAttribute="top" secondItem="InP-zS-gL9" secondAttribute="top" constant="32" id="b0e-Iv-Qsv"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="jLX-gr-5v4" firstAttribute="centerX" secondItem="kkH-ws-Jct" secondAttribute="centerX" id="9x0-Rf-3XN"/>
-                                    <constraint firstItem="5jT-Eu-9da" firstAttribute="top" secondItem="kkH-ws-Jct" secondAttribute="top" id="FLb-U2-NdA"/>
-                                    <constraint firstItem="5jT-Eu-9da" firstAttribute="centerX" secondItem="kkH-ws-Jct" secondAttribute="centerX" id="FtT-0F-Qsx"/>
-                                    <constraint firstAttribute="bottom" secondItem="UlU-MZ-iIW" secondAttribute="bottom" id="JoY-ZH-Uy0"/>
-                                    <constraint firstItem="rPm-bH-Msa" firstAttribute="centerY" secondItem="kkH-ws-Jct" secondAttribute="centerY" constant="77.25" id="azO-Fy-J3z"/>
-                                    <constraint firstItem="rPm-bH-Msa" firstAttribute="centerX" secondItem="kkH-ws-Jct" secondAttribute="centerX" id="ewG-3C-zWw"/>
-                                    <constraint firstItem="UlU-MZ-iIW" firstAttribute="top" secondItem="rPm-bH-Msa" secondAttribute="bottom" constant="16" id="kJE-e7-Mth"/>
-                                    <constraint firstItem="jLX-gr-5v4" firstAttribute="top" secondItem="5jT-Eu-9da" secondAttribute="bottom" constant="32" id="non-PA-fNJ"/>
-                                    <constraint firstItem="rPm-bH-Msa" firstAttribute="top" secondItem="jLX-gr-5v4" secondAttribute="bottom" constant="64" id="wxH-C9-vRI"/>
-                                    <constraint firstItem="UlU-MZ-iIW" firstAttribute="centerX" secondItem="kkH-ws-Jct" secondAttribute="centerX" id="yqG-yj-MlN"/>
+                                    <constraint firstItem="InP-zS-gL9" firstAttribute="top" secondItem="Vbr-Bt-6MU" secondAttribute="top" id="56D-rT-zz8"/>
+                                    <constraint firstItem="InP-zS-gL9" firstAttribute="bottom" secondItem="Vbr-Bt-6MU" secondAttribute="bottom" id="Bvm-5i-Coa"/>
+                                    <constraint firstItem="InP-zS-gL9" firstAttribute="height" secondItem="Vbr-Bt-6MU" secondAttribute="height" priority="750" id="PGZ-0o-wRo"/>
+                                    <constraint firstItem="InP-zS-gL9" firstAttribute="width" secondItem="Vbr-Bt-6MU" secondAttribute="width" id="ZCR-as-iwz"/>
+                                    <constraint firstItem="InP-zS-gL9" firstAttribute="trailing" secondItem="Vbr-Bt-6MU" secondAttribute="trailing" id="fqo-u4-sgD"/>
+                                    <constraint firstItem="InP-zS-gL9" firstAttribute="leading" secondItem="Vbr-Bt-6MU" secondAttribute="leading" id="gbg-D0-o2m"/>
                                 </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kkH-ws-Jct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="62L-vU-N4V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kkH-ws-Jct" secondAttribute="trailing" id="iWH-Pc-2Zu"/>
-                            <constraint firstItem="kkH-ws-Jct" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j5r-OM-fIL"/>
-                            <constraint firstItem="kkH-ws-Jct" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tSd-nz-xQ9"/>
+                            <constraint firstItem="Vbr-Bt-6MU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PZf-85-hIT"/>
+                            <constraint firstItem="Vbr-Bt-6MU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SFV-8z-enr"/>
+                            <constraint firstItem="Vbr-Bt-6MU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="skF-DP-kRC"/>
+                            <constraint firstItem="Vbr-Bt-6MU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wHF-BX-vg0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="lzQ-lP-6HF" id="2Cf-vN-ysc"/>
+                        <outlet property="birthdayTextField" destination="Mbe-LJ-3NB" id="gf0-kp-vJw"/>
+                        <outlet property="cpfTextField" destination="FJm-ne-XIo" id="Khu-dk-V6b"/>
+                        <outlet property="nameTextField" destination="BMx-ix-hbA" id="3FZ-7Q-6Vh"/>
+                        <segue destination="Nea-TU-HLv" kind="presentation" identifier="Credentials" modalPresentationStyle="fullScreen" id="lK4-HK-KCZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vGc-Mr-U9b">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="gDO-GL-yja"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="140" y="103.89805097451276"/>
+            <point key="canvasLocation" x="138.75" y="103.52112676056338"/>
+        </scene>
+        <!--Credential View Controller-->
+        <scene sceneID="x6S-ah-0WO">
+            <objects>
+                <viewController id="Nea-TU-HLv" customClass="CredentialViewController" customModule="SampleFaceCaptcha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R4x-MV-9f3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Servidor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="048-yH-s0t">
+                                <rect key="frame" x="32" y="86" width="311" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" smartDashesType="no" smartQuotesType="no" textContentType="url"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYM-nk-o70">
+                                <rect key="frame" x="32" y="152" width="311" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbE-Uf-o9k">
+                                <rect key="frame" x="32" y="202" width="311" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAS-VW-MtO">
+                                <rect key="frame" x="150" y="268" width="75" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Autenticar"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="Nea-TU-HLv" eventType="touchUpInside" id="XYP-Xw-VQ4"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eZL-Nl-3Sk">
+                                <rect key="frame" x="177.5" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6U-Ew-XLu">
+                                <rect key="frame" x="296" y="24" width="47" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Fechar"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="Nea-TU-HLv" eventType="touchUpInside" id="pej-RK-uH9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pSk-Zn-gBR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="048-yH-s0t" firstAttribute="top" secondItem="f6U-Ew-XLu" secondAttribute="bottom" constant="32" id="4db-ac-ydo"/>
+                            <constraint firstItem="AYM-nk-o70" firstAttribute="top" secondItem="048-yH-s0t" secondAttribute="bottom" constant="32" id="4vF-9Z-aQx"/>
+                            <constraint firstItem="zAS-VW-MtO" firstAttribute="centerX" secondItem="R4x-MV-9f3" secondAttribute="centerX" id="6Sl-Kl-qea"/>
+                            <constraint firstItem="AYM-nk-o70" firstAttribute="leading" secondItem="pSk-Zn-gBR" secondAttribute="leading" constant="32" id="9cK-JE-2xa"/>
+                            <constraint firstItem="zAS-VW-MtO" firstAttribute="top" secondItem="vbE-Uf-o9k" secondAttribute="bottom" constant="32" id="Apj-hU-aZ0"/>
+                            <constraint firstItem="pSk-Zn-gBR" firstAttribute="trailing" secondItem="f6U-Ew-XLu" secondAttribute="trailing" constant="32" id="BjK-D6-XSs"/>
+                            <constraint firstItem="vbE-Uf-o9k" firstAttribute="top" secondItem="AYM-nk-o70" secondAttribute="bottom" constant="16" id="HDz-eR-lD0"/>
+                            <constraint firstItem="eZL-Nl-3Sk" firstAttribute="centerY" secondItem="zAS-VW-MtO" secondAttribute="centerY" id="HI2-LW-2wn"/>
+                            <constraint firstItem="f6U-Ew-XLu" firstAttribute="top" secondItem="pSk-Zn-gBR" secondAttribute="top" constant="24" id="N13-wP-1oa"/>
+                            <constraint firstItem="pSk-Zn-gBR" firstAttribute="trailing" secondItem="048-yH-s0t" secondAttribute="trailing" constant="32" id="UjK-Tc-spU"/>
+                            <constraint firstItem="pSk-Zn-gBR" firstAttribute="trailing" secondItem="AYM-nk-o70" secondAttribute="trailing" constant="32" id="YS6-h7-LTX"/>
+                            <constraint firstItem="pSk-Zn-gBR" firstAttribute="trailing" secondItem="vbE-Uf-o9k" secondAttribute="trailing" constant="32" id="ZH5-2o-0AM"/>
+                            <constraint firstItem="048-yH-s0t" firstAttribute="leading" secondItem="pSk-Zn-gBR" secondAttribute="leading" constant="32" id="eeW-ph-bk5"/>
+                            <constraint firstItem="vbE-Uf-o9k" firstAttribute="leading" secondItem="pSk-Zn-gBR" secondAttribute="leading" constant="32" id="rxY-fl-gDd"/>
+                            <constraint firstItem="eZL-Nl-3Sk" firstAttribute="centerX" secondItem="zAS-VW-MtO" secondAttribute="centerX" id="v0a-9I-2rB"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KVS-Li-4oR" appends="YES" id="AoF-1d-6Ld"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="eZL-Nl-3Sk" id="wS7-PY-gsv"/>
+                        <outlet property="passwordTextField" destination="vbE-Uf-o9k" id="5qD-Pp-SSj"/>
+                        <outlet property="saveButton" destination="zAS-VW-MtO" id="oav-yU-PLO"/>
+                        <outlet property="serverTextField" destination="048-yH-s0t" id="ZjD-9Z-rEh"/>
+                        <outlet property="usernameTextField" destination="AYM-nk-o70" id="gXP-c3-ZIt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3VM-I5-fhy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KVS-Li-4oR">
+                    <connections>
+                        <action selector="viewTapped:" destination="Nea-TU-HLv" id="1Ei-mh-OUQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="140" y="873"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lK4-HK-KCZ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
