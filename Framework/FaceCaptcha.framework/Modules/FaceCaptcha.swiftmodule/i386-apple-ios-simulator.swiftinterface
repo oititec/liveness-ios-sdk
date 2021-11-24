@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 effective-4.1.50 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.1 effective-4.1.50 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
 import CallKit
@@ -10,6 +10,7 @@ import Foundation
 import Swift
 import SystemConfiguration
 import UIKit
+import _Concurrency
 public protocol DocCameraView : UIKit.UIView {
   var cameraContainer: FaceCaptcha.CameraPreviewView! { get }
   var captureButton: UIKit.UIButton! { get }
@@ -21,7 +22,7 @@ public protocol DocCameraView : UIKit.UIView {
   var instructionLabel: UIKit.UILabel! { get }
   var closeButton: UIKit.UIButton! { get }
 }
-extension AES : FaceCaptcha.Cryptors {
+extension FaceCaptcha.AES : FaceCaptcha.Cryptors {
   @inlinable final public func makeEncryptor() throws -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable {
     let blockSize = blockMode.customBlockSize ?? AES.blockSize
     let worker = try blockMode.worker(blockSize: blockSize, cipherOperation: encrypt, encryptionOperation: encrypt)
@@ -45,23 +46,23 @@ public protocol FaceCaptchaDelegate : AnyObject {
   func handleFaceCaptchaError(error: FaceCaptcha.FaceCaptchaError)
   func handleFaceCaptchaCanceled()
 }
-@objc @_inheritsConvenienceInitializers public class FaceCaptchaViewController : UIKit.UIViewController {
-  @objc override dynamic public var shouldAutorotate: Swift.Bool {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FaceCaptchaViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  convenience public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.FaceCaptchaDelegate, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FaceCaptchaView? = nil)
-  @objc override dynamic public func loadView()
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.FaceCaptchaDelegate, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FaceCaptchaView? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension FaceCaptchaViewController : AVFoundation.AVCapturePhotoCaptureDelegate {
+extension FaceCaptcha.FaceCaptchaViewController : AVFoundation.AVCapturePhotoCaptureDelegate {
   @available(iOS 11.0, *)
-  @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
-  @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CoreMedia.CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CoreMedia.CMSampleBuffer?, resolvedSettings: AVFoundation.AVCaptureResolvedPhotoSettings, bracketSettings: AVFoundation.AVCaptureBracketedStillImageSettings?, error: Swift.Error?)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CoreMedia.CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CoreMedia.CMSampleBuffer?, resolvedSettings: AVFoundation.AVCaptureResolvedPhotoSettings, bracketSettings: AVFoundation.AVCaptureBracketedStillImageSettings?, error: Swift.Error?)
 }
 @_inheritsConvenienceInitializers final public class CBCMAC : FaceCaptcha.CMAC {
   override final public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
@@ -121,7 +122,7 @@ final public class SHA2 {
   final internal func process32(block chunk: Swift.ArraySlice<Swift.UInt8>, currentHash hh: inout Swift.Array<Swift.UInt32>)
   @objc deinit
 }
-extension SHA2 : FaceCaptcha.Updatable {
+extension FaceCaptcha.SHA2 : FaceCaptcha.Updatable {
   @inlinable final public func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8> {
     self.accumulated += bytes
 
@@ -216,7 +217,7 @@ final public class Blowfish {
   public init(key: Swift.Array<Swift.UInt8>, blockMode: FaceCaptcha.BlockMode = CBC(iv: Array<UInt8>(repeating: 0, count: Blowfish.blockSize)), padding: FaceCaptcha.Padding) throws
   @objc deinit
 }
-extension Blowfish : FaceCaptcha.Cipher {
+extension FaceCaptcha.Blowfish : FaceCaptcha.Cipher {
   final public func encrypt<C>(_ bytes: C) throws -> Swift.Array<Swift.UInt8> where C : Swift.Collection, C.Element == Swift.UInt8, C.Index == Swift.Int
   final public func decrypt<C>(_ bytes: C) throws -> Swift.Array<Swift.UInt8> where C : Swift.Collection, C.Element == Swift.UInt8, C.Index == Swift.Int
 }
@@ -224,7 +225,7 @@ public struct FCPrivateKeyModel {
   public var token: Swift.String?
   public var expires: Swift.String?
 }
-extension UInt64 {
+extension Swift.UInt64 {
   @_specialize(exported: false, kind: full, where T == Swift.ArraySlice<Swift.UInt8>)
   @inlinable internal init<T>(bytes: T, fromIndex index: T.Index) where T : Swift.Collection, T.Element == Swift.UInt8, T.Index == Swift.Int {
     if bytes.isEmpty {
@@ -260,11 +261,11 @@ public class CMAC : FaceCaptcha.Authenticator {
   public func authenticate(_ bytes: Swift.Array<Swift.UInt8>, cipher: FaceCaptcha.Cipher) throws -> Swift.Array<Swift.UInt8>
   @objc deinit
 }
-extension Array where Element == Swift.UInt8 {
+extension Swift.Array where Element == Swift.UInt8 {
   public func toBase64() -> Swift.String?
   public init(base64: Swift.String)
 }
-extension String {
+extension Swift.String {
   @inlinable public var bytes: Swift.Array<Swift.UInt8> {
     get {
     data(using: String.Encoding.utf8, allowLossyConversion: true)?.bytes ?? Array(utf8)
@@ -523,11 +524,11 @@ final public class AES {
   final internal func decrypt(block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
   @objc deinit
 }
-extension AES {
+extension FaceCaptcha.AES {
   @usableFromInline
   @inline(__always) final internal func F1(_ x0: Swift.UInt32, _ x1: Swift.UInt32, _ x2: Swift.UInt32, _ x3: Swift.UInt32) -> Swift.UInt32
 }
-extension AES : FaceCaptcha.Cipher {
+extension FaceCaptcha.AES : FaceCaptcha.Cipher {
   @inlinable final public func encrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8> {
     let blockSize = self.blockMode.customBlockSize ?? AES.blockSize
     let chunks = bytes.batched(by: blockSize)
@@ -601,7 +602,7 @@ final public class SHA3 {
   final internal func process(block chunk: Swift.ArraySlice<Swift.UInt64>, currentHash hh: inout Swift.Array<Swift.UInt64>)
   @objc deinit
 }
-extension SHA3 : FaceCaptcha.Updatable {
+extension FaceCaptcha.SHA3 : FaceCaptcha.Updatable {
   @inlinable final public func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8> {
     self.accumulated += bytes
 
@@ -645,7 +646,7 @@ final public class Scrypt {
   final public func calculate() throws -> [Swift.UInt8]
   @objc deinit
 }
-extension PKCS5 {
+extension FaceCaptcha.PKCS5 {
   public struct PBKDF1 {
     public enum Error : Swift.Error {
       case invalidInput
@@ -707,7 +708,7 @@ final public class Rabbit {
   public init(key: Swift.Array<Swift.UInt8>, iv: Swift.Array<Swift.UInt8>?) throws
   @objc deinit
 }
-extension Rabbit : FaceCaptcha.Cipher {
+extension FaceCaptcha.Rabbit : FaceCaptcha.Cipher {
   final public func encrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   final public func decrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
@@ -802,7 +803,7 @@ public protocol FinalizingDecryptModeWorker : FaceCaptcha.CipherModeWorker {
   mutating func didDecryptLast(bytes plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
   mutating func finalize(decrypt plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
 }
-extension Rabbit {
+extension FaceCaptcha.Rabbit {
   convenience public init(key: Swift.String) throws
   convenience public init(key: Swift.String, iv: Swift.String) throws
 }
@@ -838,7 +839,7 @@ public protocol Cryptors : AnyObject {
   func makeDecryptor() throws -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
   static func randomIV(_ blockSize: Swift.Int) -> Swift.Array<Swift.UInt8>
 }
-extension Cryptors {
+extension FaceCaptcha.Cryptors {
   public static func randomIV(_ count: Swift.Int) -> Swift.Array<Swift.UInt8>
 }
 public struct FCValidCaptchaModel {
@@ -853,7 +854,7 @@ public protocol Authenticator {
 @usableFromInline
 internal struct BatchedCollectionIndex<Base> where Base : Swift.Collection {
 }
-extension BatchedCollectionIndex : Swift.Comparable {
+extension FaceCaptcha.BatchedCollectionIndex : Swift.Comparable {
   @usableFromInline
   internal static func == <Base>(lhs: FaceCaptcha.BatchedCollectionIndex<Base>, rhs: FaceCaptcha.BatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
   @usableFromInline
@@ -888,7 +889,7 @@ internal struct BatchedCollection<Base> : Swift.Collection where Base : Swift.Co
   @usableFromInline
   internal typealias SubSequence = Swift.Slice<FaceCaptcha.BatchedCollection<Base>>
 }
-extension Collection {
+extension Swift.Collection {
   @inlinable internal func batched(by size: Swift.Int) -> FaceCaptcha.BatchedCollection<Self> {
     BatchedCollection(base: self, size: size)
   }
@@ -898,7 +899,7 @@ final public class MD5 {
   final public func calculate(for bytes: Swift.Array<Swift.UInt8>) -> Swift.Array<Swift.UInt8>
   @objc deinit
 }
-extension MD5 : FaceCaptcha.Updatable {
+extension FaceCaptcha.MD5 : FaceCaptcha.Updatable {
   final public func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8>
 }
 final public class ChaCha20 {
@@ -916,23 +917,23 @@ final public class ChaCha20 {
   public init(key: Swift.Array<Swift.UInt8>, iv nonce: Swift.Array<Swift.UInt8>) throws
   @objc deinit
 }
-extension ChaCha20 : FaceCaptcha.Cipher {
+extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cipher {
   final public func encrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   final public func decrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
-extension ChaCha20 {
+extension FaceCaptcha.ChaCha20 {
   public struct ChaChaEncryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
     public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8>
     public func seek(to: Swift.Int) throws
   }
 }
-extension ChaCha20 {
+extension FaceCaptcha.ChaCha20 {
   public struct ChaChaDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
     public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = true) throws -> Swift.Array<Swift.UInt8>
     public func seek(to: Swift.Int) throws
   }
 }
-extension ChaCha20 : FaceCaptcha.Cryptors {
+extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
   final public func makeEncryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
   final public func makeDecryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
 }
@@ -943,7 +944,7 @@ public protocol DocHomeView : UIKit.UIView {
   var activityIndicatorView: UIKit.UIView! { get }
   var closeButton: UIKit.UIButton! { get }
 }
-extension FixedWidthInteger {
+extension Swift.FixedWidthInteger {
   @inlinable internal func bytes(totalBytes: Swift.Int = MemoryLayout<Self>.size) -> Swift.Array<Swift.UInt8> {
     arrayOfBytes(value: self.littleEndian, length: totalBytes)
     // TODO: adjust bytes order
@@ -991,7 +992,7 @@ final public class Checksum {
   }
   @objc deinit
 }
-extension Checksum {
+extension FaceCaptcha.Checksum {
   @inlinable public static func crc32(_ message: Swift.Array<Swift.UInt8>, seed: Swift.UInt32? = nil, reflect: Swift.Bool = true) -> Swift.UInt32 {
     Checksum().crc32(message, seed: seed, reflect: reflect)
   }
@@ -1014,7 +1015,7 @@ public struct Digest {
   public static func sha2(_ bytes: Swift.Array<Swift.UInt8>, variant: FaceCaptcha.SHA2.Variant) -> Swift.Array<Swift.UInt8>
   public static func sha3(_ bytes: Swift.Array<Swift.UInt8>, variant: FaceCaptcha.SHA3.Variant) -> Swift.Array<Swift.UInt8>
 }
-extension String {
+extension Swift.String {
   public func decryptBase64ToString(cipher: FaceCaptcha.Cipher) throws -> Swift.String
   public func decryptBase64(cipher: FaceCaptcha.Cipher) throws -> Swift.Array<Swift.UInt8>
 }
@@ -1050,20 +1051,20 @@ public struct FCBaseModel {
   public static let K_APP_KEY: Swift.String
   public static let K_P: Swift.String
 }
-public typealias CipherOperationOnBlock = (Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
+public typealias CipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
 public protocol BlockMode {
   var options: FaceCaptcha.BlockModeOption { get }
   @inlinable func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
   var customBlockSize: Swift.Int? { get }
 }
-extension Blowfish {
+extension FaceCaptcha.Blowfish {
   convenience public init(key: Swift.String, iv: Swift.String, padding: FaceCaptcha.Padding = .pkcs7) throws
 }
 public protocol _UInt8Type {
 }
-extension UInt8 : FaceCaptcha._UInt8Type {
+extension Swift.UInt8 : FaceCaptcha._UInt8Type {
 }
-extension UInt8 {
+extension Swift.UInt8 {
   public func bits() -> [FaceCaptcha.Bit]
   public func bits() -> Swift.String
 }
@@ -1105,7 +1106,7 @@ final public class SHA1 {
   final internal func process(block chunk: Swift.ArraySlice<Swift.UInt8>, currentHash hh: inout Swift.ContiguousArray<Swift.UInt32>)
   @objc deinit
 }
-extension SHA1 : FaceCaptcha.Updatable {
+extension FaceCaptcha.SHA1 : FaceCaptcha.Updatable {
   @discardableResult
   @inlinable final public func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8> {
     self.accumulated += bytes
@@ -1167,7 +1168,7 @@ public protocol Cipher : AnyObject {
   func decrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   func decrypt(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
-extension Cipher {
+extension FaceCaptcha.Cipher {
   public func encrypt(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   public func decrypt(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
@@ -1259,7 +1260,7 @@ final public class Poly1305 : FaceCaptcha.Authenticator {
   final public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   @objc deinit
 }
-extension Array {
+extension Swift.Array {
   @inlinable internal init(reserveCapacity: Swift.Int) {
     self = Array<Element>()
     self.reserveCapacity(reserveCapacity)
@@ -1270,11 +1271,11 @@ extension Array {
   }
   }
 }
-extension Array where Element == Swift.UInt8 {
+extension Swift.Array where Element == Swift.UInt8 {
   public init(hex: Swift.String)
   public func toHexString() -> Swift.String
 }
-extension Array where Element == Swift.UInt8 {
+extension Swift.Array where Element == Swift.UInt8 {
   @available(*, deprecated)
   public func chunks(size chunksize: Swift.Int) -> Swift.Array<Swift.Array<Element>>
   public func md5() -> [Element]
@@ -1294,7 +1295,7 @@ extension Array where Element == Swift.UInt8 {
 }
 public struct FCCaptchaModel {
 }
-extension Collection where Self.Element == Swift.UInt8, Self.Index == Swift.Int {
+extension Swift.Collection where Self.Element == Swift.UInt8, Self.Index == Swift.Int {
   @inlinable internal func toUInt32Array() -> Swift.Array<Swift.UInt32> {
     guard !isEmpty else {
       return []
@@ -1398,9 +1399,9 @@ final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
   @objc @usableFromInline
   deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CameraPreviewView : UIKit.UIView {
-  @objc override dynamic public class var layerClass: Swift.AnyClass {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CameraPreviewView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
   @objc deinit
 }
@@ -1448,7 +1449,7 @@ public protocol DocConfirmationView : UIKit.UIView {
   var sendButton: UIKit.UIButton! { get }
   var activityIndicatorView: UIKit.UIView! { get }
 }
-extension HMAC {
+extension FaceCaptcha.HMAC {
   convenience public init(key: Swift.String, variant: FaceCaptcha.HMAC.Variant = .md5) throws
 }
 public enum Bit : Swift.Int {
@@ -1460,7 +1461,7 @@ public enum Bit : Swift.Int {
     get
   }
 }
-extension Bit {
+extension FaceCaptcha.Bit {
   @inlinable internal func inverted() -> FaceCaptcha.Bit {
     self == .zero ? .one : .zero
   }
@@ -1469,7 +1470,7 @@ public protocol AEAD {
   static var kLen: Swift.Int { get }
   static var ivRange: Swift.Range<Swift.Int> { get }
 }
-extension AES {
+extension FaceCaptcha.AES {
   convenience public init(key: Swift.String, iv: Swift.String, padding: FaceCaptcha.Padding = .pkcs7) throws
 }
 @_hasMissingDesignatedInitializers public class FCCipher {
@@ -1481,11 +1482,11 @@ extension AES {
   public static func padKey(_ source: Swift.String) -> Swift.String
   @objc deinit
 }
-extension FCCipher {
+extension FaceCaptcha.FCCipher {
   public static func aesEncrypt(_ str: Swift.String, _ appKey: Swift.String) -> Swift.String
   public static func aesDecrypt(_ str: Swift.String, _ appKey: Swift.String) -> Swift.String
 }
-extension UInt32 {
+extension Swift.UInt32 {
   @_specialize(exported: false, kind: full, where T == Swift.ArraySlice<Swift.UInt8>)
   @inlinable internal init<T>(bytes: T, fromIndex index: T.Index) where T : Swift.Collection, T.Element == Swift.UInt8, T.Index == Swift.Int {
     if bytes.isEmpty {
@@ -1517,20 +1518,20 @@ public struct DocumentscopyCustomViewParam {
   public let camInstructionBack: Swift.String?
   public init(homeView: FaceCaptcha.DocHomeView?, cameraView: FaceCaptcha.DocCameraView?, confirmationView: FaceCaptcha.DocConfirmationView?, camInstructionSingle: Swift.String?, camInstructionFront: Swift.String?, camInstructionBack: Swift.String?)
 }
-@objc @_inheritsConvenienceInitializers public class DocumentscopyViewController : UIKit.UITabBarController {
-  @objc override dynamic public var shouldAutorotate: Swift.Bool {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : UIKit.UITabBarController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate, customViewParam: FaceCaptcha.DocumentscopyCustomViewParam? = nil)
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate, customViewParam: FaceCaptcha.DocumentscopyCustomViewParam? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension DocumentscopyViewController : FaceCaptcha.DocumentscopyDelegate {
-  public func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
-  public func handleDocumentscopyCompleted()
-  public func handleDocumentscopyCanceled()
+extension FaceCaptcha.DocumentscopyViewController : FaceCaptcha.DocumentscopyDelegate {
+  @_Concurrency.MainActor(unsafe) public func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
+  @_Concurrency.MainActor(unsafe) public func handleDocumentscopyCompleted()
+  @_Concurrency.MainActor(unsafe) public func handleDocumentscopyCanceled()
 }
 final public class OCB : FaceCaptcha.BlockMode {
   public enum Mode {
@@ -1598,7 +1599,7 @@ public struct CFB : FaceCaptcha.BlockMode {
   public init(iv: Swift.Array<Swift.UInt8>, segmentSize: FaceCaptcha.CFB.SegmentSize = .cfb128)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
 }
-extension PKCS5 {
+extension FaceCaptcha.PKCS5 {
   public struct PBKDF2 {
     public enum Error : Swift.Error {
       case invalidInput
@@ -1634,10 +1635,10 @@ public enum PKCS5 {
 }
 public protocol Updatable {
   mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool) throws -> Swift.Array<Swift.UInt8>
-  mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool, output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws
+  mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws
 }
-extension Updatable {
-  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false, output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+extension FaceCaptcha.Updatable {
+  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
     let processed = try update(withBytes: bytes, isLast: isLast)
     if !processed.isEmpty {
       output(processed)
@@ -1649,7 +1650,7 @@ extension Updatable {
   @inlinable public mutating func update(withBytes bytes: Swift.Array<Swift.UInt8>, isLast: Swift.Bool = false) throws -> Swift.Array<Swift.UInt8> {
     try self.update(withBytes: bytes.slice, isLast: isLast)
   }
-  @inlinable public mutating func update(withBytes bytes: Swift.Array<Swift.UInt8>, isLast: Swift.Bool = false, output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+  @inlinable public mutating func update(withBytes bytes: Swift.Array<Swift.UInt8>, isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
     try self.update(withBytes: bytes.slice, isLast: isLast, output: output)
   }
   @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8> {
@@ -1661,20 +1662,20 @@ extension Updatable {
   @inlinable public mutating func finish() throws -> Swift.Array<Swift.UInt8> {
     try self.update(withBytes: [], isLast: true)
   }
-  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
     let processed = try update(withBytes: bytes, isLast: true)
     if !processed.isEmpty {
       output(processed)
     }
   }
-  @inlinable public mutating func finish(withBytes bytes: Swift.Array<Swift.UInt8>, output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+  @inlinable public mutating func finish(withBytes bytes: Swift.Array<Swift.UInt8>, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
     try self.finish(withBytes: bytes.slice, output: output)
   }
   @inlinable public mutating func finish(output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
     try self.finish(withBytes: [], output: output)
   }
 }
-extension ChaCha20 {
+extension FaceCaptcha.ChaCha20 {
   convenience public init(key: Swift.String, iv: Swift.String) throws
 }
 public enum DocumentscopyError {
@@ -1692,7 +1693,7 @@ public enum DocumentscopyError {
     get
   }
 }
-extension Data {
+extension Foundation.Data {
   public func checksum() -> Swift.UInt16
   public func md5() -> Foundation.Data
   public func sha1() -> Foundation.Data
@@ -1708,7 +1709,7 @@ extension Data {
   public func decrypt(cipher: FaceCaptcha.Cipher) throws -> Foundation.Data
   public func authenticate(with authenticator: FaceCaptcha.Authenticator) throws -> Foundation.Data
 }
-extension Data {
+extension Foundation.Data {
   public init(hex: Swift.String)
   public var bytes: Swift.Array<Swift.UInt8> {
     get
