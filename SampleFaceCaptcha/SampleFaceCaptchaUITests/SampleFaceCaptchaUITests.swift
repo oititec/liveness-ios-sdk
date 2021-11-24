@@ -69,30 +69,30 @@ class SampleFaceCaptchaUITests: XCTestCase {
             alert.buttons["Ok"].tap()
         }
         
-        // Start two docs flow
-        app.staticTexts["2 fotos:"].tap()
-
-        // Rotate device to landscape
-        XCUIDevice.shared.orientation = .landscapeLeft
-
-        // Capture front picture
-        app.buttons["fc capture button"].tap()
-        app.buttons["USAR FOTO"].tap()
-
-        // Capture back picture
-        app.buttons["fc capture button"].tap()
-        app.buttons["USAR FOTO"].tap()
-
-        // Rotate device to portrait
-        XCUIDevice.shared.orientation = .portrait
-
-        // Send picture
-        app.buttons["ENVIAR FOTOS"].tap()
-
-        // Wait for error dialog
-        alert.waitForExistence(timeout: 60)
-        if alert.waitForExistence(timeout: 60) {
-            alert.buttons["Ok"].tap()
-        }
+//        // Start two docs flow
+//        app.staticTexts["2 fotos:"].tap()
+//
+//        // Rotate device to landscape
+//        XCUIDevice.shared.orientation = .landscapeLeft
+//
+//        // Capture front picture
+//        app.buttons["fc capture button"].tap()
+//        app.buttons["USAR FOTO"].tap()
+//
+//        // Capture back picture
+//        app.buttons["fc capture button"].tap()
+//        app.buttons["USAR FOTO"].tap()
+//
+//        // Rotate device to portrait
+//        XCUIDevice.shared.orientation = .portrait
+//
+//        // Send picture
+//        app.buttons["ENVIAR FOTOS"].tap()
+//
+//        // Wait for error dialog
+//        alert.waitForExistence(timeout: 60)
+//        if alert.waitForExistence(timeout: 60) {
+//            alert.buttons["Ok"].tap()
+//        }
     }
 }
