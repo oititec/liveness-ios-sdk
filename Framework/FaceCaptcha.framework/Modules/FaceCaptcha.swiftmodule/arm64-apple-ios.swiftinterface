@@ -1,7 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
+import AudioToolbox
 import CallKit
 import CoreTelephony
 import Darwin
@@ -49,6 +50,7 @@ extension FaceCaptcha.AES : FaceCaptcha.Cryptors {
   }
 }
 public protocol FaceCaptchaInstructionsView : UIKit.UIView {
+  var closeButton: UIKit.UIButton! { get }
   var continueButton: UIKit.UIButton! { get }
 }
 @_inheritsConvenienceInitializers final public class CBCMAC : FaceCaptcha.CMAC {
@@ -950,6 +952,7 @@ extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
   final public func makeDecryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
 }
 public protocol DocHomeView : UIKit.UIView {
+  var closeButton: UIKit.UIButton! { get }
   var contentView: UIKit.UIView! { get }
   var cnhPictureView: UIKit.UIControl! { get }
   var rgPictureView: UIKit.UIControl! { get }
@@ -1563,7 +1566,10 @@ public protocol DocumentscopyDelegate : AnyObject {
 public struct DocumentscopyCustomViewParam {
   public let homeView: FaceCaptcha.DocHomeView?
   public let cameraView: FaceCaptcha.DocCameraView?
-  public init(homeView: FaceCaptcha.DocHomeView?, cameraView: FaceCaptcha.DocCameraView?)
+  public let camInstructionSingle: Swift.String?
+  public let camInstructionFront: Swift.String?
+  public let camInstructionBack: Swift.String?
+  public init(homeView: FaceCaptcha.DocHomeView?, cameraView: FaceCaptcha.DocCameraView?, camInstructionSingle: Swift.String?, camInstructionFront: Swift.String?, camInstructionBack: Swift.String?)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : FaceCaptcha.CustomNavigationViewController {
   @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate, customViewParam: FaceCaptcha.DocumentscopyCustomViewParam? = nil, showFeedback: Swift.Bool = true)
