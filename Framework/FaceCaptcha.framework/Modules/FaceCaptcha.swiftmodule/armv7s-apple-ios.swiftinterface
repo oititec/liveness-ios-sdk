@@ -1671,7 +1671,6 @@ public enum FaceCaptchaError {
   case certifaceOff
   case noCameraPermission
   case noInternetConnection
-  case phoneCallInProgress
   case validationError
   case challengeInterrupted
   case requestError
