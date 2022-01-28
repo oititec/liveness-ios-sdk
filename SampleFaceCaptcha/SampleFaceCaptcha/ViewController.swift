@@ -78,7 +78,9 @@ class ViewController: UIViewController {
         generateAppKey { appKey in
             let controller = FaceCaptchaViewController(appKey: appKey,
                                                        baseURL: self.getSavedBaseURL(),
-                                                       delegate: self)
+                                                       delegate: self,
+                                                       showConfirmation: true,
+                                                       showFeedback: true)
             controller.modalPresentationStyle = .fullScreen
             self.present(controller, animated: true, completion: nil)
         }
@@ -114,7 +116,8 @@ class ViewController: UIViewController {
     @IBAction func documentoscopiaPressed(_ sender: Any) {
         let controller = DocumentscopyViewController(appKey: appKey ?? "",
                                                      baseURL: getSavedBaseURL(),
-                                                     documentscopyDelegate: self)
+                                                     documentscopyDelegate: self,
+                                                     showFeedback: true)
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
@@ -125,7 +128,6 @@ class ViewController: UIViewController {
         let customViewParam = DocumentscopyCustomViewParam(
             homeView: DocHomeCustomView(frame: view.bounds),
             cameraView: DocCameraCustomView(frame: view.bounds),
-            confirmationView: DocConfirmationCustomView(frame: view.bounds),
             camInstructionSingle: "Centralize o documento",
             camInstructionFront: "Centralize a frente",
             camInstructionBack: "Centralize o verso"

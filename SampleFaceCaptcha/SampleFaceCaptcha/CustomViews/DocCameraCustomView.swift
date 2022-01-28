@@ -22,9 +22,10 @@ class DocCameraCustomView: UIView, DocCameraView {
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var usePictureButton: UIButton!
     @IBOutlet weak var takeNewPictureButton: UIButton!
-    @IBOutlet weak var rotationContainer: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var activityIndicatorView: UIView!
 
     // MARK: - Lifecycle
 

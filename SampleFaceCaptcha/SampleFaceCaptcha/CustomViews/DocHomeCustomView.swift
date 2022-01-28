@@ -17,10 +17,10 @@ class DocHomeCustomView: UIView, DocHomeView {
     // MARK: - DocHomeView
 
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var singlePictureView: UIControl!
-    @IBOutlet weak var dualPictureView: UIControl!
-    @IBOutlet weak var activityIndicatorView: UIView!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var cnhPictureView: UIControl!
+    @IBOutlet weak var rgPictureView: UIControl!
+    @IBOutlet weak var activityIndicatorView: UIView!
 
     // MARK: - Lifecycle
 

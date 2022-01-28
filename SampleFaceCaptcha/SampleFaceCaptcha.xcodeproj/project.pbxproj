@@ -16,8 +16,6 @@
 		552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648FB25489E2F0086DB73 /* LaunchScreen.storyboard */; };
 		5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */; };
 		5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */; };
-		556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */; };
-		556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039102667E7960039B94F /* DocConfirmationCustomView.xib */; };
 		556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039112667E7960039B94F /* DocCameraCustomView.swift */; };
 		556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039122667E7960039B94F /* DocHomeCustomView.xib */; };
 		556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039132667E7960039B94F /* DocCameraCustomView.xib */; };
@@ -42,8 +40,6 @@
 		552648FE25489E2F0086DB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaceCaptchaCustomView.xib; sourceTree = "<group>"; };
 		5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptchaCustomView.swift; sourceTree = "<group>"; };
-		5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocConfirmationCustomView.swift; sourceTree = "<group>"; };
-		556039102667E7960039B94F /* DocConfirmationCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocConfirmationCustomView.xib; sourceTree = "<group>"; };
 		556039112667E7960039B94F /* DocCameraCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCameraCustomView.swift; sourceTree = "<group>"; };
 		556039122667E7960039B94F /* DocHomeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocHomeCustomView.xib; sourceTree = "<group>"; };
 		556039132667E7960039B94F /* DocCameraCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCameraCustomView.xib; sourceTree = "<group>"; };
@@ -108,8 +104,6 @@
 			children = (
 				556039112667E7960039B94F /* DocCameraCustomView.swift */,
 				556039132667E7960039B94F /* DocCameraCustomView.xib */,
-				5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */,
-				556039102667E7960039B94F /* DocConfirmationCustomView.xib */,
 				556039142667E7960039B94F /* DocHomeCustomView.swift */,
 				556039122667E7960039B94F /* DocHomeCustomView.xib */,
 				5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */,
@@ -216,7 +210,6 @@
 				556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */,
 				552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */,
 				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
-				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
 				5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */,
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
@@ -281,7 +274,6 @@
 				55D45B3A26F279200032AABE /* CertifaceRepository.swift in Sources */,
 				55220A1E2703A5D90004FF45 /* CredentialViewController.swift in Sources */,
 				55D45B3826F277AC0032AABE /* UserDefaultsManager.swift in Sources */,
-				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,
 				552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */,
 			);
@@ -431,16 +423,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = K3MEJQ95UW;
 				INFOPLIST_FILE = SampleFaceCaptcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.oititec.SampleCertifaceID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,16 +447,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = K3MEJQ95UW;
 				INFOPLIST_FILE = SampleFaceCaptcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.oititec.SampleCertifaceID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
