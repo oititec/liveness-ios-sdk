@@ -9,7 +9,7 @@ Guia de uso e integração do Liveness para iOS.
 import FaceCaptcha
 ```
 
-2. Instancie `DocumentscopyViewController`, passando os seguintes parâmetros:
+2. Instancie `FaceCaptchaViewController`, passando os seguintes parâmetros:
 - *appKey*: App Key recebida previamente.
 - *baseURL*: URL apontando para o ambiente desejado.
 - *delegate*: delegate que implementará os métodos para tratar o retorno do FaceCaptcha.
