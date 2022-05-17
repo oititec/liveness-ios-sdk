@@ -94,4 +94,7 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
     var cancelButtonCustomizationCustomImage: UIImage? = UIImage(named: "ic_nav_close_button")
     var cancelButtonCustomizationLocation: FaceTecCancelButtonLocation = .topLeft
     
+    //Result Screen Message
+    var resultScreenOverrideSuccessMessage : String = "Tudo certo!"
+    
     
