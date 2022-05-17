@@ -15,7 +15,7 @@ A Interface do Liveness 3D é altamente customizável e permite alterar cores, f
 
 ## 1. Elementos Customizáveis
 
-![elementos_customizaveis](Images/liveness3d_secao_elementos_customisados.png)
+![elementos_customizaveis](https://github.com/oititec/liveness-android-sdk/blob/main/Documentation/Images/liveness3d_secao_elementos_customisados.png)
 
 
 **Botão de cancelamento:** imagem e localização.
@@ -37,7 +37,7 @@ A Interface do Liveness 3D é altamente customizável e permite alterar cores, f
 
 ## 2. Customizações Gerais
 
-![Customizacoes_gerais](Images/liveness3d_secao_customizacoes_gerais.png)
+![Customizacoes_gerais](https://github.com/oititec/liveness-android-sdk/blob/main/Documentation/Images/liveness3d_secao_customizacoes_gerais.png)
 
 **1 Botão Voltar**
  - cancelButtonCustomizationCustomImage
@@ -101,7 +101,7 @@ As **customizações da tela de execução do Liveness 3D** devem respeitar as p
 Nesta tela, são fornecidas orientações que guiam o usuário a realizar uma nova Sessão Liveness 3D. 
 Apresenta boa iluminação e pose, permitindo que o usuário compreenda as correções necessárias.
 
-![customizacao_retry](Images/liveness3d_secao_retry.png)
+![customizacao_retry](https://github.com/oititec/liveness-android-sdk/blob/main/Documentation/Images/liveness3d_secao_retry.png)
 
 ### 4.1 Tela de Nova Tentativa
 
