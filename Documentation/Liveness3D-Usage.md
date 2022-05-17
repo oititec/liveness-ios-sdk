@@ -1,6 +1,6 @@
 #  Guia de Uso e Integração do Liveness 3D 
 
-> Documento em construção. Versão Beta. 
+> Versão Beta. 
 
 
 ###  Iniciando o Liveness 3D
