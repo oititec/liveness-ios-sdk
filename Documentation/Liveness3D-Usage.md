@@ -104,7 +104,7 @@ private let appKey = "APP-KEY"
 ```swift
     //Step 04
 extension ViewController: Liveness3DDelegate {
-func handleLiveness3DValidation(validateModel: LNValidLivenessModel) {
+func handleLiveness3DValidation(validateModel: Liveness3DSuccess) {
       //YOUR CODE
 }
     
@@ -121,13 +121,152 @@ func handleLiveness3DCanceled() {
 
 ###  Customização
 
+Além de poder usar o SDK em sua forma padrão de exibição, são fornecidas duas formas de customização.
+
 ####  Componentes e propriedades customizáveis 
+
 **1. Customização de tela de desafios:**
+
+```swift
+    Liveness3DViewController( 
+        endpoint: baseURL, 
+        liveness3DUser: Liveness3DUser(appKey: appKey, liveness3DTheme: theme), 
+        debugOn: true )
+```
 
 **2. Customização completa:**
 
+```swift
+    Liveness3DViewController( 
+        endpoint: baseURL, 
+        liveness3DUser: Liveness3DUser(appKey: appKey, liveness3DTheme: theme),
+        customInstructionView: instructionView, 
+        customPermissionView: permissionView, 
+        debugOn: true )
+```
+
+Os dois últimos parâmetros *(customInstructionView; customPermissionView)* permitem o envio de telas customizáveis, porém exigem os componentes obrigatórios abaixo:
+
+|Tela|Componentes|id|Descrição|
+|------|--|-----------|---------|
+|Instruction_Screen|UIButton|backButton|Botão de retornar à tela anterior.|
+|Instruction_Screen|UIButton|continueButton|Avançar para a próxima etapa.|
+|Permission_Screen|UIButton|backButton|Botão de retornar à tela anterior.|
+|Permission_Screen|UIButton|continueButton|Solicitar permissões de câmera ao usuário.|
+
+
+Detalhes de como customizar os elementos dos desafios são encontrados [neste link](Liveness3D-CustomView.md).
+
+
+
 ###  Tratando o retorno
+
 **Receber Resultado Liveness** 
+
+Para receber resultado Liveness3D deve-se setar o atributo delegate da instância do `Liveness3DViewController`. Depois é necessário implementar o delegate `Liveness3DDelegate` na ViewController.
+
+```swift
+liveness3DViewController.delegate = self
+```
+
+```swift
+    
+extension ViewController: Liveness3DDelegate {
+func handleLiveness3DValidation(validateModel: Liveness3DSuccess) {
+      //YOUR CODE
+}
+    
+func handleLiveness3DError(error: Liveness3DError) {
+    //YOUR CODE
+}
+    
+func handleLiveness3DCanceled() {
+    //YOUR CODE
+}
+}
+```
+
+>⚠️ Para mais detalhes dos tipos de retorno, [clique aqui](https://certifaceid.readme.io/docs/integra%C3%A7%C3%A3o-atualizada#42-3d-liveness).
+
+
+
 **Tratar Desafio Concluído**
+
+Para tratar o caso de desafio concluído implemente o exemplo abaixo:
+
+```swift
+    
+extension ViewController: Liveness3DDelegate {
+func handleLiveness3DValidation(validateModel: Liveness3DSuccess) {
+      //YOUR CODE
+}
+...
+}
+```
+
+O objeto `Liveness3DSuccess` deve ter a mesma estrutura do Response encontrado [aqui](https://certifaceid.readme.io/docs/integra%C3%A7%C3%A3o-atualizada#42-3d-liveness)
+
+
+
+
 **Tratar Caso de Erro** 
 
+
+Para tratar o caso de erro, o método `handleLiveness3DError` deve receber um objeto `error`, onde os atributos abaixo podem ser avaliados:
+
+- *errorCode*: Enum do tipo `Liveness3DErrorCode`, que indica qual erro ocorreu.
+- *errorMessage*: String que contém uma mensagem explicativa sobre o erro.
+
+
+
+```swift
+extension ViewController: Liveness3DDelegate {
+...    
+func handleLiveness3DError(error: Liveness3DError) {
+    //YOUR CODE
+}
+...
+}
+```
+
+`Liveness3DErrorCode` pode assumir os seguintes valores:
+
+```swift
+public enum Liveness3DErrorCode: String {
+
+// Parâmetros inválidos
+  case INVALID_BUNDLE_PARAMS = "INVALID_BUNDLE_PARAMS"
+
+// App Key inválido.
+   case INVALID_APP_KEY = "INVALID_APP_KEY"
+
+// Aparelho não possui câmera frontal
+   case NO_FRONT_CAMERA = "NO_FRONT_CAMERA"
+
+// Não foi concedida permissão de acesso à câmera do aparelho.
+   case NO_CAMERA_PERMISSION = "NO_CAMERA_PERMISSION"
+
+// Sem conexão à Internet.
+   case NO_INTERNET_CONNECTION = "NO_INTERNET_CONNECTION"
+
+// Erro na requisição.
+   case REQUEST_ERROR = "REQUEST_ERROR"
+
+// VIEW fornecida para a view customizada é inválida
+   case INVALID_CUSTOM_FRAGMENT_INSTRUCTION_SCREEN = "INVALID_CUSTOM_FRAGMENT_INSTRUCTION_SCREEN"
+   case INVALID_CUSTOM_FRAGMENT_PERMISSION_SCREEN = "INVALID_CUSTOM_FRAGMENT_PERMISSION_SCREEN"
+}
+```
+
+**Tratar Desafio Cancelado pelo Usuário**
+
+Sempre que houver desistência da operação da Prova de Vida, o delegate deve chamar o método `handleLiveness3DCanceled` para avisar que o fluxo não foi concluído devido o cancelamento efetuado pelo usuário.
+
+```swift
+extension ViewController: Liveness3DDelegate {
+...    
+func handleLiveness3DCanceled() {
+    //YOUR CODE
+}
+}
+```
