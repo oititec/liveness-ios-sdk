@@ -91,5 +91,7 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
     var feedbackCustomizationElevation: Int? = 10
 
     //Cancel Button Customization
-    var cancelButtonCustomImage: UIImage? = UIImage(named: "ic_nav_close_button")
-    var cancelButtonLocation: FaceTecCancelButtonLocation = .topLeft
+    var cancelButtonCustomizationCustomImage: UIImage? = UIImage(named: "ic_nav_close_button")
+    var cancelButtonCustomizationLocation: FaceTecCancelButtonLocation = .topLeft
+    
+    
