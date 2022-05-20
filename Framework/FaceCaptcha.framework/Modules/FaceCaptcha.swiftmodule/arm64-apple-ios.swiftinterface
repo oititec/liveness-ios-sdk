@@ -1,12 +1,13 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FaceCaptcha
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name FaceCaptcha
 import AVFoundation
 import AudioToolbox
 import CallKit
 import CoreTelephony
 import Darwin
 @_exported import FaceCaptcha
+import FaceTecSDK
 import Foundation
 import Swift
 import SystemConfiguration
@@ -57,6 +58,25 @@ public protocol FaceCaptchaInstructionsView : UIKit.UIView {
   override final public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   override public init(key: Swift.Array<Swift.UInt8>) throws
   @objc deinit
+}
+public protocol Liveness3DDelegate : AnyObject {
+  func handleLiveness3DValidation(validateModel: FaceCaptcha.Liveness3DSuccess)
+  func handleLiveness3DError(error: FaceCaptcha.Liveness3DError)
+  func handleLiveness3DCanceled()
+}
+public struct Liveness3DUser {
+  public init(appKey: Swift.String, environment: FaceCaptcha.Environment3D = .HML, liveness3DTheme: FaceCaptcha.Liveness3DTheme? = nil)
+}
+public enum Environment3D {
+  case HML
+  case PRD
+  public static func == (a: FaceCaptcha.Environment3D, b: FaceCaptcha.Environment3D) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Liveness3DTheme {
 }
 final public class SHA2 {
   @usableFromInline
@@ -756,6 +776,32 @@ public enum Padding : FaceCaptcha.PaddingProtocol {
     get
   }
 }
+public struct Liveness3DError {
+  public var errorCode: FaceCaptcha.Liveness3DErrorCode
+  public var errorMessage: Swift.String
+}
+public enum Liveness3DErrorCode : Swift.String {
+  case INVALID_BUNDLE_PARAMS
+  case INVALID_APP_KEY
+  case NO_FRONT_CAMERA
+  case NO_CAMERA_PERMISSION
+  case NO_INTERNET_CONNECTION
+  case REQUEST_ERROR
+  case INVALID_CUSTOM_FRAGMENT_INSTRUCTION_SCREEN
+  case INVALID_CUSTOM_FRAGMENT_PERMISSION_SCREEN
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Liveness3DSuccess {
+  public var valid: Swift.Bool?
+  public var codID: Swift.Double?
+  public var cause: Swift.String?
+  public var protocolo: Swift.String?
+  public var scanResultBlob: Swift.String?
+}
 public struct FCUserModel {
   public var user: Swift.String?
   public var pass: Swift.String?
@@ -861,6 +907,10 @@ public struct FCValidCaptchaModel {
   public var codID: Swift.Double?
   public var cause: Swift.String?
   public var uidProtocol: Swift.String?
+}
+public protocol CustomPermissionView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var continueButton: UIKit.UIButton! { get }
 }
 public protocol Authenticator {
   func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
@@ -1238,6 +1288,12 @@ extension FaceCaptcha.Cipher {
 public struct FCSessionModel {
   public var appkey: Swift.String?
 }
+public struct FCSession3DModel {
+  public let sessionToken: Swift.String?
+}
+public struct FCInitializationModel {
+  public var productionKey: Swift.String?
+}
 @inlinable internal func rotateLeft(_ value: Swift.UInt8, by: Swift.UInt8) -> Swift.UInt8 {
   ((value << by) & 0xff) | (value >> (8 - by))
 }
@@ -1397,6 +1453,17 @@ extension Swift.Collection where Self.Element == Swift.UInt8, Self.Index == Swif
 @usableFromInline
 internal func strideCount(from: Swift.Int, to: Swift.Int, by: Swift.Int) -> Swift.Int
 public struct FCChallengeModel {
+}
+@objc @_Concurrency.MainActor(unsafe) public class Liveness3DViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
+  @_Concurrency.MainActor(unsafe) public init(endpoint: Swift.String, liveness3DUser: FaceCaptcha.Liveness3DUser, debugOn: Swift.Bool, customInstructionView: FaceCaptcha.CustomInstructionView? = nil, customPermissionView: FaceCaptcha.CustomPermissionView? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FaceCaptcha.Liveness3DViewController : FaceCaptcha.CheckPermissionDelegate {
+  @_Concurrency.MainActor(unsafe) public func finishCheckPermissionAndOpenLiveness3D()
 }
 @usableFromInline
 final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
@@ -1684,6 +1751,9 @@ public enum FaceCaptchaError {
 }
 public enum PKCS5 {
 }
+@_hasMissingDesignatedInitializers public class Strings {
+  @objc deinit
+}
 public protocol Updatable {
   mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool) throws -> Swift.Array<Swift.UInt8>
   mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws
@@ -1780,6 +1850,9 @@ public struct PCBC : FaceCaptcha.BlockMode {
   public let customBlockSize: Swift.Int?
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
+}
+public protocol CheckPermissionDelegate : AnyObject {
+  func finishCheckPermissionAndOpenLiveness3D()
 }
 public struct CTR {
   public enum Error : Swift.Error {
@@ -1900,6 +1973,12 @@ public class BlockDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
   public func seek(to position: Swift.Int) throws
   @objc deinit
 }
+public protocol CustomInstructionView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var continueButton: UIKit.UIButton! { get }
+}
+extension FaceCaptcha.Environment3D : Swift.Equatable {}
+extension FaceCaptcha.Environment3D : Swift.Hashable {}
 extension FaceCaptcha.SHA2.Variant : Swift.Equatable {}
 extension FaceCaptcha.SHA2.Variant : Swift.Hashable {}
 extension FaceCaptcha.Blowfish.Error : Swift.Equatable {}
@@ -1931,6 +2010,9 @@ extension FaceCaptcha.CBC.Error : Swift.Equatable {}
 extension FaceCaptcha.CBC.Error : Swift.Hashable {}
 extension FaceCaptcha.Padding : Swift.Equatable {}
 extension FaceCaptcha.Padding : Swift.Hashable {}
+extension FaceCaptcha.Liveness3DErrorCode : Swift.Equatable {}
+extension FaceCaptcha.Liveness3DErrorCode : Swift.Hashable {}
+extension FaceCaptcha.Liveness3DErrorCode : Swift.RawRepresentable {}
 extension FaceCaptcha.CCM : FaceCaptcha.BlockMode {}
 extension FaceCaptcha.CCM.Error : Swift.Equatable {}
 extension FaceCaptcha.CCM.Error : Swift.Hashable {}
