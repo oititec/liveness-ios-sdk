@@ -95,6 +95,40 @@ A Interface do Liveness 3D é altamente customizável e permite alterar cores, f
 
 As **customizações da tela de execução do Liveness 3D** devem respeitar as propriedades customizáveis vistas acima.
 
+### 3.1 Customização da tela de instruções e permissionamento da câmera
+
+Além de poder usar o SDK em sua forma padrão de exibição, o SDK permite que a forma de visualização das telas de Instrução para execução do Liveness 3D e Permissão da câmera seja completamente customizada.
+
+A customização do visual é feita através da implementação de `UIViews`, que devem implementar os respectivos protocolos descritos abaixo para o correto funcionamento do processo da Liveness 3D. 
+
+Deve-se implementar 2 views, sendo um para cada tela (instrução e permissão de câmera).
+
+#### Tela de Instrução 
+
+Para customizar a tela de Instrução é necessário a criação de uma `UIView` (via código ou via Interface Builder), que implemente o protocolo `CustomInstructionView` como demonstrado abaixo:
+
+```swift
+public protocol CustomInstructionView: UIView {  
+    var backButton: UIButton! { get }
+    var continueButton: UIButton! { get }
+}
+```
+
+#### Tela de Permissão de Câmera
+
+Para customizar a tela de Permissionamento de Câmera é necessário a criação de uma `UIView` (via código ou via Interface Builder), que implemente o protocolo `CustomInstructionView` como demonstrado abaixo:
+
+```swift
+public protocol CustomPermissionView: UIView {
+    var backButton: UIButton! { get }
+    var continueButton: UIButton! { get }
+}
+```
+
+> Nota: 
+> (a) Além das subviews especificadas, as views customizadas pode conter outros elementos, apenas tomando cuidado para que os mesmos não interfiram nas subviews funcionais;
+> (b) No projeto Sample, neste mesmo repositório, encontra-se um exemplo de implementação.
+
 
 ## 4. Customização da Tela de Nova Tentativa (Retry  Screen)
 
