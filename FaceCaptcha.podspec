@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                = "FaceCaptcha"
-  spec.version             = "1.0.0-alfa2"
+  spec.version             = "1.0.0-alfa3"
   spec.summary             = "Framework FaceCaptcha para iOS."
   spec.homepage            = "https://www.oititec.com.br/"
   spec.license             = { :type => "Copyright", :file => "LICENSE" }
@@ -13,7 +13,6 @@ Pod::Spec.new do |spec|
   spec.public_header_files = "Framework/FaceCaptcha.framework/Headers/*.h"
   spec.vendored_frameworks = "Framework/FaceCaptcha.framework"
 
-  spec.dependency "Liveness3D-ios", "~> 1.0.0", :git => "https://github.com/oititec/liveness3d-ios.git"
-
+  spec.dependency "Liveness3D-ios", "~> 1.0.0"
 
 end
