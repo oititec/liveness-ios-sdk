@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		xzJ0bi9Je6TWnFllxjxKUQEiba4=
+		BUY2QKX0RyRMgP3mqeiIusvYJVE=
 		</data>
 		<key>CheckCameraPermissionViewController.nib/objects-11.0+.nib</key>
 		<data>
@@ -48,18 +48,6 @@
 		<data>
 		GDuef3nq+PBYBMb1z08v48SosAY=
 		</data>
-		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
-		<data>
-		syu8QA2IxqqbrKEXkwlimhhToaA=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
-		<data>
-		ZV8F4F0zDeR+IHn3hnaRCWe6T4U=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
-		<data>
-		wAs4vwOyQZKdO7ahNQOyqZlnthU=
-		</data>
 		<key>GothamHTF-Bold.otf</key>
 		<data>
 		P7ppvyWCRtlHM+4GC0BfQHexTnM=
@@ -82,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TThGuSJ2S1neIAMS04azJ4RFB6Y=
+		wyNz7+OHnkJaXJVZYUp19RJ23So=
 		</data>
 		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
 		<data>
@@ -139,11 +127,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xzJ0bi9Je6TWnFllxjxKUQEiba4=
+			BUY2QKX0RyRMgP3mqeiIusvYJVE=
 			</data>
 			<key>hash2</key>
 			<data>
-			jxiy9Xeoa+xICEwJ7XYV8qAcv+ojLqv2RVhxHVVxbwc=
+			Cs2r3YkeEuo+N/5XYty61isghx9BT8y5A8p5PfTDuTE=
 			</data>
 		</dict>
 		<key>CheckCameraPermissionViewController.nib/objects-11.0+.nib</key>
@@ -254,39 +242,6 @@
 			<key>hash2</key>
 			<data>
 			52Bu9dkFyYULjrglbAnWg3BzBYxyUmc++sJOTv4/3gg=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			syu8QA2IxqqbrKEXkwlimhhToaA=
-			</data>
-			<key>hash2</key>
-			<data>
-			t0seVZpc2Sii4YHhtCEeC8jdhiXW96bJw3BjkIfrwko=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZV8F4F0zDeR+IHn3hnaRCWe6T4U=
-			</data>
-			<key>hash2</key>
-			<data>
-			wM1q2A129VT+5T7zUzMtM+YMRXZQYneFqL/TxiIVU28=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			wAs4vwOyQZKdO7ahNQOyqZlnthU=
-			</data>
-			<key>hash2</key>
-			<data>
-			f3I8xTysPL7j2oq7AiS6FBaAeMzgtW0ZCqkzk/AyOps=
 			</data>
 		</dict>
 		<key>GothamHTF-Bold.otf</key>
