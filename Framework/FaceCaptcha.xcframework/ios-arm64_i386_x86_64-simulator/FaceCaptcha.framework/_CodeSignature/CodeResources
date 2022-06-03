@@ -82,7 +82,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3fyZRgZid8pVWCs05xD131srgvE=
+		QBso3M60YSbdUdEdvWek8MX4FEE=
 		</data>
 		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		U21J2m2B9KI/TdNQO9LNDjPafOA=
+		wCREqaK9DPoXFtZYpqrgmqsoUrE=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Azk8Z6oQMMgLzewVfD6h96B0Epc=
+		b9y5tFRSKwMJRl92t7L1pTOZYss=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cwzx7u4LUqwu9zfqyybmRyjvwAE=
+		YLyGYw0PtgUKoZtAfD0BgZ7yPSQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -392,11 +392,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U21J2m2B9KI/TdNQO9LNDjPafOA=
+			wCREqaK9DPoXFtZYpqrgmqsoUrE=
 			</data>
 			<key>hash2</key>
 			<data>
-			c4kIe9x37H3Cf71U2UTSAqQSuaXDNhc0uuAjbd+AmYA=
+			Pyp40XVCKZEzhDiX/sRZ5WHFTgCHQ40Zklh/ksyTLH4=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -425,11 +425,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Azk8Z6oQMMgLzewVfD6h96B0Epc=
+			b9y5tFRSKwMJRl92t7L1pTOZYss=
 			</data>
 			<key>hash2</key>
 			<data>
-			CvxAEHH62ZDJGu9UqDOqDndeASBJzkqAqDcrliRGxi0=
+			i6gtfai9UL7iF0CO4t1FDhVS9rb0O42N2DcIjt35Hns=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -458,11 +458,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cwzx7u4LUqwu9zfqyybmRyjvwAE=
+			YLyGYw0PtgUKoZtAfD0BgZ7yPSQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			aXKfazH1avEn5mlDcE+KkIAeplKv+Eac+e3eBRK/btU=
+			U1mlPklViTfcqAhg/RcGvq4Fx8nJOIk1HA5wYs5/7pI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

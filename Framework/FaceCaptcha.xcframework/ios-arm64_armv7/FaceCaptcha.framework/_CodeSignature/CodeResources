@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		Ez5R8g6BAGI+pxzxjO6vKNlnciM=
+		HaKDU8GcEVlngd2BAFnOnT/UdHA=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
 		<data>
@@ -235,7 +235,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bcVIHpCGsOsOBjtzfo21zgAh8cc=
+		GP0lAxfQwG77EgDDUjISAz/Eh10=
 		</data>
 		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
 		<data>
@@ -255,7 +255,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		pB7fEzRUjmdUMldSgycjvbhky4k=
+		TISv8pzvTPGqZZqk+fx1BHAu5WQ=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -267,7 +267,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		0dkbYLSO326mAbkZhdCj6B3/+k8=
+		Zz4O957TJGSeG85mYEI8GhJIMpM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -412,11 +412,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ez5R8g6BAGI+pxzxjO6vKNlnciM=
+			HaKDU8GcEVlngd2BAFnOnT/UdHA=
 			</data>
 			<key>hash2</key>
 			<data>
-			n835SqA6PN50zneeEk4AT98VQvdzaVFs5eggYP0V2bw=
+			bB5AS0b5ZVBBJXehz4Im8PFiLNoxQXSOSW14kXsRoH4=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
@@ -942,11 +942,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pB7fEzRUjmdUMldSgycjvbhky4k=
+			TISv8pzvTPGqZZqk+fx1BHAu5WQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			4F58YrQipbOwz+VxqPyHxCnAbKr4Df8wzvUUPRwKQ0o=
+			gRiTNihrM/AHzfJ3oOtUpnx9yGCDGJ4+Yg74U8CfUpY=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -975,11 +975,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0dkbYLSO326mAbkZhdCj6B3/+k8=
+			Zz4O957TJGSeG85mYEI8GhJIMpM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Yh8czrmxjjTGF9Unsnb9GtBjrwixpxCkaAqA4Ia5p9M=
+			mfymjllpBAFHWvVnDpINZUzcXuwjtEE6bukURdxNPEg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
