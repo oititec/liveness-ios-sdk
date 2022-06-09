@@ -1119,6 +1119,7 @@ extension Swift.UInt8 {
   public func bits() -> [FaceCaptcha.Bit]
   public func bits() -> Swift.String
 }
+public func generateAppKey(cpf: Swift.String, nome: Swift.String, dtNasciemnto: Swift.String, completion: @escaping (Swift.String) -> Swift.Void)
 public protocol FaceCaptchaView : UIKit.UIView {
   var cameraContainer: FaceCaptcha.CameraPreviewView! { get }
   var startButton: UIKit.UIButton! { get }
