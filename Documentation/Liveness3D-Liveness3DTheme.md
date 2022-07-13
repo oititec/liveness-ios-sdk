@@ -5,15 +5,15 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
 |:-------------|:---------|:--------------|:--------------|
-| guidanceCustomizationBackgroundColors | [UIColor] | Dark: #000000<br>Light: #FFFFFF | Define o background do fluxo de Prova de vida | 
-| guidanceCustomizationForegroundColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do foreground |
+| guidanceCustomizationBackgroundColors | [UIColor] | Dark: #000000<br>Light: #FFFFFF | Define a cor do background (cor do plano de fundo) do fluxo de Prova de vida | 
+| guidanceCustomizationForegroundColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do foreground (cor do primeiro plano) |
 | guidanceCustomizationHeaderFont | UIFont | Ubuntu-Bold | Define a fonte do título da primeira tela do fluxo de prova de vida |
 | guidanceCustomizationSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da primeira tela do fluxo de prova de vida |
 | guidanceCustomizationReadyScreenHeaderFont | UIFont | Ubuntu-Bold | |
 | guidanceCustomizationReadyScreenHeaderTextColor | UIColor | | Define a cor do título da primeira tela do fluxo de prova de vida |
 | guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString | nil | |
-| guidanceCustomizationReadyScreenSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da ela de inicio de captura do fluxo de prova de vida |
-| guidanceCustomizationReadyScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor subtítulo da ela de inicio de captura do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da tela de início de captura do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor subtítulo da tela de início de captura do fluxo de prova de vida |
 | guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString | nil | |
 | guidanceCustomizationRetryScreenHeaderFont | UIFont | Ubuntu-Bold | Define a cor do foreground |
 | guidanceCustomizationRetryScreenHeaderTextColor | UIColor | Dark: #FFFFFF<br>Light: #1E1E1E | Define a cor do foreground |
