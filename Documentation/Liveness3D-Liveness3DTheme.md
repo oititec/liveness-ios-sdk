@@ -1,100 +1,82 @@
 # Guia de Customização do Liveness3DTheme 
 
+A customização do fluxo de prova de vida, dar-se por meio da utilização da `Liveness3DTheme`. Essa classe na sua construção recebe o template padrão, podendo ser DarkTheme ou LightTheme.<br>
 Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`.
 
-    //Guidance customization
-    var guidanceCustomizationBackgroundColors: UIColor?
-    var guidanceCustomizationForegroundColor: UIColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-    var guidanceCustomizationHeaderFont: UIFont? = nil
-    var guidanceCustomizationSubtextFont: UIFont? = nil
-
-    //Ready Screen
-    var guidanceCustomizationReadyScreenHeaderFont: UIFont? = nil
-    var guidanceCustomizationReadyScreenHeaderTextColor: Int? = 0
-    var guidanceCustomizationReadyScreenHeaderAttributedString: String? = ""
-    var guidanceCustomizationReadyScreenSubtextFont: UIFont? = nil
-    var guidanceCustomizationReadyScreenSubtextTextColor: Int? = 0
-    var guidanceCustomizationReadyScreenSubtextAttributedString: String? = ""
-
-    //Retry Screen
-    var guidanceCustomizationRetryScreenHeaderFont: UIFont? = nil
-    var guidanceCustomizationRetryScreenHeaderTextColor: Int? = 0
-    var guidanceCustomizationRetryScreenHeaderAttributedString: String = ""
-    var guidanceCustomizationRetryScreenSubtextFont: UIFont? = nil
-    var guidanceCustomizationRetryScreenSubtextTextColor: Int? = 0
-    var guidanceCustomizationRetryScreenSubtextAttributedString: String? = ""
-    var guidanceCustomizationButtonFont: UIFont? = nil
-    var guidanceCustomizationButtonTextNormalColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var guidanceCustomizationButtonBackgroundNormalColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var guidanceCustomizationButtonTextHighlightColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var guidanceCustomizationButtonBackgroundHighlightColor: UIColor = UIColor(red: 0.22, green: 0.43, blue: 0.60, alpha: 1.00)
-    var guidanceCustomizationButtonTextDisabledColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var guidanceCustomizationButtonBackgroundDisabledColor: UIColor = UIColor(red: 0.60, green: 0.93, blue: 0.73, alpha: 1.00)
-    var guidanceCustomizationButtonBorderColor: Int? = 0
-    var guidanceCustomizationButtonBorderWidth: Int? = -1
-    var guidanceCustomizationButtonCornerRadius: Int? = -1
-    var guidanceCustomizationReadyScreenOvarFillColor: UIColor? = UIColor(red: 0.00, green: 1.00, blue: 1.00, alpha: 1.00)
-    var guidanceCustomizationReadyScreenTextBackgroundColor: Int? = -1
-    var guidanceCustomizationReadyScreenTextBackgroundCornerRadius: Int? = -1
-    var guidanceCustomizationRetryScreenImageBorderColor: UIColor = UIColor(red: 0.25, green: 0.50, blue: 0.70, alpha: 1.00)
-    var guidanceCustomizationRetryScreenImageBorderWidth: Int? = -1
-    var guidanceCustomizationRetryScreenImageCornerRadius: Int? = -1
-    var guidanceCustomizationRetryScreenOvarStrokeColor: Int? = -1
-
-    //Result Screen Customization
-    var resultScreenCustomizationAnimationRelativeScale: Float = 1.0
-    var resultScreenCustomizationForegroundColor: UIColor = UIColor(red: 0.25, green: 0.50, blue: 0.70, alpha: 1.00)
-    var resultScreenCustomizationBackgroundColors: [UIColor] = [UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00), UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)]
-    var resultScreenCustomizationActivityIndicatorColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var resultScreenCustomizationCustomActivityIndicatorImage: Int = 0
-    var resultScreenCustomizationCustomActivityIndicatorRotationIntervar: Int = 1000
-    var resultScreenCustomizationCustomActivityIndicatorAnimation: Int = 0
-    var resultScreenCustomizationShowUploadProgressBar: Bool = true
-    var resultScreenCustomizationUploadProgressFillColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var resultScreenCustomizationUploadProgressTrackColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var resultScreenCustomizationResultAnimationBackgroundColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var resultScreenCustomizationResultAnimationForegroundColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var resultScreenCustomizationResultAnimationSuccessBackgroundImage: Int = 0
-    var resultScreenCustomizationResultAnimationUnSuccessBackgroundImage: Int = 0
-    var resultScreenCustomizationCustomResultAnimationSuccess: Int = 0
-    var resultScreenCustomizationCustomResultAnimationUnSuccess: Int = 0
-    var resultScreenCustomizationCustomStaticResultAnimationSuccess: Int = 0
-    var resultScreenCustomizationCustomStaticResultAnimationUnSuccess: Int = 0
-    var resultScreenCustomizationMessageFont: UIFont? = nil
-
-    //Ovar Customization
-    var ovarCustomizationStrokeWidth: Int? = -1
-    var ovarCustomizationStrokeColor: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var ovarCustomizationProgressStrokeWidth: Int? = -1
-    var ovarCustomizationProgressColor1: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var ovarCustomizationProgressColor2: UIColor = UIColor(red: 0.02, green: 0.84, blue: 0.35, alpha: 1.00)
-    var ovarCustomizationProgressRadialOffset: Int? = -1
-
-    //Frame Customization
-    var frameCustomizationBorderWidth: Int? = -1
-    var frameCustomizationCornerRadius: Int32 =  20
-    var frameCustomizationBorderColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var frameCustomizationBackgroundColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var frameCustomizationElevation: Int? = 0
-
-    //Overlay Customization
-    var overlayCustomizationBackgroundColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var overlayCustomizationBrandingImage: UIImage? = nil
-    var overlayCustomizationShowBrandingImage: Bool = false
-
-    //Feedback Customization
-    var feedbackCustomizationCornerRadius: Int? = -1
-    var feedbackCustomizationBackgroundColors: CAGradientLayer = generateDefaultGradient()
-    var feedbackCustomizationTextColor: UIColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
-    var feedbackCustomizationTextFont: UIFont? = nil
-    var feedbackCustomizationEnablePulsatingText: Bool = true
-    var feedbackCustomizationElevation: Int? = 10
-
-    //Cancel Button Customization
-    var cancelButtonCustomizationCustomImage: UIImage? = UIImage(named: "ic_nav_close_button")
-    var cancelButtonCustomizationLocation: FaceTecCancelButtonLocation = .topLeft
-    
-    //Result Screen Message
-    var resultScreenOverrideSuccessMessage : String = "Tudo certo!"
-    
-    
+| **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
+|:-------------|:---------|:--------------|:--------------|
+| guidanceCustomizationBackgroundColors | [UIColor] | Dark: #000000<br>Light: #FFFFFF | Define o background do fluxo de Prova de vida | 
+| guidanceCustomizationForegroundColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do foreground |
+| guidanceCustomizationHeaderFont | UIFont | Ubuntu-Bold | Define a fonte do título da primeira tela do fluxo de prova de vida |
+| guidanceCustomizationSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da primeira tela do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenHeaderFont | UIFont | Ubuntu-Bold | |
+| guidanceCustomizationReadyScreenHeaderTextColor | UIColor | | Define a cor do título da primeira tela do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString | nil | |
+| guidanceCustomizationReadyScreenSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da ela de inicio de captura do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor subtítulo da ela de inicio de captura do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString | nil | |
+| guidanceCustomizationRetryScreenHeaderFont | UIFont | Ubuntu-Bold | Define a cor do foreground |
+| guidanceCustomizationRetryScreenHeaderTextColor | UIColor | Dark: #FFFFFF<br>Light: #1E1E1E | Define a cor do foreground |
+| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString | nil | |
+| guidanceCustomizationRetryScreenSubtextFont | UIFont | Inter-Regular | Define a cor do foreground |
+| guidanceCustomizationRetryScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #666666 | Define a cor do foreground |
+| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString | nil | Define a cor do foreground |
+| guidanceCustomizationButtonFont | UIFont | Inter-Bold | Define a cor do foreground |
+| guidanceCustomizationButtonTextNormalColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do foreground |
+| guidanceCustomizationButtonBackgroundNormalColor | UIColor | #05D758 | Define a cor do foreground |
+| guidanceCustomizationButtonTextHighlightColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor do foreground |
+| guidanceCustomizationButtonBackgroundHighlightColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do foreground |
+| guidanceCustomizationButtonTextDisabledColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do foreground |
+| guidanceCustomizationButtonBackgroundDisabledColor | UIColor | #b4fdd1 | Define a cor do foreground |
+| guidanceCustomizationButtonBorderColor | UIColor | nil | Define a cor do foreground |
+| guidanceCustomizationButtonBorderWidth | Int32 | nil | Define a espessura da borda do botão |
+| guidanceCustomizationButtonCornerRadius | Int32 | nil | Define a cor do foreground |
+| guidanceCustomizationReadyScreenOvarFillColor | UIColor | #05D758 | Define a cor do foreground |
+| guidanceCustomizationReadyScreenTextBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenImageBorderColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenImageBorderWidth | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenImageCornerRadius | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenOvarStrokeColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationAnimationRelativeScale | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationForegroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationBackgroundColors | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationActivityIndicatorColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationCustomActivityIndicatorImage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationCustomActivityIndicatorAnimation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationShowUploadProgressBar | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationUploadProgressFillColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationUploadProgressTrackColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationResultAnimationBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationResultAnimationForegroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationResultAnimationSuccessBackgroundImage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |    
+| resultScreenCustomizationCustomResultAnimationSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationCustomResultAnimationUnSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationCustomStaticResultAnimationSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationCustomStaticResultAnimationUnSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationMessageFont | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| ovarCustomizationStrokeWidth | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| ovarCustomizationStrokeColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| ovarCustomizationProgressStrokeWidth | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| ovarCustomizationProgressColor1 | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| ovarCustomizationProgressColor2 | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground | 
+| ovarCustomizationProgressRadialOffset | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| frameCustomizationBorderWidth | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| frameCustomizationCornerRadius | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| frameCustomizationBorderColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| frameCustomizationBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| frameCustomizationElevation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| overlayCustomizationBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| overlayCustomizationBrandingImage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| overlayCustomizationShowBrandingImage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| feedbackCustomizationCornerRadius | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |  
+| feedbackCustomizationBackgroundColors | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| feedbackCustomizationTextColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| feedbackCustomizationTextFont | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| feedbackCustomizationEnablePulsatingText | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground | 
+| feedbackCustomizationElevation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| cancelButtonCustomizationCustomImage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| cancelButtonCustomizationLocation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenOverrideSuccessMessage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
