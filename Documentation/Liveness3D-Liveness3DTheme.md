@@ -88,7 +88,6 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 | guidanceCustomizationRetryScreenImageCornerRadius | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 | guidanceCustomizationRetryScreenOvarStrokeColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 
-
 <br><br>
 ## Tela de carregando e resultado do fluxo de prova de Vida
 <br>
