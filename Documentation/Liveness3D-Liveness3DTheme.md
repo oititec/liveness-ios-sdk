@@ -4,9 +4,12 @@ A customização do fluxo de prova de vida, dar-se por meio da utilização da `
 Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`.
 <br>
 <br>
+## Tela inicial e atributos globais do fluxo de prova de Vida
+<br>
 <img width="130" height="250" src="./Images/liveness3d/dark_start_screen_liveness3d.png"> &nbsp; &nbsp;
 <img width="130" height="250" src="./Images/liveness3d/light_start_screen_liveness3d.png">
 <br><br>
+
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
 |:-------------|:---------|:--------------|:--------------|
 | guidanceCustomizationBackgroundColors | [UIColor] | Dark: #000000<br>Light: #FFFFFF | Define o background do fluxo de Prova de vida | 
@@ -24,40 +27,6 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 | guidanceCustomizationButtonBorderColor | UIColor | nil | Define a cor do foreground |
 | guidanceCustomizationButtonBorderWidth | Int32 | nil | Define a espessura da borda do botão |
 | guidanceCustomizationButtonCornerRadius | Int32 | nil | Define a cor do foreground |
-
-<br><br>
-<img width="130" height="250" src="./Images/liveness3d/dark_ready_screen_liveness3d.png"> &nbsp; &nbsp;
-<img width="130" height="250" src="./Images/liveness3d/light_ready_screen_liveness3d.png">
-<br><br>
-| **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
-|:-------------|:---------|:--------------|:--------------|
-| guidanceCustomizationReadyScreenHeaderFont | UIFont | Ubuntu-Bold | |
-| guidanceCustomizationReadyScreenHeaderTextColor | UIColor | | Define a cor do título da primeira tela do fluxo de prova de vida |
-| guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString | nil | |
-| guidanceCustomizationReadyScreenSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da ela de inicio de captura do fluxo de prova de vida |
-| guidanceCustomizationReadyScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor subtítulo da ela de inicio de captura do fluxo de prova de vida |
-| guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString | nil | |
-| guidanceCustomizationReadyScreenOvarFillColor | UIColor | #05D758 | Define a cor do foreground |
-| guidanceCustomizationReadyScreenTextBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-
-<br><br>
-<img width="130" height="250" src="./Images/liveness3d/dark_retry_screen_liveness3d.png"> &nbsp; &nbsp;
-<img width="130" height="250" src="./Images/liveness3d/light_retry_screen_liveness3d.png">
-<br><br>
-
-| **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
-|:-------------|:---------|:--------------|:--------------|
-| guidanceCustomizationRetryScreenHeaderFont | UIFont | Ubuntu-Bold | Define a cor do foreground |
-| guidanceCustomizationRetryScreenHeaderTextColor | UIColor | Dark: #FFFFFF<br>Light: #1E1E1E | Define a cor do foreground |
-| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString | nil | |
-| guidanceCustomizationRetryScreenSubtextFont | UIFont | Inter-Regular | Define a cor do foreground |
-| guidanceCustomizationRetryScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #666666 | Define a cor do foreground |
-| guidanceCustomizationRetryScreenImageBorderColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| guidanceCustomizationRetryScreenImageBorderWidth | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| guidanceCustomizationRetryScreenImageCornerRadius | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| guidanceCustomizationRetryScreenOvarStrokeColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-
 | ovarCustomizationStrokeWidth | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 | ovarCustomizationStrokeColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 | ovarCustomizationProgressStrokeWidth | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
@@ -82,6 +51,47 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 | cancelButtonCustomizationLocation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 
 <br><br>
+## Tela de leitura facial do fluxo de prova de Vida
+<br>
+<img width="130" height="250" src="./Images/liveness3d/dark_ready_screen_liveness3d.png"> &nbsp; &nbsp;
+<img width="130" height="250" src="./Images/liveness3d/light_ready_screen_liveness3d.png">
+<br><br>
+
+| **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
+|:-------------|:---------|:--------------|:--------------|
+| guidanceCustomizationReadyScreenHeaderFont | UIFont | Ubuntu-Bold | |
+| guidanceCustomizationReadyScreenHeaderTextColor | UIColor | | Define a cor do título da primeira tela do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString | nil | |
+| guidanceCustomizationReadyScreenSubtextFont | UIFont | Inter-Regular | Define a fonte do subtítulo da ela de inicio de captura do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor subtítulo da ela de inicio de captura do fluxo de prova de vida |
+| guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString | nil | |
+| guidanceCustomizationReadyScreenOvarFillColor | UIColor | #05D758 | Define a cor do foreground |
+| guidanceCustomizationReadyScreenTextBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+
+<br><br>
+## Tela de tentar novament do fluxo de prova de Vida
+<br>
+<img width="130" height="250" src="./Images/liveness3d/dark_retry_screen_liveness3d.png"> &nbsp; &nbsp;
+<img width="130" height="250" src="./Images/liveness3d/light_retry_screen_liveness3d.png">
+<br><br>
+
+| **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
+|:-------------|:---------|:--------------|:--------------|
+| guidanceCustomizationRetryScreenHeaderFont | UIFont | Ubuntu-Bold | Define a cor do foreground |
+| guidanceCustomizationRetryScreenHeaderTextColor | UIColor | Dark: #FFFFFF<br>Light: #1E1E1E | Define a cor do foreground |
+| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString | nil | |
+| guidanceCustomizationRetryScreenSubtextFont | UIFont | Inter-Regular | Define a cor do foreground |
+| guidanceCustomizationRetryScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #666666 | Define a cor do foreground |
+| guidanceCustomizationRetryScreenImageBorderColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenImageBorderWidth | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenImageCornerRadius | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationRetryScreenOvarStrokeColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+
+
+<br><br>
+## Tela de carregando e resultado do fluxo de prova de Vida
+<br>
 <img width="120" height="250" src="./Images/liveness3d/light_upload_screen_liveness3d.png"> &nbsp; &nbsp;
 <img width="120" height="250" src="./Images/liveness3d/light_result_screen_liveness3d.png"> &nbsp; &nbsp;
 <br><br>
