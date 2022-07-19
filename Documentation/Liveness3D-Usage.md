@@ -8,15 +8,17 @@
 **PASSO 1.** Crie um objeto do tipo `Liveness3DUser`, passando uma appKey (recebida previamente). Deve diferir para cada vez que for apresentar o Liveness.
 
 ```swift
-public struct Liveness3DUser { 
-    let appKey: String 
-    let environment: Environment3D = .HML 
-    let liveness3DTheme: Liveness3DTheme? 
-  }
+public struct Liveness3DUser {
+    var appKey: String
+    let environment: Environment3D
+    let defaultTheme: Liveness3DTheme?
+    let lowLightTheme: Liveness3DTheme?
+    let texts: [String: String]?
+}
 public enum Environment3D { 
     case HML 
     case PRD 
-  }
+}
 ```
 
 Detalhes de como customizar o Liveness3DTheme são encontrados [neste link](Liveness3D-Liveness3DTheme.md).
