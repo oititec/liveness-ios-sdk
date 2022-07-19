@@ -53,8 +53,9 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 <br><br>
 ## Tela de leitura facial do fluxo de prova de Vida
 <br>
+<div>
 <img width="130" height="250" src="./Images/liveness3d/dark_ready_screen_liveness3d.png"> &nbsp; &nbsp;
-<img width="130" height="250" src="./Images/liveness3d/light_ready_screen_liveness3d.png">
+<img width="130" height="250" src="./Images/liveness3d/light_ready_screen_liveness3d.png"></div>
 <br><br>
 
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
@@ -72,8 +73,9 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 <br><br>
 ## Tela de tentar novament do fluxo de prova de Vida
 <br>
+<div>
 <img width="130" height="250" src="./Images/liveness3d/dark_retry_screen_liveness3d.png"> &nbsp; &nbsp;
-<img width="130" height="250" src="./Images/liveness3d/light_retry_screen_liveness3d.png">
+<img width="130" height="250" src="./Images/liveness3d/light_retry_screen_liveness3d.png"></div>
 <br><br>
 
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
@@ -91,8 +93,9 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 <br><br>
 ## Tela de carregando e resultado do fluxo de prova de Vida
 <br>
+<div>
 <img width="120" height="250" src="./Images/liveness3d/light_upload_screen_liveness3d.png"> &nbsp; &nbsp;
-<img width="120" height="250" src="./Images/liveness3d/light_result_screen_liveness3d.png"> &nbsp; &nbsp;
+<img width="120" height="250" src="./Images/liveness3d/light_result_screen_liveness3d.png"></div>
 <br><br>
 
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
