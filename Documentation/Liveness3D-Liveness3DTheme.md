@@ -5,9 +5,9 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 <br>
 <br>
 ## Tela inicial e atributos globais do fluxo de prova de Vida
-<br>
+<br><div>
 <img width="130" height="250" src="./Images/liveness3d/dark_start_screen_liveness3d.png"> &nbsp; &nbsp;
-<img width="130" height="250" src="./Images/liveness3d/light_start_screen_liveness3d.png">
+<img width="130" height="250" src="./Images/liveness3d/light_start_screen_liveness3d.png"></div>
 <br><br>
 
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
