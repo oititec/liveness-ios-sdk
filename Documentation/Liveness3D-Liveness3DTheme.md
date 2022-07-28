@@ -44,7 +44,7 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 | feedbackCustomizationBackgroundColors | [UIColor] | Dark: #FFFFFF<br>Light: #000000 | Define a cor de fundo da caixa de texto de feedback para o usuário |
 | feedbackCustomizationTextColor | UIColor | Dark: #000000<br>Light: #000000 | Define a cor do foreground |
 | feedbackCustomizationTextFont | UIFont |  | Inter-Regular |
-| feedbackCustomizationEnablePulsatingText | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground | 
+| feedbackCustomizationEnablePulsatingText | UIColor | | | 
 | feedbackCustomizationElevation | Int32 | nil | Define o efeito de elevação da caixa de mensagens |
 | cancelButtonCustomizationCustomImage | UIImage | <img src="./Images/liveness3d/ic_back_button_liveness3D.png" width="30" height="30">  | Define a imagem customizada para o botão cancelar / voltar |
 | cancelButtonCustomizationLocation | CancelButtonLocation | topLeft | define a posição do botão cancelar / voltar do fluxo. |
@@ -66,8 +66,8 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 | guidanceCustomizationReadyScreenSubtextTextColor | UIColor | Dark: #FFFFFF<br>Light: #000000 | Define a cor subtítulo da ela de inicio de captura do fluxo de prova de vida |
 | guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString | nil | |
 | guidanceCustomizationReadyScreenOvarFillColor | UIColor | #05D758 | Define a cor do foreground |
-| guidanceCustomizationReadyScreenTextBackgroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| guidanceCustomizationReadyScreenTextBackgroundColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor do background da região do texto|
+| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32 | nil | Define o ângulo de curvatura da borda da caixa ao redor do texto
 
 <br><br>
 ## Tela de tentar novament do fluxo de prova de Vida
@@ -100,22 +100,22 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
 |:-------------|:---------|:--------------|:--------------|
-| resultScreenCustomizationAnimationRelativeScale | Int32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationForegroundColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationBackgroundColors | [UIColor] | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationActivityIndicatorColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationCustomActivityIndicatorImage | UIImage | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | INT32 | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationAnimationRelativeScale | Int32 | nil | Define a escala do objeto de animação do aguarde. |
+| resultScreenCustomizationForegroundColor | UIColor | #05D758 | Define a cor do objeto de animação do aguarde |
+| resultScreenCustomizationBackgroundColors | [UIColor] | Dark: [#000000, #000000]<br>Light: [#FFFFFF, #FFFFFF] | Define a cor do background da tela de aguarde e de resultado |
+| resultScreenCustomizationActivityIndicatorColor | UIColor | #05D758 | Define a cor do objeto de indicação de progresso da validação |
+| resultScreenCustomizationCustomActivityIndicatorImage | UIImage | <img src="./Images/liveness3d/ic_result_screen_success.png" width="24" height="20"> | Define a imagem que aparece com o resultado de sucesso da validação da prova de vida |
+| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32 | nil | Define o intervalo em que a animação do aguarde deve reiniciar |
 | resultScreenCustomizationCustomActivityIndicatorAnimation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationShowUploadProgressBar | UIColor | #05D758 |  |
+| resultScreenCustomizationShowUploadProgressBar | Bool | true | Define se a barra de progresso de validação deve ser apresentada |
 | resultScreenCustomizationUploadProgressFillColor | UIColor | #05D758 | Define a cor da barra de progresso do carregando do fluxo de prova de vida |
-| resultScreenCustomizationUploadProgressTrackColor | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
+| resultScreenCustomizationUploadProgressTrackColor | UIColor | UIColor | |
 | resultScreenCustomizationResultAnimationBackgroundColor | UIColor | Dark: #000000<br>Light: #FFFFFF | Define a cor de fundo da tela de resultado do fluxo de prova de vida |
-| resultScreenCustomizationResultAnimationForegroundColor | UIColor | nil |  |
+| resultScreenCustomizationResultAnimationForegroundColor | UIColor | #05D758 | Define a cor do texto |
 | resultScreenCustomizationResultAnimationSuccessBackgroundImage | UIImage | nil | Define a imagem da tela de resultado da operação para caso de sucesso |
 | resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | UIImage | nil | Define a imagem da tela de resultado da operação para caso de falha |    
-| resultScreenCustomizationCustomResultAnimationSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationCustomResultAnimationUnSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationCustomStaticResultAnimationSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationCustomStaticResultAnimationUnSuccess | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
-| resultScreenCustomizationMessageFont | UIFont | nil | Define a fonte para o o texto da tela de resultado da prova de vida |
+| resultScreenCustomizationCustomResultAnimationSuccess | UIColor | nil | Define a cor do foreground |
+| resultScreenCustomizationCustomResultAnimationUnSuccess | UIColor | nil | Define a cor do foreground |
+| resultScreenCustomizationCustomStaticResultAnimationSuccess | UIColor | nil | Define a cor do foreground |
+| resultScreenCustomizationCustomStaticResultAnimationUnSuccess | UIColor |  |  |
+| resultScreenCustomizationMessageFont | UIFont | Inter-Regular | Define a fonte para o o texto da tela de resultado da prova de vida |
