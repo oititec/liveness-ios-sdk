@@ -19,6 +19,7 @@ public protocol DocCameraView : UIKit.UIView {
   var previewImageView: UIKit.UIImageView! { get }
   var usePictureButton: UIKit.UIButton! { get }
   var takeNewPictureButton: UIKit.UIButton! { get }
+  var rotationContainer: UIKit.UIView! { get }
   var instructionLabel: UIKit.UILabel! { get }
   var closeButton: UIKit.UIButton! { get }
 }
@@ -886,7 +887,7 @@ public protocol Authenticator {
   func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
 public protocol CheckPermissionDelegate : AnyObject {
-  func finishCheckPermissionAndOpenLiveness3D()
+  func finishCheckPermissionAndContinueFlow()
   func canceledCheckPermission()
 }
 @usableFromInline
@@ -986,7 +987,7 @@ extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
 }
 extension FaceCaptcha.Liveness3DViewController : FaceCaptcha.CheckPermissionDelegate {
   @_Concurrency.MainActor(unsafe) public func canceledCheckPermission()
-  @_Concurrency.MainActor(unsafe) public func finishCheckPermissionAndOpenLiveness3D()
+  @_Concurrency.MainActor(unsafe) public func finishCheckPermissionAndContinueFlow()
 }
 public protocol DocHomeView : UIKit.UIView {
   var contentView: UIKit.UIView! { get }
@@ -1298,6 +1299,14 @@ extension FaceCaptcha.Cipher {
     data += Array<UInt8>(repeating: 0, count: blockSize + max - 1 - (msgLength % blockSize))
   }
 }
+extension UIKit.UIColor {
+  public static let backgroundDark: UIKit.UIColor
+  public static let backgroundLight: UIKit.UIColor
+  public static let retryScreenHeaderTextColorLight: UIKit.UIColor
+  public static let retryScreenHeaderTextColorDark: UIKit.UIColor
+  public static let resultScreenHeaderTextColorLight: UIKit.UIColor
+  public static let resultScreenHeaderTextColorDark: UIKit.UIColor
+}
 final public class Poly1305 : FaceCaptcha.Authenticator {
   public enum Error : Swift.Error {
     case authenticateError
@@ -1491,14 +1500,6 @@ final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
   valuePointer.deallocate()
 
   return bytes
-}
-extension UIKit.UIColor {
-  public static let backgroundDark: UIKit.UIColor
-  public static let backgroundLight: UIKit.UIColor
-  public static let retryScreenHeaderTextColorLight: UIKit.UIColor
-  public static let retryScreenHeaderTextColorDark: UIKit.UIColor
-  public static let resultScreenHeaderTextColorLight: UIKit.UIColor
-  public static let resultScreenHeaderTextColorDark: UIKit.UIColor
 }
 public struct OFB : FaceCaptcha.BlockMode {
   public enum Error : Swift.Error {
