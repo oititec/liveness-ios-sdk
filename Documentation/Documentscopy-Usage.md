@@ -12,14 +12,15 @@ import FaceCaptcha
 2. Instancie `DocumentscopyViewController`, passando os seguintes parâmetros:
 - *appKey*: App Key recebida previamente.
 - *baseURL*: URL apontando para o ambiente desejado.
-- *documentscopyDelegate*: delegate que implementará os métodos para tratar o retorno da documentoscopia.
+- *customView*: View customizada seguindo o protocolo ```DocumentscopyCustomView```.
 ```swift
-let controller = DocumentscopyViewController(appKey: appKey, baseURL: baseURL, documentscopyDelegate: self)
+let controller = DocumentscopyViewController(appKey: appKey, baseURL: baseURL, customView: customView)
 ```
 
-3. Apresente o controller instanciado:
+3. Defina o delegate e apresente o controller instanciado:
 ```swift
 controller.modalPresentationStyle = .fullScreen
+controller.delegate = self
 present(controller, animated: true, completion: nil)
 ```
 
@@ -45,11 +46,6 @@ Este protocolo contém três métodos:
 - *handleDocumentscopyError*: método chamado em caso de falha, recebe um enum do tipo `DocumentscopyError`, que indica o erro ocorrido.
 - *handleDocumentscopyCompleted*: método chamado em caso de envio de documento concluído com sucesso.
 - *handleDocumentscopyCanceled*: método chamado se o usuário clicar no botão fechar/cancelar.
-
-**Importante:** em todos os métodos, deve-se fazer o dismiss do controller:
-```swift
-dismiss(animated: true, completion: nil)
-```
 
 `DocumentscopyError` pode assumir os seguintes valores:
 ```swift
