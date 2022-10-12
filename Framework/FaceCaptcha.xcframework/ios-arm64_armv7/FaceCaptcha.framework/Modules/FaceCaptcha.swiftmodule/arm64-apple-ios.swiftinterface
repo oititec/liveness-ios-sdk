@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 effective-4.2 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.6.1 effective-4.2 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
 import CallKit
@@ -767,18 +767,14 @@ public struct FCUserModel {
   @objc deinit
 }
 public struct Liveness3DError {
-  public var errorCode: FaceCaptcha.Liveness3DErrorCode
-  public var errorMessage: Swift.String
+  public let errorCode: FaceCaptcha.Liveness3DErrorCode
+  public let errorMessage: Swift.String
 }
 public enum Liveness3DErrorCode : Swift.String {
-  case INVALID_BUNDLE_PARAMS
   case INVALID_APP_KEY
-  case NO_FRONT_CAMERA
   case NO_CAMERA_PERMISSION
   case NO_INTERNET_CONNECTION
-  case REQUEST_ERROR
-  case INVALID_CUSTOM_FRAGMENT_INSTRUCTION_SCREEN
-  case INVALID_CUSTOM_FRAGMENT_PERMISSION_SCREEN
+  case LIVENESS_NOT_COMPLETED
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1324,7 +1320,6 @@ final public class Poly1305 : FaceCaptcha.Authenticator {
 public protocol Liveness3DDelegate : AnyObject {
   func handleLiveness3DValidation(validateModel: FaceCaptcha.Liveness3DSuccess)
   func handleLiveness3DError(error: FaceCaptcha.Liveness3DError)
-  func handleLiveness3DCanceled()
 }
 extension Swift.Array {
   @inlinable internal init(reserveCapacity: Swift.Int) {
