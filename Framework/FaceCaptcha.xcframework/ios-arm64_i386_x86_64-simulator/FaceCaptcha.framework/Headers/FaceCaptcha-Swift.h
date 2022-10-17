@@ -228,16 +228,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11FaceCaptcha20DocCameraDefaultView")
+@interface DocCameraDefaultView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+@end
+
 @class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
-@interface DocumentscopyViewController : UITabBarController
+@interface DocumentscopyViewController : UIViewController
+@property (nonatomic) UIUserInterfaceStyle overrideUserInterfaceStyle SWIFT_AVAILABILITY(ios,introduced=12.0);
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)loadView;
 - (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
 
 
 
@@ -274,6 +286,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
+
+
+
+
 
 
 
@@ -517,16 +535,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11FaceCaptcha20DocCameraDefaultView")
+@interface DocCameraDefaultView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+@end
+
 @class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
-@interface DocumentscopyViewController : UITabBarController
+@interface DocumentscopyViewController : UIViewController
+@property (nonatomic) UIUserInterfaceStyle overrideUserInterfaceStyle SWIFT_AVAILABILITY(ios,introduced=12.0);
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)loadView;
 - (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
 
 
 
@@ -563,6 +593,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
+
+
+
+
 
 
 
@@ -806,16 +842,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11FaceCaptcha20DocCameraDefaultView")
+@interface DocCameraDefaultView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+@end
+
 @class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
-@interface DocumentscopyViewController : UITabBarController
+@interface DocumentscopyViewController : UIViewController
+@property (nonatomic) UIUserInterfaceStyle overrideUserInterfaceStyle SWIFT_AVAILABILITY(ios,introduced=12.0);
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)loadView;
 - (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
 
 
 
@@ -852,6 +900,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
+
+
+
+
 
 
 
