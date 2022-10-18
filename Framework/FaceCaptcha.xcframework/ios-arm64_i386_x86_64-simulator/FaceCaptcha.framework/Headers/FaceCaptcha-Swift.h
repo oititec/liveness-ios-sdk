@@ -269,8 +269,8 @@ SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 @interface Liveness3DViewController : UIViewController
 - (void)loadView;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidAppear:(BOOL)animated;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
@@ -557,8 +557,8 @@ SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 @interface Liveness3DViewController : UIViewController
 - (void)loadView;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidAppear:(BOOL)animated;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
@@ -845,8 +845,8 @@ SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 @interface Liveness3DViewController : UIViewController
 - (void)loadView;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidAppear:(BOOL)animated;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
