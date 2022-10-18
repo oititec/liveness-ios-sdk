@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		GmccHWkN6lYuFEizOB/ygX9jCow=
+		Y8JEACO6CeXOXnsRbEdkKw6abQ8=
 		</data>
 		<key>BottomSheetController.nib/objects-11.0+.nib</key>
 		<data>
@@ -58,19 +58,19 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		syu8QA2IxqqbrKEXkwlimhhToaA=
+		WKd/5j3xQORqRxBa83ZlHxPKebU=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
 		<data>
-		ZV8F4F0zDeR+IHn3hnaRCWe6T4U=
+		wMq6mPfUHGQwxosfXE8SUwtDMlA=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		wAs4vwOyQZKdO7ahNQOyqZlnthU=
+		ZJOAyeN4GyK4gRoyOoeQxkrmmEk=
 		</data>
 		<key>Headers/FaceCaptcha-Swift.h</key>
 		<data>
-		DMw0kNZsnQbL+EQ9UrbwUJApq4c=
+		iEsZMq5fJbaK+Ga/hUwWmA3LphY=
 		</data>
 		<key>Headers/FaceCaptcha.h</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8x1Zks5vJt04ZeXAlIAhAnbUbS8=
+		vO0tBPNSyiYWefzHUTnEDwsW798=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lSZTAJ8Ac3Qy+f84aJtCS4or/YQ=
+		E43/Dr48t0TT8XVPpEx+xyAjGgg=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Y3el6yt/FcXFm3dEUq/sG9S/l1Q=
+		JVFNrMNj/WW//ZVzB70tCjPUo9A=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -167,11 +167,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GmccHWkN6lYuFEizOB/ygX9jCow=
+			Y8JEACO6CeXOXnsRbEdkKw6abQ8=
 			</data>
 			<key>hash2</key>
 			<data>
-			M0tR/dU51fUQxOwWCs+I5MEzvDTj7syH5B/kKmzAS+M=
+			98EKV68qjfVOMHpoftycEZ0WLwoz2bbYP5G/KsdK7Ec=
 			</data>
 		</dict>
 		<key>BottomSheetController.nib/objects-11.0+.nib</key>
@@ -310,44 +310,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			syu8QA2IxqqbrKEXkwlimhhToaA=
+			WKd/5j3xQORqRxBa83ZlHxPKebU=
 			</data>
 			<key>hash2</key>
 			<data>
-			t0seVZpc2Sii4YHhtCEeC8jdhiXW96bJw3BjkIfrwko=
+			5wD08WmVyXrx4iPq8dOypOvkyPWAiVyEGPW82fnprdM=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZV8F4F0zDeR+IHn3hnaRCWe6T4U=
+			wMq6mPfUHGQwxosfXE8SUwtDMlA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wM1q2A129VT+5T7zUzMtM+YMRXZQYneFqL/TxiIVU28=
+			TdswLqIOULcYkTNbQ1OwEBBssuMN9wWDuJIC2QueseA=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wAs4vwOyQZKdO7ahNQOyqZlnthU=
+			ZJOAyeN4GyK4gRoyOoeQxkrmmEk=
 			</data>
 			<key>hash2</key>
 			<data>
-			f3I8xTysPL7j2oq7AiS6FBaAeMzgtW0ZCqkzk/AyOps=
+			epMYyQiv1oxI94Fu+6vOv/hZHE5mZJ2AreZYhrzj/rw=
 			</data>
 		</dict>
 		<key>Headers/FaceCaptcha-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DMw0kNZsnQbL+EQ9UrbwUJApq4c=
+			iEsZMq5fJbaK+Ga/hUwWmA3LphY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZmuyXWVpfwkB0VJgXMIwURnsQ86yv/g+/3vUrO8qs4g=
+			lKjsJydqSKXO4KACsQtpbnkW7gwctsLj6+yJiLYzEz0=
 			</data>
 		</dict>
 		<key>Headers/FaceCaptcha.h</key>
@@ -453,11 +453,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8x1Zks5vJt04ZeXAlIAhAnbUbS8=
+			vO0tBPNSyiYWefzHUTnEDwsW798=
 			</data>
 			<key>hash2</key>
 			<data>
-			KBmeWXjO/hb4kgRLaJNtpfn98bEDNqCR7/R2bjmdXY0=
+			DhOUrnBlYijCFzDiK2jq176LQcs9egUFOwaRGNMCOko=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -486,11 +486,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lSZTAJ8Ac3Qy+f84aJtCS4or/YQ=
+			E43/Dr48t0TT8XVPpEx+xyAjGgg=
 			</data>
 			<key>hash2</key>
 			<data>
-			X2FrXo3VBY+6dKz9Cw4qYzzc4bTO0kxXKT8YC24nJhc=
+			iM4YjKErOBvaFWsATYV/kzq4iFbQeVGR/e96VRGb+aw=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -519,11 +519,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y3el6yt/FcXFm3dEUq/sG9S/l1Q=
+			JVFNrMNj/WW//ZVzB70tCjPUo9A=
 			</data>
 			<key>hash2</key>
 			<data>
-			ljuqstkJ6aUBvckOGBDurPeKPRaaeEZxC4ynp9e0Jig=
+			Ibya8TR4IxXf7Y1rozp5WIA8pZzTNuDdITLIAtiM8JI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

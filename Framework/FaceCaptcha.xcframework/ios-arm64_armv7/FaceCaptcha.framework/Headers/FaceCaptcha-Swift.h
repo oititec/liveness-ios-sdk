@@ -281,7 +281,6 @@ SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 
 
 
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -563,7 +562,6 @@ SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
-
 
 
 
