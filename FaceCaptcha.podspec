@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                = "FaceCaptcha"
-  spec.version             = "3.1.11"
+  spec.version             = "3.1.13"
   spec.swift_version       = '4.2'
   spec.summary             = "Framework FaceCaptcha para iOS."
   spec.homepage            = "https://www.oititec.com.br/"
@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
 
   spec.vendored_frameworks = "Framework/FaceCaptcha.xcframework"
 
-  spec.dependency "Liveness3D-ios", "~> 4.0.0"
+  spec.dependency "Liveness3D-ios", "~> 5.0.1"
 
 end
