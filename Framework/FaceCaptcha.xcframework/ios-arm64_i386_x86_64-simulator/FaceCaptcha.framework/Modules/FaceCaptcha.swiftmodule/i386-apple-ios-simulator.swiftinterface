@@ -1299,6 +1299,7 @@ extension UIKit.UIColor {
   public static let backgroundDark: UIKit.UIColor
   public static let backgroundLight: UIKit.UIColor
   public static let retryScreenHeaderTextColorLight: UIKit.UIColor
+  public static let retryScreenContentTextColorLight: UIKit.UIColor
   public static let retryScreenHeaderTextColorDark: UIKit.UIColor
   public static let resultScreenHeaderTextColorLight: UIKit.UIColor
   public static let resultScreenHeaderTextColorDark: UIKit.UIColor
@@ -1316,6 +1317,18 @@ final public class Poly1305 : FaceCaptcha.Authenticator {
   public init(key: Swift.Array<Swift.UInt8>)
   final public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   @objc deinit
+}
+public enum ResultAnimationStyle {
+  case blob
+  case spinner(FaceCaptcha.SpinnerAnimationCustomization)
+  case custom(FaceCaptcha.CustomResultAnimationDelegate)
+}
+public protocol CustomResultAnimationDelegate {
+  func createActivityIndicatorView() -> UIKit.UIView?
+  func createSuccessAnimationView() -> UIKit.UIView?
+  func createUnsuccessAnimationView() -> UIKit.UIView?
+}
+public struct SpinnerAnimationCustomization {
 }
 public protocol Liveness3DDelegate : AnyObject {
   func handleLiveness3DValidation(validateModel: FaceCaptcha.Liveness3DSuccess)
@@ -1786,31 +1799,26 @@ public enum Liveness3DThemeType : Swift.Int {
 public struct Liveness3DTheme {
   public init(_ type: FaceCaptcha.Liveness3DThemeType)
   public var guidanceCustomizationBackgroundColors: [UIKit.UIColor] {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationForegroundColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationHeaderFont: UIKit.UIFont?
   public var guidanceCustomizationSubtextFont: UIKit.UIFont?
   public var guidanceCustomizationReadyScreenHeaderFont: UIKit.UIFont?
   public var guidanceCustomizationReadyScreenHeaderTextColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationReadyScreenHeaderAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationReadyScreenSubtextFont: UIKit.UIFont?
   public var guidanceCustomizationReadyScreenSubtextTextColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationReadyScreenSubtextAttributedString: Swift.String?
   public var guidanceCustomizationRetryScreenHeaderFont: UIKit.UIFont?
   public var guidanceCustomizationRetryScreenHeaderTextColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationRetryScreenHeaderAttributedString: Swift.String
   public var guidanceCustomizationRetryScreenSubtextFont: UIKit.UIFont?
@@ -1827,12 +1835,10 @@ public struct Liveness3DTheme {
     get
   }
   public var guidanceCustomizationButtonBackgroundHighlightColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationButtonTextDisabledColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var guidanceCustomizationButtonBackgroundDisabledColor: UIKit.UIColor
   public var guidanceCustomizationButtonBorderColor: UIKit.UIColor?
@@ -1841,21 +1847,16 @@ public struct Liveness3DTheme {
   public var guidanceCustomizationReadyScreenOvarFillColor: UIKit.UIColor?
   public var guidanceCustomizationReadyScreenTextBackgroundColor: UIKit.UIColor?
   public var guidanceCustomizationReadyScreenTextBackgroundCornerRadius: Swift.Int32?
-  public var guidanceCustomizationRetryScreenImageBorderColor: UIKit.UIColor {
-    mutating get
-    set
-  }
+  public var guidanceCustomizationRetryScreenImageBorderColor: UIKit.UIColor
   public var guidanceCustomizationRetryScreenImageBorderWidth: Swift.Int32?
   public var guidanceCustomizationRetryScreenImageCornerRadius: Swift.Int32?
   public var guidanceCustomizationRetryScreenOvarStrokeColor: UIKit.UIColor?
   public var resultScreenCustomizationAnimationRelativeScale: Swift.Float
   public var resultScreenCustomizationForegroundColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var resultScreenCustomizationBackgroundColors: [UIKit.UIColor] {
-    mutating get
-    set
+    get
   }
   public var resultScreenCustomizationActivityIndicatorColor: UIKit.UIColor
   public var resultScreenCustomizationCustomActivityIndicatorImage: UIKit.UIImage?
@@ -1882,37 +1883,32 @@ public struct Liveness3DTheme {
   public var frameCustomizationBorderWidth: Swift.Int32?
   public var frameCustomizationCornerRadius: Swift.Int32
   public var frameCustomizationBorderColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var frameCustomizationBackgroundColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var frameCustomizationElevation: Swift.Int32?
   public var overlayCustomizationBackgroundColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var overlayCustomizationBrandingImage: UIKit.UIImage?
   public var overlayCustomizationShowBrandingImage: Swift.Bool
   public var feedbackCustomizationCornerRadius: Swift.Int32?
   public var feedbackCustomizationBackgroundColors: QuartzCore.CAGradientLayer {
-    mutating get
-    set
+    get
   }
   public var feedbackCustomizationTextColor: UIKit.UIColor {
-    mutating get
-    set
+    get
   }
   public var feedbackCustomizationTextFont: UIKit.UIFont?
   public var feedbackCustomizationEnablePulsatingText: Swift.Bool
   public var feedbackCustomizationElevation: Swift.Int?
   public var cancelButtonCustomizationCustomImage: UIKit.UIImage? {
-    mutating get
-    set
+    get
   }
   public var cancelButtonCustomizationLocation: FaceCaptcha.Liveness3DTheme.CancelButtonLocation
+  public var resultAnimationStyle: FaceCaptcha.ResultAnimationStyle
   public var resultScreenOverrideSuccessMessage: Swift.String
   public enum CancelButtonLocation : Swift.Int {
     case topLeft, topRight, disabled
