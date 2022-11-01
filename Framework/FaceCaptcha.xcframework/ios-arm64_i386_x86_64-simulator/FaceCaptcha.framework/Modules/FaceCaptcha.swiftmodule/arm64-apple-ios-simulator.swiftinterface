@@ -3,6 +3,8 @@
 // swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
 import CallKit
+import Combine
+import CoreGraphics
 import CoreTelephony
 import Darwin
 @_exported import FaceCaptcha
@@ -12,16 +14,22 @@ import Swift
 import SystemConfiguration
 import UIKit
 import _Concurrency
-public protocol DocCameraView : UIKit.UIView {
-  var cameraContainer: FaceCaptcha.CameraPreviewView! { get }
+public protocol DocumentscopyCustomCameraView : UIKit.UIView {
+  var cameraPreview: FaceCaptcha.DocumentscopyCameraPreviewView! { get }
   var captureButton: UIKit.UIButton! { get }
   var previewContainer: UIKit.UIView! { get }
   var previewImageView: UIKit.UIImageView! { get }
   var usePictureButton: UIKit.UIButton! { get }
   var takeNewPictureButton: UIKit.UIButton! { get }
-  var rotationContainer: UIKit.UIView! { get }
   var instructionLabel: UIKit.UILabel! { get }
   var closeButton: UIKit.UIButton! { get }
+  var backButton: UIKit.UIButton! { get }
+  var containerConfirmation: UIKit.UIView! { get }
+  var bottomViewConfirmationTopConstraint: UIKit.NSLayoutConstraint! { get }
+  var viewVerso: FaceCaptcha.DocumentscopyCameraIndicatorView! { get }
+  var viewFrente: FaceCaptcha.DocumentscopyCameraIndicatorView! { get }
+  var cameraMask: UIKit.UIView! { get }
+  var cameraContainerVisualizer: UIKit.UIView! { get }
 }
 extension FaceCaptcha.AES : FaceCaptcha.Cryptors {
   @inlinable final public func makeEncryptor() throws -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable {
@@ -41,6 +49,9 @@ extension FaceCaptcha.AES : FaceCaptcha.Cryptors {
     }
     return try BlockDecryptor(blockSize: blockSize, padding: padding, worker)
   }
+}
+extension UIKit.UIImage {
+  public func cropToRect(rect: CoreGraphics.CGRect) -> UIKit.UIImage
 }
 public protocol FaceCaptchaDelegate : AnyObject {
   func handleFaceCaptchaValidation(validateModel: FaceCaptcha.FCValidCaptchaModel)
@@ -311,6 +322,27 @@ extension Swift.String {
   @inlinable public func authenticate<A>(with authenticator: A) throws -> Swift.String where A : FaceCaptcha.Authenticator {
     try self.bytes.authenticate(with: authenticator).toHexString()
   }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyCameraView : UIKit.UIView, FaceCaptcha.DocumentscopyCustomCameraView {
+  @_Concurrency.MainActor(unsafe) public var cameraPreview: FaceCaptcha.CameraPreviewView!
+  @_Concurrency.MainActor(unsafe) public var captureButton: UIKit.UIButton!
+  @_Concurrency.MainActor(unsafe) public var captureButtonCorner: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var previewContainer: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) public var previewImageView: UIKit.UIImageView!
+  @_Concurrency.MainActor(unsafe) public var usePictureButton: UIKit.UIButton!
+  @_Concurrency.MainActor(unsafe) public var takeNewPictureButton: UIKit.UIButton!
+  @_Concurrency.MainActor(unsafe) public var instructionLabel: UIKit.UILabel!
+  @_Concurrency.MainActor(unsafe) public var closeButton: UIKit.UIButton!
+  @_Concurrency.MainActor(unsafe) public var backButton: UIKit.UIButton!
+  @_Concurrency.MainActor(unsafe) public var containerConfirmation: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) public var viewVerso: FaceCaptcha.DocumentscopyCameraIndicatorView!
+  @_Concurrency.MainActor(unsafe) public var viewFrente: FaceCaptcha.DocumentscopyCameraIndicatorView!
+  @_Concurrency.MainActor(unsafe) public var cameraMask: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) public var cameraContainerVisualizer: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) public var bottomViewConfirmationTopConstraint: UIKit.NSLayoutConstraint!
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
 }
 public protocol CustomInstructionView : UIKit.UIView {
   var backButton: UIKit.UIButton! { get }
@@ -646,6 +678,13 @@ extension FaceCaptcha.SHA3 : FaceCaptcha.Updatable {
     return Array(result[0..<self.digestLength])
   }
 }
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func showAlert(title: Swift.String?, message: Swift.String)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.DocumentscopyDelegate? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil)
+  @objc deinit
+}
 final public class Scrypt {
   public init(password: Swift.Array<Swift.UInt8>, salt: Swift.Array<Swift.UInt8>, dkLen: Swift.Int, N: Swift.Int, r: Swift.Int, p: Swift.Int) throws
   final public func calculate() throws -> [Swift.UInt8]
@@ -765,6 +804,11 @@ public struct FCUserModel {
   public static let K_SERVER: Swift.String
   public static let K_API_KEY: Swift.String
   @objc deinit
+}
+public protocol DocumentscopyDelegate : AnyObject {
+  func handleDocumentscopyCompleted()
+  func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
+  func handleDocumentscopyCanceled()
 }
 public struct Liveness3DError {
   public let errorCode: FaceCaptcha.Liveness3DErrorCode
@@ -984,13 +1028,6 @@ extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
 extension FaceCaptcha.Liveness3DViewController : FaceCaptcha.CheckPermissionDelegate {
   @_Concurrency.MainActor(unsafe) public func canceledCheckPermission()
   @_Concurrency.MainActor(unsafe) public func finishCheckPermissionAndContinueFlow()
-}
-public protocol DocHomeView : UIKit.UIView {
-  var contentView: UIKit.UIView! { get }
-  var singlePictureView: UIKit.UIControl! { get }
-  var dualPictureView: UIKit.UIControl! { get }
-  var activityIndicatorView: UIKit.UIView! { get }
-  var closeButton: UIKit.UIButton! { get }
 }
 extension Swift.FixedWidthInteger {
   @inlinable internal func bytes(totalBytes: Swift.Int = MemoryLayout<Self>.size) -> Swift.Array<Swift.UInt8> {
@@ -1295,15 +1332,6 @@ extension FaceCaptcha.Cipher {
     data += Array<UInt8>(repeating: 0, count: blockSize + max - 1 - (msgLength % blockSize))
   }
 }
-extension UIKit.UIColor {
-  public static let backgroundDark: UIKit.UIColor
-  public static let backgroundLight: UIKit.UIColor
-  public static let retryScreenHeaderTextColorLight: UIKit.UIColor
-  public static let retryScreenContentTextColorLight: UIKit.UIColor
-  public static let retryScreenHeaderTextColorDark: UIKit.UIColor
-  public static let resultScreenHeaderTextColorLight: UIKit.UIColor
-  public static let resultScreenHeaderTextColorDark: UIKit.UIColor
-}
 final public class Poly1305 : FaceCaptcha.Authenticator {
   public enum Error : Swift.Error {
     case authenticateError
@@ -1317,18 +1345,6 @@ final public class Poly1305 : FaceCaptcha.Authenticator {
   public init(key: Swift.Array<Swift.UInt8>)
   final public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   @objc deinit
-}
-public enum ResultAnimationStyle {
-  case blob
-  case spinner(FaceCaptcha.SpinnerAnimationCustomization)
-  case custom(FaceCaptcha.CustomResultAnimationDelegate)
-}
-public protocol CustomResultAnimationDelegate {
-  func createActivityIndicatorView() -> UIKit.UIView?
-  func createSuccessAnimationView() -> UIKit.UIView?
-  func createUnsuccessAnimationView() -> UIKit.UIView?
-}
-public struct SpinnerAnimationCustomization {
 }
 public protocol Liveness3DDelegate : AnyObject {
   func handleLiveness3DValidation(validateModel: FaceCaptcha.Liveness3DSuccess)
@@ -1482,6 +1498,7 @@ final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
   @objc @usableFromInline
   deinit
 }
+public typealias DocumentscopyCameraPreviewView = FaceCaptcha.CameraPreviewView
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CameraPreviewView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
     @_Concurrency.MainActor(unsafe) @objc get
@@ -1509,6 +1526,15 @@ final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
 
   return bytes
 }
+extension UIKit.UIColor {
+  public static let backgroundDark: UIKit.UIColor
+  public static let backgroundLight: UIKit.UIColor
+  public static let retryScreenHeaderTextColorLight: UIKit.UIColor
+  public static let retryScreenContentTextColorLight: UIKit.UIColor
+  public static let retryScreenHeaderTextColorDark: UIKit.UIColor
+  public static let resultScreenHeaderTextColorLight: UIKit.UIColor
+  public static let resultScreenHeaderTextColorDark: UIKit.UIColor
+}
 public struct OFB : FaceCaptcha.BlockMode {
   public enum Error : Swift.Error {
     case invalidInitializationVector
@@ -1522,15 +1548,6 @@ public struct OFB : FaceCaptcha.BlockMode {
   public let customBlockSize: Swift.Int?
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
-}
-public protocol DocConfirmationView : UIKit.UIView {
-  var pictureOneImageView: UIKit.UIImageView! { get }
-  var changePictureOneButton: UIKit.UIButton! { get }
-  var pictureTwoContainer: UIKit.UIView! { get }
-  var pictureTwoImageView: UIKit.UIImageView! { get }
-  var changePictureTwoButton: UIKit.UIButton! { get }
-  var sendButton: UIKit.UIButton! { get }
-  var activityIndicatorView: UIKit.UIView! { get }
 }
 extension FaceCaptcha.HMAC {
   convenience public init(key: Swift.String, variant: FaceCaptcha.HMAC.Variant = .md5) throws
@@ -1548,6 +1565,9 @@ extension FaceCaptcha.Bit {
   @inlinable internal func inverted() -> FaceCaptcha.Bit {
     self == .zero ? .one : .zero
   }
+}
+public protocol DocumentscopyCameraIndicatorView : UIKit.UIView {
+  func setFocus(to value: Swift.Bool, animated: Swift.Bool)
 }
 public protocol AEAD {
   static var kLen: Swift.Int { get }
@@ -1586,35 +1606,6 @@ extension Swift.UInt32 {
 
     self = val0 | val1 | val2 | val3
   }
-}
-public protocol DocumentscopyDelegate : AnyObject {
-  func handleDocumentscopyCompleted()
-  func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
-  func handleDocumentscopyCanceled()
-}
-public struct DocumentscopyCustomViewParam {
-  public let homeView: FaceCaptcha.DocHomeView?
-  public let cameraView: FaceCaptcha.DocCameraView?
-  public let confirmationView: FaceCaptcha.DocConfirmationView?
-  public let camInstructionSingle: Swift.String?
-  public let camInstructionFront: Swift.String?
-  public let camInstructionBack: Swift.String?
-  public init(homeView: FaceCaptcha.DocHomeView?, cameraView: FaceCaptcha.DocCameraView?, confirmationView: FaceCaptcha.DocConfirmationView?, camInstructionSingle: Swift.String?, camInstructionFront: Swift.String?, camInstructionBack: Swift.String?)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : UIKit.UITabBarController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, documentscopyDelegate: FaceCaptcha.DocumentscopyDelegate, customViewParam: FaceCaptcha.DocumentscopyCustomViewParam? = nil)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-extension FaceCaptcha.DocumentscopyViewController : FaceCaptcha.DocumentscopyDelegate {
-  @_Concurrency.MainActor(unsafe) public func handleDocumentscopyError(error: FaceCaptcha.DocumentscopyError)
-  @_Concurrency.MainActor(unsafe) public func handleDocumentscopyCompleted()
-  @_Concurrency.MainActor(unsafe) public func handleDocumentscopyCanceled()
 }
 final public class OCB : FaceCaptcha.BlockMode {
   public enum Mode {
@@ -1757,6 +1748,18 @@ extension FaceCaptcha.Updatable {
   @inlinable public mutating func finish(output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
     try self.finish(withBytes: [], output: output)
   }
+}
+public enum ResultAnimationStyle {
+  case blob
+  case spinner(FaceCaptcha.SpinnerAnimationCustomization)
+  case custom(FaceCaptcha.CustomResultAnimationDelegate)
+}
+public protocol CustomResultAnimationDelegate {
+  func createActivityIndicatorView() -> UIKit.UIView?
+  func createSuccessAnimationView() -> UIKit.UIView?
+  func createUnsuccessAnimationView() -> UIKit.UIView?
+}
+public struct SpinnerAnimationCustomization {
 }
 extension FaceCaptcha.ChaCha20 {
   convenience public init(key: Swift.String, iv: Swift.String) throws
@@ -2010,6 +2013,11 @@ final internal class StreamEncryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
   @objc @usableFromInline
   deinit
 }
+public protocol DocumentscopyCustomView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var viewCNH: UIKit.UIView! { get }
+  var viewRG: UIKit.UIView! { get }
+}
 public class BlockDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
   @usableFromInline
   final internal let blockSize: Swift.Int
@@ -2074,6 +2082,9 @@ public class BlockDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
   }
   public func seek(to position: Swift.Int) throws
   @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func createImageFromView() -> UIKit.UIImage
 }
 extension FaceCaptcha.SHA2.Variant : Swift.Equatable {}
 extension FaceCaptcha.SHA2.Variant : Swift.Hashable {}
