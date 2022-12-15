@@ -2,14 +2,13 @@
 
 Neste repositório você vai encontrar as documentações para **iOS** sobre o **Liveness FaceCaptcha**, **Liveness 3D** e **Documentoscopia**.
 
-
 ## Sobre Este Repositório
 
 O Liveness, ou Prova de Vida, pode ser executado através de **SDK único** que reúne os tipos: **Liveness FaceCaptcha** e **Liveness 3D**. 
 
 Os tipos de Liveness serão apresentados na demonstração do serviço e a escolha de um deles deve ser efetuada mediante contratação. Um diagnóstico será efetuado pelo time comercial, responsável por ofertar a melhor experiência para o cliente, considerando seu o modelo de negócio e o comportamento de seus usuários.
 
-Para cada tipo de Liveness, são apresentados propriedades técnicas específicas. Assim, a pessoa desenvolvedora deve executar os comandos pertencentes ao tipo do serviço contratado.
+Para cada tipo de Liveness, são apresentados propriedades técnicas específicas. Assim, a pessoa desenvolvedora deve executar os comandos pertencentes ao tipo de serviço contratado.
 
 Acompanhe abaixo a instalação, uso, guias de migração e outros documentos. Esses processos integram o projeto FaceCapctha.
 
@@ -49,7 +48,7 @@ No `Info.plist` do projeto, adicione a descrição de uso de câmera (`Privacy -
 
 ###  Liveness FaceCaptcha
 
-As instruções de uso, integração e implementação do **Liveness FaceCaptcha** podem ser acessadas nos links abaixo:
+As instruções de uso, descrição, integração e implementação do **Liveness FaceCaptcha** podem ser acessadas nos links abaixo:
 
   - [Descrição e Resultados](Documentation/Liveness2D-Description.md);
   - [Guia de uso e integração](Documentation/FaceCaptcha-Usage.md);
@@ -72,7 +71,6 @@ As instruções de uso e integração da **Documentoscopia** podem ser acessadas
   - [Descrição e Resultados](Documentation/Documentoscopy-Description.md);
   - [Guia de uso e integração](Documentation/Documentscopy-Usage.md);
   - [Guia de customização de view customizada](Documentation/Documentscopy-CustomView.md).
-
 
 
 ## Outros Documentos
