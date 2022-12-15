@@ -1,17 +1,17 @@
 #  Certiface para iOS
 
-Neste repositório encontre as documentações para **iOS** sobre o **Liveness FaceCaptcha**, **Liveness 3D** e **Documentoscopia**.
+Neste repositório você vai encontrar as documentações para **iOS** sobre o **Liveness FaceCaptcha**, **Liveness 3D** e **Documentoscopia**.
 
 
-## Sobre
+## Sobre este Repositório
 
-O Liveness, ou Prova de Vida, pode ser executado através de  SDK único que reúne os tipos: *Liveness FaceCaptcha* e *Liveness 3D*. 
+O Liveness, ou Prova de Vida, pode ser executado através de **SDK único** que reúne os tipos: **Liveness FaceCaptcha** e **Liveness 3D**. 
 
 Os tipos de Liveness serão apresentados na demonstração do serviço e a escolha de um deles deve ser efetuada mediante contratação. Um diagnóstico será efetuado pelo time comercial, responsável por ofertar a melhor experiência para o cliente, considerando seu o modelo de negócio e o comportamento de seus usuários.
 
-Para cada tipo de Liveness, são apresentados propriedades técnicas específicas. Assim, a pessoa desenvolvedora deve executar os comandos pertencentes ao tipo do serviço contratado.
+Para cada tipo de Liveness, são apresentados propriedades técnicas específicas. Assim, a pessoa desenvolvedora deve executar os comandos pertencentes ao tipo de serviço contratado.
 
-Abaixo, estão descritos os processos de: instalação, uso, guias de migração e outros documentos. Esses processos integram o projeto FaceCapctha.
+Acompanhe abaixo a instalação, uso, guias de migração e outros documentos. Esses processos integram o projeto FaceCapctha.
 
 ##  Instalação
 
@@ -49,8 +49,9 @@ No `Info.plist` do projeto, adicione a descrição de uso de câmera (`Privacy -
 
 ###  Liveness FaceCaptcha
 
-As instruções de uso, integração e implementação do **Liveness FaceCaptcha** podem ser acessadas nos links abaixo:
+As instruções de uso, descrição, integração e implementação do **Liveness FaceCaptcha** podem ser acessadas nos links abaixo:
 
+  - [Liveness2D - Descrição](Documentation/Liveness2d-description.md);
   - [Guia de uso e integração](Documentation/FaceCaptcha-Usage.md);
   - [Guia de implementação de view customizada](Documentation/FaceCaptcha-CustomView.md).
 
@@ -58,6 +59,7 @@ As instruções de uso, integração e implementação do **Liveness FaceCaptcha
 
 As instruções de uso, integração, implementação e customização do **Liveness 3D** podem ser acessadas nos links abaixo: 
 
+  - [Liveness3D - Descrição](Documentation/Liveness3d-description.md);
   - [Guia de uso e integração](Documentation/Liveness3D-Usage.md);
   - [Guia de implementação de view customizada](Documentation/Liveness3D-CustomView.md);
   - [Guia de customização do Liveness3DTheme](Documentation/Liveness3D-Liveness3DTheme.md).
@@ -67,6 +69,7 @@ As instruções de uso, integração, implementação e customização do **Live
 
 As instruções de uso e integração da **Documentoscopia** podem ser acessadas nos links abaixo:
 
+  - [Documentoscopia - Descrição](Documentation/Documentoscopia-description.md);
   - [Guia de uso e integração](Documentation/Documentscopy-Usage.md);
   - [Guia de customização de view customizada](Documentation/Documentscopy-CustomView.md).
 
