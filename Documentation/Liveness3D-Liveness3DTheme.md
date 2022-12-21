@@ -125,9 +125,10 @@ theme.resultAnimationStyle = .blob
 
 ### Resultado
 
-<img src="Images/blob_customization_1.png" width="432" height="396" />
-<img src="Images/blob_customization_2.png" width="432" height="396" />
-
+<div>
+    <img src="Images/blob_customization_1.png" width="432" height="396" />
+    <img src="Images/blob_customization_2.png" width="432" height="396" />
+</div>
 ***
 <br>
 
@@ -161,9 +162,10 @@ theme.resultAnimationStyle = .spinner(customization)
 
 ### Resultado
 
-<img src="Images/spinner_customization_1.png" width="432" height="396" />
-<img src="Images/spinner_customization_2.png" width="432" height="396" />
-
+<div>
+    <img src="Images/spinner_customization_1.png" width="432" height="396" />
+    <img src="Images/spinner_customization_2.png" width="432" height="396" />
+</div>
 ***
 
 ### **Custom Animation**
@@ -206,5 +208,7 @@ theme.resultAnimationStyle = .custom(CustomResultAnimation())
 
 ### Resultado
 
-<img src="Images/custom_customization_1.png" width="432" height="396" />
-<img src="Images/custom_customization_2.png" width="432" height="396" />
+<div>
+    <img src="Images/custom_customization_1.png" width="432" height="396" />
+    <img src="Images/custom_customization_2.png" width="432" height="396" />
+</div>
