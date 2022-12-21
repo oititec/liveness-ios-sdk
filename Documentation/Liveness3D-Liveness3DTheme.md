@@ -129,6 +129,7 @@ theme.resultAnimationStyle = .blob
     <img src="Images/blob_customization_1.png" width="432" height="396" />
     <img src="Images/blob_customization_2.png" width="432" height="396" />
 </div>
+
 ***
 <br>
 
@@ -166,6 +167,7 @@ theme.resultAnimationStyle = .spinner(customization)
     <img src="Images/spinner_customization_1.png" width="432" height="396" />
     <img src="Images/spinner_customization_2.png" width="432" height="396" />
 </div>
+
 ***
 
 ### **Custom Animation**
