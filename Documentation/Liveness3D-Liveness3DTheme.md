@@ -144,8 +144,8 @@ theme.resultAnimationStyle = .blob
 | **Indice** | **Propriedade** | **Tipo** | **Descrição** |
 |:-----------|:----------------|:---------|:--------------|
 | (**1**) | `spinnerColor` | UIColor | Altera a cor do *spinner* |
-| (**3**) | `indicatorForegroundColor` | UIColor | Altera a cor do *checkmark* ao final<br>da animação de carregamento. |
-| (**4**) | `indicatorBackgroundColor` | UIColor | Altera a cor do circulo do *checkmark*<br>ao final da animação de carregamento. |
+| (**2**) | `indicatorForegroundColor` | UIColor | Altera a cor do *checkmark* ao final<br>da animação de carregamento. |
+| (**3**) | `indicatorBackgroundColor` | UIColor | Altera a cor do circulo do *checkmark*<br>ao final da animação de carregamento. |
 
 <br>
 
