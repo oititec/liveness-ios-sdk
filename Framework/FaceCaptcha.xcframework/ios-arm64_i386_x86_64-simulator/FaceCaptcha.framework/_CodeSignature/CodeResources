@@ -98,11 +98,11 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FAHNtPgYb9Ft9zUz/CY8mROpZmA=
+		YRmPGSMLgZmZYXpgwgrn3IoogKg=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4rSdoWB95F0XuKS9WepjOYWrlYs=
+		b3yjloTgN6MhxrFnPUDjRTYEqYA=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		XrBhlLnpmmiTvXR0/cTBChUDDVI=
+		wBeZtTIzvTpE8iGNzvuD9KCX24I=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DGr7OhDQMDpxJ5DWZ4UvSy1F99c=
+		b5QqEvwiibsmX0qitD8IHQSFgfI=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -122,11 +122,11 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		DynmXhzEJjJJFoGcJPNcmauvCRo=
+		GpbUiO3vHRI9Z6xc0x7pnRzsCWw=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		J6srlPjyfUi7uTtKwG3cwXlHMjI=
+		+xWe4AuBOFkOJFv06ySsWWjUVQs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -409,22 +409,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FAHNtPgYb9Ft9zUz/CY8mROpZmA=
+			YRmPGSMLgZmZYXpgwgrn3IoogKg=
 			</data>
 			<key>hash2</key>
 			<data>
-			nEwMoNRyLlfxLZUgB4f9LnMntJ8Fru+sHBq0ByvRSSc=
+			ggdGf7Lond291eAzfhHpQSAHh0zGND3wXn2+iy01Ims=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4rSdoWB95F0XuKS9WepjOYWrlYs=
+			b3yjloTgN6MhxrFnPUDjRTYEqYA=
 			</data>
 			<key>hash2</key>
 			<data>
-			HHI2Bldx3mrVAX82UeT82HNsL+MmLhHbPDfYe4Pt8OQ=
+			zUg+t2+0VvjbnAKWjqHlW41Igy8s8eWKNyxZSGZd40Y=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -442,22 +442,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XrBhlLnpmmiTvXR0/cTBChUDDVI=
+			wBeZtTIzvTpE8iGNzvuD9KCX24I=
 			</data>
 			<key>hash2</key>
 			<data>
-			0TdRYZ+/KMe9JW7t2HQZpH+VB8w6GDClHODNNx0sq48=
+			XyKajiNDIrZ+G7bu0Zq5JP5K5VZw84lNC15ZssEckAk=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DGr7OhDQMDpxJ5DWZ4UvSy1F99c=
+			b5QqEvwiibsmX0qitD8IHQSFgfI=
 			</data>
 			<key>hash2</key>
 			<data>
-			6LLYrHC7H3o6v9FNqQrpSs2PWcyPUQ4QqBwYsungOJ0=
+			cpT3EWBA77wd3aKiV3QjT5fEsDma8BKUSbF0HtCwA1c=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -475,22 +475,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DynmXhzEJjJJFoGcJPNcmauvCRo=
+			GpbUiO3vHRI9Z6xc0x7pnRzsCWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			vtesEiIYARwNHWH1GNhtzKlRObC6h+DySkcYi8CGjiU=
+			BCiu53l1Y9S6XfccffzJcsjO3u1E4NntJe2lm/yUXF0=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			J6srlPjyfUi7uTtKwG3cwXlHMjI=
+			+xWe4AuBOFkOJFv06ySsWWjUVQs=
 			</data>
 			<key>hash2</key>
 			<data>
-			3E5hJ+nVsmx5d/+XxqSbVNcXIrRa8qU2Yp6WvYEtqn8=
+			acE3iEUKkjVB3zb3rj734hWYW0DCkGzboy8m9Y0R6cw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
