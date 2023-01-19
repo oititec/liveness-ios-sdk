@@ -821,7 +821,7 @@ public enum Liveness3DErrorCode : Swift.String {
   case INVALID_APP_KEY
   case NO_CAMERA_PERMISSION
   case NO_INTERNET_CONNECTION
-  case LIVENESS_NOT_COMPLETED
+  case LIVENESS_NOT_INITIALIZED
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1881,7 +1881,7 @@ public struct Liveness3DTheme {
   public var cancelButtonCustomizationCustomImage: UIKit.UIImage?
   public var cancelButtonCustomizationLocation: FaceCaptcha.Liveness3DTheme.CancelButtonLocation
   public var resultAnimationStyle: FaceCaptcha.ResultAnimationStyle
-  public var resultScreenOverrideSuccessMessage: Swift.String
+  public var resultScreenSuccessMessage: Swift.String
   public enum CancelButtonLocation : Swift.Int {
     case topLeft, topRight, disabled
     public init?(rawValue: Swift.Int)
