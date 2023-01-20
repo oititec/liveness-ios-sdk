@@ -46,29 +46,21 @@ class ViewController: UIViewController {
 
     /// Trata de clique no botão para abrir Documentoscopia usando view padrão
     @IBAction func documentoscopiaPressed(_ sender: Any) {
-        let controller = DocumentscopyViewController(appKey: appKey,
-                                                     baseURL: baseURL,
-                                                     documentscopyDelegate: self)
+        let controller = DocumentscopyViewController(
+            appKey: appKey, baseURL: baseURL,
+            delegate: self
+        )
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
 
     /// Trata de clique no botão para abrir Documentoscopia usando view customizada
     @IBAction private func customDocumentoscopiaPressed() {
-
-        let customViewParam = DocumentscopyCustomViewParam(
-            homeView: DocHomeCustomView(frame: view.bounds),
-            cameraView: DocCameraCustomView(frame: view.bounds),
-            confirmationView: DocConfirmationCustomView(frame: view.bounds),
-            camInstructionSingle: "Centralize o documento",
-            camInstructionFront: "Centralize a frente",
-            camInstructionBack: "Centralize o verso"
+        let controller = DocumentscopyViewController(
+            appKey: appKey,
+            baseURL: baseURL,
+            delegate: self
         )
-
-        let controller = DocumentscopyViewController(appKey: appKey,
-                                                     baseURL: baseURL,
-                                                     documentscopyDelegate: self,
-                                                     customViewParam: customViewParam)
 
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)

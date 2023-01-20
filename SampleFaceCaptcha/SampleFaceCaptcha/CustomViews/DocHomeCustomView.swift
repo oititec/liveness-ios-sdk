@@ -8,7 +8,7 @@
 import UIKit
 import FaceCaptcha
 
-class DocHomeCustomView: UIView, DocHomeView {
+class DocHomeCustomView: UIView {
 
     // MARK: - Outlets
 
