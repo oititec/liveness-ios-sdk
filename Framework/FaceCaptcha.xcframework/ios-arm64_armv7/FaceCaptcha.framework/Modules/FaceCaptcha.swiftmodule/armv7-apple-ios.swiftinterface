@@ -821,6 +821,7 @@ public enum Liveness3DErrorCode : Swift.String {
   case INVALID_APP_KEY
   case NO_CAMERA_PERMISSION
   case NO_INTERNET_CONNECTION
+  case LIVENESS_NOT_COMPLETED
   case LIVENESS_NOT_INITIALIZED
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -1816,10 +1817,10 @@ public struct Liveness3DTheme {
   public var guidanceCustomizationReadyScreenSubtextAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationRetryScreenHeaderFont: UIKit.UIFont?
   public var guidanceCustomizationRetryScreenHeaderTextColor: UIKit.UIColor?
-  public var guidanceCustomizationRetryScreenHeaderAttributedString: Swift.String
+  public var guidanceCustomizationRetryScreenHeaderAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationRetryScreenSubtextFont: UIKit.UIFont?
   public var guidanceCustomizationRetryScreenSubtextTextColor: UIKit.UIColor?
-  public var guidanceCustomizationRetryScreenSubtextAttributedString: Swift.String?
+  public var guidanceCustomizationRetryScreenSubtextAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationButtonFont: UIKit.UIFont?
   public var guidanceCustomizationButtonTextNormalColor: UIKit.UIColor?
   public var guidanceCustomizationButtonBackgroundNormalColor: UIKit.UIColor
@@ -1871,9 +1872,7 @@ public struct Liveness3DTheme {
   public var overlayCustomizationBrandingImage: UIKit.UIImage?
   public var overlayCustomizationShowBrandingImage: Swift.Bool
   public var feedbackCustomizationCornerRadius: Swift.Int32?
-  public var feedbackCustomizationBackgroundColors: QuartzCore.CAGradientLayer {
-    get
-  }
+  public var feedbackCustomizationBackgroundColor: QuartzCore.CAGradientLayer?
   public var feedbackCustomizationTextColor: UIKit.UIColor?
   public var feedbackCustomizationTextFont: UIKit.UIFont?
   public var feedbackCustomizationEnablePulsatingText: Swift.Bool
