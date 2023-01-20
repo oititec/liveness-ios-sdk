@@ -81,6 +81,47 @@ Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`
 | cancelButtonCustomizationLocation | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 | resultScreenOverrideSuccessMessage | UIColor | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground |
 
+## Customização dos textos
+Os textos do fluxo do Liveness3D podem ser alterados utilizando o objeto do tipo ``Liveness3DTheme``, onde as propriedades responsáveis por cada um desses textos são de dois tipos possíveis: `NSAttributedString` ou `String`.
+
+```swift
+var theme = Liveness3DTheme(.light)
+
+theme.guidanceCustomizationReadyScreenHeaderAttributedString = NSAttributedString(string: "Titulo")
+theme.resultScreenSuccessMessage = "Mensagem de sucesso!"
+```
+### Ready Screen
+
+| **Indice** | **Propriedade** | **Tipo** |
+|:-----------|:----------------|:---------|
+| (**1**) | guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString? |
+| (**2**) | guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString? |
+
+<img src="Images/liveness3d_ready.png" width="432" height="396" />
+
+<br/>
+
+### Retry Screen
+
+| **Indice** | **Propriedade** | **Tipo** |
+|:-----------|:----------------|:---------|
+| (**1**) | guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString? |
+| (**2**) | guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? |
+
+<img src="Images/liveness3d_retry.png" width="432" height="396" />
+
+<br/>
+
+### Result Screen
+
+| **Indice** | **Propriedade** | **Tipo** |
+|:-----------|:----------------|:---------|
+| (**1**) | resultScreenSuccessMessage | String |
+
+<img src="Images/liveness3d_result.png" width="432" height="396" />
+
+---
+
 ## Animação
 
 A animação da tela de resultado pode assumir três valores: `blob`, `spinner()` ou `custom()`, esses valores são atribuídos a propriedade `resultAnimationStyle` do `Liveness3DTheme`. Caso nenhum valor seja atribuído a essa propriedade o valor `spinner()` será aplicado por padrão.
