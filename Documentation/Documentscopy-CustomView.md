@@ -5,7 +5,7 @@ Você pode utilizar o SDK padrão e por meio dele, também customizar a visualiz
 
 ## Entenda como funciona
 
-O **componente** de Documentoscopia **é dividido em treze telas**:
+O **componente** de Documentoscopia **é dividido em doze telas**:
 
 ### 1. Tela inicial
 O usuário define qual o tipo de documento que deseja enviar:
@@ -65,98 +65,103 @@ Caso a câmera do dispositivo esteja desativada, o usuário deve receber as inst
 
 <div><img src="Images/12_permissao_de_camera_desativada.png" width="214" height="488"></div>
 
-### 13. Notificação para dispositivo sem internet
-Caso seja identificado que o dispositivo não tem acesso a internet, o usuário deve receber a seguinte notificação:
-
-<div><img src="Images/13_sem_acesso_a_internet.png" width="214" height="488"></div>
-
-A customização das telas é semelhante ao **Liveness**. Ela é feita por meio da implementação de UIViews.
-
-A diferença é que, neste caso, deve-se implementar duas views, sendo um para cada tela citada anteriormente.
-
-Para realizar essa implementação é necessário seguir alguns protocolos, para o funcionamento correto do processo de **documentoscopia**. Veja a seguir:
-
 ## Instalação e configuração das telas customizáveis
+
+A customização das telas é semelhante ao **Liveness**. Ela é feita por meio da criação de objetos do tipo **UIViews**(via código ou via Interface Builder), que implementem os protocolos definidos para cada tela.
+
+Além das subviews especificadas, a view customizada pode conter outros elementos, apenas tomando cuidado para que os mesmos não interfiram nas subviews funcionais.
+
+Para realizar essa implementação é necessário seguir alguns protocolos, para o funcionamento correto do processo de **documentoscopia**. 
+Veja a seguir:
+
+### Implementação
+
+Todas as *views* customizadas são passadas via construtor da classe ``DocumentscopyViewController``. Essas *views* são opcionais, logo não há necessidade de especificar todas, caso não seja necessário.
+
+```swift
+let controller = DocumentscopyViewController(
+    appKey: appKey, baseURL: baseURL, delegate: self,
+    customView: CustomView(),
+    customCameraView: CustomCameraView()
+)
+```
 
 ### 1. Tela inicial
 
-Para customizar a tela inicial, é necessária a criação de uma `UIView` (via código ou via Interface Builder) que implemente o protocolo `DocumentscopyCustomView`, que especifica os componentes que a view em questão precisa conter:
+### `customView`
+Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomView`` que contém os seguintes atributos:
 
 ```swift
-/// Protocolo que deve ser implementado pela view customizada da tela inicial de Documentoscopia
 public protocol DocumentscopyCustomView: UIView {
-    /// Botão para função voltar da navegação
     var backButton: UIButton! { get }
-
-    /// View que terá a ação de iniciar o fluxo de captura do documento CNH
     var viewCNH: UIView! { get }
-
-    /// View que terá a ação de iniciar o fluxo de captura do documento RG
     var viewRG: UIView! { get }
 }
 ```
 
-Na figura abaixo é possível visualizar o que cada uma das subviews representa na tela:
+| **Indice** | **Elemento** | **Descrição** |
+|:-----------|:-------------|:--------------|
+| (**1**) | `backButton` | Botão para função voltar da navegação. |
+| (**2**) | `viewCNH` | View que terá a ação de iniciar o fluxo de captura do documento CNH. |
+| (**3**) | `viewRG` | View que terá a ação de iniciar o fluxo de captura do documento RG. |
 
-![Componentes da view customizada](Images/doc_custom_home_view.png)
+<br/>
+<img src="Images/dc_instructions.png" width="432" height="396" />
+
+---
 
 ### 2. Tela de captura
 
-Para customizar a tela de câmera, é necessária a criação de uma `UIView` (via código ou via Interface Builder) que implemente o protocolo `DocumentscopyCustomCameraView`, que especifica os componentes que a view em questão precisa conter:
+### `customCameraView`
+Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomCameraView`` que contém os seguintes atributos:
 
 ```swift
-/// Protocolo que deve ser implementado pela view customizada da tela de câmera de Documentoscopia
 public protocol DocumentscopyCustomCameraView: UIView {
-    /// Nesta view será colocado o preview da câmera.
     var cameraPreview: DocumentscopyCameraPreviewView! { get }
-    
-    /// Botão para capturar foto.
-    var captureButton: UIButton! { get }
-    
-    /// View que será exibida após a captura de uma imagem.
+    var captureButton: UIButton! { get }    
     var previewContainer: UIView! { get }
-    
-    /// UIImageView onde será exibida a imagem capturada para o usuário confirmar se ficou boa.
     var previewImageView: UIImageView! { get }
-    
-    /// Botão para que o usuário confirme a foto capturada.
-    var usePictureButton: UIButton! { get }
-    
-    /// Botão para que o usuário capture a foto novamente.
+    var usePictureButton: DocumentscopyEditableButton! { get }    
     var takeNewPictureButton: UIButton! { get }
-    
-    /// Texto informativo com orientação da captura, é exibido por apenas alguns segundos.
     var instructionLabel: UILabel! { get }
-    
-    /// UIButton para fechar a tela.
-    var closeButton: UIButton! { get }
-    
-    /// UIButton para fechar a tela.
-    var backButton: UIButton! { get }
-    
-    /// UIView de confirmação
-    var containerConfirmation: UIView! { get }
-    
-    /// Constraint que será alterada para mostrar ou esconder a UIView de confirmação
+    var closeButton: UIButton! { get }    
+    var backButton: UIButton! { get }    
+    var containerConfirmation: UIView! { get }    
     var bottomViewConfirmationTopConstraint: NSLayoutConstraint! { get }
-    
-    /// View que indica o momento de utilizar o verso do documento
-    var viewVerso: DocumentscopyCameraIndicatorView! { get }
-    
-    /// View que indica o momento de utilizar a frente do documento
-    var viewFrente: DocumentscopyCameraIndicatorView! { get }
-    
-    /// View que determina onde a camera não será visível
+    var viewVerso: DocumentscopyCameraIndicatorView! { get }    
+    var viewFrente: DocumentscopyCameraIndicatorView! { get }    
     var cameraMask: UIView! { get }
-    
-    /// View que determina onde o preview câmera será visível
     var cameraContainerVisualizer: UIView! { get }
 }
 ```
 
-Na figura abaixo é possível visualizar o que cada uma das subviews representa na tela:
+| **Indice** | **Elemento** | **Descrição** |
+|:-----------|:-------------|:--------------|
+| (**1**) | `backButton` | UIButton para fechar a tela. |
+| (**2**) | `closeButton` | UIButton para fechar a tela. |
+| (**3**) | `viewFrente` | View que indica o momento de utilizar a frente do documento. |
+| (**4**) | `viewVerso` | View que indica o momento de utilizar o verso do documento. |
+| (**5**) | `instructionLabel` | Texto informativo com orientação da captura, é exibido por apenas alguns segundos. |
+| (**6**) | `cameraPreview` | Nesta view será colocado o preview da câmera. |
+| (**7**) | `cameraContainerVisualizer` | View que determina onde o preview câmera será visível. |
+| (**8**) | `cameraMask` | View que determina onde a camera não será visível. |
+| (**9**) | `captureButton` | Botão para capturar foto. |
+| (**10**) | `previewContainer` | View que será exibida após a captura de uma imagem. |
+| (**11**) | `previewImageView` | UIImageView onde será exibida a imagem capturada para o usuário confirmar se ficou boa. |
+| (**12**) | `containerConfirmation` | UIView de confirmação. |
+| (**13**) | `takeNewPictureButton` | Botão para que o usuário capture a foto novamente. |
+| (**14**) | `usePictureButton` | Botão para que o usuário confirme a foto capturada. |
+|          | `bottomViewConfirmationTopConstraint` | Constraint que será alterada para mostrar ou esconder a UIView de confirmação. |
 
-![Componentes da view customizada](Images/doc_custom_camera_view.png)
+<br/>
+<div>
+    <img src="Images/dc_camera_1.png" width="432" height="396" />
+    <img src="Images/dc_camera_2.png" width="432" height="396" />
+<div/>
+    
+### Tela de processamento
+    
+### Tela de permissão da câmera
 
 ## Passando os parâmetros
 
