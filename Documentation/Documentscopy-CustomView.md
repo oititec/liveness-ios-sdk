@@ -1,15 +1,82 @@
-# Documentoscopia - Guia de implementação de view customizada
+# Documentoscopia 
+Saiba como implementar a customização de view (telas), conforme a sua necessidade.
 
-Além de poder usar o SDK em sua forma padrão de exibição, o SDK permite que a forma de visualização seja completamente customizada.
+Você pode utilizar o SDK padrão e por meio dele, também customizar a visualização dessas telas.
 
-## Entendendo o funcionamento
+## Entenda como funciona
 
-O componente de Documentoscopia é dividido em três telas:
+O **componente** de Documentoscopia **é dividido em treze telas**:
 
-1. Tela inicial, onde o usuário deve escolhar se irá capturar apenas uma foto (com frente e verso) ou duas fotos (uma da frente e outra do verso)
-2. Tela de captura das imagens, onde o usuário irá fotografar o documento e confirmar se as fotos estão boas, e em caso negativo, poderá capturá-las novamente.
+### 1. Tela inicial
+O usuário define qual o tipo de documento que deseja enviar:
 
-De forma semelhante ao Liveness, a customização do visual é feita através da implementação de UIViews, as quais devem implementar os respectivos protocolos descritos nas próximas seções, para o correto funcionamento do processo de documentoscopia. A diferença é que, neste caso, deve-se implementar 2 views, sendo um para cada tela citada anteriormente.
+<div><img src="Images/01_tipo_de_documento.png" width="214" height="488"></div>
+
+### 2. Tela de captura do documento (frente)
+O usuário recebe a instrução de captura da frente do documento, dentro da marcação apresentada:
+
+<div><img src="Images/02_instrucao_documento_frente.png" width="214" height="488"></div>
+
+### 3. Abaixo, um exemplo de como esse documento deve ficar posicionado:
+
+<div><img src="Images/03_documento_frente.png" width="214" height="488"></div>
+
+### 4. Tela de confirmação da captura do documento (frente)
+Nesta tela, o usuário deve confirmar se a imagem do documento capturado está em boa qualidade, clicando em Não, refazer ou Sim:
+
+<div><img src="Images/04_documento_frente_validacao.png" width="214" height="488"></div>
+
+### 5. Tela de captura do documento (verso)
+O usuário recebe a instrução de captura do verso do documento, dentro da marcação apresentada:
+
+<div><img src="Images/05_instrucao_documento_verso.png" width="214" height="488"></div>
+
+### 6. Abaixo, um exemplo de como esse documento deve ficar posicionado:
+
+<div><img src="Images/06_documento_verso.png" width="214" height="488"></div>
+
+### 7. Tela de confirmação da captura do documento (verso)
+Nesta tela, o usuário deve confirmar se a imagem do documento capturado está em boa qualidade, clicando em Não, refazer ou Sim:
+
+<div><img src="Images/07_documento_verso_validacao.png" width="214" height="488"></div>
+
+### 8. Tela de processamento do envio do documento
+A próxima tela que o usuário deve ver é a tela de processamento do envio do documento:
+
+<div><img src="Images/08_envio_de_documento_loading.png" width="214" height="488"></div>
+
+### 9. Tela de conclusão do envio do documento (sucesso)
+O usuário receberá uma notificação de **sucesso** caso o envio do documento seja concluído com sucesso:
+
+<div><img src="Images/09_envio_de_documento_sucesso.png" width="214" height="488"></div>
+
+### 10. Tela de conclusão do envio do documento (erro)
+O usuário receberá uma notificação de **erro** caso exista uma falha após conclusão do envio do documento:
+
+<div><img src="Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
+
+### 11. Notificação da câmera do dispositivo desativada:
+Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
+
+<div><img src="Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
+
+### 12. Tela de instrução para habilitar câmera:
+Caso a câmera do dispositivo esteja desativada, o usuário deve receber as instruções de como habilitar:
+
+<div><img src="Images/12_permissao_de_camera_desativada.png" width="214" height="488"></div>
+
+### 13. Notificação para dispositivo sem internet
+Caso seja identificado que o dispositivo não tem acesso a internet, o usuário deve receber a seguinte notificação:
+
+<div><img src="Images/13_sem_acesso_a_internet.png" width="214" height="488"></div>
+
+A customização das telas é semelhante ao **Liveness**. Ela é feita por meio da implementação de UIViews.
+
+A diferença é que, neste caso, deve-se implementar duas views, sendo um para cada tela citada anteriormente.
+
+Para realizar essa implementação é necessário seguir alguns protocolos, para o funcionamento correto do processo de **documentoscopia**. Veja a seguir:
+
+## Instalação e configuração das telas customizáveis
 
 ### 1. Tela inicial
 
