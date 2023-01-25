@@ -85,6 +85,7 @@ let controller = DocumentscopyViewController(
     customCameraView: CustomCameraView()
 )
 ```
+**Caso qualquer um desses dois argumentos seja `nil`, será usado o *layout* padrão.**
 
 ### 1. Tela inicial
 
@@ -161,26 +162,12 @@ public protocol DocumentscopyCustomCameraView: UIView {
     
 ### Tela de processamento
     
+   
+    
 ### Tela de permissão da câmera
 
-## Passando os parâmetros
 
-Após implementadas as views, elas deverão ser passadas no construtor do `DocumentscopyViewController` através dos argumentos `customView` e `customCameraView` que representam respectivamente, a tela inicial e a tela de captura das imagens do documento.
-
-```swift
-let controller = DocumentscopyViewController(
-    appKey: appKey, 
-    baseURL: baseURL,
-    delegate: self, 
-    customView: CustomView(),
-    customCameraView: CustomCameraView()
-)
-```
-
-Caso qualquer um desses dois argumentos seja `nil`, será usado o *layout* padrão.
-
-# Observações
-
-Além das subviews especificadas, as views customizadas pode conter outros elementos, apenas tomando cuidado para que os mesmos não interfiram nas subviews funcionais.
+    
+## Observações
 
 No projeto Sample, neste mesmo repositório, encontra-se um exemplo de implementação. Recomenda-se usar como ponto de partida as views inclusas neste sample, modificando-as de acordo com a necessidade.
