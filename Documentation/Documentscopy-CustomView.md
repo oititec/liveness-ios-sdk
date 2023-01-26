@@ -17,7 +17,7 @@ O usuário recebe a instrução de captura da frente do documento, dentro da mar
 
 <div><img src="Images/02_instrucao_documento_frente.png" width="214" height="488"></div>
 
-### 3. Abaixo, um exemplo de como esse documento deve ficar posicionado:
+### 3. Abaixo, um exemplo de como esse documento deve ficar posicionado
 
 <div><img src="Images/03_documento_frente.png" width="214" height="488"></div>
 
@@ -31,7 +31,7 @@ O usuário recebe a instrução de captura do verso do documento, dentro da marc
 
 <div><img src="Images/05_instrucao_documento_verso.png" width="214" height="488"></div>
 
-### 6. Abaixo, um exemplo de como esse documento deve ficar posicionado:
+### 6. Abaixo, um exemplo de como esse documento deve ficar posicionado
 
 <div><img src="Images/06_documento_verso.png" width="214" height="488"></div>
 
@@ -50,23 +50,23 @@ O usuário receberá uma notificação de **sucesso** caso o envio do documento 
 
 <div><img src="Images/09_envio_de_documento_sucesso.png" width="214" height="488"></div>
 
-### 10. Tela de conclusão de envio do documento
-O usuário receberá uma notificação para Verificar as configurações de permissão da câmera:
+### 10. Tela de processamento do documento (erro)
+O usuário receberá uma notificação de erro ao processar o documento:
 
 <div><img src="Images/13_envio_de_documento_erro.png" width="214" height="488"></div>
 
-### 11. Tela para tentar processar o documento novamente (erro):
+### 11. Tela para tentar processar o documento novamente (erro)
 Nesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
 
 <div><img src="Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
 
-### 12. Notificação da câmera do dispositivo desativada:
+### 12. Notificação da câmera do dispositivo desativada
 Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
 
 <div><img src="Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
 
 ### 13. Tela com mensagem do iOS para  direcionar o usuário a tela de configuração
-Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma mensagem na tela para dircionar ou não o usuário para a tela de configuração:
+Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma mensagem na tela para direcionar ou não o usuário para a tela de configuração:
 
 <div><img src="Images/11_mensagem_de_config_camera.png" width="214" height="488"></div>
 
@@ -293,7 +293,7 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
 | (**1**) | `backButton` | Botão para função voltar da navegação. |
 | (**2**) | `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
 | (**3**) | `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
-| (**4**) | `closeButton` | Botão que fechar o fluxo de validação da permissão de câmera e volta para tela anterior. |
+| (**4**) | `closeButton` | Botão que fecha o fluxo de validação da permissão de câmera e volta para tela anterior. |
 |         | `showBottomSheet` | Método responsável por indicar o momento de mostrar os botões de ``openSettingsButton`` e ``closeButton``. |
 
 <br/>
