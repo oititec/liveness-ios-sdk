@@ -5,7 +5,7 @@ Você pode utilizar o SDK padrão e por meio dele, também customizar a visualiz
 
 ## Entenda como funciona
 
-O **componente** de Documentoscopia **é dividido em doze telas**:
+O **componente** de Documentoscopia **é dividido em treze telas**:
 
 ### 1. Tela inicial
 O usuário define qual o tipo de documento que deseja enviar:
@@ -50,20 +50,27 @@ O usuário receberá uma notificação de **sucesso** caso o envio do documento 
 
 <div><img src="Images/09_envio_de_documento_sucesso.png" width="214" height="488"></div>
 
-### 10. Tela de conclusão do envio do documento (erro)
+### 10. Tela de conclusão de envio do documento (erro):
 O usuário receberá uma notificação de **erro** caso exista uma falha após conclusão do envio do documento:
+
+<div><img src="Images/13_envio_de_documento_erro.png" width="214" height="488"></div>
+
+### 11. Tela para tentar processar o documento novamente (erro):
+Naesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
 
 <div><img src="Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
 
-### 11. Notificação da câmera do dispositivo desativada:
+### 12. Notificação da câmera do dispositivo desativada:
 Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
 
 <div><img src="Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
 
-### 12. Tela de instrução para habilitar câmera:
+### 13. Tela de instrução para habilitar câmera:
 Caso a câmera do dispositivo esteja desativada, o usuário deve receber as instruções de como habilitar:
 
 <div><img src="Images/12_permissao_de_camera_desativada.png" width="214" height="488"></div>
+
+---
 
 ## Instalação e configuração das telas customizáveis
 
@@ -111,9 +118,9 @@ public protocol DocumentscopyCustomView: UIView {
 
 ---
 
-### 2. Tela de captura
+## 2. Tela de captura do documento
 
-### `customCameraView`
+#### `customCameraView`
 Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomCameraView`` que contém os seguintes atributos:
 
 ```swift
@@ -160,13 +167,134 @@ public protocol DocumentscopyCustomCameraView: UIView {
     <img src="Images/dc_camera_2.png" width="432" height="396" />
 <div/>
     
-### Tela de processamento
-    
-   
-    
-### Tela de permissão da câmera
+**DocumentscopyCameraPreviewView**
 
+É uma classe customizada que herda de uma `UIView`.
 
+<br/>
+
+**DocumentscopyIndicatorView**
+
+É `typealias` que força uma herança para o tipo `UIView` e obriga a assinatura do protocolo ``DocumentscopyIndicatorViewProtocol``.
+
+```swift 
+@objc public protocol DocumentscopyIndicatorViewProtocol {
+    func setFocus(to value: Bool, animated: Bool)
+}
+```
+
+| **Elemento** | **Descrição** |
+|:-------------|:--------------|
+| `setFocus(to:animated:)` | Método que indica se a *view* está ou não em foco. O parâmetro de **animated** indica quando a troca de foco do componente deve ou não ser animada (*opcional*). |
+<br/>
+
+**DocumentscopyEditableButton**
+
+É `typealias` que força uma herança para o tipo `UIButton` e obriga a assinatura do protocolo ``DocumentscopyEditableButtonProtocol``.
+
+```swift 
+@objc public protocol DocumentscopyEditableButtonProtocol: AnyObject {
+    func changeTitle(to newTitle: String)
+}
+```
+
+| **Elemento** | **Descrição** |
+|:-------------|:--------------|
+| `changeTitle(to:)` | Método que altera o texto do botão. |
+
+<br/>
+
+**DocumentscopyConfirmationSheetVisibility**
+
+```swift
+public enum DocumentscopyConfirmationSheetVisibility {
+    case displayed
+    case hidden
+}
+```
+---
+    
+## 3. Tela de processamento do documento
+    
+### `customLoadingView`
+
+Essa view deve estar em conformidade com o tipo ``DocumentscopyCustomLoadingView`` que é um ``typealias`` para o tipo ``UIView``
+
+<br/>
+<img src="Images/fc_process_result.png" width="432" height="396" />
+
+---
+
+## 4. Tela de Resultado do Processamento
+    
+### `customResultView`
+
+Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomResultView`` que contém os seguintes atributos:
+
+```swift
+public protocol DocumentscopyCustomResultView: UIView {
+    var resultButton: UIButton! { get }
+    
+    func display(for resultType: DocumentscopyResultType)
+}
+```
+
+| **Indice** | **Elemento** | **Descrição** |
+|:-----------|:-------------|:--------------|
+| (**1**) | `resultButton` | Botão para fechar o fluxo de reconhecimento de documento. |
+|         | `display(for:)` | Esse método recebe como parâmetro um `enum` do tipo `DocumentscopyResultType` que indica qual resultado deve ser mostrado. |
+
+<br/>
+
+| **Tipo de resultado** | **Exemplo de tela** |
+|:----------------------|:--------------------|
+| Sucesso | <img src="Images/dc_result_success.png" width="432" height="396" /> |
+| Tente Novamente | <img src="Images/dc_result_tryagain.png" width="432" height="396" /> |
+| Erro | <img src="Images/dc_result_error.png" width="432" height="396" /> |
+
+**DocumentscopyResultType**
+
+```swift
+public enum DocumentscopyResultType {
+    case success
+    case tryAgain
+    case error(DocumentscopyError)
+}
+```   
+---
+    
+## 5. Tela de permissão da câmera
+
+### `customCameraPermissionView`
+
+Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomCameraPermissionView`` que contém os seguintes atributos:
+
+```swift
+public protocol DocumentscopyCustomCameraPermissionView: UIView {
+    var backButton: UIButton! { get }
+    var checkPermissionButton: UIButton! { get }
+    var openSettingsButton: UIButton! { get }
+    var closeButton: UIButton! { get }
+    
+    func showBottomSheet()
+}
+```
+
+| **Indice** | **Elemento** | **Descrição** |
+|:-----------|:-------------|:--------------|
+| (**1**) | `backButton` | Botão para função voltar da navegação. |
+| (**2**) | `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
+| (**3**) | `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
+| (**4**) | `closeButton` | Botão que fechar o fluxo de validação da permissão de câmera e volta para tela anterior. |
+|         | `showBottomSheet` | Método responsável por indicar o momento de mostrar os botões de ``openSettingsButton`` e ``closeButton``. |
+
+<br/>
+<div>
+    <img src="Images/camera_permission_1.png" width="432" height="396" />
+    <img src="Images/camera_permission_2.png" width="432" height="396" />
+<div/>
+
+---
     
 ## Observações
 
