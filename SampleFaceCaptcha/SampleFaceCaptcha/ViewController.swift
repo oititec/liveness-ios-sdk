@@ -9,21 +9,26 @@ import UIKit
 import FaceCaptcha
 
 class ViewController: UIViewController {
-
+    
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private let appKey = ""
-
+    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiRDVEQjRDQTdFMzkzRkM1QzZBQjM1OTA2QTg1N0QzRkM0fG9pdGkuZmFjZXRlYy5obWwiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjc2OSIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IkNFMkQ0Njg3NEU4MkRGNjg3RkI3NEFDREQyNDkyMEE4ODY5QzNBODQ1NTZFMzkyNzFCMDE4MUVCQkIyNUM3MEEyMTJERDY2MUE5NTE4MDYzNzEyREMyQzdGQkUwRDIzMkQ0MDRGNDUxNjM3REU2RkYyN0JBQjE2REQ4ODdEMDRBRTE1NjF8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFdHcydTFuMUI5dXdZRTdiQW5VMHZCY1dwOTQyVDJzOGZnYUFDZGVuaGZiYTBiSjNTUmpLWkUzNkd3PT0iLCJrZXkiOiJUM1YwSUcxaGVTQm1aWGNnYm05eWRHaDNZWEprSUdKbGJHbGxkbWx1WnlCaGRIUT0iLCJleHAiOjE2NzQ3NjA2ODAsImlhdCI6MTY3NDc2MDM4MH0.eUYhGmgDprfHJiL6rshueAtPLUfl-peHE7_PXquq-8A"
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
         presentLiveness3D()
     }
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando imagem customizada
     @IBAction private func customLiveness3D() {
-        presentLiveness3D(theme: createLiveness3DCustomTheme())
+        presentLiveness3D(theme: createLiveness3DCustomTheme(), customPersmissionView: PermissionView(), customInstructionView: InstructionView())
     }
     
-    private func presentLiveness3D(theme: Liveness3DTheme? = nil) {
+    private func presentLiveness3D(
+        theme: Liveness3DTheme? = nil,
+        customPersmissionView: CustomCameraPermissionView? = nil,
+        customInstructionView: CustomInstructionView? = nil
+    ) {
+            
         let liveness3DUser = Liveness3DUser(
             appKey: appKey, environment: .HML,
             defaultTheme: theme, lowLightTheme: theme
@@ -31,7 +36,9 @@ class ViewController: UIViewController {
         let controller = Liveness3DViewController(
             endpoint: baseURL,
             liveness3DUser: liveness3DUser,
-            debugOn: true
+            debugOn: true,
+            customInstructionView: customInstructionView,
+            customPermissionView: customPersmissionView
         )
         controller.delegate = self
         controller.modalPresentationStyle = .fullScreen
@@ -42,13 +49,13 @@ class ViewController: UIViewController {
     @IBAction private func defaultFaceCaptcha() {
         presentFaceCaptcha()
     }
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando imagem customizada
     @IBAction private func customFaceCaptchaImage() {
         let cameraOverlay = UIImage(named: "custom_overlay")
         presentFaceCaptcha(cameraOverlay: cameraOverlay)
     }
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando view customizada
     @IBAction private func customFaceCaptcha() {
         let customView = FaceCaptchaCustomView(frame: view.bounds)
@@ -67,12 +74,12 @@ class ViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
-
+    
     /// Trata de clique no botão para abrir Documentoscopia usando view padrão
     @IBAction func defaultDocumentscopy() {
         presentDocumentscopy()
     }
-
+    
     /// Trata de clique no botão para abrir Documentoscopia usando view customizada
     @IBAction private func customDocumentscopy() {
         presentDocumentscopy()
@@ -86,7 +93,7 @@ class ViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
-
+    
     /// Exibe um UIAlertController.
     /// - Parameters:
     ///   - title: Título da alerta
@@ -97,10 +104,6 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    private func createLiveness3DCustomTheme() -> Liveness3DTheme {
-        return Liveness3DTheme(.light)
     }
 }
 
@@ -129,7 +132,7 @@ extension ViewController: Liveness3DDelegate {
 // MARK: - FaceCaptchaDelegate
 
 extension ViewController: FaceCaptchaDelegate {
-
+    
     /// Callback chamada em caso de desafio concluído.
     /// - Parameter validateModel: Modelo para verificação se prova de vida obteve sucesso
     func handleFaceCaptchaValidation(validateModel: FCValidCaptchaModel) {
@@ -141,7 +144,7 @@ extension ViewController: FaceCaptchaDelegate {
             )
         }
     }
-
+    
     /// Callback chamada em caso de erro durante execução do FaceCaptcha.
     /// - Parameters:
     ///   - error: Erro ocorrido
@@ -151,7 +154,7 @@ extension ViewController: FaceCaptchaDelegate {
             self.showAlert(title: "FaceCaptcha Falhou", message: "Erro: \(error)")
         }
     }
-
+    
     /// Callback chamada ao clicar no botão de cancelar/fechar.
     func handleFaceCaptchaCanceled() {
         debugPrint("handleCaptureCanceled")
@@ -167,7 +170,7 @@ extension ViewController: FaceCaptchaDelegate {
 // MARK: - DocumentscopyDelegate
 
 extension ViewController: DocumentscopyDelegate {
-
+    
     /// Callback chamada em caso de Documentoscopia concluída..
     func handleDocumentscopyCompleted() {
         debugPrint("handleDocumentscopyCompleted")
@@ -178,7 +181,7 @@ extension ViewController: DocumentscopyDelegate {
             )
         }
     }
-
+    
     /// Callback chamada em caso de erro durante execução da Documentoscopia.
     /// - Parameters:
     ///   - error: Erro ocorrido
@@ -188,7 +191,7 @@ extension ViewController: DocumentscopyDelegate {
             self.showAlert(title: "Documentoscopia Falhou", message: "Erro: \(error)")
         }
     }
-
+    
     /// Callback chamada ao clicar no botão de cancelar/fechar.
     func handleDocumentscopyCanceled() {
         debugPrint("handleDocumentscopyCanceled")

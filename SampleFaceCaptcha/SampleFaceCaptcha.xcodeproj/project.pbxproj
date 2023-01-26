@@ -21,6 +21,11 @@
 		556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039122667E7960039B94F /* DocHomeCustomView.xib */; };
 		556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039132667E7960039B94F /* DocCameraCustomView.xib */; };
 		5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039142667E7960039B94F /* DocHomeCustomView.swift */; };
+		B7A83B6B2982D98A004708E2 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B6A2982D98A004708E2 /* PermissionView.swift */; };
+		B7A83B6D2982D9BA004708E2 /* PermissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B6C2982D9BA004708E2 /* PermissionView.xib */; };
+		B7A83B7529830265004708E2 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7429830265004708E2 /* InstructionView.swift */; };
+		B7A83B7729830287004708E2 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7629830287004708E2 /* InstructionView.xib */; };
+		B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7829830731004708E2 /* Livness3DTheme.swift */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +47,11 @@
 		556039122667E7960039B94F /* DocHomeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocHomeCustomView.xib; sourceTree = "<group>"; };
 		556039132667E7960039B94F /* DocCameraCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCameraCustomView.xib; sourceTree = "<group>"; };
 		556039142667E7960039B94F /* DocHomeCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocHomeCustomView.swift; sourceTree = "<group>"; };
+		B7A83B6A2982D98A004708E2 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		B7A83B6C2982D9BA004708E2 /* PermissionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PermissionView.xib; sourceTree = "<group>"; };
+		B7A83B7429830265004708E2 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
+		B7A83B7629830287004708E2 /* InstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
+		B7A83B7829830731004708E2 /* Livness3DTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livness3DTheme.swift; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,14 +104,12 @@
 		5560390E2667E7190039B94F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				556039112667E7960039B94F /* DocCameraCustomView.swift */,
-				556039132667E7960039B94F /* DocCameraCustomView.xib */,
-				5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */,
-				556039102667E7960039B94F /* DocConfirmationCustomView.xib */,
-				556039142667E7960039B94F /* DocHomeCustomView.swift */,
-				556039122667E7960039B94F /* DocHomeCustomView.xib */,
-				5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */,
-				5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */,
+				B7A83B732982FBEF004708E2 /* Liveness3DInstruction */,
+				B7A83B692982D977004708E2 /* CameraPermission */,
+				B7A83B6E2982F880004708E2 /* DocCamera */,
+				B7A83B6F2982F89A004708E2 /* DocConfirmation */,
+				B7A83B702982F8AA004708E2 /* DocHome */,
+				B7A83B712982F8B8004708E2 /* FaceCaptcha */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -121,6 +129,61 @@
 				D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7A83B692982D977004708E2 /* CameraPermission */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B6A2982D98A004708E2 /* PermissionView.swift */,
+				B7A83B6C2982D9BA004708E2 /* PermissionView.xib */,
+			);
+			path = CameraPermission;
+			sourceTree = "<group>";
+		};
+		B7A83B6E2982F880004708E2 /* DocCamera */ = {
+			isa = PBXGroup;
+			children = (
+				556039112667E7960039B94F /* DocCameraCustomView.swift */,
+				556039132667E7960039B94F /* DocCameraCustomView.xib */,
+			);
+			path = DocCamera;
+			sourceTree = "<group>";
+		};
+		B7A83B6F2982F89A004708E2 /* DocConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */,
+				556039102667E7960039B94F /* DocConfirmationCustomView.xib */,
+			);
+			path = DocConfirmation;
+			sourceTree = "<group>";
+		};
+		B7A83B702982F8AA004708E2 /* DocHome */ = {
+			isa = PBXGroup;
+			children = (
+				556039142667E7960039B94F /* DocHomeCustomView.swift */,
+				556039122667E7960039B94F /* DocHomeCustomView.xib */,
+			);
+			path = DocHome;
+			sourceTree = "<group>";
+		};
+		B7A83B712982F8B8004708E2 /* FaceCaptcha */ = {
+			isa = PBXGroup;
+			children = (
+				5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */,
+				5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */,
+			);
+			path = FaceCaptcha;
+			sourceTree = "<group>";
+		};
+		B7A83B732982FBEF004708E2 /* Liveness3DInstruction */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B7429830265004708E2 /* InstructionView.swift */,
+				B7A83B7629830287004708E2 /* InstructionView.xib */,
+				B7A83B7829830731004708E2 /* Livness3DTheme.swift */,
+			);
+			path = Liveness3DInstruction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,11 +247,13 @@
 			files = (
 				556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */,
 				552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */,
+				B7A83B7729830287004708E2 /* InstructionView.xib in Resources */,
 				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
 				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
 				5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */,
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
+				B7A83B6D2982D9BA004708E2 /* PermissionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +309,11 @@
 				552648F525489E2B0086DB73 /* ViewController.swift in Sources */,
 				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
 				5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */,
+				B7A83B6B2982D98A004708E2 /* PermissionView.swift in Sources */,
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
+				B7A83B7529830265004708E2 /* InstructionView.swift in Sources */,
 				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
+				B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,
 				552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */,
 			);
@@ -396,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KRCZ6X7U8S;
 				INFOPLIST_FILE = SampleFaceCaptcha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -417,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KRCZ6X7U8S;
 				INFOPLIST_FILE = SampleFaceCaptcha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
