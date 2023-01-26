@@ -30,6 +30,8 @@
 		B7A83B7F298323DD004708E2 /* DocLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7E298323DD004708E2 /* DocLoading.xib */; };
 		B7A83B82298325BC004708E2 /* DocInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B81298325BC004708E2 /* DocInstruction.swift */; };
 		B7A83B84298326A4004708E2 /* DocInstruction.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B83298326A4004708E2 /* DocInstruction.xib */; };
+		B7A83B8729832EB4004708E2 /* DocResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8629832EB4004708E2 /* DocResult.swift */; };
+		B7A83B8929832F03004708E2 /* DocResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8829832F03004708E2 /* DocResult.xib */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		B7A83B7E298323DD004708E2 /* DocLoading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocLoading.xib; sourceTree = "<group>"; };
 		B7A83B81298325BC004708E2 /* DocInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocInstruction.swift; sourceTree = "<group>"; };
 		B7A83B83298326A4004708E2 /* DocInstruction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocInstruction.xib; sourceTree = "<group>"; };
+		B7A83B8629832EB4004708E2 /* DocResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocResult.swift; sourceTree = "<group>"; };
+		B7A83B8829832F03004708E2 /* DocResult.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocResult.xib; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,7 @@
 		B7A83B7A298321D4004708E2 /* Documentscopy */ = {
 			isa = PBXGroup;
 			children = (
+				B7A83B8529832EA5004708E2 /* DocResult */,
 				B7A83B80298325A3004708E2 /* DocInstruction */,
 				B7A83B7B29832390004708E2 /* DocLoading */,
 				B7A83B6E2982F880004708E2 /* DocCamera */,
@@ -220,6 +225,15 @@
 				B7A83B83298326A4004708E2 /* DocInstruction.xib */,
 			);
 			path = DocInstruction;
+			sourceTree = "<group>";
+		};
+		B7A83B8529832EA5004708E2 /* DocResult */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B8629832EB4004708E2 /* DocResult.swift */,
+				B7A83B8829832F03004708E2 /* DocResult.xib */,
+			);
+			path = DocResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
 				B7A83B6D2982D9BA004708E2 /* PermissionView.xib in Resources */,
+				B7A83B8929832F03004708E2 /* DocResult.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +366,7 @@
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
 				B7A83B7529830265004708E2 /* InstructionView.swift in Sources */,
 				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
+				B7A83B8729832EB4004708E2 /* DocResult.swift in Sources */,
 				B7A83B82298325BC004708E2 /* DocInstruction.swift in Sources */,
 				B7A83B7D298323A8004708E2 /* DocLoading.swift in Sources */,
 				B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */,

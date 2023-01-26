@@ -11,7 +11,7 @@ import FaceCaptcha
 class ViewController: UIViewController {
     
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiQTVBMEE4OTAyOEUwRjhCNUZGMjcxMTA3MDNENzJBMjBCfG9pdGkuZmFjZXRlYy5obWwiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjc2OSIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IkREOENENDY4QTIwQkE0MDY3QzU1NkFGNDE1NUMzQTIxMTYyNzEyNzY0OEMyNDg5RjZBNzRCQjk4NDc2NzQ4ODNFOTEwMjE5NjVBMDEzODM1OTcwNzk2MTFBMTFBQkIyMDJCQTIwOTlDMjk3NTI1OThGNUY3MEZFNzExMjAyMkRFNEYzMDB8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFbVgzSlYwOU9EQ0lhRW41REhwenphQWk0YWNJTTU2V3BFVktoa3ZlK2JKcnhPTUI2UHRGdmlDQzFBPT0iLCJrZXkiOiJUM1YwSUcxaGVTQm1aWGNnYm05eWRHaDNZWEprSUdKbGJHbGxkbWx1WnlCaGRIUT0iLCJleHAiOjE2NzQ3NjcyNjYsImlhdCI6MTY3NDc2Njk2Nn0.K1fi32o9piMy94wJRDF4pYN7SFfh4YgXuotmC8FPLHA"
+    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiRkQxRjBENUUwOEMxMUVDRTg3OTg0NTJGNUU1Q0M2OTkyfG9pdGkuZmFjZXRlYy5obWwiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjc2OSIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IkNEMEU2RDg2Mzk0QzZERDY3MUY4RUY1M0E5ODM1Qzc5RkI2QkU3MUI2RjE1Mzc1QzQ5Q0YzMERDQTUwQzk4MTkyMzMxRjgyOTIzRjhFNUJDMUFDMjQxNDQxNzlENTE2QzZCOTA3MjFGRkFFOEE3RDRBOEZBQ0RDOUZDNDc0RUQ4Njg4MDR8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFaTlmUWFUUHdTNlIyWnJiTzJzL0FLNGlvOEFTVjlUbWw0ZTZxblQxd3UvQ20yWEVuN1A5TVphQmFRPT0iLCJrZXkiOiJRMjl1YzJsa1pYSWdjM0JsWVd0cGJtY2diV1VnY0hKdmMzQmxZM1FnZDJoaGRHVT0iLCJleHAiOjE2NzQ3NzAzNDAsImlhdCI6MTY3NDc3MDA0MH0.l-lb8SuRFLrNBzf3xu9RObagSMIMYwLEXbAdo_S5p9g"
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
             customView: nil,
             customCameraPermissionView: PermissionView(),
             customLoadingView: DocLoading(),
-            customResultView: nil
+            customResultView: DocResult()
         )
     }
     
