@@ -26,6 +26,10 @@
 		B7A83B7529830265004708E2 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7429830265004708E2 /* InstructionView.swift */; };
 		B7A83B7729830287004708E2 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7629830287004708E2 /* InstructionView.xib */; };
 		B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7829830731004708E2 /* Livness3DTheme.swift */; };
+		B7A83B7D298323A8004708E2 /* DocLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7C298323A8004708E2 /* DocLoading.swift */; };
+		B7A83B7F298323DD004708E2 /* DocLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7E298323DD004708E2 /* DocLoading.xib */; };
+		B7A83B82298325BC004708E2 /* DocInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B81298325BC004708E2 /* DocInstruction.swift */; };
+		B7A83B84298326A4004708E2 /* DocInstruction.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B83298326A4004708E2 /* DocInstruction.xib */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,10 @@
 		B7A83B7429830265004708E2 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		B7A83B7629830287004708E2 /* InstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
 		B7A83B7829830731004708E2 /* Livness3DTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livness3DTheme.swift; sourceTree = "<group>"; };
+		B7A83B7C298323A8004708E2 /* DocLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocLoading.swift; sourceTree = "<group>"; };
+		B7A83B7E298323DD004708E2 /* DocLoading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocLoading.xib; sourceTree = "<group>"; };
+		B7A83B81298325BC004708E2 /* DocInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocInstruction.swift; sourceTree = "<group>"; };
+		B7A83B83298326A4004708E2 /* DocInstruction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocInstruction.xib; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,9 +114,7 @@
 			children = (
 				B7A83B732982FBEF004708E2 /* Liveness3DInstruction */,
 				B7A83B692982D977004708E2 /* CameraPermission */,
-				B7A83B6E2982F880004708E2 /* DocCamera */,
-				B7A83B6F2982F89A004708E2 /* DocConfirmation */,
-				B7A83B702982F8AA004708E2 /* DocHome */,
+				B7A83B7A298321D4004708E2 /* Documentscopy */,
 				B7A83B712982F8B8004708E2 /* FaceCaptcha */,
 			);
 			path = CustomViews;
@@ -186,6 +192,36 @@
 			path = Liveness3DInstruction;
 			sourceTree = "<group>";
 		};
+		B7A83B7A298321D4004708E2 /* Documentscopy */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B80298325A3004708E2 /* DocInstruction */,
+				B7A83B7B29832390004708E2 /* DocLoading */,
+				B7A83B6E2982F880004708E2 /* DocCamera */,
+				B7A83B6F2982F89A004708E2 /* DocConfirmation */,
+				B7A83B702982F8AA004708E2 /* DocHome */,
+			);
+			path = Documentscopy;
+			sourceTree = "<group>";
+		};
+		B7A83B7B29832390004708E2 /* DocLoading */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B7C298323A8004708E2 /* DocLoading.swift */,
+				B7A83B7E298323DD004708E2 /* DocLoading.xib */,
+			);
+			path = DocLoading;
+			sourceTree = "<group>";
+		};
+		B7A83B80298325A3004708E2 /* DocInstruction */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B81298325BC004708E2 /* DocInstruction.swift */,
+				B7A83B83298326A4004708E2 /* DocInstruction.xib */,
+			);
+			path = DocInstruction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,9 +281,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A83B84298326A4004708E2 /* DocInstruction.xib in Resources */,
 				556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */,
 				552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */,
 				B7A83B7729830287004708E2 /* InstructionView.xib in Resources */,
+				B7A83B7F298323DD004708E2 /* DocLoading.xib in Resources */,
 				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
 				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
 				5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */,
@@ -313,6 +351,8 @@
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
 				B7A83B7529830265004708E2 /* InstructionView.swift in Sources */,
 				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
+				B7A83B82298325BC004708E2 /* DocInstruction.swift in Sources */,
+				B7A83B7D298323A8004708E2 /* DocLoading.swift in Sources */,
 				B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,
 				552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */,

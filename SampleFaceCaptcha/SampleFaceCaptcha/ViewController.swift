@@ -11,7 +11,7 @@ import FaceCaptcha
 class ViewController: UIViewController {
     
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiRDVEQjRDQTdFMzkzRkM1QzZBQjM1OTA2QTg1N0QzRkM0fG9pdGkuZmFjZXRlYy5obWwiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjc2OSIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IkNFMkQ0Njg3NEU4MkRGNjg3RkI3NEFDREQyNDkyMEE4ODY5QzNBODQ1NTZFMzkyNzFCMDE4MUVCQkIyNUM3MEEyMTJERDY2MUE5NTE4MDYzNzEyREMyQzdGQkUwRDIzMkQ0MDRGNDUxNjM3REU2RkYyN0JBQjE2REQ4ODdEMDRBRTE1NjF8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFdHcydTFuMUI5dXdZRTdiQW5VMHZCY1dwOTQyVDJzOGZnYUFDZGVuaGZiYTBiSjNTUmpLWkUzNkd3PT0iLCJrZXkiOiJUM1YwSUcxaGVTQm1aWGNnYm05eWRHaDNZWEprSUdKbGJHbGxkbWx1WnlCaGRIUT0iLCJleHAiOjE2NzQ3NjA2ODAsImlhdCI6MTY3NDc2MDM4MH0.eUYhGmgDprfHJiL6rshueAtPLUfl-peHE7_PXquq-8A"
+    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiQTVBMEE4OTAyOEUwRjhCNUZGMjcxMTA3MDNENzJBMjBCfG9pdGkuZmFjZXRlYy5obWwiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjc2OSIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IkREOENENDY4QTIwQkE0MDY3QzU1NkFGNDE1NUMzQTIxMTYyNzEyNzY0OEMyNDg5RjZBNzRCQjk4NDc2NzQ4ODNFOTEwMjE5NjVBMDEzODM1OTcwNzk2MTFBMTFBQkIyMDJCQTIwOTlDMjk3NTI1OThGNUY3MEZFNzExMjAyMkRFNEYzMDB8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFbVgzSlYwOU9EQ0lhRW41REhwenphQWk0YWNJTTU2V3BFVktoa3ZlK2JKcnhPTUI2UHRGdmlDQzFBPT0iLCJrZXkiOiJUM1YwSUcxaGVTQm1aWGNnYm05eWRHaDNZWEprSUdKbGJHbGxkbWx1WnlCaGRIUT0iLCJleHAiOjE2NzQ3NjcyNjYsImlhdCI6MTY3NDc2Njk2Nn0.K1fi32o9piMy94wJRDF4pYN7SFfh4YgXuotmC8FPLHA"
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
@@ -82,13 +82,32 @@ class ViewController: UIViewController {
     
     /// Trata de clique no botão para abrir Documentoscopia usando view customizada
     @IBAction private func customDocumentscopy() {
-        presentDocumentscopy()
+        presentDocumentscopy(
+            customInstructionView: DocInstruction(),
+            customView: nil,
+            customCameraPermissionView: PermissionView(),
+            customLoadingView: DocLoading(),
+            customResultView: nil
+        )
     }
     
-    private func presentDocumentscopy() {
+    private func presentDocumentscopy(
+        customInstructionView: DocumentscopyCustomInstructionView? = nil,
+        customView: DocumentscopyCustomView? = nil,
+        customCameraPermissionView: DocumentscopyCustomCameraPermissionView? = nil,
+        customLoadingView: DocumentscopyCustomLoadingView? = nil,
+        customResultView: DocumentscopyCustomResultView? = nil
+        
+    ) {
+        
         let controller = DocumentscopyViewController(
             appKey: appKey, baseURL: baseURL,
-            delegate: self
+            delegate: self,
+            customInstructionView: customInstructionView,
+            customView: customView,
+            customCameraPermissionView: customCameraPermissionView,
+            customLoadingView: customLoadingView,
+            customResultView: customResultView
         )
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
@@ -112,7 +131,7 @@ class ViewController: UIViewController {
 extension ViewController: Liveness3DDelegate {
     func handleLiveness3DValidation(validateModel: FaceCaptcha.Liveness3DSuccess) {
         debugPrint("handleCaptureValidation: \(validateModel)")
-        var message = String("Válido: \(validateModel.valid ?? false)")
+        let message = String("Válido: \(validateModel.valid ?? false)")
             .appending("\nCausa: \(String(describing: validateModel.cause))")
             .appending("\nCodID: \(String(describing: validateModel.codID))")
             .appending("\nProtocolo: \(String(describing: validateModel.protocolo))")
