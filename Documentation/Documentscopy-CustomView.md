@@ -55,22 +55,22 @@ O usuário receberá uma notificação para Verificar as configurações de perm
 
 <div><img src="Images/13_envio_de_documento_erro.png" width="214" height="488"></div>
 
-### 11. Tela com mensagem do iOS para  direcionar o usuário a tela de configuração
+### 11. Tela para tentar processar o documento novamente (erro):
+Nesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
+
+<div><img src="Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
+
+### 12. Notificação da câmera do dispositivo desativada:
+Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
+
+<div><img src="Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
+
+### 13. Tela com mensagem do iOS para  direcionar o usuário a tela de configuração
 Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma mensagem na tela para dircionar ou não o usuário para a tela de configuração:
 
 <div><img src="Images/11_mensagem_de_config_camera.png" width="214" height="488"></div>
 
 **Obs.:** Por padrão, a Apple apresenta essa mensagem de configuração apenas uma vez. As próximas vezes o usuário terá que ir até a tela de configurações para dar permissão para a câmera manualmente.
-
-### 12. Tela para tentar processar o documento novamente (erro):
-Nesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
-
-<div><img src="Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
-
-### 13. Notificação da câmera do dispositivo desativada:
-Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
-
-<div><img src="Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
 
 ### 14. Tela de instrução para habilitar câmera:
 Caso a solicitação seja recusada pelo usuário, neste passo é apresentado a mensagem para direciona-lo às configurações:
