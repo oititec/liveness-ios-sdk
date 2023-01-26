@@ -50,23 +50,30 @@ O usuário receberá uma notificação de **sucesso** caso o envio do documento 
 
 <div><img src="Images/09_envio_de_documento_sucesso.png" width="214" height="488"></div>
 
-### 10. Tela de conclusão de envio do documento (erro):
-O usuário receberá uma notificação de **erro** caso exista uma falha após conclusão do envio do documento:
+### 10. Tela de conclusão de envio do documento
+O usuário receberá uma notificação para Verificar as configurações de permissão da câmera:
 
 <div><img src="Images/13_envio_de_documento_erro.png" width="214" height="488"></div>
 
-### 11. Tela para tentar processar o documento novamente (erro):
-Naesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
+### 11. Tela com mensagem do iOS para  direcionar o usuário a tela de configuração
+Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma mensagem na tela para dircionar ou não o usuário para a tela de configuração:
+
+<div><img src="Images/11_mensagem_de_config_camera.png" width="214" height="488"></div>
+
+**Obs.:** Por padrão, a Apple apresenta essa mensagem de configuração apenas uma vez. As próximas vezes o usuário terá que ir até a tela de configurações para dar permissão para a câmera manualmente.
+
+### 12. Tela para tentar processar o documento novamente (erro):
+Nesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
 
 <div><img src="Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
 
-### 12. Notificação da câmera do dispositivo desativada:
+### 13. Notificação da câmera do dispositivo desativada:
 Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
 
 <div><img src="Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
 
-### 13. Tela de instrução para habilitar câmera:
-Caso a câmera do dispositivo esteja desativada, o usuário deve receber as instruções de como habilitar:
+### 14. Tela de instrução para habilitar câmera:
+Caso a solicitação seja recusada pelo usuário, neste passo é apresentado a mensagem para direciona-lo às configurações:
 
 <div><img src="Images/12_permissao_de_camera_desativada.png" width="214" height="488"></div>
 
@@ -94,13 +101,13 @@ let controller = DocumentscopyViewController(
 ```
 **Caso qualquer um desses dois argumentos seja `nil`, será usado o *layout* padrão.**
 
-### 1. Tela inicial
+## 1. Tela inicial
 
-### `customView`
-Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomView`` que contém os seguintes atributos:
+### `customInstructionView`
+Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomInstructionView`` que contém os seguintes atributos:
 
 ```swift
-public protocol DocumentscopyCustomView: UIView {
+public protocol DocumentscopyCustomInstructionView: UIView {
     var backButton: UIButton! { get }
     var viewCNH: UIView! { get }
     var viewRG: UIView! { get }
@@ -120,26 +127,25 @@ public protocol DocumentscopyCustomView: UIView {
 
 ## 2. Tela de captura do documento
 
-#### `customCameraView`
-Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomCameraView`` que contém os seguintes atributos:
+### `customView`
+Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomView`` que contém os seguintes atributos:
 
 ```swift
 public protocol DocumentscopyCustomCameraView: UIView {
-    var cameraPreview: DocumentscopyCameraPreviewView! { get }
+    var cameraPreview: DocumentscopyCameraPreviewView! { get }    
+    var cameraMask: UIView! { get }
+    var backButton: UIButton! { get }
+    var closeButton: UIButton! { get }    
+    var backIndicatorView: DocumentscopyIndicatorView! { get }    
+    var frontIndicatorView: DocumentscopyIndicatorView! { get }    
+    var instructionLabel: UILabel! { get }    
+    var cameraVisualizer: UIView! { get }    
+    var previewImageView: UIImageView! { get }    
     var captureButton: UIButton! { get }    
-    var previewContainer: UIView! { get }
-    var previewImageView: UIImageView! { get }
     var usePictureButton: DocumentscopyEditableButton! { get }    
     var takeNewPictureButton: UIButton! { get }
-    var instructionLabel: UILabel! { get }
-    var closeButton: UIButton! { get }    
-    var backButton: UIButton! { get }    
-    var containerConfirmation: UIView! { get }    
-    var bottomViewConfirmationTopConstraint: NSLayoutConstraint! { get }
-    var viewVerso: DocumentscopyCameraIndicatorView! { get }    
-    var viewFrente: DocumentscopyCameraIndicatorView! { get }    
-    var cameraMask: UIView! { get }
-    var cameraContainerVisualizer: UIView! { get }
+
+    func displayConfirmationSheet(visibility: DocumentscopyConfirmationSheetVisibility, animated: Bool)
 }
 ```
 
@@ -147,19 +153,17 @@ public protocol DocumentscopyCustomCameraView: UIView {
 |:-----------|:-------------|:--------------|
 | (**1**) | `backButton` | UIButton para fechar a tela. |
 | (**2**) | `closeButton` | UIButton para fechar a tela. |
-| (**3**) | `viewFrente` | View que indica o momento de utilizar a frente do documento. |
-| (**4**) | `viewVerso` | View que indica o momento de utilizar o verso do documento. |
+| (**3**) | `frontIndicatorView` | View que indica o momento de utilizar a frente do documento. |
+| (**4**) | `backIndicatorView` | View que indica o momento de utilizar o verso do documento. |
 | (**5**) | `instructionLabel` | Texto informativo com orientação da captura, é exibido por apenas alguns segundos. |
 | (**6**) | `cameraPreview` | Nesta view será colocado o preview da câmera. |
-| (**7**) | `cameraContainerVisualizer` | View que determina onde o preview câmera será visível. |
+| (**7**) | `cameraVisualizer` | View que determina onde o preview câmera será visível. |
 | (**8**) | `cameraMask` | View que determina onde a camera não será visível. |
 | (**9**) | `captureButton` | Botão para capturar foto. |
-| (**10**) | `previewContainer` | View que será exibida após a captura de uma imagem. |
-| (**11**) | `previewImageView` | UIImageView onde será exibida a imagem capturada para o usuário confirmar se ficou boa. |
-| (**12**) | `containerConfirmation` | UIView de confirmação. |
-| (**13**) | `takeNewPictureButton` | Botão para que o usuário capture a foto novamente. |
-| (**14**) | `usePictureButton` | Botão para que o usuário confirme a foto capturada. |
-|          | `bottomViewConfirmationTopConstraint` | Constraint que será alterada para mostrar ou esconder a UIView de confirmação. |
+| (**10**) | `previewImageView` | UIImageView onde será exibida a imagem capturada para o usuário confirmar se ficou boa. |
+| (**11**) | `takeNewPictureButton` | Botão para que o usuário capture a foto novamente. |
+| (**12**) | `usePictureButton` | Botão para que o usuário confirme a foto capturada. |
+|          | `displayConfirmationSheet(visibility:animated:)` | Método que indica quando a *view* de confirmação de imagem deve ou não ser mostrada, esse método recebe dois parâmetro: **visibility** que é um `enum` do tipo ``DocumentscopyConfirmationSheetVisibility`` que indica o estado da *view* de confirmação e **animated** que indica se esse comportamento é recomendado de ser feito com animação. |
 
 <br/>
 <div>
