@@ -94,12 +94,16 @@ Todas as *views* customizadas são passadas via construtor da classe ``Documents
 
 ```swift
 let controller = DocumentscopyViewController(
-    appKey: appKey, baseURL: baseURL, delegate: self,
-    customView: CustomView(),
-    customCameraView: CustomCameraView()
+    appKey: appKey, baseURL: baseURL, delegate: self,
+    customInstructionView: CustomInstructionView(),
+    customView: CustomView(),
+    customCameraPermissionView: CustomCameraPermissionView(),
+    customLoadingView: CustomLoadingView(),
+    customResultView: CustomResultView()
 )
+
 ```
-**Caso qualquer um desses dois argumentos seja `nil`, será usado o *layout* padrão.**
+**Caso qualquer um seja `nil`, será usado o *layout* padrão.**
 
 ## 1. Tela inicial
 
@@ -131,7 +135,7 @@ public protocol DocumentscopyCustomInstructionView: UIView {
 Essa view deve estar em conformidade com o protocolo ``DocumentscopyCustomView`` que contém os seguintes atributos:
 
 ```swift
-public protocol DocumentscopyCustomCameraView: UIView {
+public protocol DocumentscopyCustomView: UIView {
     var cameraPreview: DocumentscopyCameraPreviewView! { get }    
     var cameraMask: UIView! { get }
     var backButton: UIButton! { get }
@@ -168,7 +172,7 @@ public protocol DocumentscopyCustomCameraView: UIView {
 <br/>
 <div>
     <img src="Images/dc_camera_1.png" width="432" height="396" />
-    <img src="Images/dc_camera_2.png" width="432" height="396" />
+    <img src="Images/dc_camera_3.png" width="432" height="396" />
 <div/>
     
 **DocumentscopyCameraPreviewView**
