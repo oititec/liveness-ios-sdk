@@ -888,8 +888,8 @@ public struct CCM {
 public protocol CustomCameraPermissionView : UIKit.UIView {
   var backButton: UIKit.UIButton! { get }
   var checkPermissionButton: UIKit.UIButton! { get }
-  var closeButton: UIKit.UIButton! { get }
   var openSettingsButton: UIKit.UIButton! { get }
+  var closeButton: UIKit.UIButton! { get }
   func showBottomSheet()
 }
 public protocol DocumentscopyCustomInstructionView : UIKit.UIView {
