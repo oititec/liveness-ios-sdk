@@ -48,7 +48,7 @@ class CustomDocumentscopyView: UIView, DocumentscopyCustomView {
 }
 
 class CustomIndicator: DocumentscopyIndicatorView {
-    func setFocus(to value: Bool, animated: Bool) {
+    override func setFocus(to value: Bool, animated: Bool) {
         if value {
             backgroundColor = .green
         } else {
@@ -58,7 +58,7 @@ class CustomIndicator: DocumentscopyIndicatorView {
 }
 
 class CustomButton: DocumentscopyEditableButton {
-    func changeTitle(to newTitle: String) {
+    override func changeTitle(to newTitle: String) {
         setTitle(newTitle, for: .normal)
     }
 }
