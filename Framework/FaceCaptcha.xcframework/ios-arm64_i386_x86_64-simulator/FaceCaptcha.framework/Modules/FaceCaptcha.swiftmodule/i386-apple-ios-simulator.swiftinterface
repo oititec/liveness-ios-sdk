@@ -263,6 +263,14 @@ extension Swift.Array where Element == Swift.UInt8 {
   public func toBase64() -> Swift.String?
   public init(base64: Swift.String)
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyCameraPreviewView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 extension Swift.String {
   @inlinable public var bytes: Swift.Array<Swift.UInt8> {
     get {
@@ -1376,9 +1384,11 @@ extension Swift.Array where Element == Swift.UInt8 {
 }
 public struct FCCaptchaModel {
 }
-public typealias DocumentscopyIndicatorView = UIKit.UIView & FaceCaptcha.DocumentscopyIndicatorViewProtocol
-@objc public protocol DocumentscopyIndicatorViewProtocol {
-  @objc func setFocus(to value: Swift.Bool, animated: Swift.Bool)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DocumentscopyIndicatorView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func setFocus(to value: Swift.Bool, animated: Swift.Bool)
+  @objc deinit
 }
 extension Swift.Collection where Self.Element == Swift.UInt8, Self.Index == Swift.Int {
   @inlinable internal func toUInt32Array() -> Swift.Array<Swift.UInt32> {
@@ -1493,7 +1503,6 @@ final internal class StreamDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatabl
   @objc @usableFromInline
   deinit
 }
-public typealias DocumentscopyCameraPreviewView = FaceCaptcha.CameraPreviewView
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CameraPreviewView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
     @_Concurrency.MainActor(unsafe) @objc get
@@ -1546,9 +1555,11 @@ public struct OFB : FaceCaptcha.BlockMode {
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
 }
-public typealias DocumentscopyEditableButton = UIKit.UIButton & FaceCaptcha.DocumentscopyEditableButtonProtocol
-@objc public protocol DocumentscopyEditableButtonProtocol {
-  @objc func changeTitle(to newTitle: Swift.String)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DocumentscopyEditableButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func changeTitle(to newTitle: Swift.String)
+  @objc deinit
 }
 extension FaceCaptcha.HMAC {
   convenience public init(key: Swift.String, variant: FaceCaptcha.HMAC.Variant = .md5) throws
