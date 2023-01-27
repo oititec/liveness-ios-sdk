@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DocView" customModule="SampleFaceCaptcha" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="f5j-VA-M5d" id="gp3-G9-GFa"/>
+                <outlet property="backIndicatorView" destination="H4v-Zn-ewa" id="u4H-bm-hFG"/>
+                <outlet property="cameraMask" destination="5mp-E5-reV" id="sgf-jB-ElM"/>
+                <outlet property="cameraPreview" destination="TZi-v0-5dy" id="Bov-qA-eiS"/>
+                <outlet property="cameraVisualizer" destination="tee-Bb-c6x" id="shv-s4-u3p"/>
+                <outlet property="captureButton" destination="rNL-V3-IDm" id="mCq-Ar-Sqf"/>
+                <outlet property="closeButton" destination="EQn-Ty-Wc2" id="WI9-El-HYG"/>
+                <outlet property="frontIndicatorView" destination="RrC-na-AHE" id="0BR-Q3-09c"/>
+                <outlet property="instructionLabel" destination="Weh-VN-bx4" id="Itw-1D-Upq"/>
+                <outlet property="previewImageView" destination="BW9-bG-4OQ" id="edP-JB-rF6"/>
+                <outlet property="takeNewPictureButton" destination="OM4-cQ-Rjc" id="IO0-Kg-oxh"/>
+                <outlet property="usePictureButton" destination="JQE-Uy-kCD" id="bjN-c1-saG"/>
+                <outlet property="view" destination="iN0-l3-epB" id="egO-g2-vzW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZi-v0-5dy" userLabel="cameraPreview" customClass="DocumentscopyCameraPreviewView" customModule="FaceCaptcha">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" id="5mp-E5-reV" userLabel="cameraMask">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="5oj-dr-HLk"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tee-Bb-c6x" userLabel="cameraVisualizer">
+                    <rect key="frame" x="50" y="326" width="293" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BW9-bG-4OQ" userLabel="previewImageView">
+                    <rect key="frame" x="50" y="326" width="293" height="200"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5j-VA-M5d">
+                    <rect key="frame" x="16" y="59" width="62" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQn-Ty-Wc2">
+                    <rect key="frame" x="306" y="59" width="67" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RrC-na-AHE" userLabel="frontIndicator" customClass="CustomIndicator" customModule="FaceCaptcha">
+                    <rect key="frame" x="24" y="120" width="100" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="EuN-y2-lX6"/>
+                        <constraint firstAttribute="height" constant="50" id="oho-iX-CiI"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-Zn-ewa" userLabel="backIndicator" customClass="CustomIndicator" customModule="FaceCaptcha">
+                    <rect key="frame" x="273" y="120" width="100" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="RNB-uo-lAX"/>
+                        <constraint firstAttribute="height" constant="50" id="kuH-7c-62h"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="instructionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weh-VN-bx4">
+                    <rect key="frame" x="135" y="208" width="123" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-Uy-kCD" userLabel="usePictureButton" customClass="CustomButton" customModule="FaceCaptcha">
+                    <rect key="frame" x="289" y="545" width="54" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Use"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OM4-cQ-Rjc" userLabel="takeNewPictureButton">
+                    <rect key="frame" x="45" y="545" width="59" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="New"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNL-V3-IDm" userLabel="captureButton">
+                    <rect key="frame" x="146.66666666666666" y="723" width="100" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="lwm-rc-Hup"/>
+                        <constraint firstAttribute="height" constant="50" id="r8y-3w-m5k"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Capture"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="OM4-cQ-Rjc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="0Rm-rd-ha6"/>
+                <constraint firstItem="JQE-Uy-kCD" firstAttribute="trailing" secondItem="tee-Bb-c6x" secondAttribute="trailing" id="46X-aB-V8V"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TZi-v0-5dy" secondAttribute="bottom" constant="-34" id="5DX-QT-6Fk"/>
+                <constraint firstItem="tee-Bb-c6x" firstAttribute="centerY" secondItem="5mp-E5-reV" secondAttribute="centerY" id="6Hn-7M-4hq"/>
+                <constraint firstItem="tee-Bb-c6x" firstAttribute="top" secondItem="BW9-bG-4OQ" secondAttribute="top" id="8rG-LT-hEw"/>
+                <constraint firstItem="rNL-V3-IDm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="9wu-Kg-Rgs"/>
+                <constraint firstItem="JQE-Uy-kCD" firstAttribute="trailing" secondItem="BW9-bG-4OQ" secondAttribute="trailing" id="B2e-xC-gAX"/>
+                <constraint firstItem="Weh-VN-bx4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="149" id="DxM-Hb-yaR"/>
+                <constraint firstItem="f5j-VA-M5d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="FpZ-5r-SqP"/>
+                <constraint firstItem="Weh-VN-bx4" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Gyr-L7-wBG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rNL-V3-IDm" secondAttribute="bottom" constant="45" id="JZ6-A2-ynL"/>
+                <constraint firstItem="TZi-v0-5dy" firstAttribute="top" secondItem="Weh-VN-bx4" secondAttribute="bottom" constant="-229" id="Lbf-z5-Q7I"/>
+                <constraint firstItem="H4v-Zn-ewa" firstAttribute="top" secondItem="EQn-Ty-Wc2" secondAttribute="bottom" constant="26" id="NjO-75-8DF"/>
+                <constraint firstItem="EQn-Ty-Wc2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="PPe-wn-brx"/>
+                <constraint firstItem="tee-Bb-c6x" firstAttribute="leading" secondItem="BW9-bG-4OQ" secondAttribute="leading" id="STl-37-EPE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JQE-Uy-kCD" secondAttribute="trailing" constant="50" id="Szm-KA-Vk9"/>
+                <constraint firstItem="RrC-na-AHE" firstAttribute="top" secondItem="f5j-VA-M5d" secondAttribute="bottom" constant="26" id="Vyf-AG-oeu"/>
+                <constraint firstItem="JQE-Uy-kCD" firstAttribute="top" secondItem="tee-Bb-c6x" secondAttribute="bottom" constant="19" id="cgt-Pc-vlW"/>
+                <constraint firstItem="tee-Bb-c6x" firstAttribute="bottom" secondItem="BW9-bG-4OQ" secondAttribute="bottom" id="das-x1-JDe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EQn-Ty-Wc2" secondAttribute="trailing" constant="20" id="eFJ-kf-QhV"/>
+                <constraint firstItem="RrC-na-AHE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="fXe-a3-axr"/>
+                <constraint firstItem="JQE-Uy-kCD" firstAttribute="baseline" secondItem="OM4-cQ-Rjc" secondAttribute="baseline" id="lQj-Qk-Mrg"/>
+                <constraint firstItem="f5j-VA-M5d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="lx0-br-de4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JQE-Uy-kCD" secondAttribute="bottom" constant="238" id="umt-v6-a0g"/>
+                <constraint firstItem="TZi-v0-5dy" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="wQq-wP-BOC"/>
+                <constraint firstItem="TZi-v0-5dy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wTo-F1-dTe"/>
+                <constraint firstItem="tee-Bb-c6x" firstAttribute="centerX" secondItem="Weh-VN-bx4" secondAttribute="centerX" id="xXu-rm-n4V"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="H4v-Zn-ewa" secondAttribute="trailing" constant="20" id="yAH-0s-UoV"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

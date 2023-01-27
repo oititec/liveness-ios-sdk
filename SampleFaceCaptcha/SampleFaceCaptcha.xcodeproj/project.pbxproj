@@ -32,6 +32,8 @@
 		B7A83B84298326A4004708E2 /* DocInstruction.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B83298326A4004708E2 /* DocInstruction.xib */; };
 		B7A83B8729832EB4004708E2 /* DocResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8629832EB4004708E2 /* DocResult.swift */; };
 		B7A83B8929832F03004708E2 /* DocResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8829832F03004708E2 /* DocResult.xib */; };
+		B7A83B8C2983346D004708E2 /* DocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8B2983346D004708E2 /* DocView.swift */; };
+		B7A83B8E298334A3004708E2 /* DocView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8D298334A3004708E2 /* DocView.xib */; };
 		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		B7A83B83298326A4004708E2 /* DocInstruction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocInstruction.xib; sourceTree = "<group>"; };
 		B7A83B8629832EB4004708E2 /* DocResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocResult.swift; sourceTree = "<group>"; };
 		B7A83B8829832F03004708E2 /* DocResult.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocResult.xib; sourceTree = "<group>"; };
+		B7A83B8B2983346D004708E2 /* DocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocView.swift; sourceTree = "<group>"; };
+		B7A83B8D298334A3004708E2 /* DocView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocView.xib; sourceTree = "<group>"; };
 		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +203,7 @@
 		B7A83B7A298321D4004708E2 /* Documentscopy */ = {
 			isa = PBXGroup;
 			children = (
+				B7A83B8A29833457004708E2 /* DocView */,
 				B7A83B8529832EA5004708E2 /* DocResult */,
 				B7A83B80298325A3004708E2 /* DocInstruction */,
 				B7A83B7B29832390004708E2 /* DocLoading */,
@@ -234,6 +239,15 @@
 				B7A83B8829832F03004708E2 /* DocResult.xib */,
 			);
 			path = DocResult;
+			sourceTree = "<group>";
+		};
+		B7A83B8A29833457004708E2 /* DocView */ = {
+			isa = PBXGroup;
+			children = (
+				B7A83B8B2983346D004708E2 /* DocView.swift */,
+				B7A83B8D298334A3004708E2 /* DocView.xib */,
+			);
+			path = DocView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +316,7 @@
 				B7A83B7F298323DD004708E2 /* DocLoading.xib in Resources */,
 				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
 				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
+				B7A83B8E298334A3004708E2 /* DocView.xib in Resources */,
 				5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */,
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
@@ -362,6 +377,7 @@
 				552648F525489E2B0086DB73 /* ViewController.swift in Sources */,
 				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
 				5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */,
+				B7A83B8C2983346D004708E2 /* DocView.swift in Sources */,
 				B7A83B6B2982D98A004708E2 /* PermissionView.swift in Sources */,
 				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
 				B7A83B7529830265004708E2 /* InstructionView.swift in Sources */,
