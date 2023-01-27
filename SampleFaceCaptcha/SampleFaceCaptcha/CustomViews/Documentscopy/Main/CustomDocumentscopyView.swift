@@ -10,15 +10,15 @@ import FaceCaptcha
 
 class CustomDocumentscopyView: UIView, DocumentscopyCustomView {
     @IBOutlet weak var cameraMask: UIView!
-    @IBOutlet weak var frontIndicatorView: DocumentscopyIndicatorView!
-    @IBOutlet weak var backIndicatorView: DocumentscopyIndicatorView!
+    @IBOutlet weak var frontIndicatorView: UIView!
+    @IBOutlet weak var backIndicatorView: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var cameraPreview: DocumentscopyCameraPreviewView!
     @IBOutlet weak var cameraVisualizer: UIView!
     @IBOutlet weak var previewImageView: UIImageView!
-    @IBOutlet weak var usePictureButton: DocumentscopyEditableButton!
+    @IBOutlet weak var usePictureButton: UIButton!
     @IBOutlet weak var takeNewPictureButton: UIButton!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var view: UIView!
@@ -45,20 +45,20 @@ class CustomDocumentscopyView: UIView, DocumentscopyCustomView {
         addSubview(view)
     }
     
-}
-
-class CustomIndicator: DocumentscopyIndicatorView {
-    override func setFocus(to value: Bool, animated: Bool) {
-        if value {
-            backgroundColor = .green
-        } else {
-            backgroundColor = .red
+    func setFocus(to focusElement: FaceCaptcha.FocusIndicator, animated: Bool) {
+        switch focusElement {
+        case .frontIndicator:
+            frontIndicatorView.backgroundColor = .green
+            backIndicatorView.backgroundColor = .red
+        case .backIndicator:
+            frontIndicatorView.backgroundColor = .red
+            backIndicatorView.backgroundColor = .green
+        @unknown default:
+            break
         }
     }
-}
-
-class CustomButton: DocumentscopyEditableButton {
-    override func changeTitle(to newTitle: String) {
-        setTitle(newTitle, for: .normal)
+    
+    func setUsePictureButtonTitle(to newTitle: String) {
+        usePictureButton.setTitle(newTitle, for: .normal)
     }
 }

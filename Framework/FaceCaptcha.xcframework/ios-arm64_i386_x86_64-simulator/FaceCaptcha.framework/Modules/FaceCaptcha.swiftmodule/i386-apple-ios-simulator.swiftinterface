@@ -1384,12 +1384,6 @@ extension Swift.Array where Element == Swift.UInt8 {
 }
 public struct FCCaptchaModel {
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DocumentscopyIndicatorView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) open func setFocus(to value: Swift.Bool, animated: Swift.Bool)
-  @objc deinit
-}
 extension Swift.Collection where Self.Element == Swift.UInt8, Self.Index == Swift.Int {
   @inlinable internal func toUInt32Array() -> Swift.Array<Swift.UInt32> {
     guard !isEmpty else {
@@ -1555,12 +1549,6 @@ public struct OFB : FaceCaptcha.BlockMode {
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DocumentscopyEditableButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) open func changeTitle(to newTitle: Swift.String)
-  @objc deinit
-}
 extension FaceCaptcha.HMAC {
   convenience public init(key: Swift.String, variant: FaceCaptcha.HMAC.Variant = .md5) throws
 }
@@ -1617,20 +1605,31 @@ extension Swift.UInt32 {
   }
 }
 public typealias DocumentscopyConfirmationSheetVisibility = FaceCaptcha.Visibility
+public enum FocusIndicator {
+  case frontIndicator
+  case backIndicator
+  public static func == (a: FaceCaptcha.FocusIndicator, b: FaceCaptcha.FocusIndicator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public protocol DocumentscopyCustomView : UIKit.UIView {
   var cameraPreview: FaceCaptcha.DocumentscopyCameraPreviewView! { get }
   var cameraMask: UIKit.UIView! { get }
   var backButton: UIKit.UIButton! { get }
   var closeButton: UIKit.UIButton! { get }
-  var backIndicatorView: FaceCaptcha.DocumentscopyIndicatorView! { get }
-  var frontIndicatorView: FaceCaptcha.DocumentscopyIndicatorView! { get }
+  var backIndicatorView: UIKit.UIView! { get }
+  var frontIndicatorView: UIKit.UIView! { get }
   var instructionLabel: UIKit.UILabel! { get }
   var cameraVisualizer: UIKit.UIView! { get }
   var previewImageView: UIKit.UIImageView! { get }
   var captureButton: UIKit.UIButton! { get }
-  var usePictureButton: FaceCaptcha.DocumentscopyEditableButton! { get }
+  var usePictureButton: UIKit.UIButton! { get }
   var takeNewPictureButton: UIKit.UIButton! { get }
   func displayConfirmationSheet(visibility: FaceCaptcha.DocumentscopyConfirmationSheetVisibility, animated: Swift.Bool)
+  func setFocus(to focusElement: FaceCaptcha.FocusIndicator, animated: Swift.Bool)
+  func setUsePictureButtonTitle(to newTitle: Swift.String)
 }
 public enum DocumentscopyResultType {
   case success
@@ -1915,20 +1914,22 @@ public struct Liveness3DTheme {
   @_Concurrency.MainActor(unsafe) public var captureButtonCorner: UIKit.UIView
   @_Concurrency.MainActor(unsafe) public var previewContainer: UIKit.UIView!
   @_Concurrency.MainActor(unsafe) public var previewImageView: UIKit.UIImageView!
-  @_Concurrency.MainActor(unsafe) public var usePictureButton: FaceCaptcha.DocumentscopyEditableButton!
+  @_Concurrency.MainActor(unsafe) public var usePictureButton: UIKit.UIButton!
   @_Concurrency.MainActor(unsafe) public var takeNewPictureButton: UIKit.UIButton!
   @_Concurrency.MainActor(unsafe) public var instructionLabel: UIKit.UILabel!
   @_Concurrency.MainActor(unsafe) public var closeButton: UIKit.UIButton!
   @_Concurrency.MainActor(unsafe) public var backButton: UIKit.UIButton!
   @_Concurrency.MainActor(unsafe) public var containerConfirmation: UIKit.UIView!
-  @_Concurrency.MainActor(unsafe) public var backIndicatorView: FaceCaptcha.DocumentscopyIndicatorView!
-  @_Concurrency.MainActor(unsafe) public var frontIndicatorView: FaceCaptcha.DocumentscopyIndicatorView!
+  @_Concurrency.MainActor(unsafe) public var backIndicatorView: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) public var frontIndicatorView: UIKit.UIView!
   @_Concurrency.MainActor(unsafe) public var cameraMask: UIKit.UIView!
   @_Concurrency.MainActor(unsafe) public var cameraVisualizer: UIKit.UIView!
   @_Concurrency.MainActor(unsafe) public var bottomViewConfirmationTopConstraint: UIKit.NSLayoutConstraint!
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
   @_Concurrency.MainActor(unsafe) public func displayConfirmationSheet(visibility: FaceCaptcha.DocumentscopyConfirmationSheetVisibility, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setFocus(to focusElement: FaceCaptcha.FocusIndicator, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setUsePictureButtonTitle(to newTitle: Swift.String)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
 }
 extension Foundation.Data {
@@ -2142,6 +2143,8 @@ extension FaceCaptcha.OFB.Error : Swift.Hashable {}
 extension FaceCaptcha.Bit : Swift.Equatable {}
 extension FaceCaptcha.Bit : Swift.Hashable {}
 extension FaceCaptcha.Bit : Swift.RawRepresentable {}
+extension FaceCaptcha.FocusIndicator : Swift.Equatable {}
+extension FaceCaptcha.FocusIndicator : Swift.Hashable {}
 extension FaceCaptcha.OCB.Mode : Swift.Equatable {}
 extension FaceCaptcha.OCB.Mode : Swift.Hashable {}
 extension FaceCaptcha.OCB.Error : Swift.Equatable {}
