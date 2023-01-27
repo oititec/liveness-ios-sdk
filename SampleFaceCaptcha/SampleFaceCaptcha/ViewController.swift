@@ -10,7 +10,7 @@ import FaceCaptcha
 
 class ViewController: UIViewController {
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private let appKey = ""
+    private var appKey = ""
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
