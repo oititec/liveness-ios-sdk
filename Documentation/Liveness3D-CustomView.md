@@ -1,9 +1,5 @@
 # Guia de Implementação de View Customizada do Liveness 3D
 
->  Versão Beta.
-
-
-
 A Interface do Liveness 3D é altamente customizável e permite alterar cores, fontes, bordas, ícones, textos, fundos e botões. 
 
 **São elementos customizáveis:** textos, cores, imagens, fontes, bordas e linhas.
@@ -111,22 +107,42 @@ Para customizar a tela de Instrução é necessário a criação de uma `UIView`
 public protocol CustomInstructionView: UIView {  
     var backButton: UIButton! { get }
     var continueButton: UIButton! { get }
+    
+    func changeLoadingVisibility(to visibility: LoadingVisibility)
 }
 ```
+
+| **Elemento** | **Descrição** |
+|:-------------|:--------------|
+| `backButton` | Botão de voltar no fluxo de navegação. |
+| `continueButton` | Botão para iniciar o processo do Liveness 3D. |
+| `changeLoadingVisibility(to:)` | Método responsável por indicar o estado do *loading* na tela de instruções, podendo receber dois valores: **hidden** (esconder o loading) e **displayed** (mostrar o loading). |
 
 #### Tela de Permissão de Câmera
 
-Para customizar a tela de Permissionamento de Câmera é necessário a criação de uma `UIView` (via código ou via Interface Builder), que implemente o protocolo `CustomInstructionView` como demonstrado abaixo:
+Para customizar a tela de Permissionamento de Câmera é necessário a criação de uma `UIView` (via código ou via Interface Builder), que implemente o protocolo `CustomCameraPermissionView` como demonstrado abaixo:
 
 ```swift
-public protocol CustomPermissionView: UIView {
+public protocol CustomCameraPermissionView: UIView {
     var backButton: UIButton! { get }
-    var continueButton: UIButton! { get }
+    var checkPermissionButton: UIButton! { get }
+    var closeButton: UIButton! { get }
+    var openSettingsButton: UIButton! { get }
+
+    func showBottomSheet()
 }
 ```
 
+| **Elemento** | **Descrição** |
+|:-------------|:--------------|
+| `backButton` | Botão para função voltar da navegação. |
+| `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
+| `closeButton` | Botão que fechar o fluxo de validação da permissão de câmera e volta para tela anterior. |
+| `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
+| `showBottomSheet()` | Método responsável por indicar o momento de mostrar os botões de `openSettingsButton` e `closeButton` |
+
 > Nota: 
-> (a) Além das subviews especificadas, as views customizadas pode conter outros elementos, apenas tomando cuidado para que os mesmos não interfiram nas subviews funcionais;
+> (a) Além das subviews especificadas, as views customizadas pode conter outros elementos, apenas tomando cuidado para que os mesmos não interfiram nas subviews funcionais;<br/>
 > (b) No projeto Sample, neste mesmo repositório, encontra-se um exemplo de implementação.
 
 
