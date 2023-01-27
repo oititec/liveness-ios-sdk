@@ -9,21 +9,24 @@ import UIKit
 import FaceCaptcha
 
 class ViewController: UIViewController {
-
     private let baseURL = "https://comercial.certiface.com.br:8443/"
     private let appKey = ""
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
         presentLiveness3D()
     }
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando imagem customizada
     @IBAction private func customLiveness3D() {
-        presentLiveness3D(theme: createLiveness3DCustomTheme())
+        presentLiveness3D(theme: createLiveness3DCustomTheme(), customPersmissionView: PermissionView(), customInstructionView: InstructionView())
     }
     
-    private func presentLiveness3D(theme: Liveness3DTheme? = nil) {
+    private func presentLiveness3D(
+        theme: Liveness3DTheme? = nil,
+        customPersmissionView: CustomCameraPermissionView? = nil,
+        customInstructionView: CustomInstructionView? = nil
+    ) {
         let liveness3DUser = Liveness3DUser(
             appKey: appKey, environment: .HML,
             defaultTheme: theme, lowLightTheme: theme
@@ -31,7 +34,9 @@ class ViewController: UIViewController {
         let controller = Liveness3DViewController(
             endpoint: baseURL,
             liveness3DUser: liveness3DUser,
-            debugOn: true
+            debugOn: true,
+            customInstructionView: customInstructionView,
+            customPermissionView: customPersmissionView
         )
         controller.delegate = self
         controller.modalPresentationStyle = .fullScreen
@@ -42,13 +47,13 @@ class ViewController: UIViewController {
     @IBAction private func defaultFaceCaptcha() {
         presentFaceCaptcha()
     }
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando imagem customizada
     @IBAction private func customFaceCaptchaImage() {
         let cameraOverlay = UIImage(named: "custom_overlay")
         presentFaceCaptcha(cameraOverlay: cameraOverlay)
     }
-
+    
     /// Trata de clique no botão para abrir o FaceCaptcha usando view customizada
     @IBAction private func customFaceCaptcha() {
         let customView = FaceCaptchaCustomView(frame: view.bounds)
@@ -67,26 +72,43 @@ class ViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
-
+    
     /// Trata de clique no botão para abrir Documentoscopia usando view padrão
     @IBAction func defaultDocumentscopy() {
         presentDocumentscopy()
     }
-
+    
     /// Trata de clique no botão para abrir Documentoscopia usando view customizada
     @IBAction private func customDocumentscopy() {
-        presentDocumentscopy()
+        presentDocumentscopy(
+            customInstructionView: CustomDocumentscopyInstructionView(),
+            customView: CustomDocumentscopyView(),
+            customCameraPermissionView: PermissionView(),
+            customLoadingView: CustomDocumentscopyLoadingView(),
+            customResultView: CustomDocumentscopyResultView()
+        )
     }
     
-    private func presentDocumentscopy() {
+    private func presentDocumentscopy(
+        customInstructionView: DocumentscopyCustomInstructionView? = nil,
+        customView: DocumentscopyCustomView? = nil,
+        customCameraPermissionView: DocumentscopyCustomCameraPermissionView? = nil,
+        customLoadingView: DocumentscopyCustomLoadingView? = nil,
+        customResultView: DocumentscopyCustomResultView? = nil
+    ) {
         let controller = DocumentscopyViewController(
             appKey: appKey, baseURL: baseURL,
-            delegate: self
+            delegate: self,
+            customInstructionView: customInstructionView,
+            customView: customView,
+            customCameraPermissionView: customCameraPermissionView,
+            customLoadingView: customLoadingView,
+            customResultView: customResultView
         )
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
-
+    
     /// Exibe um UIAlertController.
     /// - Parameters:
     ///   - title: Título da alerta
@@ -98,10 +120,6 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    private func createLiveness3DCustomTheme() -> Liveness3DTheme {
-        return Liveness3DTheme(.light)
-    }
 }
 
 // MARK: - Liveness3DDelegate
@@ -109,7 +127,7 @@ class ViewController: UIViewController {
 extension ViewController: Liveness3DDelegate {
     func handleLiveness3DValidation(validateModel: FaceCaptcha.Liveness3DSuccess) {
         debugPrint("handleCaptureValidation: \(validateModel)")
-        var message = String("Válido: \(validateModel.valid ?? false)")
+        let message = String("Válido: \(validateModel.valid ?? false)")
             .appending("\nCausa: \(String(describing: validateModel.cause))")
             .appending("\nCodID: \(String(describing: validateModel.codID))")
             .appending("\nProtocolo: \(String(describing: validateModel.protocolo))")
@@ -129,7 +147,6 @@ extension ViewController: Liveness3DDelegate {
 // MARK: - FaceCaptchaDelegate
 
 extension ViewController: FaceCaptchaDelegate {
-
     /// Callback chamada em caso de desafio concluído.
     /// - Parameter validateModel: Modelo para verificação se prova de vida obteve sucesso
     func handleFaceCaptchaValidation(validateModel: FCValidCaptchaModel) {
@@ -141,7 +158,7 @@ extension ViewController: FaceCaptchaDelegate {
             )
         }
     }
-
+    
     /// Callback chamada em caso de erro durante execução do FaceCaptcha.
     /// - Parameters:
     ///   - error: Erro ocorrido
@@ -151,7 +168,7 @@ extension ViewController: FaceCaptchaDelegate {
             self.showAlert(title: "FaceCaptcha Falhou", message: "Erro: \(error)")
         }
     }
-
+    
     /// Callback chamada ao clicar no botão de cancelar/fechar.
     func handleFaceCaptchaCanceled() {
         debugPrint("handleCaptureCanceled")
@@ -167,7 +184,6 @@ extension ViewController: FaceCaptchaDelegate {
 // MARK: - DocumentscopyDelegate
 
 extension ViewController: DocumentscopyDelegate {
-
     /// Callback chamada em caso de Documentoscopia concluída..
     func handleDocumentscopyCompleted() {
         debugPrint("handleDocumentscopyCompleted")
@@ -178,7 +194,7 @@ extension ViewController: DocumentscopyDelegate {
             )
         }
     }
-
+    
     /// Callback chamada em caso de erro durante execução da Documentoscopia.
     /// - Parameters:
     ///   - error: Erro ocorrido
@@ -188,7 +204,7 @@ extension ViewController: DocumentscopyDelegate {
             self.showAlert(title: "Documentoscopia Falhou", message: "Erro: \(error)")
         }
     }
-
+    
     /// Callback chamada ao clicar no botão de cancelar/fechar.
     func handleDocumentscopyCanceled() {
         debugPrint("handleDocumentscopyCanceled")
