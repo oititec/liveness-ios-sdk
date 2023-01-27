@@ -8,40 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552648F025489E2B0086DB73 /* AppDelegate.swift */; };
-		552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552648F225489E2B0086DB73 /* SceneDelegate.swift */; };
 		552648F525489E2B0086DB73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552648F425489E2B0086DB73 /* ViewController.swift */; };
 		552648F825489E2B0086DB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648F625489E2B0086DB73 /* Main.storyboard */; };
 		552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552648F925489E2F0086DB73 /* Assets.xcassets */; };
 		552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552648FB25489E2F0086DB73 /* LaunchScreen.storyboard */; };
 		5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */; };
 		5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */; };
-		556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */; };
-		556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039102667E7960039B94F /* DocConfirmationCustomView.xib */; };
-		556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039112667E7960039B94F /* DocCameraCustomView.swift */; };
-		556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039122667E7960039B94F /* DocHomeCustomView.xib */; };
-		556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556039132667E7960039B94F /* DocCameraCustomView.xib */; };
-		5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556039142667E7960039B94F /* DocHomeCustomView.swift */; };
+		5D0677BA37B41CD3922E66A9 /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DFFFDF57EB98178D9CDBA2C /* Pods_SampleFaceCaptcha.framework */; };
 		B7A83B6B2982D98A004708E2 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B6A2982D98A004708E2 /* PermissionView.swift */; };
 		B7A83B6D2982D9BA004708E2 /* PermissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B6C2982D9BA004708E2 /* PermissionView.xib */; };
 		B7A83B7529830265004708E2 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7429830265004708E2 /* InstructionView.swift */; };
 		B7A83B7729830287004708E2 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7629830287004708E2 /* InstructionView.xib */; };
 		B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7829830731004708E2 /* Livness3DTheme.swift */; };
-		B7A83B7D298323A8004708E2 /* DocLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7C298323A8004708E2 /* DocLoading.swift */; };
-		B7A83B7F298323DD004708E2 /* DocLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7E298323DD004708E2 /* DocLoading.xib */; };
-		B7A83B82298325BC004708E2 /* DocInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B81298325BC004708E2 /* DocInstruction.swift */; };
-		B7A83B84298326A4004708E2 /* DocInstruction.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B83298326A4004708E2 /* DocInstruction.xib */; };
-		B7A83B8729832EB4004708E2 /* DocResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8629832EB4004708E2 /* DocResult.swift */; };
-		B7A83B8929832F03004708E2 /* DocResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8829832F03004708E2 /* DocResult.xib */; };
-		B7A83B8C2983346D004708E2 /* DocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8B2983346D004708E2 /* DocView.swift */; };
-		B7A83B8E298334A3004708E2 /* DocView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8D298334A3004708E2 /* DocView.xib */; };
-		D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */; };
+		B7A83B7D298323A8004708E2 /* CustomDocumentscopyLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B7C298323A8004708E2 /* CustomDocumentscopyLoadingView.swift */; };
+		B7A83B7F298323DD004708E2 /* CustomDocumentscopyLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B7E298323DD004708E2 /* CustomDocumentscopyLoadingView.xib */; };
+		B7A83B82298325BC004708E2 /* CustomDocumentscopyInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B81298325BC004708E2 /* CustomDocumentscopyInstructionView.swift */; };
+		B7A83B84298326A4004708E2 /* CustomDocumentscopyInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B83298326A4004708E2 /* CustomDocumentscopyInstructionView.xib */; };
+		B7A83B8729832EB4004708E2 /* CustomDocumentscopyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8629832EB4004708E2 /* CustomDocumentscopyResultView.swift */; };
+		B7A83B8929832F03004708E2 /* CustomDocumentscopyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8829832F03004708E2 /* CustomDocumentscopyResultView.xib */; };
+		B7A83B8C2983346D004708E2 /* CustomDocumentscopyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8B2983346D004708E2 /* CustomDocumentscopyView.swift */; };
+		B7A83B8E298334A3004708E2 /* CustomDocumentscopyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8D298334A3004708E2 /* CustomDocumentscopyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		220E05B9AD4B904E9506DB14 /* Pods-SampleFaceCaptcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.debug.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.debug.xcconfig"; sourceTree = "<group>"; };
+		1DFFFDF57EB98178D9CDBA2C /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		552648ED25489E2B0086DB73 /* SampleFaceCaptcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleFaceCaptcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		552648F025489E2B0086DB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		552648F225489E2B0086DB73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		552648F425489E2B0086DB73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		552648F725489E2B0086DB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		552648F925489E2F0086DB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,27 +41,21 @@
 		552648FE25489E2F0086DB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaceCaptchaCustomView.xib; sourceTree = "<group>"; };
 		5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptchaCustomView.swift; sourceTree = "<group>"; };
-		5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocConfirmationCustomView.swift; sourceTree = "<group>"; };
-		556039102667E7960039B94F /* DocConfirmationCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocConfirmationCustomView.xib; sourceTree = "<group>"; };
-		556039112667E7960039B94F /* DocCameraCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCameraCustomView.swift; sourceTree = "<group>"; };
-		556039122667E7960039B94F /* DocHomeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocHomeCustomView.xib; sourceTree = "<group>"; };
-		556039132667E7960039B94F /* DocCameraCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCameraCustomView.xib; sourceTree = "<group>"; };
-		556039142667E7960039B94F /* DocHomeCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocHomeCustomView.swift; sourceTree = "<group>"; };
 		B7A83B6A2982D98A004708E2 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		B7A83B6C2982D9BA004708E2 /* PermissionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PermissionView.xib; sourceTree = "<group>"; };
 		B7A83B7429830265004708E2 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		B7A83B7629830287004708E2 /* InstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
 		B7A83B7829830731004708E2 /* Livness3DTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livness3DTheme.swift; sourceTree = "<group>"; };
-		B7A83B7C298323A8004708E2 /* DocLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocLoading.swift; sourceTree = "<group>"; };
-		B7A83B7E298323DD004708E2 /* DocLoading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocLoading.xib; sourceTree = "<group>"; };
-		B7A83B81298325BC004708E2 /* DocInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocInstruction.swift; sourceTree = "<group>"; };
-		B7A83B83298326A4004708E2 /* DocInstruction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocInstruction.xib; sourceTree = "<group>"; };
-		B7A83B8629832EB4004708E2 /* DocResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocResult.swift; sourceTree = "<group>"; };
-		B7A83B8829832F03004708E2 /* DocResult.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocResult.xib; sourceTree = "<group>"; };
-		B7A83B8B2983346D004708E2 /* DocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocView.swift; sourceTree = "<group>"; };
-		B7A83B8D298334A3004708E2 /* DocView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocView.xib; sourceTree = "<group>"; };
-		D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
+		B7A83B7C298323A8004708E2 /* CustomDocumentscopyLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocumentscopyLoadingView.swift; sourceTree = "<group>"; };
+		B7A83B7E298323DD004708E2 /* CustomDocumentscopyLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDocumentscopyLoadingView.xib; sourceTree = "<group>"; };
+		B7A83B81298325BC004708E2 /* CustomDocumentscopyInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocumentscopyInstructionView.swift; sourceTree = "<group>"; };
+		B7A83B83298326A4004708E2 /* CustomDocumentscopyInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDocumentscopyInstructionView.xib; sourceTree = "<group>"; };
+		B7A83B8629832EB4004708E2 /* CustomDocumentscopyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocumentscopyResultView.swift; sourceTree = "<group>"; };
+		B7A83B8829832F03004708E2 /* CustomDocumentscopyResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDocumentscopyResultView.xib; sourceTree = "<group>"; };
+		B7A83B8B2983346D004708E2 /* CustomDocumentscopyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocumentscopyView.swift; sourceTree = "<group>"; };
+		B7A83B8D298334A3004708E2 /* CustomDocumentscopyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDocumentscopyView.xib; sourceTree = "<group>"; };
+		C57CD1B9D931C14239B51CD4 /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
+		F588D827648929BC53020454 /* Pods-SampleFaceCaptcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.debug.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99D71B7659A598F05B3BE1F /* Pods_SampleFaceCaptcha.framework in Frameworks */,
+				5D0677BA37B41CD3922E66A9 /* Pods_SampleFaceCaptcha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +76,7 @@
 				552648EF25489E2B0086DB73 /* SampleFaceCaptcha */,
 				552648EE25489E2B0086DB73 /* Products */,
 				5F0A8599576EF633A5603833 /* Pods */,
-				695A1AD3B24D76A9DBE60E51 /* Frameworks */,
+				A30E375F6EF0892A7A7F8815 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,7 +93,6 @@
 			children = (
 				5560390E2667E7190039B94F /* CustomViews */,
 				552648F025489E2B0086DB73 /* AppDelegate.swift */,
-				552648F225489E2B0086DB73 /* SceneDelegate.swift */,
 				552648F425489E2B0086DB73 /* ViewController.swift */,
 				552648F625489E2B0086DB73 /* Main.storyboard */,
 				552648F925489E2F0086DB73 /* Assets.xcassets */,
@@ -131,16 +116,16 @@
 		5F0A8599576EF633A5603833 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				220E05B9AD4B904E9506DB14 /* Pods-SampleFaceCaptcha.debug.xcconfig */,
-				F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */,
+				F588D827648929BC53020454 /* Pods-SampleFaceCaptcha.debug.xcconfig */,
+				C57CD1B9D931C14239B51CD4 /* Pods-SampleFaceCaptcha.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		695A1AD3B24D76A9DBE60E51 /* Frameworks */ = {
+		A30E375F6EF0892A7A7F8815 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7ECC3D8966276C3FA345D58 /* Pods_SampleFaceCaptcha.framework */,
+				1DFFFDF57EB98178D9CDBA2C /* Pods_SampleFaceCaptcha.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,33 +137,6 @@
 				B7A83B6C2982D9BA004708E2 /* PermissionView.xib */,
 			);
 			path = CameraPermission;
-			sourceTree = "<group>";
-		};
-		B7A83B6E2982F880004708E2 /* DocCamera */ = {
-			isa = PBXGroup;
-			children = (
-				556039112667E7960039B94F /* DocCameraCustomView.swift */,
-				556039132667E7960039B94F /* DocCameraCustomView.xib */,
-			);
-			path = DocCamera;
-			sourceTree = "<group>";
-		};
-		B7A83B6F2982F89A004708E2 /* DocConfirmation */ = {
-			isa = PBXGroup;
-			children = (
-				5560390F2667E7960039B94F /* DocConfirmationCustomView.swift */,
-				556039102667E7960039B94F /* DocConfirmationCustomView.xib */,
-			);
-			path = DocConfirmation;
-			sourceTree = "<group>";
-		};
-		B7A83B702982F8AA004708E2 /* DocHome */ = {
-			isa = PBXGroup;
-			children = (
-				556039142667E7960039B94F /* DocHomeCustomView.swift */,
-				556039122667E7960039B94F /* DocHomeCustomView.xib */,
-			);
-			path = DocHome;
 			sourceTree = "<group>";
 		};
 		B7A83B712982F8B8004708E2 /* FaceCaptcha */ = {
@@ -203,51 +161,48 @@
 		B7A83B7A298321D4004708E2 /* Documentscopy */ = {
 			isa = PBXGroup;
 			children = (
-				B7A83B8A29833457004708E2 /* DocView */,
-				B7A83B8529832EA5004708E2 /* DocResult */,
-				B7A83B80298325A3004708E2 /* DocInstruction */,
-				B7A83B7B29832390004708E2 /* DocLoading */,
-				B7A83B6E2982F880004708E2 /* DocCamera */,
-				B7A83B6F2982F89A004708E2 /* DocConfirmation */,
-				B7A83B702982F8AA004708E2 /* DocHome */,
+				B7A83B80298325A3004708E2 /* Instruction */,
+				B7A83B8A29833457004708E2 /* Main */,
+				B7A83B7B29832390004708E2 /* Loading */,
+				B7A83B8529832EA5004708E2 /* Result */,
 			);
 			path = Documentscopy;
 			sourceTree = "<group>";
 		};
-		B7A83B7B29832390004708E2 /* DocLoading */ = {
+		B7A83B7B29832390004708E2 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				B7A83B7C298323A8004708E2 /* DocLoading.swift */,
-				B7A83B7E298323DD004708E2 /* DocLoading.xib */,
+				B7A83B7C298323A8004708E2 /* CustomDocumentscopyLoadingView.swift */,
+				B7A83B7E298323DD004708E2 /* CustomDocumentscopyLoadingView.xib */,
 			);
-			path = DocLoading;
+			path = Loading;
 			sourceTree = "<group>";
 		};
-		B7A83B80298325A3004708E2 /* DocInstruction */ = {
+		B7A83B80298325A3004708E2 /* Instruction */ = {
 			isa = PBXGroup;
 			children = (
-				B7A83B81298325BC004708E2 /* DocInstruction.swift */,
-				B7A83B83298326A4004708E2 /* DocInstruction.xib */,
+				B7A83B81298325BC004708E2 /* CustomDocumentscopyInstructionView.swift */,
+				B7A83B83298326A4004708E2 /* CustomDocumentscopyInstructionView.xib */,
 			);
-			path = DocInstruction;
+			path = Instruction;
 			sourceTree = "<group>";
 		};
-		B7A83B8529832EA5004708E2 /* DocResult */ = {
+		B7A83B8529832EA5004708E2 /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				B7A83B8629832EB4004708E2 /* DocResult.swift */,
-				B7A83B8829832F03004708E2 /* DocResult.xib */,
+				B7A83B8629832EB4004708E2 /* CustomDocumentscopyResultView.swift */,
+				B7A83B8829832F03004708E2 /* CustomDocumentscopyResultView.xib */,
 			);
-			path = DocResult;
+			path = Result;
 			sourceTree = "<group>";
 		};
-		B7A83B8A29833457004708E2 /* DocView */ = {
+		B7A83B8A29833457004708E2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B7A83B8B2983346D004708E2 /* DocView.swift */,
-				B7A83B8D298334A3004708E2 /* DocView.xib */,
+				B7A83B8B2983346D004708E2 /* CustomDocumentscopyView.swift */,
+				B7A83B8D298334A3004708E2 /* CustomDocumentscopyView.xib */,
 			);
-			path = DocView;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,11 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5526490125489E2F0086DB73 /* Build configuration list for PBXNativeTarget "SampleFaceCaptcha" */;
 			buildPhases = (
-				FC43A2B0B95814A60C0FFE45 /* [CP] Check Pods Manifest.lock */,
+				A89848B8DEC934C09CDA4196 /* [CP] Check Pods Manifest.lock */,
 				552648E925489E2B0086DB73 /* Sources */,
 				552648EA25489E2B0086DB73 /* Frameworks */,
 				552648EB25489E2B0086DB73 /* Resources */,
-				D29A014AB337915271760902 /* [CP] Embed Pods Frameworks */,
+				ECFC80D474EE31E410AECC6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +235,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = Oiti;
 				TargetAttributes = {
 					552648EC25489E2B0086DB73 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -309,43 +265,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A83B84298326A4004708E2 /* DocInstruction.xib in Resources */,
-				556039192667E7960039B94F /* DocCameraCustomView.xib in Resources */,
+				B7A83B84298326A4004708E2 /* CustomDocumentscopyInstructionView.xib in Resources */,
 				552648FD25489E2F0086DB73 /* LaunchScreen.storyboard in Resources */,
 				B7A83B7729830287004708E2 /* InstructionView.xib in Resources */,
-				B7A83B7F298323DD004708E2 /* DocLoading.xib in Resources */,
-				556039182667E7960039B94F /* DocHomeCustomView.xib in Resources */,
-				556039162667E7960039B94F /* DocConfirmationCustomView.xib in Resources */,
-				B7A83B8E298334A3004708E2 /* DocView.xib in Resources */,
+				B7A83B7F298323DD004708E2 /* CustomDocumentscopyLoadingView.xib in Resources */,
+				B7A83B8E298334A3004708E2 /* CustomDocumentscopyView.xib in Resources */,
 				5548FCE5260664D6009700C9 /* FaceCaptchaCustomView.xib in Resources */,
 				552648FA25489E2F0086DB73 /* Assets.xcassets in Resources */,
 				552648F825489E2B0086DB73 /* Main.storyboard in Resources */,
 				B7A83B6D2982D9BA004708E2 /* PermissionView.xib in Resources */,
-				B7A83B8929832F03004708E2 /* DocResult.xib in Resources */,
+				B7A83B8929832F03004708E2 /* CustomDocumentscopyResultView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D29A014AB337915271760902 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC43A2B0B95814A60C0FFE45 /* [CP] Check Pods Manifest.lock */ = {
+		A89848B8DEC934C09CDA4196 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,6 +303,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ECFC80D474EE31E410AECC6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -375,19 +328,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				552648F525489E2B0086DB73 /* ViewController.swift in Sources */,
-				556039172667E7960039B94F /* DocCameraCustomView.swift in Sources */,
 				5548FCE6260664D6009700C9 /* FaceCaptchaCustomView.swift in Sources */,
-				B7A83B8C2983346D004708E2 /* DocView.swift in Sources */,
+				B7A83B8C2983346D004708E2 /* CustomDocumentscopyView.swift in Sources */,
 				B7A83B6B2982D98A004708E2 /* PermissionView.swift in Sources */,
-				5560391A2667E7960039B94F /* DocHomeCustomView.swift in Sources */,
 				B7A83B7529830265004708E2 /* InstructionView.swift in Sources */,
-				556039152667E7960039B94F /* DocConfirmationCustomView.swift in Sources */,
-				B7A83B8729832EB4004708E2 /* DocResult.swift in Sources */,
-				B7A83B82298325BC004708E2 /* DocInstruction.swift in Sources */,
-				B7A83B7D298323A8004708E2 /* DocLoading.swift in Sources */,
+				B7A83B8729832EB4004708E2 /* CustomDocumentscopyResultView.swift in Sources */,
+				B7A83B82298325BC004708E2 /* CustomDocumentscopyInstructionView.swift in Sources */,
+				B7A83B7D298323A8004708E2 /* CustomDocumentscopyLoadingView.swift in Sources */,
 				B7A83B7929830731004708E2 /* Livness3DTheme.swift in Sources */,
 				552648F125489E2B0086DB73 /* AppDelegate.swift in Sources */,
-				552648F325489E2B0086DB73 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,13 +480,14 @@
 		};
 		5526490225489E2F0086DB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 220E05B9AD4B904E9506DB14 /* Pods-SampleFaceCaptcha.debug.xcconfig */;
+			baseConfigurationReference = F588D827648929BC53020454 /* Pods-SampleFaceCaptcha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KRCZ6X7U8S;
 				INFOPLIST_FILE = SampleFaceCaptcha/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FaceCaptcha;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -552,13 +502,14 @@
 		};
 		5526490325489E2F0086DB73 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0A6B4D27A341E17834F82EE /* Pods-SampleFaceCaptcha.release.xcconfig */;
+			baseConfigurationReference = C57CD1B9D931C14239B51CD4 /* Pods-SampleFaceCaptcha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KRCZ6X7U8S;
 				INFOPLIST_FILE = SampleFaceCaptcha/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FaceCaptcha;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

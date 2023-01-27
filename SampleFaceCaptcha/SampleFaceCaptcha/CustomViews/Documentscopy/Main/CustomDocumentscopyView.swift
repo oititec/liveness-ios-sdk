@@ -1,5 +1,5 @@
 //
-//  DocView.swift
+//  CustomDocumentscopyView.swift
 //  SampleFaceCaptcha
 //
 //  Created by Filipe Marques on 26/01/23.
@@ -8,10 +8,7 @@
 import UIKit
 import FaceCaptcha
 
-
-class DocView: UIView, DocumentscopyCustomView {
-    
-   
+class CustomDocumentscopyView: UIView, DocumentscopyCustomView {
     @IBOutlet weak var cameraMask: UIView!
     @IBOutlet weak var frontIndicatorView: DocumentscopyIndicatorView!
     @IBOutlet weak var backIndicatorView: DocumentscopyIndicatorView!
@@ -36,13 +33,10 @@ class DocView: UIView, DocumentscopyCustomView {
         loadFromNib()
     }
     
-    func displayConfirmationSheet(visibility: FaceCaptcha.DocumentscopyConfirmationSheetVisibility, animated: Bool) {
-        
-    }
+    func displayConfirmationSheet(visibility: FaceCaptcha.DocumentscopyConfirmationSheetVisibility, animated: Bool) { }
 
     private func loadFromNib() {
         let bundle = Bundle(for: type(of: self))
-        
         bundle.loadNibNamed("\(type(of: self))", owner: self)
         
         view.frame = bounds

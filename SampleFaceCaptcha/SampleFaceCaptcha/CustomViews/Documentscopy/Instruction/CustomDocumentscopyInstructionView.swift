@@ -1,5 +1,5 @@
 //
-//  DocResult.swift
+//  CustomDocumentscopyInstructionView.swift
 //  SampleFaceCaptcha
 //
 //  Created by Filipe Marques on 26/01/23.
@@ -8,12 +8,13 @@
 import UIKit
 import FaceCaptcha
 
-
-class DocResult: UIView, DocumentscopyCustomResultView {
-
-
-    @IBOutlet weak var resultButton: UIButton!
+class CustomDocumentscopyInstructionView: UIView, DocumentscopyCustomInstructionView {
+    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var viewCNH: UIView!
+    @IBOutlet weak var viewRG: UIView!
     @IBOutlet weak var view: UIView!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,10 +37,4 @@ class DocResult: UIView, DocumentscopyCustomResultView {
         
         addSubview(view)
     }
-    
-    
-    func display(for resultType: FaceCaptcha.DocumentscopyResultType) {
-        
-    }
-    
 }

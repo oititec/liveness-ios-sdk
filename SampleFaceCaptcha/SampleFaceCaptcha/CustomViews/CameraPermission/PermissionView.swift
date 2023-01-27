@@ -8,9 +8,7 @@
 import UIKit
 import FaceCaptcha
 
-
 final class PermissionView: UIView, CustomCameraPermissionView {
-
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var checkPermissionButton: UIButton!
     @IBOutlet weak var openSettingsButton: UIButton!
@@ -26,7 +24,6 @@ final class PermissionView: UIView, CustomCameraPermissionView {
         super.init(coder: coder)
         loadFromNib()
     }
-    
     
     func showBottomSheet() {
         openSettingsButton.isHidden = false

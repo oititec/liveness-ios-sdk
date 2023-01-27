@@ -9,9 +9,8 @@ import UIKit
 import FaceCaptcha
 
 class ViewController: UIViewController {
-    
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private let appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiOTlDMTc3RTRDQUQ5RDc0NzBGNzAwRUM0MjEwMzkwOTE2fG9pdGkuZmFjZXRlYy5obWwiLCJlbXBDb2QiOiIwMDAwMDAwMDAxIiwiZmlsQ29kIjoiMDAwMDAwMjc2OSIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IjI5NDlGREM0RDFGMDQ2MUJBRDk3RDIyMDQ3N0ZFOUExREI0ODcxM0IzMzlBOTkxQzdBMjQ0RDhGMTM4MjRGNjMyNjhFREM3MDE1MDhENTMzRkYwQURBMDZDNDQzMjlDREI1NUYyRjA1NjE2N0Y4QjQxNjU1Qzc5NkJBMzU4QzNFQ0IyMTJ8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFcXBNWDZpK2FpTjhBekVXdVVPSTUxczFUU3MxaFdmUENjRUw5RXJoRU1uV2c1NUVkbUhvUC9icWpRPT0iLCJrZXkiOiJRV0pzWlNCaGJpQm9iM0JsSUc5bUlHSnZaSGt1SUVGdWVTQnVZWGtnYzJoNWJtVT0iLCJleHAiOjE2NzQ3Nzg0MTAsImlhdCI6MTY3NDc3ODExMH0.dJ4KemQSxyPo93_2D9kYOcFjE_SLcxKuruzzNUPhw4w"
+    private let appKey = ""
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
@@ -28,7 +27,6 @@ class ViewController: UIViewController {
         customPersmissionView: CustomCameraPermissionView? = nil,
         customInstructionView: CustomInstructionView? = nil
     ) {
-            
         let liveness3DUser = Liveness3DUser(
             appKey: appKey, environment: .HML,
             defaultTheme: theme, lowLightTheme: theme
@@ -83,11 +81,11 @@ class ViewController: UIViewController {
     /// Trata de clique no botão para abrir Documentoscopia usando view customizada
     @IBAction private func customDocumentscopy() {
         presentDocumentscopy(
-            customInstructionView: DocInstruction(),
-            customView: DocView(),
+            customInstructionView: CustomDocumentscopyInstructionView(),
+            customView: CustomDocumentscopyView(),
             customCameraPermissionView: PermissionView(),
-            customLoadingView: DocLoading(),
-            customResultView: DocResult()
+            customLoadingView: CustomDocumentscopyLoadingView(),
+            customResultView: CustomDocumentscopyResultView()
         )
     }
     
@@ -97,9 +95,7 @@ class ViewController: UIViewController {
         customCameraPermissionView: DocumentscopyCustomCameraPermissionView? = nil,
         customLoadingView: DocumentscopyCustomLoadingView? = nil,
         customResultView: DocumentscopyCustomResultView? = nil
-        
     ) {
-        
         let controller = DocumentscopyViewController(
             appKey: appKey, baseURL: baseURL,
             delegate: self,
@@ -151,7 +147,6 @@ extension ViewController: Liveness3DDelegate {
 // MARK: - FaceCaptchaDelegate
 
 extension ViewController: FaceCaptchaDelegate {
-    
     /// Callback chamada em caso de desafio concluído.
     /// - Parameter validateModel: Modelo para verificação se prova de vida obteve sucesso
     func handleFaceCaptchaValidation(validateModel: FCValidCaptchaModel) {
@@ -189,7 +184,6 @@ extension ViewController: FaceCaptchaDelegate {
 // MARK: - DocumentscopyDelegate
 
 extension ViewController: DocumentscopyDelegate {
-    
     /// Callback chamada em caso de Documentoscopia concluída..
     func handleDocumentscopyCompleted() {
         debugPrint("handleDocumentscopyCompleted")

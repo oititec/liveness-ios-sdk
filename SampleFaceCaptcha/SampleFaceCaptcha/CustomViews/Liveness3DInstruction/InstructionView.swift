@@ -9,7 +9,6 @@ import UIKit
 import FaceCaptcha
 
 class InstructionView: UIView, CustomInstructionView {
-    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var view: UIView!
@@ -24,9 +23,7 @@ class InstructionView: UIView, CustomInstructionView {
         loadFromNib()
     }
     
-    func changeLoadingVisibility(to visibility: FaceCaptcha.LoadingVisibility) {
-        
-    }
+    func changeLoadingVisibility(to visibility: FaceCaptcha.LoadingVisibility) { }
     
     private func loadFromNib() {
         let bundle = Bundle(for: type(of: self))
@@ -38,6 +35,4 @@ class InstructionView: UIView, CustomInstructionView {
         
         addSubview(view)
     }
-    
-    
 }
