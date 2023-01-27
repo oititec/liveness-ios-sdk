@@ -183,11 +183,13 @@ public protocol DocumentscopyCustomView: UIView {
 
 **DocumentscopyIndicatorView**
 
-É `typealias` que força uma herança para o tipo `UIView` e obriga a assinatura do protocolo ``DocumentscopyIndicatorViewProtocol``.
+É uma classe que herda de `UIView` e que necessita que o método `setFocus(to:animated:)` seja sobrescrito.
 
 ```swift 
-@objc public protocol DocumentscopyIndicatorViewProtocol {
-    func setFocus(to value: Bool, animated: Bool)
+open class DocumentscopyIndicatorView: UIView {
+    open func setFocus(to value: Bool, animated: Bool) {
+        fatalError("Implemente o método setFocus(to:animated:) na subclasse")
+    }
 }
 ```
 
@@ -198,11 +200,13 @@ public protocol DocumentscopyCustomView: UIView {
 
 **DocumentscopyEditableButton**
 
-É `typealias` que força uma herança para o tipo `UIButton` e obriga a assinatura do protocolo ``DocumentscopyEditableButtonProtocol``.
+É uma classe que herda de `UIButton` e que necessita que o método `changeTitle(to:)` seja sobrescrito
 
 ```swift 
-@objc public protocol DocumentscopyEditableButtonProtocol: AnyObject {
-    func changeTitle(to newTitle: String)
+open class DocumentscopyEditableButton: UIButton {
+    open func changeTitle(to newTitle: String) {
+        fatalError("Implemente o método changeTitle(to:) na subclasse")
+    }
 }
 ```
 
