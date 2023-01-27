@@ -228,16 +228,38 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+@class NSString;
 
-SWIFT_CLASS("_TtC11FaceCaptcha23DocumentscopyCameraView")
-@interface DocumentscopyCameraView : UIView
+/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles
+SWIFT_PROTOCOL("_TtP11FaceCaptcha35DocumentscopyEditableButtonProtocol_")
+@protocol DocumentscopyEditableButtonProtocol
+/// Altera o titulo do botão
+/// \param newTitle Novo titulo que será usado no botão
+///
+- (void)changeTitleTo:(NSString * _Nonnull)newTitle;
+@end
+
+
+/// View que identifica qual face do documento é necessária no momento
+SWIFT_PROTOCOL("_TtP11FaceCaptcha34DocumentscopyIndicatorViewProtocol_")
+@protocol DocumentscopyIndicatorViewProtocol
+/// Determina se a View está em foco
+/// \param value Boleano que indica o estado do foco da View
+///
+/// \param animated Determina se a troca de estados será animada
+///
+- (void)setFocusTo:(BOOL)value animated:(BOOL)animated;
+@end
+
+
+SWIFT_CLASS("_TtC11FaceCaptcha17DocumentscopyView")
+@interface DocumentscopyView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 @end
 
 @class UIViewController;
-@class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
@@ -247,6 +269,13 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 - (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+@class UIGestureRecognizer;
+
+@interface DocumentscopyViewController (SWIFT_EXTENSION(FaceCaptcha)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
@@ -273,12 +302,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
 
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 @interface Liveness3DViewController : UIViewController
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
 
 
 
@@ -527,16 +556,38 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+@class NSString;
 
-SWIFT_CLASS("_TtC11FaceCaptcha23DocumentscopyCameraView")
-@interface DocumentscopyCameraView : UIView
+/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles
+SWIFT_PROTOCOL("_TtP11FaceCaptcha35DocumentscopyEditableButtonProtocol_")
+@protocol DocumentscopyEditableButtonProtocol
+/// Altera o titulo do botão
+/// \param newTitle Novo titulo que será usado no botão
+///
+- (void)changeTitleTo:(NSString * _Nonnull)newTitle;
+@end
+
+
+/// View que identifica qual face do documento é necessária no momento
+SWIFT_PROTOCOL("_TtP11FaceCaptcha34DocumentscopyIndicatorViewProtocol_")
+@protocol DocumentscopyIndicatorViewProtocol
+/// Determina se a View está em foco
+/// \param value Boleano que indica o estado do foco da View
+///
+/// \param animated Determina se a troca de estados será animada
+///
+- (void)setFocusTo:(BOOL)value animated:(BOOL)animated;
+@end
+
+
+SWIFT_CLASS("_TtC11FaceCaptcha17DocumentscopyView")
+@interface DocumentscopyView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 @end
 
 @class UIViewController;
-@class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
@@ -546,6 +597,13 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 - (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+@class UIGestureRecognizer;
+
+@interface DocumentscopyViewController (SWIFT_EXTENSION(FaceCaptcha)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
@@ -572,12 +630,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
 
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 @interface Liveness3DViewController : UIViewController
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
 
 
 
@@ -826,16 +884,38 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+@class NSString;
 
-SWIFT_CLASS("_TtC11FaceCaptcha23DocumentscopyCameraView")
-@interface DocumentscopyCameraView : UIView
+/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles
+SWIFT_PROTOCOL("_TtP11FaceCaptcha35DocumentscopyEditableButtonProtocol_")
+@protocol DocumentscopyEditableButtonProtocol
+/// Altera o titulo do botão
+/// \param newTitle Novo titulo que será usado no botão
+///
+- (void)changeTitleTo:(NSString * _Nonnull)newTitle;
+@end
+
+
+/// View que identifica qual face do documento é necessária no momento
+SWIFT_PROTOCOL("_TtP11FaceCaptcha34DocumentscopyIndicatorViewProtocol_")
+@protocol DocumentscopyIndicatorViewProtocol
+/// Determina se a View está em foco
+/// \param value Boleano que indica o estado do foco da View
+///
+/// \param animated Determina se a troca de estados será animada
+///
+- (void)setFocusTo:(BOOL)value animated:(BOOL)animated;
+@end
+
+
+SWIFT_CLASS("_TtC11FaceCaptcha17DocumentscopyView")
+@interface DocumentscopyView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 @end
 
 @class UIViewController;
-@class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
@@ -845,6 +925,13 @@ SWIFT_CLASS("_TtC11FaceCaptcha27DocumentscopyViewController")
 - (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+@class UIGestureRecognizer;
+
+@interface DocumentscopyViewController (SWIFT_EXTENSION(FaceCaptcha)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
@@ -871,12 +958,12 @@ SWIFT_CLASS("_TtC11FaceCaptcha25FaceCaptchaViewController")
 
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
 @interface Liveness3DViewController : UIViewController
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
 
 
 

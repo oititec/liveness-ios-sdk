@@ -6,23 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		VjhjehvTNcaEhkaKAGjTGV3MDfE=
-		</data>
-		<key>BottomSheetController.nib/objects-11.0+.nib</key>
-		<data>
-		EEjI7TZVIaDkcBlzus56NeGDG9M=
-		</data>
-		<key>BottomSheetController.nib/runtime.nib</key>
-		<data>
-		laF03JMKfgm5p8vJ0wt1QfWv1Es=
-		</data>
-		<key>CheckCameraPermissionViewController.nib/objects-11.0+.nib</key>
-		<data>
-		Km2bz2NFANF0R6CTkmNsN109mlo=
-		</data>
-		<key>CheckCameraPermissionViewController.nib/runtime.nib</key>
-		<data>
-		XEwHmWKq2/pDcZ6Q7UX8SDw+Uec=
+		D+d3FeiqdGVBjYib0eU6P9MxSoU=
 		</data>
 		<key>FaceCaptchaDefaultView.nib/objects-11.0+.nib</key>
 		<data>
@@ -38,7 +22,7 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		dBhvx9Qw2xmOJdr5jH6ixPPiUro=
+		3+cOYs9ggFu0pkpL943+a1YnKvo=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
 		<data>
@@ -195,7 +179,7 @@
 		</data>
 		<key>Headers/FaceCaptcha-Swift.h</key>
 		<data>
-		FejNXFTcez3rxRDrbzA2Y8o3xcQ=
+		OUhmphxBcLWBb/+C+VWbHpGxzG0=
 		</data>
 		<key>Headers/FaceCaptcha.h</key>
 		<data>
@@ -203,7 +187,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4ADIv5hjqnsNbuPWRW4vHjBg5gA=
+		iVPd6kBAgH9tNMB5dI4CUJcs2mQ=
 		</data>
 		<key>Inter-Bold.otf</key>
 		<data>
@@ -233,37 +217,29 @@
 		<data>
 		pl39d1tk6fl5SxH7kJx+uuYy3Qw=
 		</data>
-		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
-		<data>
-		11984cIz0nkG/la2k4TrUXrzcDo=
-		</data>
-		<key>Liveness3DViewController.nib/runtime.nib</key>
-		<data>
-		ef6D4eAf2HIyrvSxzu6nht9UCw8=
-		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		Ky1UuTD4FBbR58PPJbN8w4wFM8M=
+		dk0/2yAQ8ijo2mQvcT1Vv4BE9fc=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		GktbjQoxTYpVciHVxKZxQhCeVTE=
+		k8O/llZ6NRCzS7UZ3FwyYnuQz30=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		IGUpsr72BnliJmq9A7aucgB/yOk=
+		T2RNOz+G9Dw0R2MjV0DB81aPf1Y=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		tJHLRl0SpctxitQ1y0pHMD3TsRY=
+		8RXg3WKGJA8bxWAT8Cqi+TvV3bw=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		RL7YPe6VRKpc552BWIuMm/yLFS8=
+		NWHMN/JjjqE9BY1FzW9Gm3ydxNw=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		UIcUDf/N/42J91BQ445rhwB29MQ=
+		/snP4ZYUl+wBfHsddxtBSTtm+e0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -304,55 +280,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VjhjehvTNcaEhkaKAGjTGV3MDfE=
+			D+d3FeiqdGVBjYib0eU6P9MxSoU=
 			</data>
 			<key>hash2</key>
 			<data>
-			6tNHXQLNCWKhwA89c/Lnpqvk/VoKQllhjx349WaK090=
-			</data>
-		</dict>
-		<key>BottomSheetController.nib/objects-11.0+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			EEjI7TZVIaDkcBlzus56NeGDG9M=
-			</data>
-			<key>hash2</key>
-			<data>
-			4jQKfvKLflVVu3GStupnglxOhKAxSS5qlCVZJDTYHcI=
-			</data>
-		</dict>
-		<key>BottomSheetController.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			laF03JMKfgm5p8vJ0wt1QfWv1Es=
-			</data>
-			<key>hash2</key>
-			<data>
-			2BcaXx8OcIobsOLExM+guym+2Gb2DSrLomP/0KPVGQs=
-			</data>
-		</dict>
-		<key>CheckCameraPermissionViewController.nib/objects-11.0+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Km2bz2NFANF0R6CTkmNsN109mlo=
-			</data>
-			<key>hash2</key>
-			<data>
-			MuEzjdqeB5mH6zsC+jrGSW8ZdY0BbAl8IpLVWEckQL0=
-			</data>
-		</dict>
-		<key>CheckCameraPermissionViewController.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			XEwHmWKq2/pDcZ6Q7UX8SDw+Uec=
-			</data>
-			<key>hash2</key>
-			<data>
-			Lvlt9uLG13REiT75qkq9U1tUm627YOkSwM3KWgz17AY=
+			Kby0df4icXGfrBNlsblhQBF93jieUvX47Em1zKkC10Y=
 			</data>
 		</dict>
 		<key>FaceCaptchaDefaultView.nib/objects-11.0+.nib</key>
@@ -392,11 +324,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dBhvx9Qw2xmOJdr5jH6ixPPiUro=
+			3+cOYs9ggFu0pkpL943+a1YnKvo=
 			</data>
 			<key>hash2</key>
 			<data>
-			P/xCywNRGMJ9Cqc/pJcYJ6RIrteeattn+ITZ2OZsmaY=
+			INi1pOZVm45/KPqwmEQsJi9QlndSIeKnHbZnZCBYfx0=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
@@ -812,11 +744,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FejNXFTcez3rxRDrbzA2Y8o3xcQ=
+			OUhmphxBcLWBb/+C+VWbHpGxzG0=
 			</data>
 			<key>hash2</key>
 			<data>
-			S83s29xKcvMPRsvf0LlAXXX3LlNZHhuGohEjsPYayN8=
+			8LNCNEDWwnQoVyZWdLL/rous9OTuOqWxJ52Xzb0E4X0=
 			</data>
 		</dict>
 		<key>Headers/FaceCaptcha.h</key>
@@ -907,92 +839,70 @@
 			6wK9WYygGzwdvJpGqwLB55zs5Z6DRazrjphLZz+0sIc=
 			</data>
 		</dict>
-		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			11984cIz0nkG/la2k4TrUXrzcDo=
-			</data>
-			<key>hash2</key>
-			<data>
-			n3gtHI5sx09xPCgzv4mJArqc1gX9o3dHFGsD+rG0xiY=
-			</data>
-		</dict>
-		<key>Liveness3DViewController.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ef6D4eAf2HIyrvSxzu6nht9UCw8=
-			</data>
-			<key>hash2</key>
-			<data>
-			fW4FRP9+nzKua1g7eeNlMsl4yDOk+pUnk7SGw6qGfko=
-			</data>
-		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ky1UuTD4FBbR58PPJbN8w4wFM8M=
+			dk0/2yAQ8ijo2mQvcT1Vv4BE9fc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ET3CBhsPSMBHfNumwN39YWx/Ufa9zX5lKMQspKdNp1I=
+			6C+oKZPmd+/HqY5hdl4CAK8uuTjQmooFFzUoYrRyp04=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GktbjQoxTYpVciHVxKZxQhCeVTE=
+			k8O/llZ6NRCzS7UZ3FwyYnuQz30=
 			</data>
 			<key>hash2</key>
 			<data>
-			v3fi17SwYw5EVDKVCi0HGBbX8WzwjS3mJh/4AqPg+9E=
+			k0em8lznkg0Dt8foJena4eLCz82vO/c6aeKE+WNFCS8=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IGUpsr72BnliJmq9A7aucgB/yOk=
+			T2RNOz+G9Dw0R2MjV0DB81aPf1Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			No6AuwJf3j55njbKw1143mdmjClEaa58ugwJuyDCcQQ=
+			5ODsc9hnwXUOOkwaYyqSzcHb9k+2x/dpd2Wes6lyVh4=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tJHLRl0SpctxitQ1y0pHMD3TsRY=
+			8RXg3WKGJA8bxWAT8Cqi+TvV3bw=
 			</data>
 			<key>hash2</key>
 			<data>
-			mMTrNa5giyrQpV6T1cZypaqHRRIYKSE5fGHjqAzEzG0=
+			3qIPgNHuTJeGEia4DCDNbW3Noru4UJhWE6ed10pN7xw=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RL7YPe6VRKpc552BWIuMm/yLFS8=
+			NWHMN/JjjqE9BY1FzW9Gm3ydxNw=
 			</data>
 			<key>hash2</key>
 			<data>
-			Duk9M0IeYOjujnWZ3PxX0MJys6fi/1YMEPCcYVMn+Gw=
+			QMhPFV6iMrFnrSOoFbFvifSQcStBcmkZjV1lSsQ3B/s=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UIcUDf/N/42J91BQ445rhwB29MQ=
+			/snP4ZYUl+wBfHsddxtBSTtm+e0=
 			</data>
 			<key>hash2</key>
 			<data>
-			gbx4DzFWDfEem/tUx3zCbVYpkuAGzqiAL5a3Quy0bzM=
+			dBzK6SfCE30SVxQCTUGUmw9uJgqj5xzpZUb6KCFUDuw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
