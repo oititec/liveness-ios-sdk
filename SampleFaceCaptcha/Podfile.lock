@@ -1,16 +1,23 @@
 PODS:
-  - FaceCaptcha (3.1.1)
+  - FaceCaptcha (4.0.5):
+    - OILiveness3D_FT (~> 9.6.10)
+  - OILiveness3D_FT (9.6.10)
 
 DEPENDENCIES:
-  - FaceCaptcha (~> 3.1.1)
+  - FaceCaptcha (from `../`)
 
 SPEC REPOS:
-  https://github.com/oititec/liveness-ios-specs.git:
-    - FaceCaptcha
+  https://github.com/oititec/liveness-ios-specs:
+    - OILiveness3D_FT
+
+EXTERNAL SOURCES:
+  FaceCaptcha:
+    :path: "../"
 
 SPEC CHECKSUMS:
-  FaceCaptcha: 558bfeba8f245b9cd8d42de24abe8af4f7653c24
+  FaceCaptcha: d6c7ccc84a3a2fc5b8d623375bc0141b43b2fb24
+  OILiveness3D_FT: c2b3b70fbd86e2fd5efc58f47d32b0aead995ae1
 
-PODFILE CHECKSUM: e00a09eca697fc297f6b2f1ec77381fba44f182b
+PODFILE CHECKSUM: c0f8293c9196275a19695f8b1118bff55b7df3e5
 
 COCOAPODS: 1.11.3
