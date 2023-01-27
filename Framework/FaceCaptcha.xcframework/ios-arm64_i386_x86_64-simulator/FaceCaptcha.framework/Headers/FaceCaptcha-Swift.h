@@ -224,29 +224,29 @@ SWIFT_CLASS("_TtC11FaceCaptcha17CameraPreviewView")
 @interface CameraPreviewView : UIView
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
 + (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSString;
 
-/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles
+/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles.
 SWIFT_PROTOCOL("_TtP11FaceCaptcha35DocumentscopyEditableButtonProtocol_")
 @protocol DocumentscopyEditableButtonProtocol
-/// Altera o titulo do botão
-/// \param newTitle Novo titulo que será usado no botão
+/// Altera o titulo do botão.
+/// \param newTitle Novo titulo que será usado no botão.
 ///
 - (void)changeTitleTo:(NSString * _Nonnull)newTitle;
 @end
 
 
-/// View que identifica qual face do documento é necessária no momento
+/// View que identifica qual face do documento é necessária no momento.
 SWIFT_PROTOCOL("_TtP11FaceCaptcha34DocumentscopyIndicatorViewProtocol_")
 @protocol DocumentscopyIndicatorViewProtocol
-/// Determina se a View está em foco
-/// \param value Boleano que indica o estado do foco da View
+/// Determina se a View está em foco.
+/// \param value Boleano que indica o estado do foco da View.
 ///
-/// \param animated Determina se a troca de estados será animada
+/// \param animated Determina se a troca de estados será animada.
 ///
 - (void)setFocusTo:(BOOL)value animated:(BOOL)animated;
 @end
@@ -552,29 +552,29 @@ SWIFT_CLASS("_TtC11FaceCaptcha17CameraPreviewView")
 @interface CameraPreviewView : UIView
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
 + (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSString;
 
-/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles
+/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles.
 SWIFT_PROTOCOL("_TtP11FaceCaptcha35DocumentscopyEditableButtonProtocol_")
 @protocol DocumentscopyEditableButtonProtocol
-/// Altera o titulo do botão
-/// \param newTitle Novo titulo que será usado no botão
+/// Altera o titulo do botão.
+/// \param newTitle Novo titulo que será usado no botão.
 ///
 - (void)changeTitleTo:(NSString * _Nonnull)newTitle;
 @end
 
 
-/// View que identifica qual face do documento é necessária no momento
+/// View que identifica qual face do documento é necessária no momento.
 SWIFT_PROTOCOL("_TtP11FaceCaptcha34DocumentscopyIndicatorViewProtocol_")
 @protocol DocumentscopyIndicatorViewProtocol
-/// Determina se a View está em foco
-/// \param value Boleano que indica o estado do foco da View
+/// Determina se a View está em foco.
+/// \param value Boleano que indica o estado do foco da View.
 ///
-/// \param animated Determina se a troca de estados será animada
+/// \param animated Determina se a troca de estados será animada.
 ///
 - (void)setFocusTo:(BOOL)value animated:(BOOL)animated;
 @end
@@ -880,29 +880,29 @@ SWIFT_CLASS("_TtC11FaceCaptcha17CameraPreviewView")
 @interface CameraPreviewView : UIView
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
 + (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSString;
 
-/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles
+/// Protocolo que deve ser implementado por botões especifícos usados na Documentoscopia para que seja possível alterar o titulo deles.
 SWIFT_PROTOCOL("_TtP11FaceCaptcha35DocumentscopyEditableButtonProtocol_")
 @protocol DocumentscopyEditableButtonProtocol
-/// Altera o titulo do botão
-/// \param newTitle Novo titulo que será usado no botão
+/// Altera o titulo do botão.
+/// \param newTitle Novo titulo que será usado no botão.
 ///
 - (void)changeTitleTo:(NSString * _Nonnull)newTitle;
 @end
 
 
-/// View que identifica qual face do documento é necessária no momento
+/// View que identifica qual face do documento é necessária no momento.
 SWIFT_PROTOCOL("_TtP11FaceCaptcha34DocumentscopyIndicatorViewProtocol_")
 @protocol DocumentscopyIndicatorViewProtocol
-/// Determina se a View está em foco
-/// \param value Boleano que indica o estado do foco da View
+/// Determina se a View está em foco.
+/// \param value Boleano que indica o estado do foco da View.
 ///
-/// \param animated Determina se a troca de estados será animada
+/// \param animated Determina se a troca de estados será animada.
 ///
 - (void)setFocusTo:(BOOL)value animated:(BOOL)animated;
 @end

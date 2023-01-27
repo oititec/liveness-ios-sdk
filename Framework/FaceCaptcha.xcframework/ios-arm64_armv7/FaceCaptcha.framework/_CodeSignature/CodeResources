@@ -22,7 +22,7 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		3+cOYs9ggFu0pkpL943+a1YnKvo=
+		dSyAgXiA8iMWGJCjtpUtJY4y98w=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
 		<data>
@@ -179,7 +179,7 @@
 		</data>
 		<key>Headers/FaceCaptcha-Swift.h</key>
 		<data>
-		OUhmphxBcLWBb/+C+VWbHpGxzG0=
+		HnCn7z1LIrld+EwUKZsxrD06xHI=
 		</data>
 		<key>Headers/FaceCaptcha.h</key>
 		<data>
@@ -187,7 +187,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iVPd6kBAgH9tNMB5dI4CUJcs2mQ=
+		PpHDmAh+2/tvZDIxR/aN5zzN5fc=
 		</data>
 		<key>Inter-Bold.otf</key>
 		<data>
@@ -219,27 +219,27 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		dk0/2yAQ8ijo2mQvcT1Vv4BE9fc=
+		uHFm+nFH8h+pqVHfc5hue22uoUw=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		k8O/llZ6NRCzS7UZ3FwyYnuQz30=
+		O4sFAzIcwr8WO3Vs40VTAoZsePg=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		T2RNOz+G9Dw0R2MjV0DB81aPf1Y=
+		s3wGY605irTJbBH0uZCkcXdj2MI=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		8RXg3WKGJA8bxWAT8Cqi+TvV3bw=
+		lks3YhWrpkLJN/mZPsgCRDn2y2Y=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		NWHMN/JjjqE9BY1FzW9Gm3ydxNw=
+		vwXkjCfqu24B+53/tYc+y5vuf/E=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		/snP4ZYUl+wBfHsddxtBSTtm+e0=
+		ZfRQyevPNS3CE1piWdBMxFmLiNM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -324,11 +324,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3+cOYs9ggFu0pkpL943+a1YnKvo=
+			dSyAgXiA8iMWGJCjtpUtJY4y98w=
 			</data>
 			<key>hash2</key>
 			<data>
-			INi1pOZVm45/KPqwmEQsJi9QlndSIeKnHbZnZCBYfx0=
+			IcxdzsF+rxhZ9aFJo23xQWhA4D/r9lvnUoqnW/enwPM=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
@@ -744,11 +744,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OUhmphxBcLWBb/+C+VWbHpGxzG0=
+			HnCn7z1LIrld+EwUKZsxrD06xHI=
 			</data>
 			<key>hash2</key>
 			<data>
-			8LNCNEDWwnQoVyZWdLL/rous9OTuOqWxJ52Xzb0E4X0=
+			UesOALGfZK041Ca7I4O51To9MX8jHOOIR3zVWhQn+Q8=
 			</data>
 		</dict>
 		<key>Headers/FaceCaptcha.h</key>
@@ -843,66 +843,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dk0/2yAQ8ijo2mQvcT1Vv4BE9fc=
+			uHFm+nFH8h+pqVHfc5hue22uoUw=
 			</data>
 			<key>hash2</key>
 			<data>
-			6C+oKZPmd+/HqY5hdl4CAK8uuTjQmooFFzUoYrRyp04=
+			QgzxqVOj+QdCpRy/st+6jpAZdZ5zNfd9NXqdq3hk9DQ=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			k8O/llZ6NRCzS7UZ3FwyYnuQz30=
+			O4sFAzIcwr8WO3Vs40VTAoZsePg=
 			</data>
 			<key>hash2</key>
 			<data>
-			k0em8lznkg0Dt8foJena4eLCz82vO/c6aeKE+WNFCS8=
+			Z5SZZAtTbcqV9DIGgUYho4nFk9GqnOd9V3XDDUvvmqk=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T2RNOz+G9Dw0R2MjV0DB81aPf1Y=
+			s3wGY605irTJbBH0uZCkcXdj2MI=
 			</data>
 			<key>hash2</key>
 			<data>
-			5ODsc9hnwXUOOkwaYyqSzcHb9k+2x/dpd2Wes6lyVh4=
+			1L9qzX3KKstxZaFouV9mL3rCva0oNh1sSZ4UxMcsKXM=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8RXg3WKGJA8bxWAT8Cqi+TvV3bw=
+			lks3YhWrpkLJN/mZPsgCRDn2y2Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			3qIPgNHuTJeGEia4DCDNbW3Noru4UJhWE6ed10pN7xw=
+			6LM3ivh4U6Mc8qPJWoA5OYhhEuPHBV5sYLltmo+oz7U=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NWHMN/JjjqE9BY1FzW9Gm3ydxNw=
+			vwXkjCfqu24B+53/tYc+y5vuf/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			QMhPFV6iMrFnrSOoFbFvifSQcStBcmkZjV1lSsQ3B/s=
+			xNfQmOHhnpgkS/oYio3lJeXXEbxKoqe5pIkyiygMLEE=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/snP4ZYUl+wBfHsddxtBSTtm+e0=
+			ZfRQyevPNS3CE1piWdBMxFmLiNM=
 			</data>
 			<key>hash2</key>
 			<data>
-			dBzK6SfCE30SVxQCTUGUmw9uJgqj5xzpZUb6KCFUDuw=
+			PmfadKQgBX1UQaaa16mD6nVFvqW6UHt/3IF9eInwVpI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
