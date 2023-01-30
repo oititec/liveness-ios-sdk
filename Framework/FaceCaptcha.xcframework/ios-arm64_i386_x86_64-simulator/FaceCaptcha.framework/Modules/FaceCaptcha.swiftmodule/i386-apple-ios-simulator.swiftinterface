@@ -17,6 +17,15 @@ import UIKit.UIImage
 import UIKit
 import UIKit.UIView
 import _Concurrency
+public enum DocumentscopyFocusIndicator {
+  case frontIndicator
+  case backIndicator
+  public static func == (a: FaceCaptcha.DocumentscopyFocusIndicator, b: FaceCaptcha.DocumentscopyFocusIndicator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension FaceCaptcha.AES : FaceCaptcha.Cryptors {
   @inlinable final public func makeEncryptor() throws -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable {
     let blockSize = blockMode.customBlockSize ?? AES.blockSize
@@ -1605,15 +1614,6 @@ extension Swift.UInt32 {
   }
 }
 public typealias DocumentscopyConfirmationSheetVisibility = FaceCaptcha.Visibility
-public enum FocusIndicator {
-  case frontIndicator
-  case backIndicator
-  public static func == (a: FaceCaptcha.FocusIndicator, b: FaceCaptcha.FocusIndicator) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 public protocol DocumentscopyCustomView : UIKit.UIView {
   var cameraPreview: FaceCaptcha.DocumentscopyCameraPreviewView! { get }
   var cameraMask: UIKit.UIView! { get }
@@ -1628,7 +1628,7 @@ public protocol DocumentscopyCustomView : UIKit.UIView {
   var usePictureButton: UIKit.UIButton! { get }
   var takeNewPictureButton: UIKit.UIButton! { get }
   func displayConfirmationSheet(visibility: FaceCaptcha.DocumentscopyConfirmationSheetVisibility, animated: Swift.Bool)
-  func setFocus(to focusElement: FaceCaptcha.FocusIndicator, animated: Swift.Bool)
+  func setFocus(to focusElement: FaceCaptcha.DocumentscopyFocusIndicator, animated: Swift.Bool)
   func setUsePictureButtonTitle(to newTitle: Swift.String)
 }
 public enum DocumentscopyResultType {
@@ -1928,7 +1928,7 @@ public struct Liveness3DTheme {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
   @_Concurrency.MainActor(unsafe) public func displayConfirmationSheet(visibility: FaceCaptcha.DocumentscopyConfirmationSheetVisibility, animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func setFocus(to focusElement: FaceCaptcha.FocusIndicator, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setFocus(to focusElement: FaceCaptcha.DocumentscopyFocusIndicator, animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func setUsePictureButtonTitle(to newTitle: Swift.String)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
 }
@@ -2091,6 +2091,8 @@ public class BlockDecryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable {
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func createImageFromView() -> UIKit.UIImage
 }
+extension FaceCaptcha.DocumentscopyFocusIndicator : Swift.Equatable {}
+extension FaceCaptcha.DocumentscopyFocusIndicator : Swift.Hashable {}
 extension FaceCaptcha.SHA2.Variant : Swift.Equatable {}
 extension FaceCaptcha.SHA2.Variant : Swift.Hashable {}
 extension FaceCaptcha.Blowfish.Error : Swift.Equatable {}
@@ -2143,8 +2145,6 @@ extension FaceCaptcha.OFB.Error : Swift.Hashable {}
 extension FaceCaptcha.Bit : Swift.Equatable {}
 extension FaceCaptcha.Bit : Swift.Hashable {}
 extension FaceCaptcha.Bit : Swift.RawRepresentable {}
-extension FaceCaptcha.FocusIndicator : Swift.Equatable {}
-extension FaceCaptcha.FocusIndicator : Swift.Hashable {}
 extension FaceCaptcha.OCB.Mode : Swift.Equatable {}
 extension FaceCaptcha.OCB.Mode : Swift.Hashable {}
 extension FaceCaptcha.OCB.Error : Swift.Equatable {}
