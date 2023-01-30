@@ -140,16 +140,18 @@ public protocol DocumentscopyCustomView: UIView {
     var cameraMask: UIView! { get }
     var backButton: UIButton! { get }
     var closeButton: UIButton! { get }    
-    var backIndicatorView: DocumentscopyIndicatorView! { get }    
-    var frontIndicatorView: DocumentscopyIndicatorView! { get }    
+    var backIndicatorView: UIView! { get }    
+    var frontIndicatorView: UIView! { get }    
     var instructionLabel: UILabel! { get }    
     var cameraVisualizer: UIView! { get }    
     var previewImageView: UIImageView! { get }    
     var captureButton: UIButton! { get }    
-    var usePictureButton: DocumentscopyEditableButton! { get }    
+    var usePictureButton: UIButton! { get }    
     var takeNewPictureButton: UIButton! { get }
 
     func displayConfirmationSheet(visibility: DocumentscopyConfirmationSheetVisibility, animated: Bool)
+    func setFocus(to focusElement: DocumentscopyFocusIndicator, animated: Bool)
+    func setUsePictureButtonTitle(to newTitle: String)
 }
 ```
 
@@ -167,7 +169,9 @@ public protocol DocumentscopyCustomView: UIView {
 | (**10**) | `previewImageView` | UIImageView onde será exibida a imagem capturada para o usuário confirmar se ficou boa. |
 | (**11**) | `takeNewPictureButton` | Botão para que o usuário capture a foto novamente. |
 | (**12**) | `usePictureButton` | Botão para que o usuário confirme a foto capturada. |
-|          | `displayConfirmationSheet(visibility:animated:)` | Método que indica quando a *view* de confirmação de imagem deve ou não ser mostrada, esse método recebe dois parâmetro: **visibility** que é um `enum` do tipo ``DocumentscopyConfirmationSheetVisibility`` que indica o estado da *view* de confirmação e **animated** que indica se esse comportamento é recomendado de ser feito com animação. |
+|          | `displayConfirmationSheet(visibility:animated:)` | Método que indica quando a *view* de confirmação de imagem deve ou não ser mostrada, esse método possui dois parâmetros: <br/> - **visibility** que é um `enum` do tipo ``DocumentscopyConfirmationSheetVisibility`` que indica o estado da *view* de confirmação;<br/> - **animated** que indica quando é recomendado que esse comportamento seja feito com animação. |
+|          | `setFocus(to:animated:)` | Método que indica qual o indicador de face do documento deve estar em foco no momento, esse método possui dois parâmetros: <br/> - **to (*focusElement*)** que é um `enum` do tipo ``DocumentscopyFocusIndicator`` que possui os valores de *frontIndicator* e *backIndicator* que representam a frente e o verso do documento respectivamente;<br/> - **animated** que indica quando é recomendado que esse comportamento seja feito com animação. |
+|          | `setUsePictureButtonTitle(to:)` | Método responsável por atribuir um novo titlulo para o botão de usar foto (`usePictureButton`). |
 
 <br/>
 <div>
@@ -181,41 +185,6 @@ public protocol DocumentscopyCustomView: UIView {
 
 <br/>
 
-**DocumentscopyIndicatorView**
-
-É uma classe que herda de `UIView` e que necessita que o método `setFocus(to:animated:)` seja sobrescrito.
-
-```swift 
-open class DocumentscopyIndicatorView: UIView {
-    open func setFocus(to value: Bool, animated: Bool) {
-        fatalError("Implemente o método setFocus(to:animated:) na subclasse")
-    }
-}
-```
-
-| **Elemento** | **Descrição** |
-|:-------------|:--------------|
-| `setFocus(to:animated:)` | Método que indica se a *view* está ou não em foco. O parâmetro de **animated** indica quando a troca de foco do componente deve ou não ser animada (*opcional*). |
-<br/>
-
-**DocumentscopyEditableButton**
-
-É uma classe que herda de `UIButton` e que necessita que o método `changeTitle(to:)` seja sobrescrito
-
-```swift 
-open class DocumentscopyEditableButton: UIButton {
-    open func changeTitle(to newTitle: String) {
-        fatalError("Implemente o método changeTitle(to:) na subclasse")
-    }
-}
-```
-
-| **Elemento** | **Descrição** |
-|:-------------|:--------------|
-| `changeTitle(to:)` | Método que altera o texto do botão. |
-
-<br/>
-
 **DocumentscopyConfirmationSheetVisibility**
 
 ```swift
@@ -224,6 +193,18 @@ public enum DocumentscopyConfirmationSheetVisibility {
     case hidden
 }
 ```
+
+<br/>
+
+**DocumentscopyFocusIndicator**
+
+```swift
+public enum DocumentscopyFocusIndicator {
+    case frontIndicator
+    case backIndicator
+}
+```
+
 ---
     
 ## 3. Tela de processamento do documento
