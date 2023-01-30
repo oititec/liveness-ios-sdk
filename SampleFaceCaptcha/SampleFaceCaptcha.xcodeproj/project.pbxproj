@@ -27,10 +27,11 @@
 		B7A83B8929832F03004708E2 /* CustomDocumentscopyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8829832F03004708E2 /* CustomDocumentscopyResultView.xib */; };
 		B7A83B8C2983346D004708E2 /* CustomDocumentscopyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A83B8B2983346D004708E2 /* CustomDocumentscopyView.swift */; };
 		B7A83B8E298334A3004708E2 /* CustomDocumentscopyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A83B8D298334A3004708E2 /* CustomDocumentscopyView.xib */; };
-		F4383B713E433B31A6A0AC20 /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1B9F803AF376D7B6242027 /* Pods_SampleFaceCaptcha.framework */; };
+		BDA4D662EC72CD109D8B6B88 /* Pods_SampleFaceCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58E79283CDF72AED37A2BF4 /* Pods_SampleFaceCaptcha.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F04D3E9627CD90CCC79E743 /* Pods-SampleFaceCaptcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.debug.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.debug.xcconfig"; sourceTree = "<group>"; };
 		552648ED25489E2B0086DB73 /* SampleFaceCaptcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleFaceCaptcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		552648F025489E2B0086DB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		552648F425489E2B0086DB73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,8 +41,7 @@
 		552648FE25489E2F0086DB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5548FCE3260664D5009700C9 /* FaceCaptchaCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaceCaptchaCustomView.xib; sourceTree = "<group>"; };
 		5548FCE4260664D6009700C9 /* FaceCaptchaCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptchaCustomView.swift; sourceTree = "<group>"; };
-		6F1B9F803AF376D7B6242027 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DE548FB09FD9CB030A4C3A /* Pods-SampleFaceCaptcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.debug.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.debug.xcconfig"; sourceTree = "<group>"; };
+		9571CBE880E428EF947A9771 /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
 		B7A83B6A2982D98A004708E2 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		B7A83B6C2982D9BA004708E2 /* PermissionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PermissionView.xib; sourceTree = "<group>"; };
 		B7A83B7429830265004708E2 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		B7A83B8829832F03004708E2 /* CustomDocumentscopyResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDocumentscopyResultView.xib; sourceTree = "<group>"; };
 		B7A83B8B2983346D004708E2 /* CustomDocumentscopyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocumentscopyView.swift; sourceTree = "<group>"; };
 		B7A83B8D298334A3004708E2 /* CustomDocumentscopyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDocumentscopyView.xib; sourceTree = "<group>"; };
-		D1E69769932E35D4CD95CF60 /* Pods-SampleFaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFaceCaptcha.release.xcconfig"; path = "Target Support Files/Pods-SampleFaceCaptcha/Pods-SampleFaceCaptcha.release.xcconfig"; sourceTree = "<group>"; };
+		E58E79283CDF72AED37A2BF4 /* Pods_SampleFaceCaptcha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFaceCaptcha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,28 +63,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4383B713E433B31A6A0AC20 /* Pods_SampleFaceCaptcha.framework in Frameworks */,
+				BDA4D662EC72CD109D8B6B88 /* Pods_SampleFaceCaptcha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10EAF6A2E3C098680052EDF4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6F1B9F803AF376D7B6242027 /* Pods_SampleFaceCaptcha.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		552648E425489E2B0086DB73 = {
 			isa = PBXGroup;
 			children = (
 				552648EF25489E2B0086DB73 /* SampleFaceCaptcha */,
 				552648EE25489E2B0086DB73 /* Products */,
 				5F0A8599576EF633A5603833 /* Pods */,
-				10EAF6A2E3C098680052EDF4 /* Frameworks */,
+				C84A2270F3441C2318E1AA98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,8 +116,8 @@
 		5F0A8599576EF633A5603833 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				95DE548FB09FD9CB030A4C3A /* Pods-SampleFaceCaptcha.debug.xcconfig */,
-				D1E69769932E35D4CD95CF60 /* Pods-SampleFaceCaptcha.release.xcconfig */,
+				0F04D3E9627CD90CCC79E743 /* Pods-SampleFaceCaptcha.debug.xcconfig */,
+				9571CBE880E428EF947A9771 /* Pods-SampleFaceCaptcha.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -205,6 +197,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		C84A2270F3441C2318E1AA98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E58E79283CDF72AED37A2BF4 /* Pods_SampleFaceCaptcha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,11 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5526490125489E2F0086DB73 /* Build configuration list for PBXNativeTarget "SampleFaceCaptcha" */;
 			buildPhases = (
-				94F8CC88F7CD0689EB5CAF5C /* [CP] Check Pods Manifest.lock */,
+				A3FF2F8C6D89CEC338D1224D /* [CP] Check Pods Manifest.lock */,
 				552648E925489E2B0086DB73 /* Sources */,
 				552648EA25489E2B0086DB73 /* Frameworks */,
 				552648EB25489E2B0086DB73 /* Resources */,
-				9BC9EF03CA954B23C8F50C41 /* [CP] Embed Pods Frameworks */,
+				F73D0A0BB6FF8F2CB73D27EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,7 +281,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		94F8CC88F7CD0689EB5CAF5C /* [CP] Check Pods Manifest.lock */ = {
+		A3FF2F8C6D89CEC338D1224D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,7 +303,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9BC9EF03CA954B23C8F50C41 /* [CP] Embed Pods Frameworks */ = {
+		F73D0A0BB6FF8F2CB73D27EC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -480,7 +480,7 @@
 		};
 		5526490225489E2F0086DB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95DE548FB09FD9CB030A4C3A /* Pods-SampleFaceCaptcha.debug.xcconfig */;
+			baseConfigurationReference = 0F04D3E9627CD90CCC79E743 /* Pods-SampleFaceCaptcha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -504,7 +504,7 @@
 		};
 		5526490325489E2F0086DB73 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1E69769932E35D4CD95CF60 /* Pods-SampleFaceCaptcha.release.xcconfig */;
+			baseConfigurationReference = 9571CBE880E428EF947A9771 /* Pods-SampleFaceCaptcha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

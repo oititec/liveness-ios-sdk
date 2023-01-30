@@ -45,7 +45,7 @@ class CustomDocumentscopyView: UIView, DocumentscopyCustomView {
         addSubview(view)
     }
     
-    func setFocus(to focusElement: FaceCaptcha.FocusIndicator, animated: Bool) {
+    func setFocus(to focusElement: FaceCaptcha.DocumentscopyFocusIndicator, animated: Bool) {
         switch focusElement {
         case .frontIndicator:
             frontIndicatorView.backgroundColor = .green
