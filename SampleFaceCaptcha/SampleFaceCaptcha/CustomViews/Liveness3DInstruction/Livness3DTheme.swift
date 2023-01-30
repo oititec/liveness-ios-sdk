@@ -12,9 +12,58 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     
     var theme = Liveness3DTheme(.light)
     
-    /// Properties
-    theme.guidanceCustomizationBackgroundColors = [.systemBlue, .brown]
+    /// Common Customization Properties
+
+    //    MARK: - Cancel button
+    theme.cancelButtonCustomizationCustomImage = UIImage(named: "")
+    theme.cancelButtonCustomizationLocation = .topLeft
+    
+    //    MARK: - FaceTec frame
+    theme.frameCustomizationBorderWidth = 14
+    theme.frameCustomizationCornerRadius = 10
+    theme.frameCustomizationBorderColor = .red
+    theme.frameCustomizationBackgroundColor = .red
+    theme.frameCustomizationElevation = 10
+    
+    //    MARK: - Overlay
+    theme.overlayCustomizationBackgroundColor = .green
+    theme.overlayCustomizationBrandingImage = UIImage(named: "")
+    theme.overlayCustomizationShowBrandingImage = false
+    
+    //    MARK: - Feedback bar
+    theme.feedbackCustomizationCornerRadius = 10
+    theme.feedbackCustomizationTextColor = .systemPink
+    theme.feedbackCustomizationTextFont = UIFont(name: "", size: 14)
+    
+    //    MARK: - Oval
+    theme.ovarCustomizationStrokeWidth = 10
+    theme.ovarCustomizationStrokeColor = .black
+    theme.ovarCustomizationProgressStrokeWidth = 10
+    theme.ovarCustomizationProgressColor1 = .purple
+    theme.ovarCustomizationProgressColor2 = .green
+    theme.ovarCustomizationProgressRadialOffset = 2
+    
+    //    MARK: - Background color
     theme.guidanceCustomizationForegroundColor = .white
+    
+    //    MARK: - Buttons
+    theme.guidanceCustomizationButtonFont = UIFont(name: "", size: 14)
+    theme.guidanceCustomizationButtonTextNormalColor = .purple
+    theme.guidanceCustomizationButtonBackgroundNormalColor = .purple
+    theme.guidanceCustomizationButtonTextHighlightColor = .red
+    theme.guidanceCustomizationButtonBackgroundHighlightColor = .gray
+    theme.guidanceCustomizationButtonTextDisabledColor = .black
+    theme.guidanceCustomizationButtonBackgroundDisabledColor = .blue
+    theme.guidanceCustomizationButtonBorderColor = .white
+    theme.guidanceCustomizationButtonBorderWidth = 10
+    theme.guidanceCustomizationButtonCornerRadius = 10
+    
+    //    MARK: - Guidance customization
+    theme.guidanceCustomizationReadyScreenTextBackgroundColor = .systemPink
+    theme.guidanceCustomizationReadyScreenTextBackgroundCornerRadius = 10
+    
+    ///
+    theme.guidanceCustomizationBackgroundColors = [.systemBlue, .brown]
     theme.guidanceCustomizationHeaderFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationSubtextFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationReadyScreenHeaderFont = UIFont(name: "", size: 14)
@@ -29,19 +78,7 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     theme.guidanceCustomizationRetryScreenSubtextFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationRetryScreenSubtextTextColor = .red
     theme.guidanceCustomizationRetryScreenSubtextAttributedString = NSAttributedString(string: "Retry subtexto")
-    theme.guidanceCustomizationButtonFont = UIFont(name: "", size: 14)
-    theme.guidanceCustomizationButtonTextNormalColor = .purple
-    theme.guidanceCustomizationButtonBackgroundNormalColor = .purple
-    theme.guidanceCustomizationButtonTextHighlightColor = .red
-    theme.guidanceCustomizationButtonBackgroundHighlightColor = .gray
-    theme.guidanceCustomizationButtonTextDisabledColor = .black
-    theme.guidanceCustomizationButtonBackgroundDisabledColor = .blue
-    theme.guidanceCustomizationButtonBorderColor = .white
-    theme.guidanceCustomizationButtonBorderWidth = 10
-    theme.guidanceCustomizationButtonCornerRadius = 10
     theme.guidanceCustomizationReadyScreenOvarFillColor = .systemPink
-    theme.guidanceCustomizationReadyScreenTextBackgroundColor = .systemPink
-    theme.guidanceCustomizationReadyScreenTextBackgroundCornerRadius = 10
     theme.guidanceCustomizationRetryScreenImageBorderColor = .systemBlue
     theme.guidanceCustomizationRetryScreenImageBorderWidth = 10
     theme.guidanceCustomizationRetryScreenImageCornerRadius = 10
@@ -65,37 +102,11 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     theme.resultScreenCustomizationCustomStaticResultAnimationSuccess = 3
     theme.resultScreenCustomizationCustomStaticResultAnimationUnSuccess = 4
     theme.resultScreenCustomizationMessageFont = UIFont(name: "", size: 15.0)
-    theme.ovarCustomizationStrokeWidth = 10
-    theme.ovarCustomizationStrokeColor = .black
-    theme.ovarCustomizationProgressStrokeWidth = 10
-    theme.ovarCustomizationProgressColor1 = .purple
-    theme.ovarCustomizationProgressColor2 = .green
-    theme.ovarCustomizationProgressRadialOffset = 2
-    theme.frameCustomizationBorderWidth = 14
-    theme.frameCustomizationCornerRadius = 10
-    theme.frameCustomizationBorderColor = .red
-    theme.frameCustomizationBackgroundColor = .red
-    theme.frameCustomizationElevation = 10
-    theme.overlayCustomizationBackgroundColor = .green
-    theme.overlayCustomizationBrandingImage = UIImage(named: "")
-    theme.overlayCustomizationShowBrandingImage = false
-    theme.feedbackCustomizationCornerRadius = 10
-    theme.feedbackCustomizationBackgroundColor = {
-        let gradient = CAGradientLayer.init()
-        gradient.colors = [UIColor.yellow.cgColor, UIColor.red.cgColor]
-        gradient.locations = [0,1]
-        gradient.startPoint = CGPoint.init(x: 0, y: 0)
-        gradient.endPoint = CGPoint.init(x: 1, y: 0)
-        return gradient
-    }()
-    theme.feedbackCustomizationTextColor = .systemPink
-    theme.feedbackCustomizationTextFont = UIFont(name: "", size: 14)
     theme.feedbackCustomizationEnablePulsatingText = true
     theme.feedbackCustomizationElevation = 10
-    theme.cancelButtonCustomizationCustomImage = UIImage(named: "")
-    theme.cancelButtonCustomizationLocation = .topLeft
     theme.resultAnimationStyle = .blob
     theme.resultScreenSuccessMessage = "Valeu!!"
+    
     
     return theme
 }

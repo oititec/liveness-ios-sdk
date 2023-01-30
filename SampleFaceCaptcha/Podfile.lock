@@ -7,7 +7,7 @@ DEPENDENCIES:
   - FaceCaptcha (from `../`)
 
 SPEC REPOS:
-  https://github.com/oititec/liveness-ios-specs:
+  https://github.com/oititec/liveness-ios-specs.git:
     - OILiveness3D_FT
 
 EXTERNAL SOURCES:
