@@ -3,6 +3,186 @@
 A customização do fluxo de prova de vida, dar-se por meio da utilização da `Liveness3DTheme`. Essa classe na sua construção recebe o template padrão, podendo ser DarkTheme ou LightTheme.<br>
 Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`.
 
+## Elementos comuns
+
+### 1. Botão de cancelar
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| cancelButtonCustomizationCustomImage | UIImage | aaaa | 
+| cancelButtonCustomizationLocation | CancelButtonLocation | aaaa | 
+
+```swift
+public enum CancelButtonLocation: Int {
+    case topLeft = 0
+    case topRight = 1
+    case disabled = 2
+}
+```
+
+### 2. Frame
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| frameCustomizationBorderWidth | Int32? | aaaa | 
+| frameCustomizationCornerRadius | Int32 | aaaa | 
+| frameCustomizationBorderColor | UIColor? | aaaa | 
+| frameCustomizationBackgroundColor | UIColor? | aaaa | 
+| frameCustomizationElevation | Int32? | aaaa | 
+
+### 3. Overlay
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| overlayCustomizationBackgroundColor | UIColor? | aaaa |
+| overlayCustomizationBrandingImage | UIImage? | aaaa |
+| overlayCustomizationShowBrandingImage | Bool | aaaa |
+
+### 4 .Feedback Bar
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| feedbackCustomizationCornerRadius | Int32? | aaaa |
+| feedbackCustomizationBackgroundColor | CAGradientLayer? | aaaa |
+| feedbackCustomizationTextColor | UIColor? | aaaa |
+| feedbackCustomizationTextFont | UIFont? | aaaa |
+| feedbackCustomizationEnablePulsatingText | Bool | aaaa |
+| feedbackCustomizationElevation | Int? | aaaa |
+
+### 5. Oval
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| ovarCustomizationStrokeWidth | Int32? | aaaa |
+| ovarCustomizationStrokeColor | UIColor | aaaa |
+| ovarCustomizationProgressStrokeWidth | Int32? | aaaa |
+| ovarCustomizationProgressColor1 | UIColor | aaaa |
+| ovarCustomizationProgressColor2 | UIColor | aaaa |
+| ovarCustomizationProgressRadialOffset | Int32? | aaaa |
+
+### 6. Botões
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationButtonFont | UIFont? | aaaa |
+| guidanceCustomizationButtonTextNormalColor | UIColor? | aaaa |
+| guidanceCustomizationButtonBackgroundNormalColor | UIColor | aaaa |
+| guidanceCustomizationButtonTextHighlightColor | UIColor? | aaaa |
+| guidanceCustomizationButtonBackgroundHighlightColor | UIColor? | aaaa |
+| guidanceCustomizationButtonTextDisabledColor | UIColor? | aaaa |
+| guidanceCustomizationButtonBackgroundDisabledColor | UIColor | aaaa |
+| guidanceCustomizationButtonBorderColor | UIColor? | aaaa |
+| guidanceCustomizationButtonBorderWidth | Int32? | aaaa |
+| guidanceCustomizationButtonCornerRadius | Int32? | aaaa |
+
+### 7. Guidance
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationBackgroundColors | [UIColor]? | aaaa |
+| guidanceCustomizationForegroundColor | UIColor? | aaaa |
+| guidanceCustomizationHeaderFont | UIFont? | aaaa |
+| guidanceCustomizationSubtextFont | UIFont? | aaaa |
+
+<br/>
+<img src="Images/blob_customization_1.png" width="432" height="396" />
+
+---
+
+## Tela de pronto para começar
+
+### 1. Header
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationReadyScreenHeaderFont | UIFont? | aaaa |
+| guidanceCustomizationReadyScreenHeaderTextColor | UIColor? | aaaa |
+| guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString? | aaaa |
+
+### 2. Subtext
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationReadyScreenSubtextFont | UIFont? | aaaa |
+| guidanceCustomizationReadyScreenSubtextTextColor | UIColor? | aaaa |
+| guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString? | aaaa |
+
+### 3. Textos
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationReadyScreenOvarFillColor | UIColor? | aaaa |
+| guidanceCustomizationReadyScreenTextBackgroundColor | UIColor? | aaaa |
+| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32? | aaaa |
+
+<br/>
+<img src="Images/blob_customization_1.png" width="432" height="396" />
+
+---
+
+## Tela de resultado
+
+### 1. Activity
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| resultScreenCustomizationForegroundColor | UIColor? | aaaaa |
+| resultScreenCustomizationBackgroundColors | [UIColor]? | aaaaa |
+| resultScreenCustomizationActivityIndicatorColor | UIColor | aaaaa |
+| resultScreenCustomizationCustomActivityIndicatorImage | UIImage? | aaaaa |
+| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32 | aaaaa |
+| resultScreenCustomizationCustomActivityIndicatorAnimation | Int | aaaaa |
+
+### 2. Barra de carregamento
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| resultScreenCustomizationShowUploadProgressBar | Bool | aaaaa |
+| resultScreenCustomizationUploadProgressFillColor | UIColor | aaaaa |
+| resultScreenCustomizationUploadProgressTrackColor | UIColor | aaaaa |
+
+### 3. Animação
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| resultScreenCustomizationAnimationRelativeScale | Float | aaaaa |
+| resultScreenCustomizationResultAnimationBackgroundColor | UIColor | aaaaa |
+| resultScreenCustomizationResultAnimationForegroundColor | UIColor | aaaaa |
+| resultScreenCustomizationResultAnimationSuccessBackgroundImage | UIImage? | aaaaa |
+| resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | Int | aaaaa |
+| resultScreenCustomizationCustomResultAnimationSuccess | Int | aaaaa |
+| resultScreenCustomizationCustomResultAnimationUnSuccess | Int | aaaaa |
+| resultScreenCustomizationCustomStaticResultAnimationSuccess | Int | aaaaa |
+| resultScreenCustomizationCustomStaticResultAnimationUnSuccess | Int | aaaaa |
+
+### 4. Mensagem de sucesso
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| resultScreenCustomizationMessageFont | UIFont? | aaaaa |
+| resultScreenSuccessMessage | String | aaaaa |
+
+<br/>
+<img src="Images/blob_customization_1.png" width="432" height="396" />
+
+---
+
+## Tela de tente novamente
+
+### 1. Header
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationRetryScreenHeaderFont | UIFont? | aaaa |
+| guidanceCustomizationRetryScreenHeaderTextColor | UIColor? | aaaa |
+| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString? | aaaa |
+
+### 2. Subtext
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationRetryScreenSubtextFont | UIFont? | aaaa |
+| guidanceCustomizationRetryScreenSubtextTextColor | UIColor? | aaaa |
+| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | aaaa |
+
+### 3. Imagem
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationRetryScreenImageBorderColor | UIColor | aaaa |
+| guidanceCustomizationRetryScreenImageBorderWidth | Int32? | aaaa |
+| guidanceCustomizationRetryScreenImageCornerRadius | Int32? | aaaa |
+| guidanceCustomizationRetryScreenOvarStrokeColor | UIColor? | aaaa |
+
+<br/>
+<img src="Images/blob_customization_1.png" width="432" height="396" />
+
+-----
+<br/>
+
 | **Atributo** | **Tipo** | **Valor Padrão** | **Descrição** |
 |:-------------|:---------|:--------------|:--------------|
 | guidanceCustomizationBackgroundColors | [UIColor] | Dark: #000000<br>Light: #FFFFFF | Define a cor do background (cor do plano de fundo) do fluxo de Prova de vida | 
