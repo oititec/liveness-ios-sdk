@@ -899,7 +899,7 @@ public protocol CustomCameraPermissionView : UIKit.UIView {
   var checkPermissionButton: UIKit.UIButton! { get }
   var openSettingsButton: UIKit.UIButton! { get }
   var closeButton: UIKit.UIButton! { get }
-  func showBottomSheet()
+  func showBottomSheet(visibility: FaceCaptcha.Visibility)
 }
 public protocol DocumentscopyCustomInstructionView : UIKit.UIView {
   var backButton: UIKit.UIButton! { get }
