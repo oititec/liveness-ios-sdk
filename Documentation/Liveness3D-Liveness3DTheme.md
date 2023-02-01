@@ -69,16 +69,23 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationButtonBorderWidth | Int32? | aaaa |
 | guidanceCustomizationButtonCornerRadius | Int32? | aaaa |
 
-### 7. Guidance
+### 7. Frame Background
 | **Atributo** | **Tipo** | **Descrição** |
 |:-------------|:---------|:--------------|
 | guidanceCustomizationBackgroundColors | [UIColor]? | aaaa |
+
+### 8. Guidance
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
 | guidanceCustomizationForegroundColor | UIColor? | aaaa |
 | guidanceCustomizationHeaderFont | UIFont? | aaaa |
 | guidanceCustomizationSubtextFont | UIFont? | aaaa |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<div>
+    <img src="Images/liveness3d_theme_common_1.png" width="432" height="396" />
+    <img src="Images/liveness3d_theme_common_2.png" width="432" height="396" />
+<div/>
 
 ---
 
@@ -106,7 +113,7 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32? | aaaa |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<img src="Images/liveness3d_theme_ready_screen.png" width="432" height="396" />
 
 ---
 
@@ -121,6 +128,26 @@ public enum CancelButtonLocation: Int {
 | resultScreenCustomizationCustomActivityIndicatorImage | UIImage? | aaaaa |
 | resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32 | aaaaa |
 | resultScreenCustomizationCustomActivityIndicatorAnimation | Int | aaaaa |
+| resultAnimationStyle | ResultAnimationStyle | aaaaa |
+
+```swift
+public enum ResultAnimationStyle {
+    case blob
+    case spinner(SpinnerAnimationCustomization)
+    case custom(CustomResultAnimationDelegate)
+}
+
+public struct SpinnerAnimationCustomization {
+    let spinnerColor: UIColor
+    let indicatorForegroundColor: UIColor
+    let indicatorBackgroundColor: UIColor
+}
+
+public protocol CustomResultAnimationDelegate {
+    func createActivityIndicatorView() -> UIView?
+    func createSuccessAnimationView() -> UIView?
+}
+```
 
 ### 2. Barra de carregamento
 | **Atributo** | **Tipo** | **Descrição** |
@@ -149,7 +176,10 @@ public enum CancelButtonLocation: Int {
 | resultScreenSuccessMessage | String | aaaaa |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<div>
+    <img src="Images/liveness3d_theme_result_screen_1.png" width="432" height="396" />
+    <img src="Images/liveness3d_theme_result_screen_2.png" width="432" height="396" />
+<div/>
 
 ---
 
@@ -162,14 +192,19 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationRetryScreenHeaderTextColor | UIColor? | aaaa |
 | guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString? | aaaa |
 
-### 2. Subtext
+### 2. Customização do Subtext
 | **Atributo** | **Tipo** | **Descrição** |
 |:-------------|:---------|:--------------|
 | guidanceCustomizationRetryScreenSubtextFont | UIFont? | aaaa |
 | guidanceCustomizationRetryScreenSubtextTextColor | UIColor? | aaaa |
 | guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | aaaa |
 
-### 3. Imagem
+### 3. Customização do Subtext
+| **Atributo** | **Tipo** | **Descrição** |
+|:-------------|:---------|:--------------|
+| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | aaaa |
+
+### 4. Imagem
 | **Atributo** | **Tipo** | **Descrição** |
 |:-------------|:---------|:--------------|
 | guidanceCustomizationRetryScreenImageBorderColor | UIColor | aaaa |
@@ -178,7 +213,7 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationRetryScreenOvarStrokeColor | UIColor? | aaaa |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<img src="Images/liveness3d_theme_retry_screen.png" width="432" height="396" />
 
 -----
 <br/>
