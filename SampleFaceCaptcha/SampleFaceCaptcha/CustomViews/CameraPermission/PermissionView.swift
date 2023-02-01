@@ -25,9 +25,17 @@ final class PermissionView: UIView, CustomCameraPermissionView {
         loadFromNib()
     }
     
-    func showBottomSheet() {
-        openSettingsButton.isHidden = false
-        closeButton.isHidden = false
+    func showBottomSheet(visibility: Visibility) {
+        switch visibility {
+        case .displayed:
+            openSettingsButton.isHidden = false
+            closeButton.isHidden = false
+        case .hidden:
+            openSettingsButton.isHidden = true
+            closeButton.isHidden = true
+        @unknown default:
+            break
+        }
     }
     
     private func loadFromNib() {
