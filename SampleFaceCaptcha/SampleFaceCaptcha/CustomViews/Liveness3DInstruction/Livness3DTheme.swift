@@ -106,19 +106,19 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     theme.resultScreenCustomizationCustomResultAnimationUnSuccess = 2
     theme.resultScreenCustomizationCustomStaticResultAnimationSuccess = 3
     theme.resultScreenCustomizationCustomStaticResultAnimationUnSuccess = 4
-    theme.resultScreenCustomizationResultAnimationBackgroundColor = .green
-    theme.resultScreenCustomizationResultAnimationForegroundColor = .purple
-    theme.resultScreenCustomizationResultAnimationSuccessBackgroundImage = UIImage()
+    theme.resultScreenCustomizationResultAnimationBackgroundColor = .white
+    theme.resultScreenCustomizationResultAnimationForegroundColor = .systemPink
+    theme.resultScreenCustomizationResultAnimationSuccessBackgroundImage = UIImage(named: "back_button")
     theme.resultScreenCustomizationResultAnimationUnSuccessBackgroundImage = 5
     theme.resultAnimationStyle = .blob
     
     //    MARK: -  Result screen activity indicator
-    theme.resultScreenCustomizationForegroundColor = .red
-    theme.resultScreenCustomizationBackgroundColors = [.white, .red]
+    theme.resultScreenCustomizationForegroundColor = .systemPink
+    theme.resultScreenCustomizationBackgroundColors = [.white, .white]
     theme.resultScreenCustomizationActivityIndicatorColor = .systemBlue
     theme.resultScreenCustomizationCustomActivityIndicatorImage = nil
-    theme.resultScreenCustomizationCustomActivityIndicatorRotationIntervar = 1230
-    theme.resultScreenCustomizationCustomActivityIndicatorAnimation = 1
+    theme.resultScreenCustomizationCustomActivityIndicatorRotationIntervar = 50
+    theme.resultScreenCustomizationCustomActivityIndicatorAnimation = 100
     
     //    MARK: -  Result screen upload process
     theme.resultScreenCustomizationShowUploadProgressBar = true

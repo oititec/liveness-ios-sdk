@@ -41,7 +41,7 @@ public enum CancelButtonLocation: Int {
 | feedbackCustomizationBackgroundColor     | CAGradientLayer? | Modifica a cor de fundo da barra.                         |
 | feedbackCustomizationTextColor           | UIColor?         | Modifica a cor do texto do feedback.                      |
 | feedbackCustomizationTextFont            | UIFont?          | Adiciona uma fonte customizada para o texto do feedback.  |
-| feedbackCustomizationEnablePulsatingText | Bool             | Propriedade booleana que ativa                            |
+| feedbackCustomizationEnablePulsatingText | Bool             | **não consegui validar**                                  |
 
 ### 5. Oval
 | **Atributo**                          | **Tipo** | **Descrição**                                                  |
@@ -67,16 +67,23 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationButtonBorderWidth              | Int32?   | Modifica a largura da borda do botão.                             |
 | guidanceCustomizationButtonCornerRadius             | Int32?   | Modifica o tamanho do arredondamento das bordas do botão.         |
 
-### 7. Guidance
+### 7. Frame Background
 | **Atributo**                          | **Tipo**   | **Descrição**                                                                |
 | :------------------------------------ | :--------- | :--------------------------------------------------------------------------- |
 | guidanceCustomizationBackgroundColors | [UIColor]? | Modifica a cor de fundo e caso receba duas cores diferentes cria um degradê. |
-| guidanceCustomizationForegroundColor  | UIColor?   | Modifica a cor de fundo quando estiver em primeiro plano.                    |
-| guidanceCustomizationHeaderFont       | UIFont?    | Adiciona uma fonte customizada para o header.                                |
-| guidanceCustomizationSubtextFont      | UIFont?    | Adiciona uma fonte customizada para o subtext.                               |
+
+### 8. Guidance
+| **Atributo**                         | **Tipo** | **Descrição**                                             |
+| :----------------------------------- | :------- | :-------------------------------------------------------- |
+| guidanceCustomizationForegroundColor | UIColor? | Modifica a cor de fundo quando estiver em primeiro plano. |
+| guidanceCustomizationHeaderFont      | UIFont?  | Adiciona uma fonte customizada para o header.             |
+| guidanceCustomizationSubtextFont     | UIFont?  | Adiciona uma fonte customizada para o subtext.            |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<div>
+    <img src="Images/liveness3d_theme_common_1.png" width="432" height="396" />
+    <img src="Images/liveness3d_theme_common_2.png" width="432" height="396" />
+<div/>
 
 ---
 
@@ -97,86 +104,113 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString? | Adiciona um texto para o subtext.              |
 
 ### 3. Textos
-| **Atributo**                                               | **Tipo** | **Descrição**                     |
-| :--------------------------------------------------------- | :------- | :-------------------------------- |
-| guidanceCustomizationReadyScreenOvarFillColor              | UIColor? | aaaa                              |
-| guidanceCustomizationReadyScreenTextBackgroundColor        | UIColor? | Modifica a cor da fonte do texto. |
-| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32?   | aaaa                              |
+
+> **_Observação:_**
+> A propriedade abaixo só será aplicada em telas pequenas. 
+
+| **Atributo**                                               | **Tipo** | **Descrição**                                    |
+| :--------------------------------------------------------- | :------- | :----------------------------------------------- |
+| guidanceCustomizationReadyScreenOvarFillColor              | UIColor? | **não consegui validar**                         |
+| guidanceCustomizationReadyScreenTextBackgroundColor        | UIColor? | Modifica a cor de fundo.                         |
+| guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32?   | Modifica o tamanho do arredondamento das bordas. |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<img src="Images/liveness3d_theme_ready_screen.png" width="432" height="396" />
 
 ---
 
 ## Tela de resultado
 
 ### 1. Activity
-| **Atributo**                                                     | **Tipo**   | **Descrição** |
-| :--------------------------------------------------------------- | :--------- | :------------ |
-| resultScreenCustomizationForegroundColor                         | UIColor?   | aaaaa         |
-| resultScreenCustomizationBackgroundColors                        | [UIColor]? | aaaaa         |
-| resultScreenCustomizationActivityIndicatorColor                  | UIColor    | aaaaa         |
-| resultScreenCustomizationCustomActivityIndicatorImage            | UIImage?   | aaaaa         |
-| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32      | aaaaa         |
-| resultScreenCustomizationCustomActivityIndicatorAnimation        | Int        | aaaaa         |
+| **Atributo**                                                     | **Tipo**             | **Descrição**                                                                |
+| :--------------------------------------------------------------- | :------------------- | :--------------------------------------------------------------------------- |
+| resultScreenCustomizationForegroundColor                         | UIColor?             | Modifica a cor de fundo quando estiver em primeiro plano.                    |
+| resultScreenCustomizationBackgroundColors                        | [UIColor]?           | Modifica a cor de fundo e caso receba duas cores diferentes cria um degradê. |
+| resultScreenCustomizationActivityIndicatorColor                  | UIColor              | Modifica a cor do activity indicator.                                        |
+| resultScreenCustomizationCustomActivityIndicatorImage            | UIImage?             | Adiciona uma imagem customizada para o activity indicator                    |
+| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32                | **não consegui validar**                                                     |
+| resultScreenCustomizationCustomActivityIndicatorAnimation        | Int                  | **não consegui validar**                                                     |
+| resultAnimationStyle                                             | ResultAnimationStyle | **não consegui validar**                                                     |
+
+```swift
+public enum ResultAnimationStyle {
+    case blob
+    case spinner(SpinnerAnimationCustomization)
+    case custom(CustomResultAnimationDelegate)
+}
+
+public struct SpinnerAnimationCustomization {
+    let spinnerColor: UIColor
+    let indicatorForegroundColor: UIColor
+    let indicatorBackgroundColor: UIColor
+}
+
+public protocol CustomResultAnimationDelegate {
+    func createActivityIndicatorView() -> UIView?
+    func createSuccessAnimationView() -> UIView?
+}
+```
 
 ### 2. Barra de carregamento
-| **Atributo**                                      | **Tipo** | **Descrição** |
-| :------------------------------------------------ | :------- | :------------ |
-| resultScreenCustomizationShowUploadProgressBar    | Bool     | aaaaa         |
-| resultScreenCustomizationUploadProgressFillColor  | UIColor  | aaaaa         |
-| resultScreenCustomizationUploadProgressTrackColor | UIColor  | aaaaa         |
+| **Atributo**                                      | **Tipo** | **Descrição**                                                        |
+| :------------------------------------------------ | :------- | :------------------------------------------------------------------- |
+| resultScreenCustomizationShowUploadProgressBar    | Bool     | Propriedade booleana que ativa a visualização da barra de progresso. |
+| resultScreenCustomizationUploadProgressFillColor  | UIColor  | Modifica a cor do preenchimento da barra de progresso.               |
+| resultScreenCustomizationUploadProgressTrackColor | UIColor  | Modifica a cor da barra de progresso.                                |
 
 ### 3. Animação
-| **Atributo**                                                     | **Tipo** | **Descrição** |
-| :--------------------------------------------------------------- | :------- | :------------ |
-| resultScreenCustomizationAnimationRelativeScale                  | Float    | aaaaa         |
-| resultScreenCustomizationResultAnimationBackgroundColor          | UIColor  | aaaaa         |
-| resultScreenCustomizationResultAnimationForegroundColor          | UIColor  | aaaaa         |
-| resultScreenCustomizationResultAnimationSuccessBackgroundImage   | UIImage? | aaaaa         |
-| resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | Int      | aaaaa         |
-| resultScreenCustomizationCustomResultAnimationSuccess            | Int      | aaaaa         |
-| resultScreenCustomizationCustomResultAnimationUnSuccess          | Int      | aaaaa         |
-| resultScreenCustomizationCustomStaticResultAnimationSuccess      | Int      | aaaaa         |
-| resultScreenCustomizationCustomStaticResultAnimationUnSuccess    | Int      | aaaaa         |
+| **Atributo**                                                     | **Tipo** | **Descrição**                                                                         |
+| :--------------------------------------------------------------- | :------- | :------------------------------------------------------------------------------------ |
+| resultScreenCustomizationAnimationRelativeScale                  | Float    | **não conssegui validar**                                                             |
+| resultScreenCustomizationResultAnimationBackgroundColor          | UIColor  | Modifica a cor de fundo da imagem que aparece após a animação finalizar.              |
+| resultScreenCustomizationResultAnimationForegroundColor          | UIColor  | Modifica a cor do icone que vai aparecer em primeiro plano após a animação finalizar. |
+| resultScreenCustomizationResultAnimationSuccessBackgroundImage   | UIImage? | Adiciona uma imagem customizada após a animação finalizar com sucesso.                |
+| resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | Int      | Adiciona uma imagem customizada após a animação finalizar com erro.                   |
+| resultScreenCustomizationCustomResultAnimationSuccess            | Int      | **não conssegui validar**                                                             |
+| resultScreenCustomizationCustomResultAnimationUnSuccess          | Int      | **não conssegui validar**                                                             |
+| resultScreenCustomizationCustomStaticResultAnimationSuccess      | Int      | **não conssegui validar**                                                             |
+| resultScreenCustomizationCustomStaticResultAnimationUnSuccess    | Int      | **não conssegui validar**                                                             |
 
 ### 4. Mensagem de sucesso
-| **Atributo**                         | **Tipo** | **Descrição** |
-| :----------------------------------- | :------- | :------------ |
-| resultScreenCustomizationMessageFont | UIFont?  | aaaaa         |
-| resultScreenSuccessMessage           | String   | aaaaa         |
+| **Atributo**                         | **Tipo** | **Descrição**                                              |
+| :----------------------------------- | :------- | :--------------------------------------------------------- |
+| resultScreenCustomizationMessageFont | UIFont?  | Adiciona uma fonte customizada para a mensagem de sucesso. |
+| resultScreenSuccessMessage           | String   | Adiciona uma mensagem customizada de sucesso.              |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<div>
+    <img src="Images/liveness3d_theme_result_screen_1.png" width="432" height="396" />
+    <img src="Images/liveness3d_theme_result_screen_2.png" width="432" height="396" />
+<div/>
 
 ---
 
 ## Tela de tente novamente
 
 ### 1. Header
-| **Atributo**                                           | **Tipo**            | **Descrição** |
-| :----------------------------------------------------- | :------------------ | :------------ |
-| guidanceCustomizationRetryScreenHeaderFont             | UIFont?             | aaaa          |
-| guidanceCustomizationRetryScreenHeaderTextColor        | UIColor?            | aaaa          |
-| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString? | aaaa          |
+| **Atributo**                                           | **Tipo**            | **Descrição**                                             |
+| :----------------------------------------------------- | :------------------ | :-------------------------------------------------------- |
+| guidanceCustomizationRetryScreenHeaderFont             | UIFont?             | Adiciona uma fonte customizada para a mensagem do header. |
+| guidanceCustomizationRetryScreenHeaderTextColor        | UIColor?            | Modifica a cor da fonte do header.                        |
+| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString? | Adiciona uma mensagem personalizada no header.            |
 
-### 2. Subtext
-| **Atributo**                                            | **Tipo**            | **Descrição** |
-| :------------------------------------------------------ | :------------------ | :------------ |
-| guidanceCustomizationRetryScreenSubtextFont             | UIFont?             | aaaa          |
-| guidanceCustomizationRetryScreenSubtextTextColor        | UIColor?            | aaaa          |
-| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | aaaa          |
+### 2. Customização do Subtext
+| **Atributo**                                            | **Tipo**            | **Descrição**                                              |
+| :------------------------------------------------------ | :------------------ | :--------------------------------------------------------- |
+| guidanceCustomizationRetryScreenSubtextFont             | UIFont?             | Adiciona uma fonte customizada para a mensagem do subtext. |
+| guidanceCustomizationRetryScreenSubtextTextColor        | UIColor?            | Modifica a cor da fonte do subtext                         |
+| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | Adiciona uma mensagem personalizada no subtext             |
 
-### 3. Imagem
-| **Atributo**                                      | **Tipo** | **Descrição** |
-| :------------------------------------------------ | :------- | :------------ |
-| guidanceCustomizationRetryScreenImageBorderColor  | UIColor  | aaaa          |
-| guidanceCustomizationRetryScreenImageBorderWidth  | Int32?   | aaaa          |
-| guidanceCustomizationRetryScreenImageCornerRadius | Int32?   | aaaa          |
-| guidanceCustomizationRetryScreenOvarStrokeColor   | UIColor? | aaaa          |
+### 4. Imagem
+| **Atributo**                                      | **Tipo** | **Descrição**                                                     |
+| :------------------------------------------------ | :------- | :---------------------------------------------------------------- |
+| guidanceCustomizationRetryScreenImageBorderColor  | UIColor  | Modifica a cor da borda do preview da imagem de retentativa.      |
+| guidanceCustomizationRetryScreenImageBorderWidth  | Int32?   | Modifica a largura da borda do preview da imagem de retentativa.  |
+| guidanceCustomizationRetryScreenImageCornerRadius | Int32?   | Modifica o tamanho do arredondamento das bordas.                  |
+| guidanceCustomizationRetryScreenOvarStrokeColor   | UIColor? | Modifica a cor da borda do preview oval da imagem de retentativa. |
 
 <br/>
-<img src="Images/blob_customization_1.png" width="432" height="396" />
+<img src="Images/liveness3d_theme_retry_screen.png" width="432" height="396" />
 
 -----
 <br/>
