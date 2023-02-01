@@ -23,11 +23,10 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     theme.frameCustomizationCornerRadius = 10
     theme.frameCustomizationBorderColor = .red
     theme.frameCustomizationBackgroundColor = .red
-    theme.frameCustomizationElevation = 10
-    theme.guidanceCustomizationBackgroundColors = [.brown, .brown]
+    theme.guidanceCustomizationBackgroundColors = [.brown, .systemPink]
     
     //    MARK: - Common overlay
-    theme.overlayCustomizationBackgroundColor = .green
+    theme.overlayCustomizationBackgroundColor = .white
     theme.overlayCustomizationBrandingImage = UIImage(named: "")
     theme.overlayCustomizationShowBrandingImage = false
     
@@ -51,22 +50,25 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     theme.guidanceCustomizationButtonFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationButtonTextNormalColor = .purple
     theme.guidanceCustomizationButtonBackgroundNormalColor = .purple
+    
     theme.guidanceCustomizationButtonTextHighlightColor = .red
     theme.guidanceCustomizationButtonBackgroundHighlightColor = .gray
+    
     theme.guidanceCustomizationButtonTextDisabledColor = .black
     theme.guidanceCustomizationButtonBackgroundDisabledColor = .blue
+    
     theme.guidanceCustomizationButtonBorderColor = .white
     theme.guidanceCustomizationButtonBorderWidth = 10
     theme.guidanceCustomizationButtonCornerRadius = 10
     
     //    MARK: - Common guidance customization
-    theme.guidanceCustomizationReadyScreenTextBackgroundColor = .systemPink
-    theme.guidanceCustomizationReadyScreenTextBackgroundCornerRadius = 10
+    theme.guidanceCustomizationReadyScreenTextBackgroundColor = .white
+    theme.guidanceCustomizationReadyScreenTextBackgroundCornerRadius = 40
     
     ///   Get ready screen
     
-    
     //    MARK: - Ready screen Guidance header
+    theme.guidanceCustomizationReadyScreenOvarFillColor = .systemPink
     theme.guidanceCustomizationReadyScreenHeaderAttributedString = NSAttributedString(string: "Titulo")
     theme.guidanceCustomizationReadyScreenHeaderFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationHeaderFont = UIFont(name: "", size: 14)
@@ -91,7 +93,6 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     theme.guidanceCustomizationRetryScreenSubtextAttributedString = NSAttributedString(string: "Retry subtexto")
     
     //    MARK: - Retry screen guidance image
-    theme.guidanceCustomizationReadyScreenOvarFillColor = .systemPink
     theme.guidanceCustomizationRetryScreenImageBorderColor = .systemBlue
     theme.guidanceCustomizationRetryScreenImageBorderWidth = 10
     theme.guidanceCustomizationRetryScreenImageCornerRadius = 10
@@ -127,7 +128,6 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     //    MARK: -  Result screen text
     theme.resultScreenCustomizationMessageFont = UIFont(name: "", size: 15.0)
     theme.feedbackCustomizationEnablePulsatingText = true
-    theme.feedbackCustomizationElevation = 10
     theme.resultScreenSuccessMessage = "Valeu!!"
     
     return theme
