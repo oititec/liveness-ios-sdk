@@ -269,7 +269,7 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
     var openSettingsButton: UIButton! { get }
     var closeButton: UIButton! { get }
     
-    func showBottomSheet()
+    func showBottomSheet(visibility: Visibility)
 }
 ```
 
@@ -279,7 +279,7 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
 | (**2**) | `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
 | (**3**) | `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
 | (**4**) | `closeButton` | Botão que fecha o fluxo de validação da permissão de câmera e volta para tela anterior. |
-|         | `showBottomSheet` | Método responsável por indicar o momento de mostrar os botões de ``openSettingsButton`` e ``closeButton``. |
+|         | `showBottomSheet(visibility:)` | Método responsável por indicar o momento de mostrar os botões de ``openSettingsButton`` e ``closeButton``, podendo receber dois valores: **hidden** (esconder os botões) e **displayed** (mostrar os botões). |
 
 <br/>
 <div>

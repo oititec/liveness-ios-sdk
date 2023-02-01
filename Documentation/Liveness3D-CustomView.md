@@ -129,7 +129,7 @@ public protocol CustomCameraPermissionView: UIView {
     var closeButton: UIButton! { get }
     var openSettingsButton: UIButton! { get }
 
-    func showBottomSheet()
+    func showBottomSheet(visibility: Visibility)
 }
 ```
 
@@ -139,7 +139,7 @@ public protocol CustomCameraPermissionView: UIView {
 | `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
 | `closeButton` | Botão que fechar o fluxo de validação da permissão de câmera e volta para tela anterior. |
 | `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
-| `showBottomSheet()` | Método responsável por indicar o momento de mostrar os botões de `openSettingsButton` e `closeButton` |
+| `showBottomSheet(visibility:)` | Método responsável por indicar o momento de mostrar os botões de `openSettingsButton` e `closeButton`, podendo receber dois valores: **hidden** (esconder os botões) e **displayed** (mostrar os botões). |
 
 > Nota: 
 > (a) Além das subviews especificadas, as views customizadas pode conter outros elementos, apenas tomando cuidado para que os mesmos não interfiram nas subviews funcionais;<br/>
