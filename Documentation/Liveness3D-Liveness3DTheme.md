@@ -44,14 +44,14 @@ public enum CancelButtonLocation: Int {
 | feedbackCustomizationEnablePulsatingText | Bool             | **não consegui validar**                                  |
 
 ### 5. Oval
-| **Atributo**                          | **Tipo** | **Descrição**                                                  |
-| :------------------------------------ | :------- | :------------------------------------------------------------- |
-| ovarCustomizationStrokeWidth          | Int32?   | Modifica a largura da borda da camada oval                     |
-| ovarCustomizationStrokeColor          | UIColor  | Modifica a cor da borda da camada oval                         |
-| ovarCustomizationProgressStrokeWidth  | Int32?   | Modifica a largura da borda do progresso da camada oval        |
-| ovarCustomizationProgressColor1       | UIColor  | Modifica a cor da borda de progresso da camada oval            |
-| ovarCustomizationProgressColor2       | UIColor  | Modifica a cor da borda de progresso da camada oval            |
-| ovarCustomizationProgressRadialOffset | Int32?   | Modifica o distânciamento da borda de progresso da camada oval |
+| **Atributo**                          | **Tipo** | **Descrição**                                                   |
+| :------------------------------------ | :------- | :-------------------------------------------------------------- |
+| ovarCustomizationStrokeWidth          | Int32?   | Modifica a largura da borda da camada oval.                     |
+| ovarCustomizationStrokeColor          | UIColor  | Modifica a cor da borda da camada oval.                         |
+| ovarCustomizationProgressStrokeWidth  | Int32?   | Modifica a largura da borda do progresso da camada oval.        |
+| ovarCustomizationProgressColor1       | UIColor  | Modifica a cor da borda de progresso da camada oval.            |
+| ovarCustomizationProgressColor2       | UIColor  | Modifica a cor da borda de progresso da camada oval.            |
+| ovarCustomizationProgressRadialOffset | Int32?   | Modifica o distânciamento da borda de progresso da camada oval. |
 
 ### 6. Botões
 | **Atributo**                                        | **Tipo** | **Descrição**                                                     |
@@ -127,7 +127,7 @@ public enum CancelButtonLocation: Int {
 | resultScreenCustomizationForegroundColor                         | UIColor?             | Modifica a cor de fundo quando estiver em primeiro plano.                    |
 | resultScreenCustomizationBackgroundColors                        | [UIColor]?           | Modifica a cor de fundo e caso receba duas cores diferentes cria um degradê. |
 | resultScreenCustomizationActivityIndicatorColor                  | UIColor              | Modifica a cor do activity indicator.                                        |
-| resultScreenCustomizationCustomActivityIndicatorImage            | UIImage?             | Adiciona uma imagem customizada para o activity indicator                    |
+| resultScreenCustomizationCustomActivityIndicatorImage            | UIImage?             | Adiciona uma imagem customizada para o activity indicator.                   |
 | resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32                | **não consegui validar**                                                     |
 | resultScreenCustomizationCustomActivityIndicatorAnimation        | Int                  | **não consegui validar**                                                     |
 | resultAnimationStyle                                             | ResultAnimationStyle | **não consegui validar**                                                     |
@@ -198,8 +198,8 @@ public protocol CustomResultAnimationDelegate {
 | **Atributo**                                            | **Tipo**            | **Descrição**                                              |
 | :------------------------------------------------------ | :------------------ | :--------------------------------------------------------- |
 | guidanceCustomizationRetryScreenSubtextFont             | UIFont?             | Adiciona uma fonte customizada para a mensagem do subtext. |
-| guidanceCustomizationRetryScreenSubtextTextColor        | UIColor?            | Modifica a cor da fonte do subtext                         |
-| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | Adiciona uma mensagem personalizada no subtext             |
+| guidanceCustomizationRetryScreenSubtextTextColor        | UIColor?            | Modifica a cor da fonte do subtext.                        |
+| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | Adiciona uma mensagem personalizada no subtext.            |
 
 ### 4. Imagem
 | **Atributo**                                      | **Tipo** | **Descrição**                                                     |
