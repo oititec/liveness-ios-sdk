@@ -41,7 +41,7 @@ public enum CancelButtonLocation: Int {
 | feedbackCustomizationBackgroundColor     | CAGradientLayer? | Modifica a cor de fundo da barra.                         |
 | feedbackCustomizationTextColor           | UIColor?         | Modifica a cor do texto do feedback.                      |
 | feedbackCustomizationTextFont            | UIFont?          | Adiciona uma fonte customizada para o texto do feedback.  |
-| feedbackCustomizationEnablePulsatingText | Bool             | **não consegui validar**                                  |
+| feedbackCustomizationEnablePulsatingText | Bool             | ***                                                       |
 
 ### 5. Oval
 | **Atributo**                          | **Tipo** | **Descrição**                                                   |
@@ -106,11 +106,11 @@ public enum CancelButtonLocation: Int {
 ### 3. Textos
 
 > **_Observação:_**
-> A propriedade abaixo só será aplicada em telas pequenas. 
+> As propriedades abaixo só serão aplicadas em telas pequenas. 
 
 | **Atributo**                                               | **Tipo** | **Descrição**                                    |
 | :--------------------------------------------------------- | :------- | :----------------------------------------------- |
-| guidanceCustomizationReadyScreenOvarFillColor              | UIColor? | **não consegui validar**                         |
+| guidanceCustomizationReadyScreenOvarFillColor              | UIColor? | ***                                              |
 | guidanceCustomizationReadyScreenTextBackgroundColor        | UIColor? | Modifica a cor de fundo.                         |
 | guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32?   | Modifica o tamanho do arredondamento das bordas. |
 
@@ -128,9 +128,9 @@ public enum CancelButtonLocation: Int {
 | resultScreenCustomizationBackgroundColors                        | [UIColor]?           | Modifica a cor de fundo e caso receba duas cores diferentes cria um degradê. |
 | resultScreenCustomizationActivityIndicatorColor                  | UIColor              | Modifica a cor do activity indicator.                                        |
 | resultScreenCustomizationCustomActivityIndicatorImage            | UIImage?             | Adiciona uma imagem customizada para o activity indicator.                   |
-| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32                | **não consegui validar**                                                     |
-| resultScreenCustomizationCustomActivityIndicatorAnimation        | Int                  | **não consegui validar**                                                     |
-| resultAnimationStyle                                             | ResultAnimationStyle | **não consegui validar**                                                     |
+| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | Int32                | ***                                                                          |
+| resultScreenCustomizationCustomActivityIndicatorAnimation        | Int                  | ***                                                                          |
+| resultAnimationStyle                                             | ResultAnimationStyle | Determina o tipo de animação será utilizada juntamente com sua customização. |
 
 ```swift
 public enum ResultAnimationStyle {
@@ -161,15 +161,15 @@ public protocol CustomResultAnimationDelegate {
 ### 3. Animação
 | **Atributo**                                                     | **Tipo** | **Descrição**                                                                         |
 | :--------------------------------------------------------------- | :------- | :------------------------------------------------------------------------------------ |
-| resultScreenCustomizationAnimationRelativeScale                  | Float    | **não conssegui validar**                                                             |
+| resultScreenCustomizationAnimationRelativeScale                  | Float    | ***                                                                                   |
 | resultScreenCustomizationResultAnimationBackgroundColor          | UIColor  | Modifica a cor de fundo da imagem que aparece após a animação finalizar.              |
 | resultScreenCustomizationResultAnimationForegroundColor          | UIColor  | Modifica a cor do icone que vai aparecer em primeiro plano após a animação finalizar. |
 | resultScreenCustomizationResultAnimationSuccessBackgroundImage   | UIImage? | Adiciona uma imagem customizada após a animação finalizar com sucesso.                |
 | resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | Int      | Adiciona uma imagem customizada após a animação finalizar com erro.                   |
-| resultScreenCustomizationCustomResultAnimationSuccess            | Int      | **não conssegui validar**                                                             |
-| resultScreenCustomizationCustomResultAnimationUnSuccess          | Int      | **não conssegui validar**                                                             |
-| resultScreenCustomizationCustomStaticResultAnimationSuccess      | Int      | **não conssegui validar**                                                             |
-| resultScreenCustomizationCustomStaticResultAnimationUnSuccess    | Int      | **não conssegui validar**                                                             |
+| resultScreenCustomizationCustomResultAnimationSuccess            | Int      | ***                                                                                   |
+| resultScreenCustomizationCustomResultAnimationUnSuccess          | Int      | ***                                                                                   |
+| resultScreenCustomizationCustomStaticResultAnimationSuccess      | Int      | ***                                                                                   |
+| resultScreenCustomizationCustomStaticResultAnimationUnSuccess    | Int      | ***                                                                                   |
 
 ### 4. Mensagem de sucesso
 | **Atributo**                         | **Tipo** | **Descrição**                                              |
@@ -213,85 +213,6 @@ public protocol CustomResultAnimationDelegate {
 <img src="Images/liveness3d_theme_retry_screen.png" width="432" height="396" />
 
 -----
-<br/>
-
-| **Atributo**                                                     | **Tipo**           | **Valor Padrão**                                         | **Descrição**                                                                      |
-| :--------------------------------------------------------------- | :----------------- | :------------------------------------------------------- | :--------------------------------------------------------------------------------- |
-| guidanceCustomizationBackgroundColors                            | [UIColor]          | Dark: #000000<br>Light: #FFFFFF                          | Define a cor do background (cor do plano de fundo) do fluxo de Prova de vida       |
-| guidanceCustomizationForegroundColor                             | UIColor            | Dark: #000000<br>Light: #FFFFFF                          | Define a cor do foreground (cor do primeiro plano)                                 |
-| guidanceCustomizationHeaderFont                                  | UIFont             | Ubuntu-Bold                                              | Define a fonte do título da primeira tela do fluxo de prova de vida                |
-| guidanceCustomizationSubtextFont                                 | UIFont             | Inter-Regular                                            | Define a fonte do subtítulo da primeira tela do fluxo de prova de vida             |
-| guidanceCustomizationReadyScreenHeaderFont                       | UIFont             | Ubuntu-Bold                                              |                                                                                    |
-| guidanceCustomizationReadyScreenHeaderTextColor                  | UIColor            |                                                          | Define a cor do título da primeira tela do fluxo de prova de vida                  |
-| guidanceCustomizationReadyScreenHeaderAttributedString           | NSAttributedString | nil                                                      |                                                                                    |
-| guidanceCustomizationReadyScreenSubtextFont                      | UIFont             | Inter-Regular                                            | Define a fonte do subtítulo da tela de início de captura do fluxo de prova de vida |
-| guidanceCustomizationReadyScreenSubtextTextColor                 | UIColor            | Dark: #FFFFFF<br>Light: #000000                          | Define a cor subtítulo da tela de início de captura do fluxo de prova de vida      |
-| guidanceCustomizationReadyScreenSubtextAttributedString          | NSAttributedString | nil                                                      |                                                                                    |
-| guidanceCustomizationRetryScreenHeaderFont                       | UIFont             | Ubuntu-Bold                                              | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenHeaderTextColor                  | UIColor            | Dark: #FFFFFF<br>Light: #1E1E1E                          | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenHeaderAttributedString           | NSAttributedString | nil                                                      |                                                                                    |
-| guidanceCustomizationRetryScreenSubtextFont                      | UIFont             | Inter-Regular                                            | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenSubtextTextColor                 | UIColor            | Dark: #FFFFFF<br>Light: #666666                          | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenSubtextAttributedString          | NSAttributedString | nil                                                      | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonFont                                  | UIFont             | Inter-Bold                                               | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonTextNormalColor                       | UIColor            | Dark: #000000<br>Light: #FFFFFF                          | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonBackgroundNormalColor                 | UIColor            | #05D758                                                  | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonTextHighlightColor                    | UIColor            | Dark: #FFFFFF<br>Light: #000000                          | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonBackgroundHighlightColor              | UIColor            | Dark: #000000<br>Light: #FFFFFF                          | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonTextDisabledColor                     | UIColor            | Dark: #000000<br>Light: #FFFFFF                          | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonBackgroundDisabledColor               | UIColor            | #b4fdd1                                                  | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonBorderColor                           | UIColor            | nil                                                      | Define a cor do foreground                                                         |
-| guidanceCustomizationButtonBorderWidth                           | Int32              | nil                                                      | Define a espessura da borda do botão                                               |
-| guidanceCustomizationButtonCornerRadius                          | Int32              | nil                                                      | Define a cor do foreground                                                         |
-| guidanceCustomizationReadyScreenOvarFillColor                    | UIColor            | #05D758                                                  | Define a cor do foreground                                                         |
-| guidanceCustomizationReadyScreenTextBackgroundColor              | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| guidanceCustomizationReadyScreenTextBackgroundCornerRadius       | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenImageBorderColor                 | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenImageBorderWidth                 | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenImageCornerRadius                | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| guidanceCustomizationRetryScreenOvarStrokeColor                  | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationAnimationRelativeScale                  | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationForegroundColor                         | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationBackgroundColors                        | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationActivityIndicatorColor                  | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomActivityIndicatorImage            | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomActivityIndicatorRotationIntervar | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomActivityIndicatorAnimation        | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationShowUploadProgressBar                   | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationUploadProgressFillColor                 | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor da barra de carregamento.                                             |
-| resultScreenCustomizationUploadProgressTrackColor                | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationResultAnimationBackgroundColor          | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationResultAnimationForegroundColor          | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationResultAnimationSuccessBackgroundImage   | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationResultAnimationUnSuccessBackgroundImage | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomResultAnimationSuccess            | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomResultAnimationUnSuccess          | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomStaticResultAnimationSuccess      | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationCustomStaticResultAnimationUnSuccess    | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenCustomizationMessageFont                             | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| ovarCustomizationStrokeWidth                                     | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| ovarCustomizationStrokeColor                                     | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| ovarCustomizationProgressStrokeWidth                             | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| ovarCustomizationProgressColor1                                  | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| ovarCustomizationProgressColor2                                  | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| ovarCustomizationProgressRadialOffset                            | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| frameCustomizationBorderWidth                                    | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| frameCustomizationCornerRadius                                   | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| frameCustomizationBorderColor                                    | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| frameCustomizationBackgroundColor                                | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| frameCustomizationElevation                                      | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| overlayCustomizationBackgroundColor                              | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| overlayCustomizationBrandingImage                                | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| overlayCustomizationShowBrandingImage                            | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| feedbackCustomizationCornerRadius                                | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| feedbackCustomizationBackgroundColors                            | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| feedbackCustomizationTextColor                                   | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| feedbackCustomizationTextFont                                    | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| feedbackCustomizationEnablePulsatingText                         | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| feedbackCustomizationElevation                                   | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| cancelButtonCustomizationCustomImage                             | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| cancelButtonCustomizationLocation                                | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
-| resultScreenOverrideSuccessMessage                               | UIColor            | UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00) | Define a cor do foreground                                                         |
 
 ## Customização dos textos
 Os textos do fluxo do Liveness3D podem ser alterados utilizando o objeto do tipo ``Liveness3DTheme``, onde as propriedades responsáveis por cada um desses textos são de dois tipos possíveis: `NSAttributedString` ou `String`.
