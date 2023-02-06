@@ -10,7 +10,7 @@ import FaceCaptcha
 
 class ViewController: UIViewController {
     private let baseURL = "https://comercial.certiface.com.br:8443/"
-    private var appKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiMUE0NEYwNEYzQ0M5MEYxRDM2N0EwOTEyNkZBMzMyOUQxfG1vYmlsZS5hcGlnbG9iYWwiLCJlbXBDb2QiOiIwMDAwMDAwNjc5IiwiZmlsQ29kIjoiMDAwMDAwMjc3NCIsImNwZiI6Ijc4NjUyMTg2NzIzIiwibm9tZSI6IkQ1NjlCNURBODY1QTZBOUU2MjFFRUQwNjYwNkMyMUEwRjRBRUZDOEFCRUQwNkRFMDIzRUEzRDZBRkIwQkU5REFBNjIxNDFGNThCQUM3OURGMDM2MEM3OTg2QTE5NjYyOTgwMURCRUI2Q0Q0MkNGNTA1RDE1OEMwNEI4NDI1MEQ0QzBBODJ8QUxFU1NBTkRSTyBGQVJJQSIsIm5hc2NpbWVudG8iOiIyNy8wNS8xOTcyIiwiZWFzeS1pbmRleCI6IkFBQUFFaThwc0VwRVRvaTlWR3NocnJZQkNUQkRyM2ZCQ1V3ZG42VWpDUU16d1JNb1lmeCttTmtvd1VkOUhBPT0iLCJrZXkiOiJRMjl1YzJsa1pYSWdjM0JsWVd0cGJtY2diV1VnY0hKdmMzQmxZM1FnZDJoaGRHVT0iLCJleHAiOjE2NzUyODE2MzQsImlhdCI6MTY3NTI4MTMzNH0.UekX07_iIbleHoKu4xtcYXipceCrueWWkQwoKvAMo7Q"
+    private var appKey = ""
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
     @IBAction private func defaultLiveness3D() {
