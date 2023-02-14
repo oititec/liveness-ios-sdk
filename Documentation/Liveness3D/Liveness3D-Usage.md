@@ -125,8 +125,6 @@ public struct Liveness3DSuccess {
 
 >⚠️ Para mais detalhes sobre as propriedades no objeto de retorno, [clique aqui](https://certifaceid.readme.io/docs/integra%C3%A7%C3%A3o-atualizada#42-3d-liveness).
 
-<br/>
-
 ### Erro
 
 Para tratar o caso de erro, o método `handleLiveness3DError(error:)` deve recebe um objeto do tipo `Liveness3DError`, onde os atributos abaixo podem ser avaliados:
