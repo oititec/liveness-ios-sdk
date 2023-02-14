@@ -58,7 +58,7 @@ As instruções de uso, descrição, integração e implementação do **Livenes
 
 As instruções de uso, integração, implementação e customização do **Liveness 3D** podem ser acessadas nos links abaixo: 
 
-  - [Descrição e Resultados](Documentation/Liveness3D-Description.md);
+  - [Descrição e Resultados](Documentation/Liveness3D_Description.md);
   - [Guia de uso e integração](Documentation/Liveness3D-Usage.md);
   - [Guia de implementação de view customizada](Documentation/Liveness3D-CustomView.md);
   - [Guia de customização do Liveness3DTheme](Documentation/Liveness3D-Liveness3DTheme.md).
