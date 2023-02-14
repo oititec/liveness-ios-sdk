@@ -1,6 +1,25 @@
 # Guia de Customização do Liveness3DTheme 
 
-A customização do fluxo de prova de vida, dar-se por meio da utilização da `Liveness3DTheme`. Essa classe na sua construção recebe o template padrão, podendo ser DarkTheme ou LightTheme.<br>
+A customização do fluxo de prova de vida, dar-se por meio da utilização da `Liveness3DTheme`. Essa classe na sua construção recebe o template padrão, podendo ser DarkTheme ou LightTheme. Os temas são atribuídos aos argumentos `defaultTheme` e `lowLightTheme` do ``Liveness3DUser``.<br>
+
+```swift
+var defaultTheme = Liveness3DTheme(.dark)
+defaultTheme.cancelButtonCustomizationLocation = .left
+
+var lowLightTheme = Liveness3DTheme(.light)
+lowLightTheme.cancelButtonCustomizationLocation = .left
+
+let liveness3DUser = Liveness3DUser(
+    appKey: appKey,
+    environment: .HML,
+    defaultTheme: defaultTheme,
+    lowLightTheme: lowLightTheme
+)
+```
+> **Considerações**: <br/>
+> 1. Ambos os temas serão aplicados de acordo com o funcionamento interno do SDK, onde o tema padrão (*defaultTheme*) será utilizado até que haja a necessidade de utilizar o tema para pouco luminosidade (*lowLightTheme*).
+> 2. Todos as propriedades do `Liveness3DTheme` possuem um valor *default*, dessa forma, não é necessário especificar todas as propriedades para exibir a customização.
+
 Abaixo, estão mapeadas as propriedades para customização do `Liveness3DTheme`.
 
 ## Elementos comuns
@@ -81,8 +100,8 @@ public enum CancelButtonLocation: Int {
 
 <br/>
 <div>
-    <img src="Images/liveness3d_theme_common_1.png" width="432" height="396" />
-    <img src="Images/liveness3d_theme_common_2.png" width="432" height="396" />
+    <img src="../Images/liveness3d_theme_common_1.png" width="432" height="396" />
+    <img src="../Images/liveness3d_theme_common_2.png" width="432" height="396" />
 <div/>
 
 ---
@@ -115,7 +134,7 @@ public enum CancelButtonLocation: Int {
 | guidanceCustomizationReadyScreenTextBackgroundCornerRadius | Int32?   | Modifica o tamanho do arredondamento das bordas. |
 
 <br/>
-<img src="Images/liveness3d_theme_ready_screen.png" width="432" height="396" />
+<img src="../Images/liveness3d_theme_ready_screen.png" width="432" height="396" />
 
 ---
 
@@ -179,8 +198,8 @@ public protocol CustomResultAnimationDelegate {
 
 <br/>
 <div>
-    <img src="Images/liveness3d_theme_result_screen_1.png" width="432" height="396" />
-    <img src="Images/liveness3d_theme_result_screen_2.png" width="432" height="396" />
+    <img src="../Images/liveness3d_theme_result_screen_1.png" width="432" height="396" />
+    <img src="../Images/liveness3d_theme_result_screen_2.png" width="432" height="396" />
 <div/>
 
 ---
@@ -210,7 +229,7 @@ public protocol CustomResultAnimationDelegate {
 | guidanceCustomizationRetryScreenOvarStrokeColor   | UIColor? | Modifica a cor da borda do preview oval da imagem de retentativa. |
 
 <br/>
-<img src="Images/liveness3d_theme_retry_screen.png" width="432" height="396" />
+<img src="../Images/liveness3d_theme_retry_screen.png" width="432" height="396" />
 
 -----
 
@@ -230,7 +249,7 @@ theme.resultScreenSuccessMessage = "Mensagem de sucesso!"
 | (**1**)    | guidanceCustomizationReadyScreenHeaderAttributedString  | NSAttributedString? |
 | (**2**)    | guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString? |
 
-<img src="Images/liveness3d_ready.png" width="432" height="396" />
+<img src="../Images/liveness3d_ready.png" width="432" height="396" />
 
 <br/>
 
@@ -241,7 +260,7 @@ theme.resultScreenSuccessMessage = "Mensagem de sucesso!"
 | (**1**)    | guidanceCustomizationRetryScreenHeaderAttributedString  | NSAttributedString? |
 | (**2**)    | guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? |
 
-<img src="Images/liveness3d_retry.png" width="432" height="396" />
+<img src="../Images/liveness3d_retry.png" width="432" height="396" />
 
 <br/>
 
@@ -251,7 +270,7 @@ theme.resultScreenSuccessMessage = "Mensagem de sucesso!"
 | :--------- | :------------------------- | :------- |
 | (**1**)    | resultScreenSuccessMessage | String   |
 
-<img src="Images/liveness3d_result.png" width="432" height="396" />
+<img src="../Images/liveness3d_result.png" width="432" height="396" />
 
 ---
 
@@ -275,7 +294,7 @@ theme.resultAnimationStyle = .custom(delegate)
 
 | **Descrição**            | **Animação**                                                   | **Customização**                                                                                                       |
 | :----------------------- | :------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| Exemplo da <br> Animação | <img src="Images/blob_loading.gif" width="195" height="422" /> | A customização da animação de Blob é definida <br> pelos parâmetros do `Liveness3DTheme` listados<br>na tabela abaixo: |
+| Exemplo da <br> Animação | <img src="../Images/blob_loading.gif" width="195" height="422" /> | A customização da animação de Blob é definida <br> pelos parâmetros do `Liveness3DTheme` listados<br>na tabela abaixo: |
 
 <br>
 
@@ -300,8 +319,8 @@ theme.resultAnimationStyle = .blob
 ### Resultado
 
 <div>
-    <img src="Images/blob_customization_1.png" width="432" height="396" />
-    <img src="Images/blob_customization_2.png" width="432" height="396" />
+    <img src="../Images/blob_customization_1.png" width="432" height="396" />
+    <img src="../Images/blob_customization_2.png" width="432" height="396" />
 </div>
 
 ***
@@ -312,7 +331,7 @@ theme.resultAnimationStyle = .blob
 
 | **Descrição**            | **Animação**                                                      | **Customização**                                                                                            |
 | :----------------------- | :---------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
-| Exemplo da <br> Animação | <img src="Images/spinner_loading.gif" width="195" height="422" /> | A customização da animação de Spinner é feita através do<br>objeto do tipo `SpinnerAnimationCustomization`. |
+| Exemplo da <br> Animação | <img src="../Images/spinner_loading.gif" width="195" height="422" /> | A customização da animação de Spinner é feita através do<br>objeto do tipo `SpinnerAnimationCustomization`. |
 
 ### `SpinnerAnimationCustomization`
 | **Indice** | **Propriedade**            | **Tipo** | **Descrição**                                                                   |
@@ -338,8 +357,8 @@ theme.resultAnimationStyle = .spinner(customization)
 ### Resultado
 
 <div>
-    <img src="Images/spinner_customization_1.png" width="432" height="396" />
-    <img src="Images/spinner_customization_2.png" width="432" height="396" />
+    <img src="../Images/spinner_customization_1.png" width="432" height="396" />
+    <img src="../Images/spinner_customization_2.png" width="432" height="396" />
 </div>
 
 ***
@@ -349,7 +368,7 @@ theme.resultAnimationStyle = .spinner(customization)
 
 | **Descrição**            | **Animação**                                                     | **Customização**                                                                                                                            |
 | :----------------------- | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| Exemplo da <br> Animação | <img src="Images/custom_loading.gif" width="195" height="422" /> | A animação personalizada é feita através de um<br>objeto que deve estar em conformidade com o<br>protocolo `CustomResultAnimationDelegate`. |
+| Exemplo da <br> Animação | <img src="../Images/custom_loading.gif" width="195" height="422" /> | A animação personalizada é feita através de um<br>objeto que deve estar em conformidade com o<br>protocolo `CustomResultAnimationDelegate`. |
 
 ### `CustomResultAnimationDelegate`
 | **Indice** | **Método**                      | **Tipo de retorno** | **Descrição**                                                        |
@@ -385,6 +404,6 @@ theme.resultAnimationStyle = .custom(CustomResultAnimation())
 ### Resultado
 
 <div>
-    <img src="Images/custom_customization_1.png" width="432" height="396" />
-    <img src="Images/custom_customization_2.png" width="432" height="396" />
+    <img src="../Images/custom_customization_1.png" width="432" height="396" />
+    <img src="../Images/custom_customization_2.png" width="432" height="396" />
 </div>
