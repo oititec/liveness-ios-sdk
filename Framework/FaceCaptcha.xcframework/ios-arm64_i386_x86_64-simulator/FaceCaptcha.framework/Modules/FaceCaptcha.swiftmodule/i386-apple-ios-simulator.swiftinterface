@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 effective-4.2 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.6.1 effective-4.2 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
 import CallKit
@@ -1019,6 +1019,17 @@ extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
 @objc @_Concurrency.MainActor(unsafe) public class Liveness3DViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
   @_Concurrency.MainActor(unsafe) public init(endpoint: Swift.String, liveness3DUser: FaceCaptcha.Liveness3DUser, debugOn: Swift.Bool, customInstructionView: FaceCaptcha.CustomInstructionView? = nil, customPermissionView: FaceCaptcha.CustomCameraPermissionView? = nil)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+public struct HybridEcosystemLiveness3DViewAppearance {
+  public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor)
+}
+@objc @_Concurrency.MainActor(unsafe) public class HybridEcosystemLiveness3DViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
+  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, customAppearance: FaceCaptcha.HybridEcosystemLiveness3DViewAppearance? = nil)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
