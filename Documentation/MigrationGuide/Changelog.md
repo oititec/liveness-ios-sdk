@@ -4,7 +4,6 @@
 - Melhoria na qualidade das imagens capturadas durante o processo de documentoscopia para envio e validação.
 - Melhoria na qualidade da pré visualização durante o processo de documentoscopia.
 
-
 #### 4.0.7
 - Correção no apontamento interno dos ambientes de homologação (HML) e produção (PRD) para validação do Liveness3D.
 - Correção no envio de logs do SDK em homologação.
