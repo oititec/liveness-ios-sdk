@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6.1 effective-4.2 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
-// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name FaceCaptcha
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FaceCaptcha
 import AVFoundation
 import CallKit
 import Combine
@@ -9,13 +9,14 @@ import CoreTelephony
 import Darwin
 @_exported import FaceCaptcha
 import Foundation
-import Network
 import Swift
 import SystemConfiguration
 import UIKit.UIButton
+import UIKit.UIColor
 import UIKit.UIImage
 import UIKit
 import UIKit.UIView
+import UIKit.UIViewController
 import _Concurrency
 public enum DocumentscopyFocusIndicator {
   case frontIndicator
@@ -801,18 +802,19 @@ public typealias DocumentscopyCustomLoadingView = UIKit.UIView
   @objc deinit
 }
 public struct Liveness3DError {
-  public let errorCode: FaceCaptcha.Liveness3DErrorCode
-  public let errorMessage: Swift.String
+  public let code: Swift.Int
+  public let type: FaceCaptcha.Liveness3DErrorCode
+  public let message: Swift.String
 }
-public enum Liveness3DErrorCode : Swift.String {
+public enum Liveness3DErrorCode : Swift.Int, Swift.Error {
   case INVALID_APP_KEY
   case NO_CAMERA_PERMISSION
   case NO_INTERNET_CONNECTION
   case LIVENESS_NOT_COMPLETED
   case LIVENESS_NOT_INITIALIZED
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -1018,7 +1020,7 @@ extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
 }
 @objc @_Concurrency.MainActor(unsafe) public class Liveness3DViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
-  @_Concurrency.MainActor(unsafe) public init(endpoint: Swift.String, liveness3DUser: FaceCaptcha.Liveness3DUser, debugOn: Swift.Bool, customInstructionView: FaceCaptcha.CustomInstructionView? = nil, customPermissionView: FaceCaptcha.CustomCameraPermissionView? = nil)
+  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, customInstructionView: FaceCaptcha.CustomInstructionView? = nil, customPermissionView: FaceCaptcha.CustomCameraPermissionView? = nil)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
@@ -1133,6 +1135,10 @@ final internal class BlockEncryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable
   @objc @usableFromInline
   deinit
 }
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class HybridDocumentscopyViewController : FaceCaptcha.DocumentscopyViewController {
+  @_Concurrency.MainActor(unsafe) public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.DocumentscopyDelegate, customAppearance: FaceCaptcha.HybridViewAppearance? = nil)
+  @objc deinit
+}
 public struct ECB : FaceCaptcha.BlockMode {
   public let options: FaceCaptcha.BlockModeOption
   public let customBlockSize: Swift.Int?
@@ -1165,6 +1171,7 @@ public protocol DocumentscopyCustomResultView : UIKit.UIView {
   func display(for resultType: FaceCaptcha.DocumentscopyResultType)
 }
 public func generateAppKey(user: Swift.String, passcode: Swift.String, cpf: Swift.String, nome: Swift.String, dtNasciemnto: Swift.String, completion: @escaping (Swift.String) -> Swift.Void)
+public typealias DocumentscopyHybridViewAppearance = FaceCaptcha.HybridViewAppearance
 public protocol FaceCaptchaView : UIKit.UIView {
   var cameraContainer: FaceCaptcha.CameraPreviewView! { get }
   var startButton: UIKit.UIButton! { get }
@@ -1638,7 +1645,7 @@ public enum DocumentscopyResultType {
 }
 public typealias DocumentscopyCustomCameraPermissionView = FaceCaptcha.CustomCameraPermissionView
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.DocumentscopyDelegate, customInstructionView: FaceCaptcha.DocumentscopyCustomInstructionView? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil, customCameraPermissionView: FaceCaptcha.DocumentscopyCustomCameraPermissionView? = nil, customLoadingView: FaceCaptcha.DocumentscopyCustomLoadingView? = nil, customResultView: FaceCaptcha.DocumentscopyCustomResultView? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.DocumentscopyDelegate, customInstructionView: FaceCaptcha.DocumentscopyCustomInstructionView? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil, customCameraPermissionView: FaceCaptcha.DocumentscopyCustomCameraPermissionView? = nil, customLoadingView: FaceCaptcha.DocumentscopyCustomLoadingView? = nil, customResultView: FaceCaptcha.DocumentscopyCustomResultView? = nil)
   @objc deinit
 }
 extension FaceCaptcha.DocumentscopyViewController : UIKit.UIGestureRecognizerDelegate {
@@ -1709,6 +1716,9 @@ public struct CFB : FaceCaptcha.BlockMode {
   public let customBlockSize: Swift.Int?
   public init(iv: Swift.Array<Swift.UInt8>, segmentSize: FaceCaptcha.CFB.SegmentSize = .cfb128)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
+}
+public struct HybridViewAppearance {
+  public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor)
 }
 extension FaceCaptcha.PKCS5 {
   public struct PBKDF2 {
@@ -1968,6 +1978,15 @@ public struct PCBC : FaceCaptcha.BlockMode {
   public let customBlockSize: Swift.Int?
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
+}
+public typealias Liveness3DHybridViewAppearance = FaceCaptcha.HybridViewAppearance
+@objc @_Concurrency.MainActor(unsafe) public class HybridLiveness3DViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
+  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, customAppearance: FaceCaptcha.Liveness3DHybridViewAppearance? = nil)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
 }
 public struct CTR {
   public enum Error : Swift.Error {
