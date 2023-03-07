@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
 
   spec.name                = "FaceCaptcha"
-  spec.version             = "4.0.8"
-  spec.swift_version       = '4.2'
+  spec.version             = "4.0.9-beta"
+  spec.swift_version       = '5.0'
   spec.summary             = "Framework FaceCaptcha para iOS."
   spec.homepage            = "https://www.oititec.com.br/"
   spec.license             = { :type => "Copyright", :file => "LICENSE" }
