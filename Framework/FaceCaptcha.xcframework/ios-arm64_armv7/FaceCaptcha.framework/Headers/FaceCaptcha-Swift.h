@@ -292,24 +292,25 @@ SWIFT_CLASS("_TtC11FaceCaptcha33HybridDocumentscopyViewController")
 @end
 
 
-SWIFT_CLASS("_TtC11FaceCaptcha30HybridLiveness3DViewController")
-@interface HybridLiveness3DViewController : UIViewController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)loadView;
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
-
-
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
-@interface Liveness3DViewController : UIViewController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)loadView;
-- (void)viewDidLoad;
+@interface Liveness3DViewController : UINavigationController
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11FaceCaptcha30HybridLiveness3DViewController")
+@interface HybridLiveness3DViewController : Liveness3DViewController
+@end
+
+
+
+
+@interface Liveness3DViewController (SWIFT_EXTENSION(FaceCaptcha)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 
@@ -623,24 +624,25 @@ SWIFT_CLASS("_TtC11FaceCaptcha33HybridDocumentscopyViewController")
 @end
 
 
-SWIFT_CLASS("_TtC11FaceCaptcha30HybridLiveness3DViewController")
-@interface HybridLiveness3DViewController : UIViewController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)loadView;
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
-
-
 SWIFT_CLASS("_TtC11FaceCaptcha24Liveness3DViewController")
-@interface Liveness3DViewController : UIViewController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)loadView;
-- (void)viewDidLoad;
+@interface Liveness3DViewController : UINavigationController
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11FaceCaptcha30HybridLiveness3DViewController")
+@interface HybridLiveness3DViewController : Liveness3DViewController
+@end
+
+
+
+
+@interface Liveness3DViewController (SWIFT_EXTENSION(FaceCaptcha)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 

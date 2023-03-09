@@ -807,11 +807,11 @@ public struct Liveness3DError {
   public let message: Swift.String
 }
 public enum Liveness3DErrorCode : Swift.Int, Swift.Error {
-  case INVALID_APP_KEY
-  case NO_CAMERA_PERMISSION
-  case NO_INTERNET_CONNECTION
-  case LIVENESS_NOT_COMPLETED
-  case LIVENESS_NOT_INITIALIZED
+  case invalidAppKey
+  case noCameraPermission
+  case noInternetConnection
+  case livenessNotCompleted
+  case livenessNotInitialized
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -1018,14 +1018,6 @@ extension FaceCaptcha.ChaCha20 : FaceCaptcha.Cryptors {
   final public func makeEncryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
   final public func makeDecryptor() -> FaceCaptcha.Cryptor & FaceCaptcha.Updatable
 }
-@objc @_Concurrency.MainActor(unsafe) public class Liveness3DViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
-  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, customInstructionView: FaceCaptcha.CustomInstructionView? = nil, customPermissionView: FaceCaptcha.CustomCameraPermissionView? = nil)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @objc deinit
-}
 extension Swift.FixedWidthInteger {
   @inlinable internal func bytes(totalBytes: Swift.Int = MemoryLayout<Self>.size) -> Swift.Array<Swift.UInt8> {
     arrayOfBytes(value: self.littleEndian, length: totalBytes)
@@ -1148,6 +1140,11 @@ public struct ECB : FaceCaptcha.BlockMode {
 public struct FCBaseModel {
   public static let K_APP_KEY: Swift.String
   public static let K_P: Swift.String
+}
+public typealias Liveness3DHybridViewAppearance = FaceCaptcha.HybridViewAppearance
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class HybridLiveness3DViewController : FaceCaptcha.Liveness3DViewController {
+  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, delegate: FaceCaptcha.Liveness3DDelegate?, customAppearance: FaceCaptcha.Liveness3DHybridViewAppearance?)
+  @objc deinit
 }
 public typealias CipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
 public protocol BlockMode {
@@ -1275,6 +1272,14 @@ public protocol Cipher : AnyObject {
 extension FaceCaptcha.Cipher {
   public func encrypt(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
   public func decrypt(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class Liveness3DViewController : UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) weak public var liveness3DDelegate: FaceCaptcha.Liveness3DDelegate?
+  @_Concurrency.MainActor(unsafe) convenience public init(liveness3DUser: FaceCaptcha.Liveness3DUser, delegate: FaceCaptcha.Liveness3DDelegate?, customInstructionView: FaceCaptcha.CustomInstructionView? = nil, customPermissionView: FaceCaptcha.CustomCameraPermissionView? = nil)
+  @objc deinit
+}
+extension FaceCaptcha.Liveness3DViewController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 @inlinable internal func rotateLeft(_ value: Swift.UInt8, by: Swift.UInt8) -> Swift.UInt8 {
   ((value << by) & 0xff) | (value >> (8 - by))
@@ -1978,15 +1983,6 @@ public struct PCBC : FaceCaptcha.BlockMode {
   public let customBlockSize: Swift.Int?
   public init(iv: Swift.Array<Swift.UInt8>)
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
-}
-public typealias Liveness3DHybridViewAppearance = FaceCaptcha.HybridViewAppearance
-@objc @_Concurrency.MainActor(unsafe) public class HybridLiveness3DViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: FaceCaptcha.Liveness3DDelegate?
-  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, customAppearance: FaceCaptcha.Liveness3DHybridViewAppearance? = nil)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @objc deinit
 }
 public struct CTR {
   public enum Error : Swift.Error {
