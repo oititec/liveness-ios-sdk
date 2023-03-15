@@ -26,24 +26,15 @@ Detalhes de como customizar o Liveness3DTheme são encontrados [neste link](Live
 
 ```swift
 let liveness3DViewController = Liveness3DViewController(
-    endpoint: "", 
     liveness3DUser: Liveness3DUser(
         appKey: appKey,
         environment: .HML
     ),
-    debugOn: true,
+    delegate: self,
 )
 ```
 
-**PASSO 3.** Definir o `Delegate`:
-
-```swift
-liveness3DViewController.delegate = self
-```
-
-> Nota: o objeto `liveness3DViewController` é o mesmo criado no passo 2.
-
-**PASSO 4.** Implementar o `Liveness3DDelegate` na sua View Controller.
+**PASSO 3.** Implementar o `Liveness3DDelegate` na sua View Controller.
  Os métodos são:
  - **handleLiveness3DValidation(validateModel:)**: método chamado no delegate após efetuada a validação da prova de vida;
  - **handleLiveness3DError(error:)**: método chamado no delegate caso o SDK do Liveness3D encontre algum erro de comunicação com o backend ou na validação da prova de vida;
@@ -55,7 +46,7 @@ public protocol Liveness3DDelegate: AnyObject {
 }
 ``` 
 
-**PASSO 5.** Apresentar a View Controller do Liveness3D como modal.
+**PASSO 4.** Apresentar a View Controller do Liveness3D como modal.
 
 ```swift
 liveness3DViewController.modalPresentationStyle = .fullScreen 
@@ -77,17 +68,10 @@ class ViewController: UIViewController {
             environment: .PRD
         )
         
-        // Passo 02
-        let liveness3DViewController = Liveness3DViewController(
-            endpoint: "",
-            liveness3DUser: liveness3DUser,
-            debugOn: false
-        )
-    
         // Passo 03
         liveness3DViewController.delegate = self
         
-        // Passo 05
+        // Passo 04
         liveness3DViewController.modalPresentationStyle = .fullScreen
         present(liveness3DViewController, animated: true)
     }
@@ -95,7 +79,7 @@ class ViewController: UIViewController {
 ```
 
 ```swift
-// Passo 04
+// Passo 03
 extension ViewController: Liveness3DDelegate {
     func handleLiveness3DValidation(validateModel: Liveness3DSuccess) {
         // Seu código ...
@@ -134,15 +118,26 @@ Para tratar o caso de erro, o método `handleLiveness3DError(error:)` deve receb
 
 ```swift
 public struct Liveness3DError {
-    public let errorCode: Liveness3DErrorCode
-    public let errorMessage: String
+    public let code: Int
+    public let type: Liveness3DErrorCode
+    public let message: String
 }
 
-public enum Liveness3DErrorCode: String {    
-    case INVALID_APP_KEY = "App Key inválido."
-    case NO_CAMERA_PERMISSION = "Não foi concedida permissão de acesso à câmera do aparelho."
-    case NO_INTERNET_CONNECTION = "Sem conexão à Internet."
-    case LIVENESS_NOT_COMPLETED = "Prova de vida não foi completada."
-    case LIVENESS_NOT_INITIALIZED = "Liveness não foi inicializado corretamente."
+public enum Liveness3DErrorCode: Int, Error {
+    // App Key inválido.
+    case invalidAppKey = 0
+    
+    // Não foi concedida permissão de acesso à câmera do aparelho.
+    case noCameraPermission = 1
+    
+    // Sem conexão à Internet.
+    case noInternetConnection = 2
+    
+    // Prova de vida não foi completada.
+    case livenessNotCompleted = 3
+    
+    // Liveness não foi inicializado corretamente.
+    case livenessNotInitialized = 4
+    
 }
 ```
