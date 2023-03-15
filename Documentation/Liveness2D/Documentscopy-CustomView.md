@@ -75,7 +75,7 @@ Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma
 ### 14. Tela de instrução para habilitar câmera:
 Caso a solicitação seja recusada pelo usuário, neste passo é apresentado a mensagem para direciona-lo às configurações:
 
-<div><img src="../Images/12_permissao_de_camera_desativada.png" width="214" height="488"></div>
+<div><img src="../Images/substituir_passo_14.png" width="214" height="488"></div>
 
 ---
 
@@ -284,7 +284,7 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
 <br/>
 <div>
     <img src="../Images/camera_permission_1.png" width="432" height="396" />
-    <img src="../Images/camera_permission_2.png" width="432" height="396" />
+    <img src="../Images/Substituir_passo5_imagem2.png" width="432" height="396" />
 <div/>
 
 ---
