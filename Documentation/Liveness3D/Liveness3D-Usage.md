@@ -22,7 +22,7 @@ public enum Environment3D {
 
 Detalhes de como customizar o Liveness3DTheme são encontrados [neste link](Liveness3D-Liveness3DTheme.md).
 
-**PASSO 2.**  Crie uma instância para a classe `Liveness3DViewController`, com os parâmetro de *endpoint*,*liveness3DUser* e *debugOn*.
+**PASSO 2.**  Crie uma instância para a classe `Liveness3DViewController`, com os parâmetro de *liveness3DUser* e *delegate*.
 
 ```swift
 let liveness3DViewController = Liveness3DViewController(
@@ -30,7 +30,7 @@ let liveness3DViewController = Liveness3DViewController(
         appKey: appKey,
         environment: .HML
     ),
-    delegate: self,
+    delegate: self
 )
 ```
 
@@ -68,8 +68,11 @@ class ViewController: UIViewController {
             environment: .PRD
         )
         
-        // Passo 03
-        liveness3DViewController.delegate = self
+        // Passo 02 e 03
+        let liveness3DViewController = Liveness3DViewController(
+            liveness3DUser: liveness3DUser,
+            delegate: self
+        )
         
         // Passo 04
         liveness3DViewController.modalPresentationStyle = .fullScreen
@@ -113,8 +116,9 @@ public struct Liveness3DSuccess {
 
 Para tratar o caso de erro, o método `handleLiveness3DError(error:)` deve recebe um objeto do tipo `Liveness3DError`, onde os atributos abaixo podem ser avaliados:
 
-- **errorCode**: *enum* do tipo `Liveness3DErrorCode`, que indica o erro capturado.
-- **errorMessage**: texto que contém uma mensagem explicativa sobre o erro.
+- **code**: representação do erro em valor numérico.
+- **type**: *enum* do tipo `Liveness3DErrorCode`, que indica o erro capturado.
+- **message**: texto que contém uma mensagem explicativa sobre o erro.
 
 ```swift
 public struct Liveness3DError {
