@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             environment: .PRD
         )
         
-        // Passo 02 e 03
+        // Passo 02
         let liveness3DViewController = Liveness3DViewController(
             liveness3DUser: liveness3DUser,
             delegate: self
