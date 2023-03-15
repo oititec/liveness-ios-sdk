@@ -1,5 +1,11 @@
 # Changelog
 
+#### [4.0.9](4.0.9.md) - BREAKING CHANGE
+- Atualização da FaceTec.
+- Alteração do comportamento e do visual da tela de captura de permissão de câmera.
+- Alteração no inicializador do `Liveness3DViewController`.
+- Alterações dos códigos de erro.
+
 #### 4.0.8
 - Melhoria na qualidade das imagens capturadas durante o processo de documentoscopia para envio e validação.
 - Melhoria na qualidade da pré visualização durante o processo de documentoscopia.

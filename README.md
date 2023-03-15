@@ -89,6 +89,7 @@ Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha]
 
 ##  Guias de migração
 
+- [4.0.9](Documentation/MigrationGuide/4.0.9.md) - BREAKING CHANGE
 - [4.0.6](Documentation/MigrationGuide/4.0.6.md) - BREAKING CHANGE
 - [3.0.0](Documentation/MigrationGuide/3.0.0.md) - BREAKING CHANGE
 - [2.0.0](Documentation/MigrationGuide/2.0.0.md) - BREAKING CHANGE
