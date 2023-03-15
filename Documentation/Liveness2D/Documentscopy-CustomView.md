@@ -63,12 +63,12 @@ Nesta tela o usuário poderá clicar no botão **Tentar novamente**, após a men
 ### 12. Notificação da câmera do dispositivo desativada
 Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
 
-<div><img src="../Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
+<div><img src="../Images/substituir_passo_12.png" width="214" height="488"></div>
 
 ### 13. Tela com mensagem do iOS para  direcionar o usuário a tela de configuração
 Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma mensagem na tela para direcionar ou não o usuário para a tela de configuração:
 
-<div><img src="../Images/11_mensagem_de_config_camera.png" width="214" height="488"></div>
+<div><img src="../Images/substituir_passo_13.png" width="214" height="488"></div>
 
 **Obs.:** Por padrão, a Apple apresenta essa mensagem de configuração apenas uma vez. As próximas vezes o usuário terá que ir até a tela de configurações para dar permissão para a câmera manualmente.
 
@@ -283,7 +283,7 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
 
 <br/>
 <div>
-    <img src="../Images/camera_permission_1.png" width="432" height="396" />
+    <img src="../Images/Substituir_passo5_imagem1.png" width="432" height="396" />
     <img src="../Images/Substituir_passo5_imagem2.png" width="432" height="396" />
 <div/>
 
