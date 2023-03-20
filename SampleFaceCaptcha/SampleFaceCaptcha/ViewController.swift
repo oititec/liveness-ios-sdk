@@ -32,13 +32,11 @@ class ViewController: UIViewController {
             defaultTheme: theme, lowLightTheme: theme
         )
         let controller = Liveness3DViewController(
-            endpoint: baseURL,
             liveness3DUser: liveness3DUser,
-            debugOn: true,
+            delegate: self,
             customInstructionView: customInstructionView,
             customPermissionView: customPersmissionView
         )
-        controller.delegate = self
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
@@ -139,7 +137,7 @@ extension ViewController: Liveness3DDelegate {
         debugPrint("handleCaptureValidation: \(error)")
         showAlert(
             title: "Liveness 3D Falhou",
-            message: "Code: \(error.errorCode)\nMessage:\(error.errorMessage)"
+            message: "Code: \(error.code)\nMessage:\(error.message)"
         )
     }
 }

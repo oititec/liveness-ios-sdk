@@ -28,7 +28,7 @@ source 'https://github.com/oititec/liveness-ios-specs.git'
 2. Após isso, adicione a dependência:
 
 ```rb
-pod 'FaceCaptcha', '~> 4.0.7'
+pod 'FaceCaptcha', '~> 4.0.9'
 ```
 
 3. Rode `pod install`.
@@ -43,7 +43,7 @@ Para adicionar o SDK manualmente no seu projeto, siga estas [instruções](Docum
 
 No `Info.plist` do projeto, adicione a descrição de uso de câmera (`Privacy - Camera Usage Description`).
 
-![Instalação 4](Documentation/Images/installation_4.png)
+![Instalação 4](Documentation/Images/Common/installation_4.png)
 
 
 ###  Liveness FaceCaptcha
@@ -60,8 +60,8 @@ As instruções de uso, integração, implementação e customização do **Live
 
   - [Descrição e Resultados](Documentation/Liveness3D/Liveness3D-Description.md);
   - [Guia de uso e integração](Documentation/Liveness3D/Liveness3D-Usage.md);
-  - [Guia de implementação de view customizada](Documentation/Liveness3D/Liveness3D-CustomView.md);
-  - [Guia de customização do Liveness3DTheme](Documentation/Liveness3D/Liveness3D-Liveness3DTheme.md).
+  - [Guia de customização: Views](Documentation/Liveness3D/Liveness3D-CustomView.md);
+  - [Guia de customização: Liveness3DTheme](Documentation/Liveness3D/Liveness3D-Liveness3DTheme.md).
 
 ###  Documentoscopia
 
@@ -89,6 +89,7 @@ Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha]
 
 ##  Guias de migração
 
+- [4.0.9](Documentation/MigrationGuide/4.0.9.md) - BREAKING CHANGE
 - [4.0.6](Documentation/MigrationGuide/4.0.6.md) - BREAKING CHANGE
 - [3.0.0](Documentation/MigrationGuide/3.0.0.md) - BREAKING CHANGE
 - [2.0.0](Documentation/MigrationGuide/2.0.0.md) - BREAKING CHANGE

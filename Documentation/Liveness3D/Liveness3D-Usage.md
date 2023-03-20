@@ -22,28 +22,19 @@ public enum Environment3D {
 
 Detalhes de como customizar o Liveness3DTheme são encontrados [neste link](Liveness3D-Liveness3DTheme.md).
 
-**PASSO 2.**  Crie uma instância para a classe `Liveness3DViewController`, com os parâmetro de *endpoint*,*liveness3DUser* e *debugOn*.
+**PASSO 2.**  Crie uma instância para a classe `Liveness3DViewController`, com os parâmetro de *liveness3DUser* e *delegate*.
 
 ```swift
 let liveness3DViewController = Liveness3DViewController(
-    endpoint: "", 
     liveness3DUser: Liveness3DUser(
         appKey: appKey,
         environment: .HML
     ),
-    debugOn: true,
+    delegate: self
 )
 ```
 
-**PASSO 3.** Definir o `Delegate`:
-
-```swift
-liveness3DViewController.delegate = self
-```
-
-> Nota: o objeto `liveness3DViewController` é o mesmo criado no passo 2.
-
-**PASSO 4.** Implementar o `Liveness3DDelegate` na sua View Controller.
+**PASSO 3.** Implementar o `Liveness3DDelegate` na sua View Controller.
  Os métodos são:
  - **handleLiveness3DValidation(validateModel:)**: método chamado no delegate após efetuada a validação da prova de vida;
  - **handleLiveness3DError(error:)**: método chamado no delegate caso o SDK do Liveness3D encontre algum erro de comunicação com o backend ou na validação da prova de vida;
@@ -55,7 +46,7 @@ public protocol Liveness3DDelegate: AnyObject {
 }
 ``` 
 
-**PASSO 5.** Apresentar a View Controller do Liveness3D como modal.
+**PASSO 4.** Apresentar a View Controller do Liveness3D como modal.
 
 ```swift
 liveness3DViewController.modalPresentationStyle = .fullScreen 
@@ -79,15 +70,11 @@ class ViewController: UIViewController {
         
         // Passo 02
         let liveness3DViewController = Liveness3DViewController(
-            endpoint: "",
             liveness3DUser: liveness3DUser,
-            debugOn: false
+            delegate: self
         )
-    
-        // Passo 03
-        liveness3DViewController.delegate = self
         
-        // Passo 05
+        // Passo 04
         liveness3DViewController.modalPresentationStyle = .fullScreen
         present(liveness3DViewController, animated: true)
     }
@@ -95,7 +82,7 @@ class ViewController: UIViewController {
 ```
 
 ```swift
-// Passo 04
+// Passo 03
 extension ViewController: Liveness3DDelegate {
     func handleLiveness3DValidation(validateModel: Liveness3DSuccess) {
         // Seu código ...
@@ -129,20 +116,32 @@ public struct Liveness3DSuccess {
 
 Para tratar o caso de erro, o método `handleLiveness3DError(error:)` deve recebe um objeto do tipo `Liveness3DError`, onde os atributos abaixo podem ser avaliados:
 
-- **errorCode**: *enum* do tipo `Liveness3DErrorCode`, que indica o erro capturado.
-- **errorMessage**: texto que contém uma mensagem explicativa sobre o erro.
+- **code**: representação do erro em valor numérico.
+- **type**: *enum* do tipo `Liveness3DErrorCode`, que indica o erro capturado.
+- **message**: texto que contém uma mensagem explicativa sobre o erro.
 
 ```swift
 public struct Liveness3DError {
-    public let errorCode: Liveness3DErrorCode
-    public let errorMessage: String
+    public let code: Int
+    public let type: Liveness3DErrorCode
+    public let message: String
 }
 
-public enum Liveness3DErrorCode: String {    
-    case INVALID_APP_KEY = "App Key inválido."
-    case NO_CAMERA_PERMISSION = "Não foi concedida permissão de acesso à câmera do aparelho."
-    case NO_INTERNET_CONNECTION = "Sem conexão à Internet."
-    case LIVENESS_NOT_COMPLETED = "Prova de vida não foi completada."
-    case LIVENESS_NOT_INITIALIZED = "Liveness não foi inicializado corretamente."
+public enum Liveness3DErrorCode: Int, Error {
+    // App Key inválido.
+    case invalidAppKey = 0
+    
+    // Não foi concedida permissão de acesso à câmera do aparelho.
+    case noCameraPermission = 1
+    
+    // Sem conexão à Internet.
+    case noInternetConnection = 2
+    
+    // Prova de vida não foi completada.
+    case livenessNotCompleted = 3
+    
+    // Liveness não foi inicializado corretamente.
+    case livenessNotInitialized = 4
+    
 }
 ```

@@ -10,72 +10,72 @@ O **componente** de Documentoscopia **é dividido em treze telas**:
 ### 1. Tela inicial
 O usuário define qual o tipo de documento que deseja enviar:
 
-<div><img src="../Images/01_tipo_de_documento.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/01_tipo_de_documento.png" width="214" height="488"></div>
 
 ### 2. Tela de captura do documento (frente)
 O usuário recebe a instrução de captura da frente do documento, dentro da marcação apresentada:
 
-<div><img src="../Images/02_instrucao_documento_frente.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/02_instrucao_documento_frente.png" width="214" height="488"></div>
 
 ### 3. Abaixo, um exemplo de como esse documento deve ficar posicionado
 
-<div><img src="../Images/03_documento_frente.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/03_documento_frente.png" width="214" height="488"></div>
 
 ### 4. Tela de confirmação da captura do documento (frente)
 Nesta tela, o usuário deve confirmar se a imagem do documento capturado está em boa qualidade, clicando em Não, refazer ou Sim:
 
-<div><img src="../Images/04_documento_frente_validacao.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/04_documento_frente_validacao.png" width="214" height="488"></div>
 
 ### 5. Tela de captura do documento (verso)
 O usuário recebe a instrução de captura do verso do documento, dentro da marcação apresentada:
 
-<div><img src="../Images/05_instrucao_documento_verso.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/05_instrucao_documento_verso.png" width="214" height="488"></div>
 
 ### 6. Abaixo, um exemplo de como esse documento deve ficar posicionado
 
-<div><img src="../Images/06_documento_verso.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/06_documento_verso.png" width="214" height="488"></div>
 
 ### 7. Tela de confirmação da captura do documento (verso)
 Nesta tela, o usuário deve confirmar se a imagem do documento capturado está em boa qualidade, clicando em Não, refazer ou Sim:
 
-<div><img src="../Images/07_documento_verso_validacao.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/07_documento_verso_validacao.png" width="214" height="488"></div>
 
 ### 8. Tela de processamento do envio do documento
 A próxima tela que o usuário deve ver é a tela de processamento do envio do documento:
 
-<div><img src="../Images/08_envio_de_documento_loading.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/08_envio_de_documento_loading.png" width="214" height="488"></div>
 
 ### 9. Tela de conclusão do envio do documento (sucesso)
 O usuário receberá uma notificação de **sucesso** caso o envio do documento seja concluído com sucesso:
 
-<div><img src="../Images/09_envio_de_documento_sucesso.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/09_envio_de_documento_sucesso.png" width="214" height="488"></div>
 
 ### 10. Tela de processamento do documento (erro)
 O usuário receberá uma notificação de erro ao processar o documento:
 
-<div><img src="../Images/13_envio_de_documento_erro.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/13_envio_de_documento_erro.png" width="214" height="488"></div>
 
 ### 11. Tela para tentar processar o documento novamente (erro)
 Nesta tela o usuário poderá clicar no botão **Tentar novamente**, após a mensagem de erro:
 
-<div><img src="../Images/10_envio_de_documento_erro.png" width="214" height="488"></div>
+<div><img src="../Images/Documentscopy/10_envio_de_documento_erro.png" width="214" height="488"></div>
 
 ### 12. Notificação da câmera do dispositivo desativada
 Antes do passo 2 (Tela de captura do documento (frente)), o usuário será notificado caso a permissão para acessar a câmera estiver desativada:
 
-<div><img src="../Images/11_permissao_de_camera_desativada.png" width="214" height="488"></div>
+<div><img src="../Images/Common/camera_permission_1.png" width="214" height="488"></div>
 
 ### 13. Tela com mensagem do iOS para  direcionar o usuário a tela de configuração
 Ao clicar no botão **Verificar** do passo anterior, o dispositivo apresenta uma mensagem na tela para direcionar ou não o usuário para a tela de configuração:
 
-<div><img src="../Images/11_mensagem_de_config_camera.png" width="214" height="488"></div>
+<div><img src="../Images/Common/camera_permission_2.png" width="214" height="488"></div>
 
 **Obs.:** Por padrão, a Apple apresenta essa mensagem de configuração apenas uma vez. As próximas vezes o usuário terá que ir até a tela de configurações para dar permissão para a câmera manualmente.
 
 ### 14. Tela de instrução para habilitar câmera:
 Caso a solicitação seja recusada pelo usuário, neste passo é apresentado a mensagem para direciona-lo às configurações:
 
-<div><img src="../Images/12_permissao_de_camera_desativada.png" width="214" height="488"></div>
+<div><img src="../Images/Common/camera_permission_3.png" width="214" height="488"></div>
 
 ---
 
@@ -125,7 +125,7 @@ public protocol DocumentscopyCustomInstructionView: UIView {
 | (**3**) | `viewRG` | View que terá a ação de iniciar o fluxo de captura do documento RG. |
 
 <br/>
-<img src="../Images/dc_instructions.png" width="432" height="396" />
+<img src="../Images/Documentscopy/dc_instructions.png" width="432" height="396" />
 
 ---
 
@@ -175,13 +175,15 @@ public protocol DocumentscopyCustomView: UIView {
 
 <br/>
 <div>
-    <img src="../Images/dc_camera_1.png" width="432" height="396" />
-    <img src="../Images/dc_camera_3.png" width="432" height="396" />
+    <img src="../Images/Documentscopy/dc_camera_1.png" width="432" height="396" />
+    <img src="../Images/Documentscopy/dc_camera_3.png" width="432" height="396" />
 <div/>
     
 **DocumentscopyCameraPreviewView**
 
-É uma classe customizada que herda de uma `UIView`.
+É uma classe customizada que herda de uma `UIView` e que deve seguir duas regras:
+1. Deve ser a *view* com maior profundidade na tela (*primeira view a ser adicionada na tela*) em relação as demais *views* do procotolo `DocumentscopyCustomView`.
+2. As *constraints* de *leading*, *trailing*, *bottom* e *top* devem ser iguais a *superview* e não a *safearea*.
 
 <br/>
 
@@ -205,6 +207,10 @@ public enum DocumentscopyFocusIndicator {
 }
 ```
 
+> **Observações**:
+> - A propriedade *cameraMask* assim como a *cameraPreview* deve possuir suas *constraints* de *leading*, *trailing*, *bottom* e *top* iguais a *superview* e não a *safearea*.
+> - A propriedade *cameraMask* deve ser adicionada após a *cameraPreview*.
+
 ---
     
 ## 3. Tela de processamento do documento
@@ -214,7 +220,7 @@ public enum DocumentscopyFocusIndicator {
 Essa view deve estar em conformidade com o tipo ``DocumentscopyCustomLoadingView`` que é um ``typealias`` para o tipo ``UIView``
 
 <br/>
-<img src="../Images/fc_process_result.png" width="432" height="396" />
+<img src="../Images/Documentscopy/dc_process_result.png" width="432" height="396" />
 
 ---
 
@@ -241,9 +247,9 @@ public protocol DocumentscopyCustomResultView: UIView {
 
 | **Tipo de resultado** | **Exemplo de tela** |
 |:----------------------|:--------------------|
-| Sucesso | <img src="../Images/dc_result_success.png" width="432" height="396" /> |
-| Tente Novamente | <img src="../Images/dc_result_tryagain.png" width="432" height="396" /> |
-| Erro | <img src="../Images/dc_result_error.png" width="432" height="396" /> |
+| Sucesso | <img src="../Images/Documentscopy/dc_result_success.png" width="432" height="396" /> |
+| Tente Novamente | <img src="../Images/Documentscopy/dc_result_tryagain.png" width="432" height="396" /> |
+| Erro | <img src="../Images/Documentscopy/dc_result_error.png" width="432" height="396" /> |
 
 **DocumentscopyResultType**
 
@@ -275,16 +281,16 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
 
 | **Indice** | **Elemento** | **Descrição** |
 |:-----------|:-------------|:--------------|
-| (**1**) | `backButton` | Botão para função voltar da navegação. |
+| (**1**) | `backButton` | Botão que fecha o SDK e retorna o erro *noCameraPermission*. |
 | (**2**) | `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
 | (**3**) | `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
-| (**4**) | `closeButton` | Botão que fecha o fluxo de validação da permissão de câmera e volta para tela anterior. |
+| (**4**) | `closeButton` | Botão que fecha o SDK e retorna o erro *noCameraPermission*. |
 |         | `showBottomSheet(visibility:)` | Método responsável por indicar o momento de mostrar os botões de ``openSettingsButton`` e ``closeButton``, podendo receber dois valores: **hidden** (esconder os botões) e **displayed** (mostrar os botões). |
 
 <br/>
 <div>
-    <img src="../Images/camera_permission_1.png" width="432" height="396" />
-    <img src="../Images/camera_permission_2.png" width="432" height="396" />
+    <img src="../Images/Common/custom_camera_permission_1.png" width="432" height="396" />
+    <img src="../Images/Common/custom_camera_permission_2.png" width="432" height="396" />
 <div/>
 
 ---

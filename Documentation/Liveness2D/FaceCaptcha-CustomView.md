@@ -36,7 +36,7 @@ Além das subviews especificadas, a view customizada pode conter outros elemento
 
 Na figura abaixo é possível visualizar o que cada uma das subviews representa na tela:
 
-![Componentes da view customizada](../Images/custom_view_components.jpg)
+![Componentes da view customizada](../Images/FaceCaptcha/custom_view_components.jpg)
 
 Após criada a view, é necessário passá-la para o construtor do `FaceCaptchaViewController` através do parâmetro `customView`. Exemplo:
 
