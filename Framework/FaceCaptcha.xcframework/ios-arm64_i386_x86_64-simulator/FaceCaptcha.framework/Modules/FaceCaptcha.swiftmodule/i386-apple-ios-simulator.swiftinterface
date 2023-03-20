@@ -1141,9 +1141,8 @@ public struct FCBaseModel {
   public static let K_APP_KEY: Swift.String
   public static let K_P: Swift.String
 }
-public typealias Liveness3DHybridViewAppearance = FaceCaptcha.HybridViewAppearance
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class HybridLiveness3DViewController : FaceCaptcha.Liveness3DViewController {
-  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, delegate: FaceCaptcha.Liveness3DDelegate?, customAppearance: FaceCaptcha.Liveness3DHybridViewAppearance?)
+  @_Concurrency.MainActor(unsafe) public init(liveness3DUser: FaceCaptcha.Liveness3DUser, delegate: FaceCaptcha.Liveness3DDelegate?, customAppearance: FaceCaptcha.HybridViewAppearance? = nil)
   @objc deinit
 }
 public typealias CipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> Swift.Array<Swift.UInt8>?
