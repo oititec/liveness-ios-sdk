@@ -43,7 +43,7 @@ Para adicionar o SDK manualmente no seu projeto, siga estas [instruções](Docum
 
 No `Info.plist` do projeto, adicione a descrição de uso de câmera (`Privacy - Camera Usage Description`).
 
-![Instalação 4](Documentation/Images/installation_4.png)
+![Instalação 4](Documentation/Images/Common/installation_4.png)
 
 
 ###  Liveness FaceCaptcha

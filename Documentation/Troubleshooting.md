@@ -4,7 +4,7 @@
 
 ### Code signing "FaceCaptcha.framework" failed
 
-![Code signing failed screenshot](Images/code_signing_failed.png)
+![Code signing failed screenshot](Images/Common/code_signing_failed.png)
 
 Se o erro acima acontecer ao arquivar o aplicativo, adicione o seguinte script no `Build Phases` do seu target:
 
