@@ -181,7 +181,9 @@ public protocol DocumentscopyCustomView: UIView {
     
 **DocumentscopyCameraPreviewView**
 
-É uma classe customizada que herda de uma `UIView`.
+É uma classe customizada que herda de uma `UIView` e que deve seguir duas regras:
+1. Deve ser a *view* com maior profundidade na tela (*primeira view a ser adicionada na tela*) em relação as demais *views* do procotolo `DocumentscopyCustomView`.
+2. As *constraints* de *leading*, *trailing*, *bottom* e *top* devem ser iguais a *superview* e não a *safearea*.
 
 <br/>
 
@@ -204,6 +206,10 @@ public enum DocumentscopyFocusIndicator {
     case backIndicator
 }
 ```
+
+> **Observações**:
+> - A propriedade *cameraMask* assim como a *cameraPreview* deve possuir suas *constraints* de *leading*, *trailing*, *bottom* e *top* iguais a *superview* e não a *safearea*.
+> - A propriedade *cameraMask* deve ser adicionada após a *cameraPreview*.
 
 ---
     
@@ -275,10 +281,10 @@ public protocol DocumentscopyCustomCameraPermissionView: UIView {
 
 | **Indice** | **Elemento** | **Descrição** |
 |:-----------|:-------------|:--------------|
-| (**1**) | `backButton` | Botão para função voltar da navegação. |
+| (**1**) | `backButton` | Botão que fecha o SDK e retorna o erro *noCameraPermission*. |
 | (**2**) | `checkPermissionButton` | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário. |
 | (**3**) | `openSettingsButton` | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
-| (**4**) | `closeButton` | Botão que fecha o fluxo de validação da permissão de câmera e volta para tela anterior. |
+| (**4**) | `closeButton` | Botão que fecha o SDK e retorna o erro *noCameraPermission*. |
 |         | `showBottomSheet(visibility:)` | Método responsável por indicar o momento de mostrar os botões de ``openSettingsButton`` e ``closeButton``, podendo receber dois valores: **hidden** (esconder os botões) e **displayed** (mostrar os botões). |
 
 <br/>

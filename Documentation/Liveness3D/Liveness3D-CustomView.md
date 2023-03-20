@@ -29,7 +29,7 @@ public protocol CustomInstructionView: UIView {
 
 | **Indice** | **Elemento**                   | **Descrição**                                                               |
 | :--------- | :----------------------------- | :-------------------------------------------------------------------------- |
-| (**1**)    | `backButton`                   | Botão de voltar no fluxo de navegação.                                      |
+| (**1**)    | `backButton`                   | Botão que fecha o SDK e retorna o erro *livenessNotCompleted*.              |
 | (**2**)    | `continueButton`               | Botão para iniciar o processo do Liveness 3D.                               |
 |            | `changeLoadingVisibility(to:)` | Método responsável por indicar o estado do *loading* na tela de instruções, podendo receber dois valores: **hidden** (esconder o loading) e **displayed** (mostrar o loading). |
 
@@ -55,10 +55,10 @@ public protocol CustomCameraPermissionView: UIView {
 
 | **Indice** | **Elemento**                   | **Descrição**                                                                                            |
 | :--------- | :----------------------------- | :------------------------------------------------------------------------------------------------------- |
-| (**1**)    | `backButton`                   | Botão para função voltar da navegação.                                                                   |
+| (**1**)    | `backButton`                   | Botão que fecha o SDK e retorna o erro *noCameraPermission*.                                             |
 | (**2**)    | `checkPermissionButton`        | Botão responsável por verificar a permissão de câmera e solicitá-la se necessário.                       |
 | (**3**)    | `openSettingsButton`           | Botão que redireciona o usuário para o menu de permissões do aplicativo na configurações do dispositivo. |
-| (**4**)    | `closeButton`                  | Botão que fechar o fluxo de validação da permissão de câmera e volta para tela anterior.                 |
+| (**4**)    | `closeButton`                  | Botão que fecha o SDK e retorna o erro *noCameraPermission*.                                             |
 |            | `showBottomSheet(visibility:)` | Método responsável por indicar o momento de mostrar os botões de `openSettingsButton` e `closeButton`, podendo receber dois valores: **hidden** (esconder o loading) e **displayed** (mostrar o loading). |
 
 <br/>
