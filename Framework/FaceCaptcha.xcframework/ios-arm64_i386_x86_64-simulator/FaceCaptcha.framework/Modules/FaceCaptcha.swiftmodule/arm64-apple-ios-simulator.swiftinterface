@@ -907,6 +907,10 @@ public protocol DocumentscopyCustomInstructionView : UIKit.UIView {
   var backButton: UIKit.UIButton! { get }
   var viewCNH: UIKit.UIView! { get }
   var viewRG: UIKit.UIView! { get }
+  func changeLoadingVisibility(to visibility: FaceCaptcha.LoadingVisibility)
+}
+extension FaceCaptcha.DocumentscopyCustomInstructionView {
+  public func changeLoadingVisibility(to visibility: FaceCaptcha.LoadingVisibility)
 }
 public struct FCTypeFaceModel {
 }
