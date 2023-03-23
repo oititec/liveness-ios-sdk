@@ -1,6 +1,6 @@
 # Changelog
 
-#### 4.0.10
+#### 4.1.0
 - O *loading* na tela de instruções da Documentoscopia não é mais aplicado na *custom view*.
 - O estado do loading da tela de instruções da Documentoscopia pode ser verificado através da implementação do método `changeLoadingVisibility(to:)`, presente no protocolo `DocumentscopyCustomInstructionView`. [Guia de customização de view customizada](../Liveness2D/Documentscopy-CustomView.md#custominstructionview).
 
