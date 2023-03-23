@@ -1,5 +1,9 @@
 # Changelog
 
+#### 4.0.10
+- O *loading* na tela de instruções da Documentoscopia não é mais aplicado na *custom view*.
+- O estado do loading da tela de instruções da Documentoscopia pode ser verificado através da implementação do método `changeLoadingVisibility(to:)`, presente no protocolo `DocumentscopyCustomInstructionView`. [Guia de customização de view customizada](../Liveness2D/Documentscopy-CustomView.md#custominstructionview).
+
 #### [4.0.9](4.0.9.md) - BREAKING CHANGE
 - Atualização da FaceTec.
 - Alteração do comportamento e do visual da tela de captura de permissão de câmera.

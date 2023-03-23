@@ -115,6 +115,8 @@ public protocol DocumentscopyCustomInstructionView: UIView {
     var backButton: UIButton! { get }
     var viewCNH: UIView! { get }
     var viewRG: UIView! { get }
+
+    func changeLoadingVisibility(to visibility: LoadingVisibility)
 }
 ```
 
@@ -123,6 +125,7 @@ public protocol DocumentscopyCustomInstructionView: UIView {
 | (**1**) | `backButton` | Botão para função voltar da navegação. |
 | (**2**) | `viewCNH` | View que terá a ação de iniciar o fluxo de captura do documento CNH. |
 | (**3**) | `viewRG` | View que terá a ação de iniciar o fluxo de captura do documento RG. |
+|         | `changeLoadingVisibility(to:)` | Método responsável por indicar o estado do *loading* na tela de instruções, podendo receber dois valores: **hidden** (esconder o loading) e **displayed** (mostrar o loading). |
 
 <br/>
 <img src="../Images/Documentscopy/dc_instructions.png" width="432" height="396" />
