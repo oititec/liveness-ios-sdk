@@ -37,4 +37,15 @@ class CustomDocumentscopyInstructionView: UIView, DocumentscopyCustomInstruction
         
         addSubview(view)
     }
+    
+    func changeLoadingVisibility(to visibility: LoadingVisibility) {
+        switch visibility {
+        case .displayed:
+            print("[CustomDocumentscopyInstructionView] Loading Visibility: DISPLAYED")
+        case .hidden:
+            print("[CustomDocumentscopyInstructionView] Loading Visibility: HIDDEN")
+        @unknown default:
+            print("[CustomDocumentscopyInstructionView] Loading Visibility: UNKNOWN VALUE")
+        }
+    }
 }
