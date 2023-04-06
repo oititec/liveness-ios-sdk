@@ -10,7 +10,14 @@ Os tipos de Liveness serão apresentados na demonstração do serviço e a escol
 
 Para cada tipo de Liveness, são apresentados propriedades técnicas específicas. Assim, a pessoa desenvolvedora deve executar os comandos pertencentes ao tipo de serviço contratado.
 
-Acompanhe abaixo a instalação, uso, guias de migração e outros documentos. Esses processos integram o projeto FaceCapctha.
+Acompanhe abaixo a instalação, uso, guias de migração e outros documentos. Esses processos integram o projeto FaceCaptcha.
+
+##  Requisitos mínimos
+- iOS 11+
+- Swift 5+
+
+> **Notas** <br>
+> O **XCFramework** foi gerado utilizando **Xcode 14.1** e **SDK iOS 16.1**.
 
 ##  Instalação
 
