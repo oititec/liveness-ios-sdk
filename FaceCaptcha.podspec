@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
 
   spec.vendored_frameworks = "Framework/FaceCaptcha.xcframework"
 
-  spec.dependency "OILiveness3D_FT", "9.6.25-beta"
+  spec.dependency "OILiveness3D_FT", "9.6.25"
 
 end
