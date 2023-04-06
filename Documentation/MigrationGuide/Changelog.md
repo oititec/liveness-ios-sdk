@@ -1,5 +1,10 @@
 # Changelog
 
+#### 4.1.1
+- Atualização da FaceTec.
+- Alteração do target mínimo de **iOS 10.0** para **iOS 11.0**.
+- Remoção do suporte para as arquiteturas *armv7* (dispositivo) e *i386* (simulador).
+
 #### 4.1.0
 - O *loading* na tela de instruções da Documentoscopia não é mais aplicado na *custom view*.
 - O estado do loading da tela de instruções da Documentoscopia pode ser verificado através da implementação do método `changeLoadingVisibility(to:)`, presente no protocolo `DocumentscopyCustomInstructionView`. [Guia de customização de view customizada](../Liveness2D/Documentscopy-CustomView.md#custominstructionview).
