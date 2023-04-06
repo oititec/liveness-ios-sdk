@@ -6,6 +6,6 @@ framework module FaceCaptcha {
 }
 
 module FaceCaptcha.Swift {
-    header "FaceCaptcha-Swift.h"
-    requires objc
+  header "FaceCaptcha-Swift.h"
+  requires objc
 }
