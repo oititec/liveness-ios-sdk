@@ -1,5 +1,8 @@
 # Changelog
 
+#### 4.1.2
+- Atualização da FaceTec.
+
 #### 4.1.1
 - Atualização da FaceTec.
 - Alteração do target mínimo de **iOS 10.0** para **iOS 11.0**.
