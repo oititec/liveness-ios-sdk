@@ -6,23 +6,23 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		nb/8tYmqmkaqaqThbYZlgNYiNJw=
+		JYF/xediTILhPKrmJT54oKCKb0w=
 		</data>
 		<key>FaceCaptchaDefaultView.nib</key>
 		<data>
-		oR9xtSFAwsUrzQNzWa4QT0Lb7Bw=
+		39I+r2PIgeSp3+jy4AtRsDMnMrY=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		sodaKrOu8kb2WxmeXWQ7+vdQjrM=
+		GkVt50/2ecTeeTBv4Gpfv2p0t2c=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
 		<data>
-		Jj5c9sz/0i5h81miFpsocjlBW9s=
+		g6Oxqtv8zTvmmL33vnaKYIyYEgU=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		GN6ZW8DQ8w3hI5y2GL0Dul4dDOE=
+		BV+AmeiArLUo7Zr4W6qAixdyszc=
 		</data>
 		<key>Headers/FaceCaptcha-Swift.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XQF5agIbPMxtATrinZx5wJoAt80=
+		x9O9plwbn2FKxDC2pNJ1jdjdAkI=
 		</data>
 		<key>Inter-Bold.otf</key>
 		<data>
@@ -143,35 +143,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KThkvDJQ6w45lm3XIjUX0rrxR3ZlAy5mKGQ2NWllBR8=
+			BhRKAwffSYOhc6BYSifAk9ftoudvtyglMiqaMVO4kfA=
 			</data>
 		</dict>
 		<key>FaceCaptchaDefaultView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bn1pAC97LfyLBXI57OqyIyWIZnknCgDp5Hp/7qAUk5s=
+			gI0FqnozqjlBeH754LQeqHrAjuOhypusCRYydzDS6fM=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sp8yGXw9WVUJLegKufMeQbOP8rSsqjIb4KuKo/rFtok=
+			uZn2VQPPm7HnSIKThl0zH8OCzZQ4qbhxuIc82df8Fpg=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8E87DaxSdqoTZmsxBw/5q4SDGznqB24haFGDc7zWfok=
+			V3DAMBmBhl2g6ZH1VSbYkXe58XeOh20hyvHuuIkV3+A=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OXQjYsMgKyqcWAmbh8YueBm+gve2QU226zGREMtKlKg=
+			W58VeaVtna8JlSvuxNhsZmDcNmzmn4SqqMivglTFep4=
 			</data>
 		</dict>
 		<key>Headers/FaceCaptcha-Swift.h</key>
