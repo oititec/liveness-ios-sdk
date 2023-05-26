@@ -1,5 +1,14 @@
 # Changelog
 
+## [versão 4.1.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.3)
+*data: 26/05/2023*
+
+- **Atualização da FaceTec**
+    - Adicionada nova checagem de injeção de video no dispositivo e servidor para mitigar a ameaça das IAs Generativas;
+    - Melhorias de performance em modelos mais antigos de iPhones e iPads que melhoram a taxa de sucesso;
+    - Melhorias de estabilidade.
+
+---
 #### 4.1.2
 - Atualização da FaceTec.
 

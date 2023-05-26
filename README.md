@@ -35,7 +35,7 @@ source 'https://github.com/oititec/liveness-ios-specs.git'
 2. Após isso, adicione a dependência:
 
 ```rb
-pod 'FaceCaptcha', '~> 4.0.9'
+pod 'FaceCaptcha', '~> 4.1.3'
 ```
 
 3. Rode `pod install`.

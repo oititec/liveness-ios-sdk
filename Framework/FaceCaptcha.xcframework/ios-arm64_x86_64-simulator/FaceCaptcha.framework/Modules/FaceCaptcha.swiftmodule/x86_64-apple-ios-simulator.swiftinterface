@@ -842,6 +842,10 @@ public struct BlockModeOption : Swift.OptionSet {
   public typealias Element = FaceCaptcha.BlockModeOption
   public typealias RawValue = Swift.Int
 }
+public protocol LoadingViewConfigurationProtocol {
+  var backgroundColor: UIKit.UIColor { get }
+  func createLoadingView() -> UIKit.UIView
+}
 public protocol CipherModeWorker {
   var cipherOperation: FaceCaptcha.CipherOperationOnBlock { get }
   var additionalBufferSize: Swift.Int { get }
@@ -904,6 +908,15 @@ public protocol CustomCameraPermissionView : UIKit.UIView {
   var openSettingsButton: UIKit.UIButton! { get }
   var closeButton: UIKit.UIButton! { get }
   func showBottomSheet(visibility: FaceCaptcha.Visibility)
+}
+public enum LoadingTypes {
+  case activityIndicator
+  case spinner
+  public static func == (a: FaceCaptcha.LoadingTypes, b: FaceCaptcha.LoadingTypes) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public protocol DocumentscopyCustomInstructionView : UIKit.UIView {
   var backButton: UIKit.UIButton! { get }
@@ -1648,6 +1661,13 @@ public protocol DocumentscopyCustomView : UIKit.UIView {
   func setFocus(to focusElement: FaceCaptcha.DocumentscopyFocusIndicator, animated: Swift.Bool)
   func setUsePictureButtonTitle(to newTitle: Swift.String)
 }
+public struct ActivityIndicatorConfiguration : FaceCaptcha.LoadingViewConfigurationProtocol {
+  public let loadingType: FaceCaptcha.LoadingTypes
+  public let loadingColor: UIKit.UIColor
+  public let backgroundColor: UIKit.UIColor
+  public init(loadingColor: UIKit.UIColor, backgroundColor: UIKit.UIColor)
+  public func createLoadingView() -> UIKit.UIView
+}
 public enum DocumentscopyResultType {
   case success
   case tryAgain
@@ -1728,7 +1748,7 @@ public struct CFB : FaceCaptcha.BlockMode {
   public func worker(blockSize: Swift.Int, cipherOperation: @escaping FaceCaptcha.CipherOperationOnBlock, encryptionOperation: @escaping FaceCaptcha.CipherOperationOnBlock) throws -> FaceCaptcha.CipherModeWorker
 }
 public struct HybridViewAppearance {
-  public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor)
+  public init(configuration: FaceCaptcha.LoadingViewConfigurationProtocol)
 }
 extension FaceCaptcha.PKCS5 {
   public struct PBKDF2 {
@@ -1820,6 +1840,15 @@ public struct SpinnerAnimationCustomization {
 }
 extension FaceCaptcha.ChaCha20 {
   convenience public init(key: Swift.String, iv: Swift.String) throws
+}
+public struct SpinnerConfiguration : FaceCaptcha.LoadingViewConfigurationProtocol {
+  public let backgroundColor: UIKit.UIColor
+  public let loadingType: FaceCaptcha.LoadingTypes
+  public let loadingColor: UIKit.UIColor
+  public let strokeWidth: CoreFoundation.CGFloat
+  public let scaleFactor: CoreFoundation.CGFloat
+  public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor, strokeWidth: CoreFoundation.CGFloat, scaleFactor: CoreFoundation.CGFloat)
+  public func createLoadingView() -> UIKit.UIView
 }
 public struct Liveness3DUser {
   public init(appKey: Swift.String, environment: FaceCaptcha.Environment3D = .HML, defaultTheme: FaceCaptcha.Liveness3DTheme? = nil, lowLightTheme: FaceCaptcha.Liveness3DTheme? = nil, texts: [Swift.String : Swift.String]? = nil)
@@ -2152,6 +2181,8 @@ extension FaceCaptcha.Liveness3DErrorCode : Swift.RawRepresentable {}
 extension FaceCaptcha.CCM : FaceCaptcha.BlockMode {}
 extension FaceCaptcha.CCM.Error : Swift.Equatable {}
 extension FaceCaptcha.CCM.Error : Swift.Hashable {}
+extension FaceCaptcha.LoadingTypes : Swift.Equatable {}
+extension FaceCaptcha.LoadingTypes : Swift.Hashable {}
 extension FaceCaptcha.ChaCha20.Error : Swift.Equatable {}
 extension FaceCaptcha.ChaCha20.Error : Swift.Hashable {}
 extension FaceCaptcha.Visibility : Swift.Equatable {}
