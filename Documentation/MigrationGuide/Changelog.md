@@ -1,5 +1,12 @@
 # Changelog
 
+## [versão 4.1.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.3)
+*data: 26/05/2023*
+
+- **Manutenção evolutiva**
+    - Atualização da FaceTec.
+
+---
 #### 4.1.2
 - Atualização da FaceTec.
 
