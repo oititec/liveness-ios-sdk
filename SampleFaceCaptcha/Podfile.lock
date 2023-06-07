@@ -1,5 +1,5 @@
 PODS:
-  - FaceCaptcha (4.1.3):
+  - FaceCaptcha (5.0.0):
     - OILiveness3D_FT (= 9.6.33)
   - OILiveness3D_FT (9.6.33)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FaceCaptcha: 9d7cb96e164b34586452048f384784f862e9e318
+  FaceCaptcha: 6064e3229990a21111261eea1dd6c99bb0bd039c
   OILiveness3D_FT: fc78e3f4549179b74dd8c3adbdadbb237ceb3357
 
 PODFILE CHECKSUM: e0fe57ceffa0d3e140e07853a4cf95cae4a575b6
