@@ -10,13 +10,13 @@ import FaceCaptcha
 ```
 
 2. Instancie `FaceCaptchaViewController`, passando os seguintes parâmetros:
-- *appKey*: App Key recebida previamente.
-- *baseURL*: URL apontando para o ambiente desejado.
-- *delegate*: delegate que implementará os métodos para tratar o retorno do FaceCaptcha.
+- **appKey**: App Key recebida previamente.
+- **environment**: argumento que indica o ambiente desejado.
+- **delegate**: delegate que implementará os métodos para tratar o retorno do FaceCaptcha.
 ```swift
 let controller = FaceCaptchaViewController(
     appKey: appKey,
-    baseURL: baseURL,
+    environment: .HML,
     delegate: self
 )
 ```
@@ -36,7 +36,7 @@ Para exibir uma imagem de fundo (overlay da câmera) customizada, basta passar a
 ```swift
 let controller = FaceCaptchaViewController(
     appKey: appKey,
-    baseURL: baseURL,
+    environment: .HML,
     delegate: self,
     cameraOverlay: UIImage(named: "custom_overlay")
 )
@@ -49,7 +49,7 @@ let controller = FaceCaptchaViewController(
 let customView: FaceCaptchaView = MyCustomView(frame: view.bounds)
 let controller = FaceCaptchaViewController(
     appKey: appKey,
-    baseURL: baseURL,
+    environment: .HML,
     delegate: self,
     customView: customView
 )

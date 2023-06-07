@@ -43,10 +43,12 @@ Após criada a view, é necessário passá-la para o construtor do `FaceCaptchaV
 ```swift
 // MyCustomView must implement FaceCaptchaView
 let customView: FaceCaptchaView = MyCustomView(frame: view.bounds)
-let controller = FaceCaptchaViewController(appKey: appKey,
-                                           baseURL: baseURL,
-                                           delegate: self,
-                                           customView: customView)
+let controller = FaceCaptchaViewController(
+    appKey: appKey,
+    environment: .HML,
+    delegate: self,
+    customView: customView
+)
 ```
 
 No projeto Sample, neste mesmo repositório, encontra-se um exemplo de implementação.

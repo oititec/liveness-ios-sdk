@@ -11,7 +11,7 @@ import FaceCaptcha
 
 2. Instancie `DocumentscopyViewController`, passando os seguintes parâmetros:
 - **appKey**: App Key recebida previamente.
-- **baseURL**: URL apontando para o ambiente desejado.
+- **environment**: argumento que indica o ambiente desejado.
 - **delegate** *(opcional)*: delegate que implementará os métodos para tratar o retorno da documentoscopia.
 - **customView** *(opcional)*: View customizada para tela inicial que será utilizada no fluxo de Documentoscopia 
 e deve estar em conformidade com o protocolo `DocumentscopyCustomView`
@@ -20,7 +20,7 @@ utilizada no fluxo de Documentoscopia e deve estar em conformidade com o protoco
 ```swift
 let controller = DocumentscopyViewController(
     appKey: appKey, 
-    baseURL: baseURL,
+    environment: .HML,
     delegate: self, 
     customView: CustomView(),
     customCameraView: CustomCameraView()

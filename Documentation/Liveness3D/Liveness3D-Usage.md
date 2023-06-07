@@ -8,13 +8,13 @@
 ```swift
 public struct Liveness3DUser {
     var appKey: String
-    let environment: Environment3D
+    let environment: Environment
     let defaultTheme: Liveness3DTheme?
     let lowLightTheme: Liveness3DTheme?
     let texts: [String: String]?
 }
 
-public enum Environment3D { 
+public enum Environment { 
     case HML 
     case PRD 
 }
