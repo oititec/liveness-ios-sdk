@@ -60,7 +60,7 @@ public protocol FaceCaptchaDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.FaceCaptchaDelegate, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FaceCaptchaView? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.FaceCaptchaDelegate, cameraOverlay: UIKit.UIImage? = nil, customView: FaceCaptcha.FaceCaptchaView? = nil)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -594,6 +594,9 @@ extension FaceCaptcha.AES : FaceCaptcha.Cipher {
     return out
   }
 }
+@_hasMissingDesignatedInitializers public class FaceTecTexts {
+  @objc deinit
+}
 final public class SHA3 {
   final public let blockSize: Swift.Int
   final public let digestLength: Swift.Int
@@ -946,6 +949,47 @@ public struct FCValidCaptchaModel {
 public protocol Authenticator {
   func authenticate(_ bytes: Swift.Array<Swift.UInt8>) throws -> Swift.Array<Swift.UInt8>
 }
+public enum Liveness3DTextKey {
+  case readyHeader1
+  case readyHeader2
+  case readyMessage1
+  case readyMessage2
+  case readyButton
+  case retryHeader
+  case retrySubheader
+  case retryMessageSmile
+  case retryMessageLightning
+  case retryMessageContrast
+  case retryYourPicture
+  case retryIdealPicture
+  case retryButton
+  case resultUploadMessage
+  case resultSuccessMessage
+  case feedbackCenterFace
+  case feedbackFaceNotFound
+  case feedbackFaceNotLookingStraightAhead
+  case feedbackFaceNotUpright
+  case feedbackHoldSteady
+  case feedbackMovePhoneAway
+  case feedbackMovePhoneCloser
+  case feedbackMovePhoneToEyeLevel
+  case feedbackUseEvenLighting
+  case feedbackFrameYourFace
+  case feedbackPositionFaceStraightInOval
+  case feedbackHoldSteady1
+  case feedbackHoldSteady2
+  case feedbackHoldSteady3
+  case feedbackEyesStraightAhead
+  case feedbackRemoveDarkGlasses
+  case feedbackNeutralExpression
+  case feedbackConditionsTooBright
+  case feedbackBrightenYourEnvironment
+  public static func == (a: FaceCaptcha.Liveness3DTextKey, b: FaceCaptcha.Liveness3DTextKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @usableFromInline
 internal struct BatchedCollectionIndex<Base> where Base : Swift.Collection {
 }
@@ -1044,9 +1088,6 @@ extension Swift.FixedWidthInteger {
     // var value = self.littleEndian
     // return withUnsafeBytes(of: &value, Array.init).reversed()
   }
-}
-@_hasMissingDesignatedInitializers public class Strings {
-  @objc deinit
 }
 final public class Checksum {
   @usableFromInline
@@ -1147,7 +1188,7 @@ final internal class BlockEncryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable
   deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class HybridDocumentscopyViewController : FaceCaptcha.DocumentscopyViewController {
-  @_Concurrency.MainActor(unsafe) public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.DocumentscopyDelegate, customAppearance: FaceCaptcha.HybridViewAppearance? = nil)
+  @_Concurrency.MainActor(unsafe) public init(appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.DocumentscopyDelegate, customAppearance: FaceCaptcha.HybridViewAppearance? = nil)
   @objc deinit
 }
 public struct ECB : FaceCaptcha.BlockMode {
@@ -1675,7 +1716,7 @@ public enum DocumentscopyResultType {
 }
 public typealias DocumentscopyCustomCameraPermissionView = FaceCaptcha.CustomCameraPermissionView
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, baseURL: Swift.String, delegate: FaceCaptcha.DocumentscopyDelegate, customInstructionView: FaceCaptcha.DocumentscopyCustomInstructionView? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil, customCameraPermissionView: FaceCaptcha.DocumentscopyCustomCameraPermissionView? = nil, customLoadingView: FaceCaptcha.DocumentscopyCustomLoadingView? = nil, customResultView: FaceCaptcha.DocumentscopyCustomResultView? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.DocumentscopyDelegate, customInstructionView: FaceCaptcha.DocumentscopyCustomInstructionView? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil, customCameraPermissionView: FaceCaptcha.DocumentscopyCustomCameraPermissionView? = nil, customLoadingView: FaceCaptcha.DocumentscopyCustomLoadingView? = nil, customResultView: FaceCaptcha.DocumentscopyCustomResultView? = nil)
   @objc deinit
 }
 extension FaceCaptcha.DocumentscopyViewController : UIKit.UIGestureRecognizerDelegate {
@@ -1844,19 +1885,20 @@ extension FaceCaptcha.ChaCha20 {
 public struct SpinnerConfiguration : FaceCaptcha.LoadingViewConfigurationProtocol {
   public let backgroundColor: UIKit.UIColor
   public let loadingType: FaceCaptcha.LoadingTypes
+  public let height: CoreFoundation.CGFloat
+  public let width: CoreFoundation.CGFloat
   public let loadingColor: UIKit.UIColor
   public let strokeWidth: CoreFoundation.CGFloat
-  public let scaleFactor: CoreFoundation.CGFloat
-  public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor, strokeWidth: CoreFoundation.CGFloat, scaleFactor: CoreFoundation.CGFloat)
+  public init(backgroundColor: UIKit.UIColor, height: CoreFoundation.CGFloat, width: CoreFoundation.CGFloat, loadingColor: UIKit.UIColor, strokeWidth: CoreFoundation.CGFloat)
   public func createLoadingView() -> UIKit.UIView
 }
 public struct Liveness3DUser {
-  public init(appKey: Swift.String, environment: FaceCaptcha.Environment3D = .HML, defaultTheme: FaceCaptcha.Liveness3DTheme? = nil, lowLightTheme: FaceCaptcha.Liveness3DTheme? = nil, texts: [Swift.String : Swift.String]? = nil)
+  public init(appKey: Swift.String, environment: FaceCaptcha.Environment = .HML, defaultTheme: FaceCaptcha.Liveness3DTheme? = nil, lowLightTheme: FaceCaptcha.Liveness3DTheme? = nil, texts: [FaceCaptcha.Liveness3DTextKey : Swift.String]? = nil)
 }
-public enum Environment3D {
+public enum Environment {
   case HML
   case PRD
-  public static func == (a: FaceCaptcha.Environment3D, b: FaceCaptcha.Environment3D) -> Swift.Bool
+  public static func == (a: FaceCaptcha.Environment, b: FaceCaptcha.Environment) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -1878,16 +1920,12 @@ public struct Liveness3DTheme {
   public var guidanceCustomizationSubtextFont: UIKit.UIFont?
   public var guidanceCustomizationReadyScreenHeaderFont: UIKit.UIFont?
   public var guidanceCustomizationReadyScreenHeaderTextColor: UIKit.UIColor?
-  public var guidanceCustomizationReadyScreenHeaderAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationReadyScreenSubtextFont: UIKit.UIFont?
   public var guidanceCustomizationReadyScreenSubtextTextColor: UIKit.UIColor?
-  public var guidanceCustomizationReadyScreenSubtextAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationRetryScreenHeaderFont: UIKit.UIFont?
   public var guidanceCustomizationRetryScreenHeaderTextColor: UIKit.UIColor?
-  public var guidanceCustomizationRetryScreenHeaderAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationRetryScreenSubtextFont: UIKit.UIFont?
   public var guidanceCustomizationRetryScreenSubtextTextColor: UIKit.UIColor?
-  public var guidanceCustomizationRetryScreenSubtextAttributedString: Foundation.NSAttributedString?
   public var guidanceCustomizationButtonFont: UIKit.UIFont?
   public var guidanceCustomizationButtonTextNormalColor: UIKit.UIColor?
   public var guidanceCustomizationButtonBackgroundNormalColor: UIKit.UIColor
@@ -1947,7 +1985,6 @@ public struct Liveness3DTheme {
   public var cancelButtonCustomizationCustomImage: UIKit.UIImage?
   public var cancelButtonCustomizationLocation: FaceCaptcha.Liveness3DTheme.CancelButtonLocation
   public var resultAnimationStyle: FaceCaptcha.ResultAnimationStyle
-  public var resultScreenSuccessMessage: Swift.String
   public enum CancelButtonLocation : Swift.Int {
     case topLeft, topRight, disabled
     public init?(rawValue: Swift.Int)
@@ -2183,6 +2220,8 @@ extension FaceCaptcha.CCM.Error : Swift.Equatable {}
 extension FaceCaptcha.CCM.Error : Swift.Hashable {}
 extension FaceCaptcha.LoadingTypes : Swift.Equatable {}
 extension FaceCaptcha.LoadingTypes : Swift.Hashable {}
+extension FaceCaptcha.Liveness3DTextKey : Swift.Equatable {}
+extension FaceCaptcha.Liveness3DTextKey : Swift.Hashable {}
 extension FaceCaptcha.ChaCha20.Error : Swift.Equatable {}
 extension FaceCaptcha.ChaCha20.Error : Swift.Hashable {}
 extension FaceCaptcha.Visibility : Swift.Equatable {}
@@ -2211,8 +2250,8 @@ extension FaceCaptcha.PKCS5.PBKDF2.Error : Swift.Equatable {}
 extension FaceCaptcha.PKCS5.PBKDF2.Error : Swift.Hashable {}
 extension FaceCaptcha.FaceCaptchaError : Swift.Equatable {}
 extension FaceCaptcha.FaceCaptchaError : Swift.Hashable {}
-extension FaceCaptcha.Environment3D : Swift.Equatable {}
-extension FaceCaptcha.Environment3D : Swift.Hashable {}
+extension FaceCaptcha.Environment : Swift.Equatable {}
+extension FaceCaptcha.Environment : Swift.Hashable {}
 extension FaceCaptcha.Liveness3DThemeType : Swift.Equatable {}
 extension FaceCaptcha.Liveness3DThemeType : Swift.Hashable {}
 extension FaceCaptcha.Liveness3DThemeType : Swift.RawRepresentable {}

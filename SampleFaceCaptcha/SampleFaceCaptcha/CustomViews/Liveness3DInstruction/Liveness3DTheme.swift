@@ -69,14 +69,12 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     
     //    MARK: - Ready screen Guidance header
     theme.guidanceCustomizationReadyScreenOvarFillColor = .systemPink
-    theme.guidanceCustomizationReadyScreenHeaderAttributedString = NSAttributedString(string: "Titulo")
     theme.guidanceCustomizationReadyScreenHeaderFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationHeaderFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationSubtextFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationReadyScreenHeaderTextColor = .green
     
     //    MARK: - Ready screen Guidance subheader
-    theme.guidanceCustomizationReadyScreenSubtextAttributedString = NSAttributedString(string: "Subtexto")
     theme.guidanceCustomizationReadyScreenSubtextFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationReadyScreenSubtextTextColor = .brown
     
@@ -85,12 +83,10 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     //    MARK: - Retry screen Header
     theme.guidanceCustomizationRetryScreenHeaderFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationRetryScreenHeaderTextColor = .systemPink
-    theme.guidanceCustomizationRetryScreenHeaderAttributedString = NSAttributedString(string: "Retry titulo")
     
     //    MARK: - Retry screen Subheader
     theme.guidanceCustomizationRetryScreenSubtextFont = UIFont(name: "", size: 14)
     theme.guidanceCustomizationRetryScreenSubtextTextColor = .red
-    theme.guidanceCustomizationRetryScreenSubtextAttributedString = NSAttributedString(string: "Retry subtexto")
     
     //    MARK: - Retry screen guidance image
     theme.guidanceCustomizationRetryScreenImageBorderColor = .systemBlue
@@ -128,7 +124,6 @@ public func createLiveness3DCustomTheme() -> Liveness3DTheme {
     //    MARK: -  Result screen text
     theme.resultScreenCustomizationMessageFont = UIFont(name: "", size: 15.0)
     theme.feedbackCustomizationEnablePulsatingText = true
-    theme.resultScreenSuccessMessage = "Valeu!!"
     
     return theme
 }
