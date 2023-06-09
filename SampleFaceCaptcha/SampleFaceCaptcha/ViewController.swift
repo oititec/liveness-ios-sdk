@@ -9,7 +9,6 @@ import UIKit
 import FaceCaptcha
 
 class ViewController: UIViewController {
-    private let baseURL = "https://comercial.certiface.com.br:8443/"
     private var appKey = ""
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
@@ -19,17 +18,31 @@ class ViewController: UIViewController {
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando imagem customizada
     @IBAction private func customLiveness3D() {
-        presentLiveness3D(theme: createLiveness3DCustomTheme(), customPersmissionView: PermissionView(), customInstructionView: InstructionView())
+        presentLiveness3D(
+            theme: createLiveness3DCustomTheme(),
+            customPersmissionView: PermissionView(),
+            customInstructionView: InstructionView()
+        )
+    }
+    
+    @IBAction private func customLiveness3DTexts() {
+        presentLiveness3D(
+            texts: createLiveness3DCustomTexts()
+        )
     }
     
     private func presentLiveness3D(
+        texts: [Liveness3DTextKey: String]? = nil,
         theme: Liveness3DTheme? = nil,
         customPersmissionView: CustomCameraPermissionView? = nil,
         customInstructionView: CustomInstructionView? = nil
     ) {
         let liveness3DUser = Liveness3DUser(
-            appKey: appKey, environment: .HML,
-            defaultTheme: theme, lowLightTheme: theme
+            appKey: appKey,
+            environment: .HML,
+            defaultTheme: theme,
+            lowLightTheme: theme,
+            texts: texts
         )
         let controller = Liveness3DViewController(
             liveness3DUser: liveness3DUser,
@@ -63,7 +76,8 @@ class ViewController: UIViewController {
         customView: FaceCaptchaView? = nil
     ) {
         let controller = FaceCaptchaViewController(
-            appKey: appKey, baseURL: baseURL,
+            appKey: appKey,
+            environment: .HML,
             delegate: self, cameraOverlay: cameraOverlay,
             customView: customView
         )
@@ -95,7 +109,8 @@ class ViewController: UIViewController {
         customResultView: DocumentscopyCustomResultView? = nil
     ) {
         let controller = DocumentscopyViewController(
-            appKey: appKey, baseURL: baseURL,
+            appKey: appKey,
+            environment: .HML,
             delegate: self,
             customInstructionView: customInstructionView,
             customView: customView,

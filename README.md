@@ -2,7 +2,7 @@
 
 Neste repositório você vai encontrar as documentações para **iOS** sobre o **Liveness FaceCaptcha**, **Liveness 3D** e **Documentoscopia**.
 
-## Sobre Este Repositório
+## Sobre este repositório
 
 O Liveness, ou Prova de Vida, pode ser executado através de **SDK único** que reúne os tipos: **Liveness FaceCaptcha** e **Liveness 3D**. 
 
@@ -35,7 +35,7 @@ source 'https://github.com/oititec/liveness-ios-specs.git'
 2. Após isso, adicione a dependência:
 
 ```rb
-pod 'FaceCaptcha', '~> 4.1.3'
+pod 'FaceCaptcha', '~> 5.0.0'
 ```
 
 3. Rode `pod install`.
@@ -69,6 +69,7 @@ As instruções de uso, integração, implementação e customização do **Live
   - [Guia de uso e integração](Documentation/Liveness3D/Liveness3D-Usage.md);
   - [Guia de customização: Views](Documentation/Liveness3D/Liveness3D-CustomView.md);
   - [Guia de customização: Liveness3DTheme](Documentation/Liveness3D/Liveness3D-Liveness3DTheme.md).
+  - [Guia de customização: Textos](Documentation/Liveness3D/Liveness3D-CustomTexts.md).
 
 ###  Documentoscopia
 
@@ -96,11 +97,11 @@ Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha]
 
 ##  Guias de migração
 
+- [5.0.0](Documentation/MigrationGuide/5.0.0.md) - BREAKING CHANGE
 - [4.0.9](Documentation/MigrationGuide/4.0.9.md) - BREAKING CHANGE
 - [4.0.6](Documentation/MigrationGuide/4.0.6.md) - BREAKING CHANGE
 - [3.0.0](Documentation/MigrationGuide/3.0.0.md) - BREAKING CHANGE
 - [2.0.0](Documentation/MigrationGuide/2.0.0.md) - BREAKING CHANGE
-- [1.2.0](Documentation/MigrationGuide/1.2.0.md) - BREAKING CHANGE
 
 >⚠️ **Para conhecer mais sobre Liveness, consulte [este link.](https://certifaceid.readme.io/docs/liveness-detection-vs-atualizada)**
 

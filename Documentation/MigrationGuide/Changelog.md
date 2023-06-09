@@ -1,5 +1,20 @@
 # Changelog
 
+## [versão 5.0.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.0.0)
+*data: 09/06/2023*
+
+- **Breaking changes**
+    - O *enum* `Environment3D` teve sua nomenclatura alterada para `Environment`. [[Guia de uso e integração | Liveness3D](../Liveness3D/Liveness3D-Usage.md#iniciando-o-liveness-3d)]
+    - O parâmetro `baseURL` do inicializador da **Documentscopy** foi substituído pelo parâmetro `environment`. [[Guia de uso e integração | Documentoscopia](../Liveness2D/Documentscopy-Usage.md#iniciando-a-documentoscopia)]
+    - O parâmetro `baseURL` do inicializador do **FaceCaptcha** foi substituído pelo parâmetro `environment`. [[Guia de uso e integração | FaceCaptcha](../Liveness2D/FaceCaptcha-Usage.md#iniciando-o-facecaptcha)]
+    - A *struct* `Liveness3DTheme` teve algumas propriedades removidas [[Guia de Customização: Liveness3DTheme](../Liveness3D/Liveness3D-Liveness3DTheme.md)], segue a lista:
+        - guidanceCustomizationReadyScreenHeaderAttributedString
+        - guidanceCustomizationReadyScreenSubtextAttributedString
+        - guidanceCustomizationRetryScreenHeaderAttributedString
+        - guidanceCustomizationRetryScreenSubtextAttributedString
+        - resultScreenSuccessMessage    
+    - A customização de textos agora é feita somente pelo dicionário de textos e a chave do dicionário mudou de `String` para o *enum* `Liveness3DTextKey`. [[Guia de Customização: Textos](../Liveness3D/Liveness3D-CustomTexts.md)]
+
 ## [versão 4.1.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.3)
 *data: 26/05/2023*
 

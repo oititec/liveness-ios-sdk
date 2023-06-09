@@ -1,4 +1,4 @@
-# Guia de Customização do Liveness3DTheme 
+# Guia de Customização: Liveness3DTheme 
 
 A customização do fluxo de prova de vida, dar-se por meio da utilização da `Liveness3DTheme`. Essa classe na sua construção recebe o template padrão, podendo ser DarkTheme ou LightTheme. Os temas são atribuídos aos argumentos `defaultTheme` e `lowLightTheme` do ``Liveness3DUser``.<br>
 
@@ -113,14 +113,12 @@ public enum CancelButtonLocation: Int {
 | :----------------------------------------------------- | :------------------ | :-------------------------------------------- |
 | guidanceCustomizationReadyScreenHeaderFont             | UIFont?             | Adiciona uma fonte customizada para o header. |
 | guidanceCustomizationReadyScreenHeaderTextColor        | UIColor?            | Modifica a cor da fonte do texto.             |
-| guidanceCustomizationReadyScreenHeaderAttributedString | NSAttributedString? | Adiciona um texto para o header.              |
 
 ### 2. Subtext
 | **Atributo**                                            | **Tipo**            | **Descrição**                                  |
 | :------------------------------------------------------ | :------------------ | :--------------------------------------------- |
 | guidanceCustomizationReadyScreenSubtextFont             | UIFont?             | Adiciona uma fonte customizada para o subtext. |
 | guidanceCustomizationReadyScreenSubtextTextColor        | UIColor?            | Modifica a cor da fonte do texto.              |
-| guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString? | Adiciona um texto para o subtext.              |
 
 ### 3. Textos
 
@@ -194,7 +192,6 @@ public protocol CustomResultAnimationDelegate {
 | **Atributo**                         | **Tipo** | **Descrição**                                              |
 | :----------------------------------- | :------- | :--------------------------------------------------------- |
 | resultScreenCustomizationMessageFont | UIFont?  | Adiciona uma fonte customizada para a mensagem de sucesso. |
-| resultScreenSuccessMessage           | String   | Adiciona uma mensagem customizada de sucesso.              |
 
 <br/>
 <div>
@@ -211,14 +208,12 @@ public protocol CustomResultAnimationDelegate {
 | :----------------------------------------------------- | :------------------ | :-------------------------------------------------------- |
 | guidanceCustomizationRetryScreenHeaderFont             | UIFont?             | Adiciona uma fonte customizada para a mensagem do header. |
 | guidanceCustomizationRetryScreenHeaderTextColor        | UIColor?            | Modifica a cor da fonte do header.                        |
-| guidanceCustomizationRetryScreenHeaderAttributedString | NSAttributedString? | Adiciona uma mensagem personalizada no header.            |
 
 ### 2. Customização do Subtext
 | **Atributo**                                            | **Tipo**            | **Descrição**                                              |
 | :------------------------------------------------------ | :------------------ | :--------------------------------------------------------- |
 | guidanceCustomizationRetryScreenSubtextFont             | UIFont?             | Adiciona uma fonte customizada para a mensagem do subtext. |
 | guidanceCustomizationRetryScreenSubtextTextColor        | UIColor?            | Modifica a cor da fonte do subtext.                        |
-| guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? | Adiciona uma mensagem personalizada no subtext.            |
 
 ### 4. Imagem
 | **Atributo**                                      | **Tipo** | **Descrição**                                                     |
@@ -230,47 +225,6 @@ public protocol CustomResultAnimationDelegate {
 
 <br/>
 <img src="../Images/Liveness3D/liveness3d_theme_retry_screen.png" width="432" height="396" />
-
------
-
-## Customização dos textos
-Os textos do fluxo do Liveness3D podem ser alterados utilizando o objeto do tipo ``Liveness3DTheme``, onde as propriedades responsáveis por cada um desses textos são de dois tipos possíveis: `NSAttributedString` ou `String`.
-
-```swift
-var theme = Liveness3DTheme(.light)
-
-theme.guidanceCustomizationReadyScreenHeaderAttributedString = NSAttributedString(string: "Titulo")
-theme.resultScreenSuccessMessage = "Mensagem de sucesso!"
-```
-### Ready Screen
-
-| **Indice** | **Propriedade**                                         | **Tipo**            |
-| :--------- | :------------------------------------------------------ | :------------------ |
-| (**1**)    | guidanceCustomizationReadyScreenHeaderAttributedString  | NSAttributedString? |
-| (**2**)    | guidanceCustomizationReadyScreenSubtextAttributedString | NSAttributedString? |
-
-<img src="../Images/Liveness3D/liveness3d_ready.png" width="432" height="396" />
-
-<br/>
-
-### Retry Screen
-
-| **Indice** | **Propriedade**                                         | **Tipo**            |
-| :--------- | :------------------------------------------------------ | :------------------ |
-| (**1**)    | guidanceCustomizationRetryScreenHeaderAttributedString  | NSAttributedString? |
-| (**2**)    | guidanceCustomizationRetryScreenSubtextAttributedString | NSAttributedString? |
-
-<img src="../Images/Liveness3D/liveness3d_retry.png" width="432" height="396" />
-
-<br/>
-
-### Result Screen
-
-| **Indice** | **Propriedade**            | **Tipo** |
-| :--------- | :------------------------- | :------- |
-| (**1**)    | resultScreenSuccessMessage | String   |
-
-<img src="../Images/Liveness3D/liveness3d_result.png" width="432" height="396" />
 
 ---
 
