@@ -1,7 +1,7 @@
 # Changelog
 
 ## [versão 5.0.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.0.0)
-*data: 07/06/2023*
+*data: 09/06/2023*
 
 - **Breaking changes**
     - O *enum* `Environment3D` teve sua nomenclatura alterada para `Environment`. [[Guia de uso e integração | Liveness3D](../Liveness3D/Liveness3D-Usage.md#iniciando-o-liveness-3d)]
