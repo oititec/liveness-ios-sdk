@@ -1188,7 +1188,7 @@ final internal class BlockEncryptor : FaceCaptcha.Cryptor, FaceCaptcha.Updatable
   deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class HybridDocumentscopyViewController : FaceCaptcha.DocumentscopyViewController {
-  @_Concurrency.MainActor(unsafe) public init(appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.DocumentscopyDelegate, customAppearance: FaceCaptcha.HybridViewAppearance? = nil)
+  @_Concurrency.MainActor(unsafe) public init(ticket: Swift.String? = nil, appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.DocumentscopyDelegate, customAppearance: FaceCaptcha.HybridViewAppearance? = nil)
   @objc deinit
 }
 public struct ECB : FaceCaptcha.BlockMode {
@@ -1716,7 +1716,7 @@ public enum DocumentscopyResultType {
 }
 public typealias DocumentscopyCustomCameraPermissionView = FaceCaptcha.CustomCameraPermissionView
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DocumentscopyViewController : UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) convenience public init(appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.DocumentscopyDelegate, customInstructionView: FaceCaptcha.DocumentscopyCustomInstructionView? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil, customCameraPermissionView: FaceCaptcha.DocumentscopyCustomCameraPermissionView? = nil, customLoadingView: FaceCaptcha.DocumentscopyCustomLoadingView? = nil, customResultView: FaceCaptcha.DocumentscopyCustomResultView? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(ticket: Swift.String? = nil, appKey: Swift.String, environment: FaceCaptcha.Environment, delegate: FaceCaptcha.DocumentscopyDelegate, customInstructionView: FaceCaptcha.DocumentscopyCustomInstructionView? = nil, customView: FaceCaptcha.DocumentscopyCustomView? = nil, customCameraPermissionView: FaceCaptcha.DocumentscopyCustomCameraPermissionView? = nil, customLoadingView: FaceCaptcha.DocumentscopyCustomLoadingView? = nil, customResultView: FaceCaptcha.DocumentscopyCustomResultView? = nil)
   @objc deinit
 }
 extension FaceCaptcha.DocumentscopyViewController : UIKit.UIGestureRecognizerDelegate {

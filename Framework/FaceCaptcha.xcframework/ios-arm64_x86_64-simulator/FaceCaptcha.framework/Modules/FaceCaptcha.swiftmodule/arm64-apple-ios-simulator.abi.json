@@ -23016,13 +23016,28 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(appKey:environment:delegate:customAppearance:)",
+            "printedName": "init(ticket:appKey:environment:delegate:customAppearance:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "HybridDocumentscopyViewController",
                 "printedName": "FaceCaptcha.HybridDocumentscopyViewController",
                 "usr": "c:@M@FaceCaptcha@objc(cs)HybridDocumentscopyViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -23059,8 +23074,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11FaceCaptcha33HybridDocumentscopyViewControllerC6appKey11environment8delegate16customAppearanceACSS_AA11EnvironmentOAA0D8Delegate_pAA0ceL0VSgtcfc",
-            "mangledName": "$s11FaceCaptcha33HybridDocumentscopyViewControllerC6appKey11environment8delegate16customAppearanceACSS_AA11EnvironmentOAA0D8Delegate_pAA0ceL0VSgtcfc",
+            "usr": "s:11FaceCaptcha33HybridDocumentscopyViewControllerC6ticket6appKey11environment8delegate16customAppearanceACSSSg_SSAA11EnvironmentOAA0D8Delegate_pAA0ceM0VSgtcfc",
+            "mangledName": "$s11FaceCaptcha33HybridDocumentscopyViewControllerC6ticket6appKey11environment8delegate16customAppearanceACSSSg_SSAA11EnvironmentOAA0D8Delegate_pAA0ceM0VSgtcfc",
             "moduleName": "FaceCaptcha",
             "declAttributes": [
               "Custom",
@@ -31425,13 +31440,28 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(appKey:environment:delegate:customInstructionView:customView:customCameraPermissionView:customLoadingView:customResultView:)",
+            "printedName": "init(ticket:appKey:environment:delegate:customInstructionView:customView:customCameraPermissionView:customLoadingView:customResultView:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "DocumentscopyViewController",
                 "printedName": "FaceCaptcha.DocumentscopyViewController",
                 "usr": "c:@M@FaceCaptcha@objc(cs)DocumentscopyViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -31528,8 +31558,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11FaceCaptcha27DocumentscopyViewControllerC6appKey11environment8delegate017customInstructionD00jD00j16CameraPermissionD00j7LoadingD00j6ResultD0ACSS_AA11EnvironmentOAA0C8Delegate_pAA0c6CustomkD0_pSgAA0crD0_pSgAA0rlmD0_pSgSo6UIViewCSgAA0croD0_pSgtcfc",
-            "mangledName": "$s11FaceCaptcha27DocumentscopyViewControllerC6appKey11environment8delegate017customInstructionD00jD00j16CameraPermissionD00j7LoadingD00j6ResultD0ACSS_AA11EnvironmentOAA0C8Delegate_pAA0c6CustomkD0_pSgAA0crD0_pSgAA0rlmD0_pSgSo6UIViewCSgAA0croD0_pSgtcfc",
+            "usr": "s:11FaceCaptcha27DocumentscopyViewControllerC6ticket6appKey11environment8delegate017customInstructionD00kD00k16CameraPermissionD00k7LoadingD00k6ResultD0ACSSSg_SSAA11EnvironmentOAA0C8Delegate_pAA0c6CustomlD0_pSgAA0csD0_pSgAA0smnD0_pSgSo6UIViewCSgAA0cspD0_pSgtcfc",
+            "mangledName": "$s11FaceCaptcha27DocumentscopyViewControllerC6ticket6appKey11environment8delegate017customInstructionD00kD00k16CameraPermissionD00k7LoadingD00k6ResultD0ACSSSg_SSAA11EnvironmentOAA0C8Delegate_pAA0c6CustomlD0_pSgAA0csD0_pSgAA0smnD0_pSgSo6UIViewCSgAA0cspD0_pSgtcfc",
             "moduleName": "FaceCaptcha",
             "declAttributes": [
               "Custom",
@@ -57805,16 +57835,30 @@
     {
       "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/Util\/EnvironmentManager.swift",
       "kind": "StringLiteral",
-      "offset": 225,
+      "offset": 255,
+      "length": 36,
+      "value": "\"https:\/\/comercial.certiface.com.br\""
+    },
+    {
+      "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/Util\/EnvironmentManager.swift",
+      "kind": "StringLiteral",
+      "offset": 324,
       "length": 26,
       "value": "\"https:\/\/certiface.com.br\""
     },
     {
       "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/Util\/EnvironmentManager.swift",
       "kind": "StringLiteral",
-      "offset": 288,
-      "length": 36,
-      "value": "\"https:\/\/comercial.certiface.com.br\""
+      "offset": 421,
+      "length": 30,
+      "value": "\"https:\/\/api.hml.certiface.io\""
+    },
+    {
+      "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/Util\/EnvironmentManager.swift",
+      "kind": "StringLiteral",
+      "offset": 484,
+      "length": 26,
+      "value": "\"https:\/\/api.certiface.io\""
     },
     {
       "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/Util\/CryptoSwift\/AEAD\/AEADChaCha20Poly1305.swift",
@@ -59171,13 +59215,13 @@
       "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/API\/Provider\/FCProvider.swift",
       "kind": "StringLiteral",
       "offset": 315,
-      "length": 41,
-      "value": "\"https:\/\/comercial.certiface.com.br:8443\""
+      "length": 36,
+      "value": "\"https:\/\/comercial.certiface.com.br\""
     },
     {
       "filePath": "\/Users\/gleds\/Codes\/Oiti\/Monolitic\/development\/FaceCaptcha\/FaceCaptcha\/Commons\/API\/Provider\/FCProvider.swift",
       "kind": "Dictionary",
-      "offset": 382,
+      "offset": 377,
       "length": 201,
       "value": "[(\"Accept\", \"application\/json\"), (\"cache-control\", \"no-cache\"), (\"Content-Type\", \"application\/x-www-form-urlencoded; charset=UTF-8\"), (\"Access-Control-Allow-Origin\", \"*\")]"
     },
