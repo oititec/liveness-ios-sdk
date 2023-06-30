@@ -103,5 +103,7 @@ Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha]
 - [3.0.0](Documentation/MigrationGuide/3.0.0.md) - BREAKING CHANGE
 - [2.0.0](Documentation/MigrationGuide/2.0.0.md) - BREAKING CHANGE
 
->⚠️ **Para conhecer mais sobre Liveness, consulte [este link.](https://certifaceid.readme.io/docs/liveness-detection-vs-atualizada)**
+> ⚠️ **Importante**
+> <br/>Para conhecer o **Hub de Liveness**: [consulte este link.](https://devcenter.certiface.io/docs/hub-de-liveness)
+> <br/>Para conhecer o **Doc Core**: [consulte este link.](https://devcenter.certiface.io/docs/doc-core)
 
