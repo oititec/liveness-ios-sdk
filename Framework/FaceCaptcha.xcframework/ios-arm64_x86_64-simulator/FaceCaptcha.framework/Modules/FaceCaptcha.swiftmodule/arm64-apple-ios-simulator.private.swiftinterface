@@ -979,6 +979,7 @@ public enum Liveness3DTextKey {
   case feedbackHoldSteady1
   case feedbackHoldSteady2
   case feedbackHoldSteady3
+  @available(*, deprecated, message: "A partir da versão 9.6.40 da FaceTec, esta propriedade foi descontinuada")
   case feedbackEyesStraightAhead
   case feedbackRemoveDarkGlasses
   case feedbackNeutralExpression
