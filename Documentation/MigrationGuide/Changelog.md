@@ -1,5 +1,11 @@
 # Changelog
 
+## [versão 5.1.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.0)
+*data: 02/08/2023*
+
+- **Melhorias**
+    - Adicionado o parâmetro `ticket` (_opcional_) no inicializador da classe `DocumentscopyViewController` para uso da Certiface API.
+
 ## [versão 5.0.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.0.0)
 *data: 09/06/2023*
 
