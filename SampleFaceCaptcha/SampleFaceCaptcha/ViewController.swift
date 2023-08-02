@@ -9,6 +9,7 @@ import UIKit
 import FaceCaptcha
 
 class ViewController: UIViewController {
+    private var ticket: String? = nil
     private var appKey = ""
     
     /// Trata de clique no botão para abrir o FaceCaptcha usando view padrão
@@ -109,6 +110,7 @@ class ViewController: UIViewController {
         customResultView: DocumentscopyCustomResultView? = nil
     ) {
         let controller = DocumentscopyViewController(
+            ticket: ticket,
             appKey: appKey,
             environment: .HML,
             delegate: self,

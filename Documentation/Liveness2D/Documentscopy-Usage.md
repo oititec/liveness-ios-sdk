@@ -10,6 +10,7 @@ import FaceCaptcha
 ```
 
 2. Instancie `DocumentscopyViewController`, passando os seguintes parâmetros:
+- **ticket** *(opcional)*: _Token_ para uso da Certiface API.
 - **appKey**: App Key recebida previamente.
 - **environment**: argumento que indica o ambiente desejado.
 - **delegate** *(opcional)*: delegate que implementará os métodos para tratar o retorno da documentoscopia.
@@ -17,8 +18,10 @@ import FaceCaptcha
 e deve estar em conformidade com o protocolo `DocumentscopyCustomView`
 - **customCameraView** *(opcional)*: View customizada para tela de captura das imagens do documento que será 
 utilizada no fluxo de Documentoscopia e deve estar em conformidade com o protocolo `DocumentscopyCustomCameraView`
+
 ```swift
 let controller = DocumentscopyViewController(
+    ticket: ticket,
     appKey: appKey, 
     environment: .HML,
     delegate: self, 

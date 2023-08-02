@@ -1,5 +1,11 @@
 # Changelog
 
+## [versão 5.1.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.0)
+*data: 02/08/2023*
+
+- **Melhorias**
+    - Adicionado o parâmetro `ticket` (_opcional_) no inicializador da classe `DocumentscopyViewController` para uso da Certiface API.
+
 ## [versão 5.0.1](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.0.1)
 _data: 06/07/2023_
 
@@ -7,7 +13,7 @@ _data: 06/07/2023_
     - A propriedade `feedbackEyesStraightAhead` foi descontinuada.
     - Adicionada nova checagem de injeção de video no dispositivo e servidor para mitigar a ameaça das IAs Generativas;
     - Melhorias de performance em modelos mais antigos de iPhones e iPads que melhoram a taxa de sucesso;
-    - Melhorias de estabilide.
+    - Melhorias de estabilidade.
 
 ## [versão 5.0.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.0.0)
 *data: 09/06/2023*
