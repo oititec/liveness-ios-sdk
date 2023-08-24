@@ -1,7 +1,7 @@
 PODS:
-  - FaceCaptcha (5.1.0):
-    - OILiveness3D_FT (= 9.6.40)
-  - OILiveness3D_FT (9.6.40)
+  - FaceCaptcha (5.1.1):
+    - OILiveness3D_FT (= 9.6.45)
+  - OILiveness3D_FT (9.6.45)
 
 DEPENDENCIES:
   - FaceCaptcha (from `../`)
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FaceCaptcha: c7a0c6f1ab926db0c35de3fb85dda1cab31962e7
-  OILiveness3D_FT: a58ceb6ea1b1229015434125d25b78b46f7667a9
+  FaceCaptcha: adf43c490c882420c2a714f3babaad27d629f70a
+  OILiveness3D_FT: b57fa712db35bad58a1fcc522837175022b6db8d
 
 PODFILE CHECKSUM: e0fe57ceffa0d3e140e07853a4cf95cae4a575b6
 

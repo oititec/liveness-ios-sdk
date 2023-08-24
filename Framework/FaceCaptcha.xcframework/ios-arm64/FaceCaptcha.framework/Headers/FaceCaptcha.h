@@ -1,5 +1,8 @@
 //
 //  FaceCaptcha.h
+//  FaceCaptcha
+//
+//  Copyright © 2019-2023 Oiti. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
