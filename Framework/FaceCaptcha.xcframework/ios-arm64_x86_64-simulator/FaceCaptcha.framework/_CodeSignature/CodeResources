@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		haTa7Dlq67nMCIJEMZ1zaTO4zeY=
+		eN/28dDwstGap533QM8QIduh6M8=
 		</data>
 		<key>FaceCaptchaDefaultView.nib</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Headers/FaceCaptcha.h</key>
 		<data>
-		xofodfTvEeZP5VnSTrGGlw/FoYw=
+		NRTLM5Xo+14SSA4mbVHON9jcyqI=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PqnXQDg0WaysA7ztso6w89pGXIE=
+		vaD2R3e2LM1+0INNpNKoQ2d5TNo=
 		</data>
 		<key>Inter-Bold.ttf</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6Kh746tKoTO30QFr47LQK3vv5SI=
+		F4LxRvM2HBZ0VNezSsmPk2GuNb8=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Up2XEQWtQhWwshf/8eJI3Jdpzcs=
+		nQoa71XYqMovdiG0KGr3tFZPeRg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -103,7 +103,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K4hmc2jTISRkrUGkqB4soihcYlmpUJlFvxiTdC83CPs=
+			vCjelW9vrB6fxrlrKW5dMwyAz84tzFCidIVc/U4hnwg=
 			</data>
 		</dict>
 		<key>FaceCaptchaDefaultView.nib</key>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bb+Xm+E/CqbCm4ZgbPpG7xSKP+jKegAgw+in/1WhJGI=
+			5tmJJS/JWaOc3JnHRJKB8Wf+wMW32GR4jc06aax9s/w=
 			</data>
 		</dict>
 		<key>Inter-Bold.ttf</key>
@@ -180,7 +180,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2YOq7BV9lXRtpuw/pjoJ3DyR5/hqGOel/HHq2nfXZDI=
+			PpLHQEfURUJrjpy8lfJhkX+nZ1jUyM8CNKCn0/uTmu0=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -215,7 +215,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CZ3zuo7G3qQZ6rSo20aT0HOT7+/eFZ/ASPTlDyzdEVI=
+			To3FG0TKoW525tEwEcY4yHQ7VH6/wkXSVqZP7oVEPUE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
