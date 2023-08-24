@@ -1,7 +1,7 @@
 # Changelog
 
 ## [versão 5.1.1](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.1)
-_data: 06/07/2023_
+_data: 24/08/2023_
 
 - **Atualização da FaceTec - [versão 9.6.45](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.45)**
     - Adicionada nova checagem de injeção de video no dispositivo e servidor para mitigar a ameaça das IAs Generativas;
