@@ -41,42 +41,80 @@ _data: 06/07/2023_
 ## [versão 4.1.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.3)
 *data: 26/05/2023*
 
-- **Atualização da FaceTec**
+- **Atualização da FaceTec - [versão 9.6.33](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.33)**
     - Adicionada nova checagem de injeção de video no dispositivo e servidor para mitigar a ameaça das IAs Generativas;
     - Melhorias de performance em modelos mais antigos de iPhones e iPads que melhoram a taxa de sucesso;
     - Melhorias de estabilidade.
 
+## [versão 4.1.2](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.2)
+*data: 25/04/2023*
+
+- **Atualização da FaceTec - [versão 9.6.29](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.29)**
+    - Adicionadas novas camadas de IA para proteção contra ataques sofisticados de nível 5 nos dispositivos e servidores.
+    - Melhorias de compatibilidade, estabilidade e desempenho.
+
+## [versão 4.1.1](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.1)
+*data: 06/04/2023*
+
+- **Melhorias**
+    - Alteração do target mínimo de **iOS 10.0** para **iOS 11.0**.
+    - Remoção do suporte para as arquiteturas *armv7* (dispositivo) e *i386* (simulador).
+
+- **Atualização da FaceTec - [versão 9.6.25](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.25)**
+    - Adicionadas novas camadas de IA para proteção contra ataques sofisticados de nível 5 nos dispositivos e servidores.
+    - Melhorias de compatibilidade, estabilidade e desempenho.
+
+## [versão 4.1.0](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.1.0)
+*data: 24/03/2023*
+
+- **Melhorias**
+    - O *loading* na tela de instruções da Documentoscopia não é mais aplicado na *custom view*.
+    - O estado do loading da tela de instruções da Documentoscopia pode ser verificado através da implementação do método `changeLoadingVisibility(to:)`, presente no protocolo `DocumentscopyCustomInstructionView`. [Guia de customização de view customizada](../Liveness2D/Documentscopy-CustomView.md#custominstructionview).
+    - Durante o carregamento da tela de instruções da Documentoscopia, as *views* de RG e CNH ficarão desabilitadas.
+
+## [versão 4.0.9](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.0.9)
+*data: 20/03/2023*
+
+- **Breaking changes**
+    - Alteração do comportamento e do visual da tela de captura de permissão de câmera.
+    - Alteração no inicializador do `Liveness3DViewController`.
+    - Alterações dos códigos de erro.
+
+- **Atualização da FaceTec - [versão 9.6.18](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.18)**
+    - Melhorias nas taxas de correspondência e de sucesso do liveness.
+    - Melhorias de compatibilidade, estabilidade, segurança e desempenho.
+
+## [versão 4.0.8](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.0.8)
+*data: 23/02/2023*
+
+- **Melhorias**
+    - Melhoria na qualidade das imagens capturadas durante o processo de documentoscopia para envio e validação.
+    - Melhoria na qualidade da pré visualização durante o processo de documentoscopia.
+
+## [versão 4.0.7](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.0.7)
+*data: 13/02/2023*
+
+- **Melhorias**
+    - Correção no apontamento interno dos ambientes de homologação (HML) e produção (PRD) para validação do Liveness3D.
+    - Correção no envio de logs do SDK em homologação.
+
+## [versão 4.0.6](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.0.6)
+*data: 31/01/2023*
+
+- **Breaking changes**
+    - O protocolo `DocumentscopyCustomView` teve alterações nos tipos das propriedades: `backIndicatorView`, `frontIndicatorView` e `usePictureButton`. [Guia de customização de view customizada](Documentation/Liveness2D/Documentscopy-CustomView.md).
+    - O protocolo `DocumentscopyCustomView` possui dois novos métodos: `setFocus(to:animated:)` e `setUsePictureButtonTitle(to:)`. [Guia de customização de view customizada](Documentation/Liveness2D/Documentscopy-CustomView.md).
+    - A assinatura do método `showBottomSheet()` do protocolo `CustomCameraPermissionView` mudou para `showBottomSheet(visibility:)`. [Guia de customização: Views](Documentation/Liveness3D/Liveness3D-CustomView.md) e [Guia de customização de view customizada](Documentation/Liveness2D/Documentscopy-CustomView.md)
+
+## [versão 4.0.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/4.0.3)
+*data: 19/01/2023*
+
+- **Atualização da FaceTec - [versão 9.6.10](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.10)**
+    - Melhorias significantes nas taxas de correspondência de segurança e de sucusso do Liveness e 3D.
+    - Melhoria na compatibilidade de dispositivos.
+    - Melhorias de performance, estabilidade e uso de memória.
+
 ---
-#### 4.1.2
-- Atualização da FaceTec.
-
-#### 4.1.1
-- Atualização da FaceTec.
-- Alteração do target mínimo de **iOS 10.0** para **iOS 11.0**.
-- Remoção do suporte para as arquiteturas *armv7* (dispositivo) e *i386* (simulador).
-
-#### 4.1.0
-- O *loading* na tela de instruções da Documentoscopia não é mais aplicado na *custom view*.
-- O estado do loading da tela de instruções da Documentoscopia pode ser verificado através da implementação do método `changeLoadingVisibility(to:)`, presente no protocolo `DocumentscopyCustomInstructionView`. [Guia de customização de view customizada](../Liveness2D/Documentscopy-CustomView.md#custominstructionview).
-- Durante o carregamento da tela de instruções da Documentoscopia, as *views* de RG e CNH ficarão desabilitadas.
-
-#### [4.0.9](4.0.9.md) - BREAKING CHANGE
-- Atualização da FaceTec.
-- Alteração do comportamento e do visual da tela de captura de permissão de câmera.
-- Alteração no inicializador do `Liveness3DViewController`.
-- Alterações dos códigos de erro.
-
-#### 4.0.8
-- Melhoria na qualidade das imagens capturadas durante o processo de documentoscopia para envio e validação.
-- Melhoria na qualidade da pré visualização durante o processo de documentoscopia.
-
-#### 4.0.7
-- Correção no apontamento interno dos ambientes de homologação (HML) e produção (PRD) para validação do Liveness3D.
-- Correção no envio de logs do SDK em homologação.
-
-#### [4.0.6](4.0.6.md) - BREAKING CHANGE
-- Alterações no protocolo `DocumentscopyCustomView`. [Documentoscopia](../Liveness2D/Documentscopy-CustomView.md).
-- Alterações no protocolo `CustomCameraPermissionView`. [Documentoscopia](../Liveness2D/Documentscopy-CustomView.md) e [Liveness3D](../Liveness3D/Liveness3D-CustomView.md).
 
 #### 3.1.1
 - Correção na lógica de exibição do indicador de rotação na tela de câmera da documentoscopia.
