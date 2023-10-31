@@ -1,5 +1,20 @@
 # Changelog
 
+## [versão 5.1.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.2)
+
+_data: 31/10/2023_
+
+- **Melhorias**
+  - Corrigido o desfoque na captura de documento em dispositivos com três câmeras.
+
+- **Atualização da FaceTec - [versão 9.6.57](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.57)**
+  - Feedback genérico atualizado.
+  - Melhorias de UI/UX.
+  - Melhorias nos logs em casos de erro.
+  - Melhorias nos modos `Low Light` e `Auto-Dimming`.
+  - Adicionada nova checagem de injeção de video no dispositivo e servidor para mitigar a ameaça das IAs Generativas.
+  - Melhorias de performance para dispositivos de níveis inferior e médio, resultando em melhores taxas de sucesso.
+
 ## [versão 5.1.2](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.2)
 
 _data: 21/09/2023_
