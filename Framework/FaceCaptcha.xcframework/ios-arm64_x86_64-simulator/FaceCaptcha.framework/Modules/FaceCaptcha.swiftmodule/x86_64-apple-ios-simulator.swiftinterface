@@ -1886,11 +1886,10 @@ extension FaceCaptcha.ChaCha20 {
 public struct SpinnerConfiguration : FaceCaptcha.LoadingViewConfigurationProtocol {
   public let backgroundColor: UIKit.UIColor
   public let loadingType: FaceCaptcha.LoadingTypes
-  public let height: CoreFoundation.CGFloat
-  public let width: CoreFoundation.CGFloat
   public let loadingColor: UIKit.UIColor
   public let strokeWidth: CoreFoundation.CGFloat
-  public init(backgroundColor: UIKit.UIColor, height: CoreFoundation.CGFloat, width: CoreFoundation.CGFloat, loadingColor: UIKit.UIColor, strokeWidth: CoreFoundation.CGFloat)
+  public let scaleFactor: CoreFoundation.CGFloat
+  public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor, strokeWidth: CoreFoundation.CGFloat, scaleFactor: CoreFoundation.CGFloat)
   public func createLoadingView() -> UIKit.UIView
 }
 public struct Liveness3DUser {
