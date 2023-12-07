@@ -1,5 +1,14 @@
 # Changelog
 
+## [versão 5.1.4](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.4)
+
+_data: 30/11/2023_
+
+- **Atualização da FaceTec - [versão 9.6.64](https://github.com/oititec/ios-liveness3d-ft/releases/tag/9.6.64)**
+ 
+    - Como parte do lançamento do Xcode 15, a Apple descontinuará o suporte para iOS 11. A FaceTec seguirá essa direção e **irá descontinuar o suporte ao iOS 11** na SDK do FaceTec iOS em um lançamento futuro.
+    - As atualizações da FaceTec correspondem as mesmas realizadas na versão 5.1.3, abaixo.
+
 ## [versão 5.1.3](https://github.com/oititec/liveness-ios-sdk/releases/tag/5.1.2)
 
 _data: 31/10/2023_
