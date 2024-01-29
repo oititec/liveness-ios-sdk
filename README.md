@@ -1,109 +1,53 @@
-#  Certiface para iOS
+<p style="align: center;">
+  <img src="Documentation/Images/OitiHeader.png"/>
+</p>
 
-Neste repositório você vai encontrar as documentações para **iOS** sobre o **Liveness FaceCaptcha**, **Liveness 3D** e **Documentoscopia**.
+# Oiti - FaceCaptcha iOS
 
-## Sobre este repositório
+Visite o sumário abaixo e conheça sobre as documentações de uso e integração, customização e releases notes do **FaceCaptcha** para iOS.
 
-O Liveness, ou Prova de Vida, pode ser executado através de **SDK único** que reúne os tipos: **Liveness FaceCaptcha** e **Liveness 3D**. 
+**Simplificamos nossos guias de integração e de customização do nosso SDK iOS:**
 
-Os tipos de Liveness serão apresentados na demonstração do serviço e a escolha de um deles deve ser efetuada mediante contratação. Um diagnóstico será efetuado pelo time comercial, responsável por ofertar a melhor experiência para o cliente, considerando seu o modelo de negócio e o comportamento de seus usuários.
+- [Guias de Instalação](https://dash.readme.com/project/certifaceid/v2.0/docs/sumario-sdk-monolito-ios)
+- [Guias do Liveness FaceCaptcha](https://dash.readme.com/project/certifaceid/v2.0/docs/liveness2d-monolito-ios)
+- [Guias do Liveness 3D](https://dash.readme.com/project/certifaceid/v2.0/docs/liveness3d-monolito-ios)
+- [Guias da Documentoscopia](https://dash.readme.com/project/certifaceid/v2.0/docs/doc-core-monolito-ios)
 
-Para cada tipo de Liveness, são apresentados propriedades técnicas específicas. Assim, a pessoa desenvolvedora deve executar os comandos pertencentes ao tipo de serviço contratado.
+--- 
 
-Acompanhe abaixo a instalação, uso, guias de migração e outros documentos. Esses processos integram o projeto FaceCaptcha.
+Neste repositório encontre também release notes dos módulos **Liveness3D**, **FaceCaptcha** e **Documentoscopia**.
 
-##  Requisitos mínimos
-- iOS 11+
-- Swift 5+
+### Changelog
 
-> **Notas** <br>
-> O **XCFramework** foi gerado utilizando **Xcode 14.1** e **SDK iOS 16.1**.
+- As novidades das versões podem ser acessadas [neste link](Documentation/Changelog.md).
 
-##  Instalação
+### Breaking Changes
 
-O SDK está disponível via [CocoaPods](https://cocoapods.org/), forma recomendada. A instalação também pode ser realizada manualmente.
+- [5.0.0](Documentation/BreakingChanges/5.0.0.md)
+- [4.0.9](Documentation/BreakingChanges/4.0.9.md)
+- [4.0.6](Documentation/BreakingChanges/4.0.6.md)
+- [3.0.0](Documentation/BreakingChanges/3.0.0.md)
+- [2.0.0](Documentation/BreakingChanges/2.0.0.md)
 
+--- 
 
-####  CocoaPods
+### Guias de Migração (Novos Módulos)
 
-1. No início do `Podfile`, inclua a linha:
+- FaceCaptcha para [OILiveness2D](/Documentation/MigrationGuide/Liveness2D.md).
+- FaceCaptcha para [OILiveness3D](/Documentation/MigrationGuide/Liveness3D.md).
 
-```rb
-source 'https://github.com/oititec/liveness-ios-specs.git'
-```
+--- 
 
-2. Após isso, adicione a dependência:
+### App de Exemplo
 
-```rb
-pod 'FaceCaptcha', '~> x.y.z'
-```
+Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha](https://github.com/oititec/liveness-ios-sdk/tree/main/SampleFaceCaptcha "SampleFaceCaptcha") que está presente neste repositório.
 
-3. Rode `pod install`.
+---
 
-####  Manual
+### Saiba mais
 
-Para adicionar o SDK manualmente no seu projeto, siga estas [instruções](Documentation/ManualInstallation.md).
+- Conhecer as **ferramentas de prevenção à fraude** e suas funcionalidades:  [consulte este link](https://devcenter.certiface.io/docs/certiface-funcionalidades).
 
-##  Uso
+- Acessar quadro de **compatibilidade de sistemas e drivers**: [consulte este link](https://devcenter.certiface.io/docs/compatibilidade-dos-servicos).
 
-###  Permissões de acesso
-
-No `Info.plist` do projeto, adicione a descrição de uso de câmera (`Privacy - Camera Usage Description`).
-
-![Instalação 4](Documentation/Images/Common/installation_4.png)
-
-
-###  Liveness FaceCaptcha
-
-As instruções de uso, descrição, integração e implementação do **Liveness FaceCaptcha** podem ser acessadas nos links abaixo:
-
-  - [Descrição e Resultados](Documentation/Liveness2D/Liveness2D-Description.md);
-  - [Guia de uso e integração](Documentation/Liveness2D/FaceCaptcha-Usage.md);
-  - [Guia de implementação de view customizada](Documentation/Liveness2D/FaceCaptcha-CustomView.md).
-
-###  Liveness 3D
-
-As instruções de uso, integração, implementação e customização do **Liveness 3D** podem ser acessadas nos links abaixo: 
-
-  - [Descrição e Resultados](Documentation/Liveness3D/Liveness3D-Description.md);
-  - [Guia de uso e integração](Documentation/Liveness3D/Liveness3D-Usage.md);
-  - [Guia de customização: Views](Documentation/Liveness3D/Liveness3D-CustomView.md);
-  - [Guia de customização: Liveness3DTheme](Documentation/Liveness3D/Liveness3D-Liveness3DTheme.md).
-  - [Guia de customização: Textos](Documentation/Liveness3D/Liveness3D-CustomTexts.md).
-
-###  Documentoscopia
-
-As instruções de uso e integração da **Documentoscopia** podem ser acessadas nos links abaixo:
-
-  - [Descrição e Resultados](Documentation/Liveness2D/Documentoscopy-Description.md);
-  - [Guia de uso e integração](Documentation/Liveness2D/Documentscopy-Usage.md);
-  - [Guia de customização de view customizada](Documentation/Liveness2D/Documentscopy-CustomView.md).
-
-
-## Outros Documentos
-
-
-###  Sample
-
-Um exemplo de implementação pode ser encontrado no projeto [SampleFaceCaptcha](https://github.com/oititec/liveness-ios-sdk/tree/main/SampleFaceCaptcha "SampleFaceCaptcha"), neste mesmo repositório.
-
-### Troubleshooting
-
-- [Troubleshooting](Documentation/Troubleshooting.md)
-
-###  Changelog
-
-- As novidades das versões podem ser acessadas [neste link](Documentation/MigrationGuide/Changelog.md).
-
-##  Guias de migração
-
-- [5.0.0](Documentation/MigrationGuide/5.0.0.md) - BREAKING CHANGE
-- [4.0.9](Documentation/MigrationGuide/4.0.9.md) - BREAKING CHANGE
-- [4.0.6](Documentation/MigrationGuide/4.0.6.md) - BREAKING CHANGE
-- [3.0.0](Documentation/MigrationGuide/3.0.0.md) - BREAKING CHANGE
-- [2.0.0](Documentation/MigrationGuide/2.0.0.md) - BREAKING CHANGE
-
-> ⚠️ **Importante**
-> <br/>Para conhecer o **Hub de Liveness**: [consulte este link.](https://devcenter.certiface.io/docs/hub-de-liveness)
-> <br/>Para conhecer o **Doc Core**: [consulte este link.](https://devcenter.certiface.io/docs/doc-core)
-
+- Entrar em contato com o **atendimento Oiti**: [consulte este link](https://devcenter.certiface.io/docs/portal-de-atendimento).
