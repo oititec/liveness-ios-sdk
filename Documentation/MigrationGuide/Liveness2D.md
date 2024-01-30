@@ -1,54 +1,104 @@
-# Guia de migração - 1.0.0
-Guia de migração do SDK iOS para versões acima da versão 1.0.0 e anterior a versão 2.0.0.
+# Guia de migração - Liveness 2D
 
-Essa primeira versão faz parte da modularização do antigo módulo único (FaceCaptcha), onde nesse repositório se encontra isolado os módulo de FaceCaptcha e Documentoscopia.
+Este guia tem como propósito auxiliar na migração do SDK monólito (**FaceCaptcha**) para o novo módulo de Liveness 2D (**OILiveness2D**).
+
+> **Versões utilizadas**
+>
+> Foram utilizadas na elaboração desse guia a versão _5.1.4_ do SDK **FaceCaptcha** e a versão _1.3.0_ do SDK **OILiveness2D**.
 
 ## Mudanças
 
+### Podfile
+
+No arquivo `Podfile` houveram duas alterações:
+
+```sh
+# Antigo
+source 'https://github.com/oititec/liveness-ios-specs.git'
+
+# Novo
+source 'https://github.com/oititec/ios-artifactory.git'
+```
+
+```ruby
+# Antigo
+pod 'FaceCaptcha', '5.1.4'
+
+# Novo
+pod 'OILiveness2D', '1.3.0'
+```
+
+### Importação
+
+Dentro dos arquivos `.swift` houve a alteração da importação do módulo, agora deve ser feita referência ao módulo `OILiveness2D` para ter acesso ao contéudo do **FaceCaptcha** e **Documentscopy**.
+
+```swift
+// Antigo
+import FaceCaptcha
+
+// Novo
+import OILiveness2D
+```
+
 ### FaceCaptcha
 
-1. O *layout* e fluxo de telas foram atualizados. [Fluxo de telas](../../FaceCaptcha/FaceCaptcha-ScreensFlow.md)
+1. As assinaturas dos métodos do protocolo `FaceCaptchaDelegate` foram alteradas.
 
-2. As assinaturas dos métodos do protocolo `FaceCaptchaDelegate` foram alteradas. [Guia de implementação](../../FaceCaptcha/FaceCaptcha-Implementation.md)
+    ```swift
+    // Antigo
 
-3. Os parâmetros `cameraOverlay` e `customView` da classe `FaceCaptchaViewController` foram removidos.
+    func handleFaceCaptchaValidation(validateModel: FCValidCaptchaModel) { }
+    func handleFaceCaptchaError(error: FaceCaptchaError) { }
+    func handleFaceCaptchaCanceled() { }
 
-4. Foram adicionados novos protocolos para customização das telas do fluxo.
+    // Novo
 
-5. O protocolo `FaceCaptchaView` mudou para `FaceCaptchaCustomView`.
+    func handleSuccess(model: FaceCaptchaSuccessModel) { }
+    func handleError(error: FaceCaptchaError) { }
+    func handleCanceled() { }
+    ```
 
-6. Houveram alterações nas propriedades e métodos do protocolo `FaceCaptchaCustomView` (antigo `FaceCaptchaView`):
+2. O parâmetro `cameraOverlay` da classe `FaceCaptchaViewController` foi removido.
 
-| **Nome antigo**        | **Novo nome**    | **Novo Tipo**                 |
-| :--------------------- | :--------------- | :---------------------------- |
-| cameraContainer        | cameraPreview    | ***                           |
-| initialInstructionView | instructionLabel | UILabel!                      |
-| activityIndicatorView  | recognizingLabel | UILabel!                      |
-| ***                    | cameraOverlay    | UIView!                       |
-| ***                    | backButton       | UIButton!                     |
-| ***                    | progressView     | UIView!                       |
+3. O parâmetro `customView` da classe `FaceCaptchaViewController` foi alterado para `customLivenessView`.
 
-**Métodos adicionados**
-- updateProgress(to:)
-- setInstructionLabelTitle(to:)
+4. O protocolo `FaceCaptchaView` mudou para `FaceCaptchaCustomView`.
 
-**Propriedades removidas**
-- challengeContainer
+5. Houveram alterações nas propriedades e métodos do protocolo `FaceCaptchaCustomView` (antigo `FaceCaptchaView`):
 
-> Os tópicos de 3 a 6 podem ser consultados no [Guia de customização](../../FaceCaptcha/FaceCaptcha-Customization.md)
+    | **Nome antigo**        | **Novo nome**    | **Novo Tipo**                 |
+    | :--------------------- | :--------------- | :---------------------------- |
+    | cameraContainer        | cameraPreview    | ***                           |
+    | initialInstructionView | instructionLabel | UILabel!                      |
+    | activityIndicatorView  | recognizingLabel | UILabel!                      |
+    | ***                    | cameraOverlay    | UIView!                       |
+    | ***                    | backButton       | UIButton!                     |
+    | ***                    | progressView     | UIView!                       |
+
+    **Métodos adicionados**
+    - updateProgress(to:)
+    - setInstructionLabelTitle(to:)
+
+    **Propriedades removidas**
+    - challengeContainer
+
+6. Foram adicionados novos parâmetros para customização das telas no inicializador da classe `FaceCaptchaViewController`.
+
+    - customInstructionsView
+    - customProcessResultView
+    - customResultView
+    - customCameraPermissionView
 
 ### Documentoscopia
 
-1. O parâmetro `customCameraPermissionView` do inicializador da `DocumentscopyViewController` mudou de posição.
+1. O parâmetro `customCameraPermissionView` do inicializador da `DocumentscopyViewController` mudou para última posição.
 
 2. A assinatura do tipo ``DocumentscopyCustomCameraPermissionView`` mudou para ``CustomCameraPermissionView``. 
 
-3. A assinatura dos tipos ``LoadingVisibility`` e ``DocumentscopyConfirmationSheetVisibility`` mudou para ``Visibility``.
+3. A assinatura dos tipos ``LoadingVisibility`` (_DocumentscopyCustomInstructionView_) e ``DocumentscopyConfirmationSheetVisibility`` (_DocumentscopyCustomView_) mudou para ``Visibility``.
 
 4. A partir dessa versão a implementação do método `changeLoadingVisibility(to:)` do protocolo ``DocumentscopyCustomInstructionView`` é obrigatória.
 
 5. A assinatura do tipo ``DocumentscopyCameraPreviewView`` mudou para ``CameraPreviewView``.
 
 6. O tipo ``DocumentscopyFocusIndicator`` foi substituído pelo ``FocusIndicator``.
-
-> Todas as alterações na Documentoscopia podem ser encontradas no [Guia de customização](../../Documentscopy/Documentscopy-Customization.md).
