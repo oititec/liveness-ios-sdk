@@ -8,10 +8,10 @@ Visite o sumário abaixo e conheça sobre as documentações de uso e integraç�
 
 **Simplificamos nossos guias de integração e de customização do nosso SDK iOS:**
 
-- [Guias de Instalação](https://dash.readme.com/project/certifaceid/v2.0/docs/sumario-sdk-monolito-ios)
-- [Guias do Liveness FaceCaptcha](https://dash.readme.com/project/certifaceid/v2.0/docs/liveness2d-monolito-ios)
-- [Guias do Liveness 3D](https://dash.readme.com/project/certifaceid/v2.0/docs/liveness3d-monolito-ios)
-- [Guias da Documentoscopia](https://dash.readme.com/project/certifaceid/v2.0/docs/doc-core-monolito-ios)
+- [Guias de Instalação](https://devcenter.certiface.io/docs/sumario-sdk-monolito-ios)
+- [Guias do Liveness FaceCaptcha](https://devcenter.certiface.io/docs/liveness2d-monolito-ios)
+- [Guias do Liveness 3D](https://devcenter.certiface.io/docs/liveness3d-monolito-ios)
+- [Guias da Documentoscopia](https://devcenter.certiface.io/docs/doc-core-monolito-ios)
 
 --- 
 
